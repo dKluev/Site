@@ -1,0 +1,53 @@
+﻿<Content>
+  <Image>
+    <Main>
+      <StudentClabCard>
+      </StudentClabCard>
+      <Coupon> </Coupon>
+    </Main>
+    <Badge>
+      <RealSpecialist></RealSpecialist>
+      <Hours></Hours>
+      <Top></Top>
+      <Unlimit></Unlimit>
+      <Best></Best>
+    </Badge>
+    <SimplePage></SimplePage>
+    <Specialist></Specialist>
+    <Certification>
+      <Employee></Employee>
+    </Certification>
+    <Guide></Guide>
+    <MarketingAction>
+      <Coupon></Coupon>
+    </MarketingAction>
+    <Vacancy></Vacancy>
+    <User></User>
+    <Complex>
+      <ClassRoom></ClassRoom>
+    </Complex>
+  </Image>
+  <File>
+    <Test>
+      <Question></Question>
+      <Answer></Answer>
+    </Test>
+    <LectureFile>
+      
+    </LectureFile>
+  </File>
+  <Temp>
+    <User>
+      <WebinarCert></WebinarCert>
+      <GroupCert></GroupCert>
+      <GroupCertVendor></GroupCertVendor>
+      <GroupCertEng></GroupCertEng>
+      <GroupCertEngHd></GroupCertEngHd>
+      <GroupEnd></GroupEnd>
+      <RegCoupon></RegCoupon>
+      <Best2016></Best2016>
+      <CityCoupon></CityCoupon>
+    </User>
+    <SocialImage></SocialImage>
+  </Temp>
+</Content>

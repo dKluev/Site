@@ -1,0 +1,73 @@
+﻿<#@ template debug="True" hostspecific="True" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="$(ProjectDir)bin\Debug\SimpleUtils.dll" #>
+<#@ assembly name="System.Core.dll" #>
+<#@ assembly name="System.Xml.dll" #>
+<#@ assembly name="System.Xml.Linq.dll" #>
+
+<#@ import namespace="System.Linq" #>
+
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="SimpleUtils.Common.Extensions" #>
+
+<# 
+var xmlPath = Host.ResolvePath(@"cdnstruct.xml");
+	var xml = XDocument.Load(xmlPath);
+	var cls = FromXml(xml.Root, new CdnFiles{Name = "//cdn.specialist.ru/", SysName = "C:/Inetpub/cdn/"});
+ #>
+ using SimpleUtils.FluentHtml.Tags;
+namespace Specialist.Web.Common.Cdn {
+	public static class Cdns {
+		<#= cls.Render() #>
+	}
+
+}
+
+<#+
+	CdnFiles FromXml(XElement element, CdnFiles parent) {
+			var files = new CdnFiles{Name = element.Name.ToString(), Parent = parent}; 																									
+			files.InnerFiles = element.Elements().Select(x => FromXml(x,files)).ToList();
+            return files;
+		}
+#>
+
+<#+
+	public class CdnFiles {
+	   
+	   
+	 
+	    public string Name { get; set; }
+	    public string SysName { get; set; }
+		public CdnFiles Parent { get; set; }
+
+		public List<CdnFiles> InnerFiles { get; set; }
+
+	public string GetPath(){
+		if(Parent == null)
+			return SysName;
+		return Parent.GetPath() + Name	+ "/"; 	       	   																													
+    }
+	public string GetUrl(){
+		if(Parent == null)
+			return Name;
+		return (Parent.GetUrl() + Name	+ "/"); 	       	   																													
+    }
+	public string GetName(){
+		if(Parent == null || Parent.Parent == null)
+			return "";
+		return Parent.GetName() + Name; 	       	   																													
+    }
+	  
+        public string Render(){
+	       if(InnerFiles.Any())
+	           return InnerFiles.Select(x => x.Render()).JoinWith("\n");
+			var name = GetName();
+			var url = GetUrl();
+			var path =  GetPath();
+			return "public static CdnFile {0}(string file) {{ return new CdnFile(\"{1}\" + file, \"{2}\" + file);}}\n".FormatWith(name,url,path);
+		}
+	}
+
+
+#>

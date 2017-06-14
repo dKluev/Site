@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C7F7E47A-8072-44BD-883E-06AC71768EF5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Specialist.Web.Common</RootNamespace>
+    <AssemblyName>Specialist.Web.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GSearch.Core">
+      <HintPath>..\..\Dependencies\GSearch\GSearch.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GSearch.Web">
+      <HintPath>..\..\Dependencies\GSearch\GSearch.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Linq">
+      <HintPath>..\..\Dependencies\Microsoft.Linq\Microsoft.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\Dependencies\Unity21\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\Dependencies\Unity21\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib">
+      <HintPath>..\..\Dependencies\MvcContrib\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.0.2.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\Dependencies\NLog\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils.FluentAttributes">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.FluentAttributes.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils.FluentHtml">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.FluentHtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cdn\CdnFile.cs" />
+    <Compile Include="Cdn\CdnUrls.cs">
+      <DependentUpon>CdnUrls.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Cdn\Cdns.cs">
+      <DependentUpon>Cdns.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Extension\DecimalExtension.cs" />
+    <Compile Include="Extension\HtmlHelperExtension.cs" />
+    <Compile Include="Extension\LinkExtension.cs" />
+    <Compile Include="Extension\NameValueCollectionExtension.cs" />
+    <Compile Include="Extension\NullableExtension.cs" />
+    <Compile Include="Extension\RouteCollectionExtension.cs" />
+    <Compile Include="Extension\UrlHelperExtension.cs" />
+    <Compile Include="Html\BootHtmls.cs" />
+    <Compile Include="Html\H.cs" />
+    <Compile Include="Html\Htmls2.cs" />
+    <Compile Include="Html\ExpressionInputExtension.cs" />
+    <Compile Include="Html\GenericExtension.cs" />
+    <Compile Include="Html\HtmlControls.cs" />
+    <Compile Include="Html\Htmls.cs" />
+    <Compile Include="Html\HtmlsExtension.cs" />
+    <Compile Include="Html\HtmlTagExtension.cs" />
+    <Compile Include="Html\HtmlUtils.cs" />
+    <Compile Include="Html\HUtil.cs" />
+    <Compile Include="Html\JuiHtmls.cs" />
+    <Compile Include="Html\MHtmls.cs" />
+    <Compile Include="Html\NullTagImg.cs" />
+    <Compile Include="Html\RawXml.cs" />
+    <Compile Include="Html\TagList.cs" />
+    <Compile Include="MetaInfo\AdditionalAttributesExtension.cs" />
+    <Compile Include="MetaInfo\AssemblyMetaDataProvider.cs" />
+    <Compile Include="MetaInfo\Attributes\DeletableAttribute.cs" />
+    <Compile Include="MetaInfo\Attributes\ForeignTypeAttribute.cs" />
+    <Compile Include="MetaInfo\Attributes\FullLengthStringDisplayAttribute.cs" />
+    <Compile Include="MetaInfo\Attributes\NotAddAttribute.cs" />
+    <Compile Include="MetaInfo\Attributes\NotFilterAttribute.cs" />
+    <Compile Include="MetaInfo\BaseMetaDataExtension.cs" />
+    <Compile Include="MetaInfo\PropertyMetaDataBuilderExtension.cs" />
+    <Compile Include="Mvc\ActionFilters\ExModelStateToTempData.cs" />
+    <Compile Include="Mvc\ActionResults\DownloadResult.cs" />
+    <Compile Include="Mvc\ActionResults\StringWriterWithEncoding.cs" />
+    <Compile Include="Mvc\ActionResults\XmlResult.cs" />
+    <Compile Include="Mvc\Binders\DateTimeModelBinder.cs" />
+    <Compile Include="Mvc\Binders\DefaultDictionaryBinder.cs" />
+    <Compile Include="Mvc\Binders\FlagEnumModelBinder.cs" />
+    <Compile Include="Mvc\Extensions\AjaxRequestExtension.cs" />
+    <Compile Include="Mvc\Extensions\ViewExtension.cs" />
+    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Services\CaptchaException.cs" />
+    <Compile Include="Services\MailService.cs" />
+    <Compile Include="Services\OdnoklassnikiUtl.cs" />
+    <Compile Include="Services\VkontakteService.cs" />
+    <Compile Include="Site\CommonSiteHtmls.cs" />
+    <Compile Include="Utils\Files\CertTextPosition.cs" />
+    <Compile Include="Utils\Files\CompanyFiles.cs" />
+    <Compile Include="Utils\Files\ImageMetas.cs" />
+    <Compile Include="Utils\Files\ImageUtils.cs" />
+    <Compile Include="Utils\Files\JavaScripts.cs" />
+    <Compile Include="Utils\Files\Images.cs" />
+    <Compile Include="Html\Pager.cs" />
+    <Compile Include="Html\Routing\RouteCollectionExtension.cs" />
+    <Compile Include="Html\Routing\RoutingParameter.cs" />
+    <Compile Include="Html\SelectExtensionEx.cs" />
+    <Compile Include="Html\StringExtension.cs" />
+    <Compile Include="Utils\Files\KbSize.cs" />
+    <Compile Include="Utils\Files\LectureFiles.cs" />
+    <Compile Include="Utils\Files\Ulrs.cs" />
+    <Compile Include="MetaInfo\Controls\ExtraControl.cs" />
+    <Compile Include="Mvc\ActionFilters\AuthAttribute.cs" />
+    <Compile Include="Mvc\ActionResults\RssResult.cs" />
+    <Compile Include="Mvc\Attributes\LinkTextAttribute.cs" />
+    <Compile Include="Mvc\Controllers\AccountController.cs" />
+    <Compile Include="Page\SearchVM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site\CommonPartialViewNames.cs" />
+    <Compile Include="Utils\Files\UserFiles.cs" />
+    <Compile Include="Utils\Files\UserImages.cs" />
+    <Compile Include="Utils\Files\VendorCertBase.cs" />
+    <Compile Include="Utils\Files\VendorEngCertData.cs" />
+    <Compile Include="Utils\Gravatar.cs" />
+    <Compile Include="Utils\HttpUtils.cs" />
+    <Compile Include="Utils\SelectListUtil.cs" />
+    <Compile Include="Utils\Tasks\Task.cs" />
+    <Compile Include="Utils\UnityRegistrator.cs" />
+    <Compile Include="Utils\ViewWithModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamicForm\DynamicForm.csproj">
+      <Project>{9D06C8E9-58AD-4A39-80C0-B87CDA39C332}</Project>
+      <Name>DynamicForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Entities\Specialist.Entities.csproj">
+      <Project>{19383E60-91D3-431B-8870-5456C67EE86D}</Project>
+      <Name>Specialist.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Services\Specialist.Services.csproj">
+      <Project>{EA56F9BC-8CDB-401F-B5F6-DCB77AAEAB20}</Project>
+      <Name>Specialist.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cdn\CdnUrls.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CdnUrls.cs</LastGenOutput>
+    </None>
+    <None Include="Cdn\Cdns.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Cdns.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Cdn\cdnstruct.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
