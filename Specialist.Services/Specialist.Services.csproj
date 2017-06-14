@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA56F9BC-8CDB-401F-B5F6-DCB77AAEAB20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Specialist.Services</RootNamespace>
+    <AssemblyName>Specialist.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Linq">
+      <HintPath>..\..\Dependencies\Microsoft.Linq\Microsoft.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\Dependencies\Unity21\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\Dependencies\Unity21\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\Dependencies\NLog\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils.FluentHtml">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.FluentHtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Catalog\CoursePrerequisiteService.cs" />
+    <Compile Include="Catalog\Extension\BannerQueryable.cs" />
+    <Compile Include="Catalog\Extension\MarketingActionQueryable.cs" />
+    <Compile Include="Catalog\VendorVMService.cs" />
+    <Compile Include="Catalog\VendorService.cs" />
+    <Compile Include="Catalog\EntityCommonService.cs" />
+    <Compile Include="Catalog\Interface\IEntityCommonService.cs" />
+    <Compile Include="Center\Extension\EmployeeQueryable.cs" />
+    <Compile Include="Center\Interface\IEmployeeVMService.cs" />
+    <Compile Include="Center\Interface\IUserWorkService.cs" />
+    <Compile Include="Center\UserWorkService.cs" />
+    <Compile Include="Center\ViewModel\EmployeeVMService.cs" />
+    <Compile Include="Cms\Const\CmsUrls.cs" />
+    <Compile Include="Cms\Interface\ISimplePageService.cs" />
+    <Compile Include="Cms\SimplePageService.cs" />
+    <Compile Include="Common\FileService.cs" />
+    <Compile Include="Common\FileVMService.cs" />
+    <Compile Include="Common\GeoService.cs" />
+    <Compile Include="Common\Interface\IFileVMService.cs" />
+    <Compile Include="Common\Interface\IMailService.cs" />
+    <Compile Include="Common\Interface\IFileService.cs" />
+    <Compile Include="Common\MailTemplateService.cs" />
+    <Compile Include="Common\SimpleValueService.cs" />
+    <Compile Include="Common\Utils\TemplateEngine.cs" />
+    <Compile Include="Core\BaseContextProvider.cs" />
+    <Compile Include="Core\CachingService.cs" />
+    <Compile Include="Catalog\Interface\IMainPageService.cs" />
+    <Compile Include="Catalog\Interface\INewsService.cs" />
+    <Compile Include="Common\Interface\ISiteObjectRelationService.cs" />
+    <Compile Include="Catalog\MainPageService.cs" />
+    <Compile Include="Catalog\NewsService.cs" />
+    <Compile Include="Common\SiteObjectRelationService.cs" />
+    <Compile Include="Common\SiteObjectService.cs" />
+    <Compile Include="Common\TagService.cs" />
+    <Compile Include="Center\CityService.cs" />
+    <Compile Include="Center\ComplexService.cs" />
+    <Compile Include="Center\Extension\ComplexQueryable.cs" />
+    <Compile Include="Core\Interface\IRepository2.cs" />
+    <Compile Include="Core\Repository2.cs" />
+    <Compile Include="Core\Utils\DataLoadOptionsBuilder.cs" />
+    <Compile Include="Education\LectureService.cs" />
+    <Compile Include="Examination\CertificationVMService.cs" />
+    <Compile Include="Examination\CertificationService.cs" />
+    <Compile Include="Common\DictionariesService.cs" />
+    <Compile Include="Common\Extension\GenericQueryable.cs" />
+    <Compile Include="Core\ContextProvider.cs" />
+    <Compile Include="Core\SpecialistContextProvider.cs" />
+    <Compile Include="Core\DynamicRepository.cs" />
+    <Compile Include="Core\Interface\IContextProvider.cs" />
+    <Compile Include="Core\Interface\IRepository.cs" />
+    <Compile Include="Core\Repository.cs" />
+    <Compile Include="Catalog\CourseListVMService.cs" />
+    <Compile Include="Catalog\CourseService.cs" />
+    <Compile Include="Catalog\CustomSectionService.cs" />
+    <Compile Include="Catalog\CustomSectionTypeService.cs" />
+    <Compile Include="Education\DayShiftService.cs" />
+    <Compile Include="Education\StudentInGroupService.cs" />
+    <Compile Include="Lms\PiStudentInGroupLectureService.cs" />
+    <Compile Include="Message\Interfaces\IMessageSectionService.cs" />
+    <Compile Include="Message\MessageSectionService.cs" />
+    <Compile Include="Order\DiscountService.cs" />
+    <Compile Include="Education\Interface\IStudentService.cs" />
+    <Compile Include="Education\StudentService.cs" />
+    <Compile Include="Education\EmployeeService.cs" />
+    <Compile Include="Examination\ExamService.cs" />
+    <Compile Include="Education\GroupService.cs" />
+    <Compile Include="Education\GroupVMService.cs" />
+    <Compile Include="Common\Interface\ISiteObjectService.cs" />
+    <Compile Include="Common\Interface\ITagService.cs" />
+    <Compile Include="Center\Interface\ICityService.cs" />
+    <Compile Include="Center\Interface\IComplexService.cs" />
+    <Compile Include="Catalog\Interface\IVendorVMService.cs" />
+    <Compile Include="Catalog\Interface\IVendorService.cs" />
+    <Compile Include="Common\Interface\ICachingService.cs" />
+    <Compile Include="Catalog\Interface\ICertificationcVMService.cs" />
+    <Compile Include="Catalog\Interface\ICertificationService.cs" />
+    <Compile Include="Catalog\Interface\ICourseListVMService.cs" />
+    <Compile Include="Catalog\Interface\ICourseService.cs" />
+    <Compile Include="Catalog\Interface\ICustomSectionService.cs" />
+    <Compile Include="Catalog\Interface\ICustomSectionTypeService.cs" />
+    <Compile Include="Education\Interface\IDayShiftService.cs" />
+    <Compile Include="Common\Interface\IDictionariesService.cs" />
+    <Compile Include="Order\EditExamVMService.cs" />
+    <Compile Include="Order\ExtrasService.cs" />
+    <Compile Include="Order\Interface\IEditExamVMService.cs" />
+    <Compile Include="Order\Interface\IDiscountService.cs" />
+    <Compile Include="Center\Interface\IEmployeeService.cs" />
+    <Compile Include="Examination\Interfaces\IExamService.cs" />
+    <Compile Include="Education\Interface\IGroupService.cs" />
+    <Compile Include="Education\Interface\IGroupVMService.cs" />
+    <Compile Include="Order\Interface\IPriceService.cs" />
+    <Compile Include="Common\Interface\IResponseService.cs" />
+    <Compile Include="Catalog\Interface\ISectionService.cs" />
+    <Compile Include="Catalog\Interface\ITrackVMService.cs" />
+    <Compile Include="Catalog\Interface\ITrackService.cs" />
+    <Compile Include="Common\Interface\IUserSettingsService.cs" />
+    <Compile Include="Order\Interface\ICartService.cs" />
+    <Compile Include="Order\Interface\IContractVMService.cs" />
+    <Compile Include="Order\Interface\IEditCourseVMService.cs" />
+    <Compile Include="Order\Interface\IEditTrackVMService.cs" />
+    <Compile Include="Order\Interface\IOrderDetailService.cs" />
+    <Compile Include="Order\Interface\IOrderService.cs" />
+    <Compile Include="Order\Interface\IRegistrationVMService.cs" />
+    <Compile Include="Order\Interface\ISmartGroupChoiceService.cs" />
+    <Compile Include="Order\SmartGroupChoiceService.cs" />
+    <Compile Include="Passport\Interface\IAuthService.cs" />
+    <Compile Include="Passport\Interface\IUserService.cs" />
+    <Compile Include="Cms\Interface\IBannerService.cs" />
+    <Compile Include="Catalog\Interface\ICoursesScheduleVMService.cs" />
+    <Compile Include="Order\CartService.cs" />
+    <Compile Include="Order\EditCourseVMService.cs" />
+    <Compile Include="Order\ContractVMService.cs" />
+    <Compile Include="Order\EditTrackVMService.cs" />
+    <Compile Include="Order\Interface\ISpecialistExportService.cs" />
+    <Compile Include="Order\OrderDetailService.cs" />
+    <Compile Include="Order\OrderService.cs" />
+    <Compile Include="Order\RegistrationVMService.cs" />
+    <Compile Include="Order\SpecialistExportService.cs" />
+    <Compile Include="Passport\AuthService.cs" />
+    <Compile Include="Passport\UserInfoService.cs" />
+    <Compile Include="Passport\UserService.cs" />
+    <Compile Include="Order\PriceService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Catalog\Extension\GroupQueryable.cs" />
+    <Compile Include="Catalog\ResponseService.cs" />
+    <Compile Include="Catalog\SectionService.cs" />
+    <Compile Include="Cms\BannerService.cs" />
+    <Compile Include="Tests\TestModuleService.cs" />
+    <Compile Include="Tests\TestService.cs" />
+    <Compile Include="Tests\UserTestService.cs" />
+    <Compile Include="Utils\CacheUtils.cs" />
+    <Compile Include="Utils\Logger.cs" />
+    <Compile Include="Order\ShoppingCartVMService.cs" />
+    <Compile Include="Catalog\TrackVMService.cs" />
+    <Compile Include="Catalog\TrackService.cs" />
+    <Compile Include="UnityInterception\CachedAttribute.cs" />
+    <Compile Include="Common\UserSettingsService.cs" />
+    <Compile Include="Catalog\CoursesScheduleVMService.cs" />
+    <Compile Include="Utils\PermissionException.cs" />
+    <Compile Include="Utils\SpecLogger.cs" />
+    <Compile Include="Utils\ThreadPoolEx.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Specialist.Entities\Specialist.Entities.csproj">
+      <Project>{19383E60-91D3-431B-8870-5456C67EE86D}</Project>
+      <Name>Specialist.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
