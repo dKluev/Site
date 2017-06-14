@@ -1,0 +1,4 @@
+.header_lang a img{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);}
+.header_lang a.active img{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);}
+.left1 .h2_menu2 h2, .right2 .h2_menu2 h2{width:223px; overflow:hidden;}
+.courses_4{ margin:0 32px 0px 32px;}

@@ -1,0 +1,49 @@
+.all_page {width: expression((document.documentElement.clientWidth || document.body.clientWidth) < 1000 ? '1000px' : (document.documentElement.clientWidth || document.body.clientWidth)>1280 ? '1280px' : 'auto');}
+.header1 .registration {float:left; width:200px; background-image:none; padding:0;}
+.header1 .registration_ie {float:left; height:100%; padding:0 15px 0 25px; margin-right:-3px; background:url("../images/header1_reg_bg.png") left top repeat-x;}
+.header1.title2{margin-left:-3px;}
+.basket_bottom .basket_bottom_l {float:none; position:absolute; top:0; left:1px; font-size:1px;}
+.basket_bottom .basket_bottom_r {float:none; position:absolute; top:0; right:2px; font-size:1px;}
+.basket_bottom .basket_bottom_c {font-size:1px; }
+.basket_bottom {z-index:10;}
+.bookmark_red{display:inline; z-index:1;}
+
+.header_lang a img{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);}
+.header_lang a.active img{filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100);}
+.header2 .info_ie{margin-left:-3px;}
+
+.header3 .menu_main {margin-right:212px;}
+.header3 .search p {margin:6px 0 0 0; }
+.header3 .search{margin-left:-3px;}
+
+.center {zoom:1;}
+
+.block_chamfered_r{ zoom:1;}
+.block_chamfered_bl, .block_chamfered_br{bottom: expression(-this.parentNode.offsetHeight % 2);}
+.block_chamfered_tr, .block_chamfered_br{right:  expression(-this.parentNode.offsetWidth % 2); }
+
+.block_c_br, .block_c_bl{bottom: expression(-this.parentNode.offsetHeight % 2);}
+.block_c_tr, .block_c_br{right:  expression(-this.parentNode.offsetWidth % 2); }
+
+	.block_c_tl{background:url(../images/table_corners.gif) -7px -7px no-repeat;}
+	.block_c_tr{background:url(../images/table_corners.gif) 0 -7px no-repeat;}
+	.block_c_br{background:url(../images/table_corners.gif) 0 0 no-repeat;}
+	.block_c_bl{background:url(../images/table_corners.gif) -7px 0 no-repeat;}
+	
+	.table_c_tl{background:url(../images/table_c_tl.gif) top left no-repeat;}	
+	.table_c_tr{background:url(../images/table_c_tr.gif) top right no-repeat;}	
+	.table_c_br{background: url(../images/table_c_br.gif) bottom right no-repeat;}	
+	.table_c_bl{background: url(../images/table_c_bl.gif) bottom left no-repeat;}
+
+.h2_menu2_t_blue, .h2_menu2_t_red, .h2_menu2_t_green, .h2_menu2_t_brown, .h2_menu2_t_grey, .h2_menu2_t_lightblue{font-size:1px;}
+.left1 .h2_menu2 h2, .right2 .h2_menu2 h2{width:223px; overflow:hidden;}
+
+
+.footer2{zoom:1;}
+
+/*Общие*/
+.overflow{zoom:1;}
+
+
+
+

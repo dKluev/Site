@@ -1,0 +1,351 @@
+﻿/* шапка*/
+
+#header-line {
+	
+	width:100%;
+	height: 27px;
+	margin-right: 20px;
+	background-color: #eef3f5;
+}
+
+#shapka {
+	width: 100%;
+    overflow: hidden;
+	min-width: 900px;
+	}
+	
+	
+#podshapka {
+	float: left;
+	width: 99%;
+	margin-top: 10px;
+}
+#leftcolumn {
+	float: left;
+	width: 170px;
+	text-align: center;
+	margin-right: 5px;
+	font-family: 'Arial', 'Helvetica', sans-serif;
+}
+#leftcolumn .chart{
+	
+	border-bottom: 1px solid #e7e7e7;
+}
+
+#leftcolumn .mess{
+	
+	background: url('//cdn.specialist.ru/Content/temp/cabinet/letter1.gif') no-repeat left center;
+	line-height: 27px;
+	margin-left: 20px;
+}
+
+#leftcolumn .mess p{
+	
+	padding-left: 10px;
+	color: #ff0000;
+	font-weight: bold;
+}
+
+#rightcolumn {
+	float: left;
+	padding-left: 40px;
+	border-left: 1px solid #e7e7e7;
+}
+#rightcolumn .phead{
+	color: #0063a6;
+	font-size:14px;
+	font-weight: bold;
+}
+#rightcolumn ul{
+	overflow:hidden;
+	list-style:none;
+	padding-left: 0px;
+}	
+
+#rightcolumn ul.sign li{
+	float:left;
+	margin:0 5px 10px;
+}
+#rightcolumn ul.card li.verch{
+	float: left;
+	margin: 0 5px 0;
+	width: 154px;
+	text-align:center;
+}
+#rightcolumn ul.card li{
+	margin: 0 5px 0;
+}
+/* табы меню*/
+#wrapper {
+	
+	padding: 20px;
+	font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+#nav {
+	width: 220px;
+}
+#nav .item, #nav .item a {
+	padding: 5px;
+	font-size: 12px;
+	color: #0164a7;
+	cursor: pointer;
+    text-decoration: none;
+}
+
+#nav .item a {
+    padding-left: 0;
+}
+
+#nav .item:hover {
+	background: url('//cdn.specialist.ru/Content/temp/cabinet/bg.png') repeat-y left top;
+	background: -webkit-linear-gradient(left, #daedfc, transparent);
+	background: -o-linear-gradient(left, #daedfc, transparent);
+	background: linear-gradient(to right, #daedfc, transparent);	
+}
+#nav .item.active {
+	font-weight: bold;
+	background: url('//cdn.specialist.ru/Content/temp/cabinet/bg.png') repeat-y left top;
+	background: -webkit-linear-gradient(left, #daedfc, transparent);
+	background: -o-linear-gradient(left, #daedfc, transparent);
+	background: linear-gradient(to right, #daedfc, transparent);
+	cursor: default;
+}
+#nav .item .icon {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+	background: url('//cdn.specialist.ru/Content/temp/cabinet/sprite.png') no-repeat;
+}
+#nav .item .icon.n01 {
+	background-position: 0 0;	
+}
+#nav .item .icon.n02 {
+	background-position: -25px 0px;	
+}
+#nav .item .icon.n03 {
+	background-position: -50px 0;	
+}
+#nav .item .icon.n04 {
+	background-position: -75px 0;	
+}
+#nav .item .icon.n05 {
+	background-position: -100px 0;	
+}
+#nav .item .icon.n06 {
+	background-position: -125px 0;	
+}
+#nav .item .icon.n07 {
+	background-position: -150px 0;	
+}
+#nav .item .icon.n08 {
+	background-position: -175px 0;	
+}
+#nav .item .icon.n09 {
+	background-position: -200px 0;	
+}
+#nav .item .icon.n10 {
+	background-position: -225px 0;	
+}
+#nav .item .icon.forum {
+	background-position: -225px 0;	
+}
+#nav .item .name {
+	display: inline-block;
+	vertical-align: middle;
+	
+	}
+	
+#content {
+	float: right;
+	width: calc(100% - 220px);
+	padding-left: 10px;
+	}
+#content .content {
+	display: none;	
+}
+#content .content.active {
+	display: block;	
+}
+	
+#other_blocks {
+	width:100%;
+	font-family: 'Arial', 'Helvetica', sans-serif;
+	}
+
+#other_blocks .video-club {
+	background: url('//cdn.specialist.ru/Content/temp/cabinet/bg-club.png') repeat-y left top;
+	background: -webkit-linear-gradient(left, #cfdfef, transparent);
+	background: -o-linear-gradient(left, #cfdfef, transparent);
+	background: linear-gradient(to right, #cfdfef, transparent);
+	height: 37px;
+	width: 536px;
+	margin: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	
+	}
+
+#other_blocks .video-club .name {
+	padding-left: 40px;
+	text-transform: uppercase;
+	color: #456e95;
+	height: 37px;
+	padding-top: 10px;
+	font-size: 16px;
+	font-weight: bold;
+	background: url('//cdn.specialist.ru/Content/temp/cabinet/ico-club.jpg') no-repeat 10px 7px;
+	
+	
+}
+
+
+/*стили внутренних табов*/
+/* navup */
+#navup {
+	
+width: 750px;
+font-family: 'Verdana', sans-serif;
+font-size: 11px;
+}
+#navup .itemInner {
+	
+	
+	color: #000066;
+	cursor: pointer;
+	display: inline-block;
+	background: linear-gradient(to top, #E4EEF8,#E4EEF8 );
+	background-color: #E4EEF8;
+	border-radius: 5px 5px 0 0; 
+	border-right: 1px solid #373737;
+	height: 15px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	position: relative;
+	top: 9px;
+	o#ve1rflow: hidden;
+	vertical-align: middle;
+	padding:5px 12px;
+	
+	
+	}
+	
+#navup .itemInner:hover {
+	
+	color: #FFFFFF;
+	cursor: pointer;
+	display: inline-block;
+	background: linear-gradient(to top, #000000,#000000 );
+	border-radius: 5px 5px 0 0; 
+	border-right: 1px solid #373737;
+	height: 15px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+	position: relative;
+	top: 9px;
+	padding:5px 12px;
+}	
+
+
+#navup .itemInner.active {
+
+	cursor: default;
+	height: 15px;
+	padding:5px -12px;
+	position: relative;
+	top: 8px;
+	background: linear-gradient(to top, #EEEEEE,#EEEEEE );
+	color: #000066;
+	font-weight: bold;
+		
+}
+
+
+#navup .itemInner .name {
+	
+}
+
+
+
+#content-wrap {
+
+	min-height: 300px;
+
+}
+#content-wrap .content1 {
+	display: none;	
+}
+#content-wrap .content1.active {
+	display: block;	
+}
+
+.plus {
+	background: url(//cdn.specialist.ru/Content/temp/cabinet/plus-aj.jpg) no-repeat left center;
+	padding: 20px 25px;
+}
+
+.recommended {
+	border-bottom: 1px solid #CCC;
+	border-collapse:collapse;
+}
+#profile-href {
+	margin-top:-17px;
+	display: block;
+	padding: 10px 10px;
+}
+#profile-href ul{
+	float: right;
+	list-style-type: none;
+	margin-top:7px;
+}
+
+
+.online:before,
+.online:after {
+    content: '';
+    display: table;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.plate {
+    background: #eef3f6;
+    padding: 0 10px;
+    color: #2377b5;
+}
+
+.hallo {
+    float: left;
+    line-height: 27px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+.manager {
+    float: left;
+    line-height: 27px;
+    font-size: 12px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+}
+
+    .manager:before {
+        content: '';
+        display: block;
+        float: left;
+        margin-right: 5px;
+        width: 23px;
+        height: 27px;
+        background: url('//cdn.specialist.ru/Content/temp/cabinet/ico-mann.jpg') no-repeat center;
+    }

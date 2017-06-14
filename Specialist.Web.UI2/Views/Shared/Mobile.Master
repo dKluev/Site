@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+<%@ Import Namespace="Specialist.Entities.Catalog.Interface" %>
+<%@ Import Namespace="Specialist.Entities.Context.ViewModel" %>
+<%@ Import Namespace="Specialist.Entities.ViewModel" %>
+<%@ Import Namespace="Specialist.Web" %>
+<%@ Import Namespace="Specialist.Web.Common.Logic" %>
+<%@ Import Namespace="Specialist.Web.Const" %>
+<%@ Import Namespace="Specialist.Web.Controllers" %>
+<%@ Import Namespace="Specialist.Web.Controllers.Shop" %>
+<%@ Import Namespace="Specialist.Web.Pages" %>
+<%@ Import Namespace="Specialist.Web.Util" %>
+<%@ Import Namespace="SpecialistTest.Web.Core.Mvc.Extensions" %>
+<%@ Import Namespace="SimpleUtils.Common.Extensions" %>
+<%@ Import Namespace="SimpleUtils.Utils" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+        <% string htmlTitle = null; 
+           var baseModel = Model as BaseVM;
+           var model = baseModel != null ? baseModel.MainModel : Model;
+           htmlTitle = HtmlTitleCreator.Get(model);
+           if(htmlTitle.IsEmpty() && model is IViewModel) {
+               htmlTitle = Model.As<IViewModel>().Title;
+           }
+           htmlTitle = htmlTitle ?? "Специалист мобильный";
+       %>
+	<title><%= htmlTitle %></title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+	<script src="<%= JavaScripts.ScriptPath %>" type="text/javascript"> </script>
+	<% if(MvcApplication.IsDebug){ %>
+	<link rel="stylesheet" type="text/css" href="/Content/mobile.css" />
+  <% }else{ %>
+	<link rel="stylesheet" type="text/css" href="/Content/mobile.min.css?v=2" />
+  <% } %>
+	<meta name="viewport" content="width=device-width" />
+    	<%= PageMetaTags.Get(Model) %>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<div id="top">
+		<a href="/" id="top_Home">С</a>
+		<%= Url.Link<ProfileController>(c => c.Details(), "Профиль") %>
+		<%= Url.Link<CartController>(c => c.Details(), "Корзина") %>
+		<%= Url.Link<CourseController>(c => c.Search(null), "Поиск") %>
+        <%= H.Anchor(StringUtils.AddUrlParam(Request.Url.PathAndQuery, "commonsite", "1"), "Полная версия сайта").AbsoluteHref() %>
+	</div>
+<a href='https://play.google.com/store/apps/details?id=ru.specialist&utm_source=mobile-site&utm_medium=banner&utm_campaign=10'>
+<img src="http://cdn.specialist.ru/Content/Image/mobile/main/mobile-app.jpg"/></a>
+    <%= Htmls.ShowMessage() %>
+	<asp:ContentPlaceHolder ID="Center" runat="server" />
+	<div id="bottom">
+		<a href="#">Наверх</a> 
+	</div>
+	
+	<script type="text/javascript">
+	    var gaAccountId = 'UA-4563265-7';
+	</script>
+		<% Html.RenderPartial(Views.Shared.GoogleAnalytics.GACommon); %>
+	<% if (Model is PaymentTypeChoiceVM) { %>
+		<% Html.RenderPartial(Views.Shared.GoogleAnalytics.GAOrder, Model.As<PaymentTypeChoiceVM>().Order); %>
+	<% }else{ %>
+        <script>
+          ga('send', 'pageview');
+        </script>
+	<% } %>
+    
+
+<script type="text/javascript">
+(function(a,e,c,f,g,h,b,d){var k={ak:"1059972133",cl:"fAavCKXo2WwQpci3-QM",autoreplace:"+7 (495) 232-32-16"};a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};a[g]||(a[g]=k.ak);b=e.createElement(h);b.async=1;b.src="//www.gstatic.com/wcm/loader.js";d=e.getElementsByTagName(h)[0];d.parentNode.insertBefore(b,d);a[f]=function(b,d,e){a[c](2,b,k,d,null,new Date,e)};a[f]()})(window,document,"_googWcmImpl","_googWcmGet","_googWcmAk","script");
+</script>
+
+	
+	
+	<!--Openstat-->
+<span id="openstat2292910"></span>
+<script type="text/javascript">
+    var openstat = { counter: 2292910, next: openstat, track_links: "all" };
+    (function (d, t, p) {
+        var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+        j.src = ("https:" == p ? "https:" : "http:") + "//openstat.net/cnt.js";
+        var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+    })(document, "script", document.location.protocol);
+</script>
+<!--/Openstat-->
+    
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter41713014 = new Ya.Metrika({
+                    id:41713014,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    ecommerce:"dataLayer"
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/41713014" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

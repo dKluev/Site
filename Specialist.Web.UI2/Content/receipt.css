@@ -1,0 +1,10 @@
+body{font:11px "Times New Roman",Times,serif;}
+		
+table{width:720px; border-collapse:collapse; border-color:#000000; border-width:1px 2px 2px 1px; border-style:solid;}
+table td{border:1px solid #000; vertical-align:top;}
+table td.left{width:218px; height:250px;  text-align:center;}
+span.font13_{font-size:13px; text-decoration:underline;}
+span.font14_{font-size:14px; text-decoration:underline;}
+span.font14{font-size:14px;}
+span.font_{text-decoration:underline;}
+p{margin:6px 5px;}

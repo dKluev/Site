@@ -1,0 +1,3167 @@
+﻿@media screen and (min-width: 768px) and (max-width: 1024px) {
+.header3 .menu_main ul {
+	font-size: 14px !important;
+}
+
+.header3 .menu_main a, .header3 .menu_main span, .header3 .menu_main a:visited, .menu_main a:hover {
+	padding: 0 8px !important;
+}
+
+.header1 .menu_top ul {
+	font-size: 12px !important;
+}
+
+.menu_top ul li:nth-child(2){
+	margin-right:0px !important;
+}
+
+.header2 .info {
+	left:400px !important;
+}
+.header2 .info .phone {
+	margin: 3px 0 0 20px !important;
+	font-size: 21px !important;
+	font-weight: bold;
+}
+.header2 .info .e-mail {
+	left:-140px !important;
+}
+
+.e-mail a:nth-child(2){
+	left:418px !important;
+}
+
+.header2 .info .e-mail a {
+	font-size: 16px !important;
+}
+.header2 .logo img{
+	width:215px !important;
+	height: auto     !important;
+	margin-top:3px !important;
+}
+
+ul.bookmarks {
+    font-size: 11px !important;
+}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+	.header2 .logo {
+	left:15px !important;
+}
+}
+
+body {
+	margin: 0;
+	color: #1a405e;
+	font-family: Verdana, sans-serif;
+	font-size: 13px;
+	color: #1a405e;
+}
+.all_page {
+	max-width: 1280px;
+	min-width: 1100px;
+	margin: 0 auto;
+}
+.page {
+	position: relative;
+}
+/*Шапка*/
+/*Шапка1 - регистрация, заголовок*/
+.header1 {
+	width: 100%;
+	height: 35px;
+	overflow: hidden;
+	background: #ffffff;
+	border-bottom: 1px solid #9acde3;
+	font-family:Verdana, sans-serif;
+}
+/*Новые стили*/
+.header1 .menu_top {
+	line-height: 28px;
+	float: left;
+	overflow: hidden;
+	margin: 0px;
+}
+
+.header1 .menu_top ul {
+	margin: 0px;
+	padding: 2px 0 0 0;
+	font-size: 15px;
+	line-height:28px;
+}
+.header1 .menu_top li {
+	display: inline-block;
+	margin: 0px;
+	padding: 0 10px;
+	list-style-type: none;
+}
+
+.header1 .menu_top a, .header1 .menu_top span, .header1 .menu_top a:visited, .menu_top a:hover {
+	display: block;
+	padding: 0px;
+	color: #3c89c9;
+	text-decoration: none;
+}
+.header1 .menu_top a:hover {
+	display: block;
+	color: #3c89c9;
+	text-decoration: underline;
+}
+
+.menu_top ul li:nth-child(2){
+	line-height:28px;
+	margin-right:140px;
+}
+
+.menu_top ul li img{
+  	width:22px;
+	float:left;
+	padding-top:4px;
+}
+
+/*Новые стили_конец*/
+.header1 .registration {
+	position:absolute !important;
+	top:0;
+	right:250px;
+	padding: 0px 0px 0px 10px;
+	border-right: 1px solid #9acde3;
+	border-left: 1px solid #9acde3;
+	width: 280px;
+	font-size: 15px;
+	color: #909192;
+	overflow: hidden;
+	line-height: 28px;
+	margin: 2px 0 2px 0;
+}
+.header1 .registration p {
+	margin: 0px;
+}
+.header1 .registration span.enter {
+	margin-right: 0px;
+}
+.header1 .registration span.enter a {
+	color: #909192;
+	font-size: 15px;
+	background:url("//cdn1.specialist.ru/Content/Image/Main/blue/profile.png") 0px 0 no-repeat;
+	background-size:23px;
+	background-clip: padding-box;
+	padding-left: 35px;
+	padding-bottom:4px;
+	}/**/
+	
+.header1 .registration span.reg a {
+	color: #909192;
+	font-size: 15px;
+	margin-left:10px;
+}/**/
+.header1 .title {
+	height: 100%;/**/
+	overflow: hidden;
+}
+.header1 .title p {
+	color: #fff;
+	font-size: 12px;
+	line-height: 30px;
+	margin: 0 0px 0 10px;
+}
+
+/*Дополнительный стиль*/
+.title2{
+	display:none !important;
+}
+
+/*Дополнительный стиль_конец*/
+/*Корзина*/
+.header_basket {
+	position: absolute;
+	top: 0px;
+	right: 90px;
+	width: 170px;
+	overflow: hidden;
+}
+.basket_center {
+	font-size: 15px;
+}
+.basket_center p {
+	margin:0px;
+	padding: 2px 0 0 30px;
+}
+.basket_center p a{
+	color:#909192;
+	text-decoration:none !important;
+	background:url("//cdn1.specialist.ru/Content/Image/Main/blue/korzina.png") 0px 0 no-repeat;
+	background-size:23px;
+	background-clip: padding-box;
+	line-height:28px;
+	padding-left:40px;
+	padding-bottom:8px;
+}
+/*Новый стиль корзина*/
+.notice {
+    border: 1px solid red; 
+    background: red; 
+    border-radius: 13px;
+	-moz-border-radius: 13px;
+	-webkit-border-radius: 13px;
+	position:absolute;
+	top:1px;
+	right:105px;
+	margin:0;
+	padding: 0 2px;
+	color:#fff;
+	font-size:13px;
+	line-height:13px;
+}
+/*Новый стиль корзина_конец*/
+/*Дополнительные стили корзина*/
+.basket_center a:nth-child(1){
+	display:none !important;
+}
+.basket_center a:nth-child(4){
+	display:none !important;
+}
+/*Дополнительные стили корзина_конец*/
+.basket_center span {
+	font-weight: bold;
+	color: #AA3846;
+	display:none !important;
+}
+.basket_top {
+	position: relative;
+	display:none !important;
+}
+.basket_top .basket_top_l {
+	float: left;
+	width: 8px;
+	height: 8px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/basket_corner_tl_test.png") 0 0 no-repeat;
+	display:none !important;
+}
+.basket_top .basket_top_r {
+	float: right;
+	width: 8px;
+	height: 8px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/basket_corner_tr_test.png") 0 0 no-repeat;
+	display:none !important;
+}
+.basket_top .basket_top_c {
+	height: 8px;
+	margin: 0 8px;
+	background: url("//cdn.specialist.ru/Content/Image/Main/basket_border_t_test.png") 0 0 repeat-x;
+	display:none !important;
+}
+.basket_bottom {
+	position: relative;
+	display:none !important;
+}
+.basket_bottom .basket_bottom_l {
+	float: left;
+	width: 8px;
+	height: 8px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/basket_corner_bl_test.png") 0 0 no-repeat;
+	display:none !important;
+}
+.basket_bottom .basket_bottom_r {
+	float: right;
+	width: 8px;
+	height: 8px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/basket_corner_br_test.png") 0 0 no-repeat;
+	display:none !important;
+}
+.basket_bottom .basket_bottom_c {
+	height: 8px;
+	margin: 0 8px;
+	background: url("//cdn.specialist.ru/Content/Image/Main/basket_border_b_test.png") 0 0 repeat-x;
+	display:none !important;
+}
+.header_basket .additionalLink {
+	margin-left: 70px;
+	height: 16px;
+}
+.header_basket .timetable {
+	position: absolute;
+	left: 8px;
+	margin-top: 2px;
+	display:none !important;
+}
+/*.header_basket .additionalLink a{text-decoration:none;}
+.header_basket .additionalLink_l_red, .header_basket .additionalLink_r_red{height:16px;}
+.header_basket  .additionalLink_c_red{height:16px; padding-top:0;}
+*/
+
+/*Переключение версии языка*/
+.header_lang {
+	position: absolute;
+	top: 8px;
+	right: 30px;
+	font-size:15px;
+}
+.header_lang a {
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	text-decoration:none;
+}
+.header_lang a.active {
+	padding: 0px;
+}
+.header_lang a img {
+	opacity: 0.5;
+	display:none !important;
+}
+.header_lang a.active img {
+	opacity: 1;	
+	display:none !important;
+}
+/*Шапка2 - логотип, выбор города*/
+.header2 {
+  background: url("//cdn2.specialist.ru/Content/Image/Main/fon_25.png") -8px -8px no-repeat;
+	font-family: Verdana, sans-serif;
+	height: 100px;
+	margin: 0;
+	overflow: hidden;
+}
+
+.header2 .logo {
+	position:absolute;
+	top: 36px;
+	left:15px;
+	margin-left:0px;
+}
+
+.header2 .info {
+	position:absolute;
+	top: 52px;
+	left:530px;
+}
+.header2 .info .city {
+	margin: 13px 0 7px 0;
+	font-size: 11px;
+	color: #2C3030;
+}
+.header2 .info .city select {
+	color: #5F5F5F;
+	font-size: 11px;
+	vertical-align: middle;
+}
+.header2 .info .phone {
+	margin: 0px 0 0 35px;
+	color: #3c89c9;
+	font-size: 24px;
+	font-weight: bold;
+}
+.header2 .info .e-mail {
+	margin: 0px;
+	position:absolute;
+	top:25px;
+	left:-180px;
+}
+/*Дополнительные стили*/
+.e-mail a:nth-child(2){
+	position:absolute;
+	left:510px;
+}
+.e-mail a:nth-child(2) img{
+	width:23px !important;
+	height:23px !important;
+}
+.e-mail a:nth-child(3){
+	display:none !important;
+}
+/*Дополнительные стили_конец*/
+.header2 .info .e-mail a {
+	color: #537088;
+	font-size: 18px;
+	text-decoration: underline;
+}
+
+/*Шапка 3 - главное меню, поиск*/
+.header3 {
+	margin: 0;
+	font-family: Verdana, sans-serif;
+}
+.header3 .menu_main {
+	width: 100%;
+	line-height: 33px;
+	background: #4ca1d7 url("//cdn.specialist.ru/Content/Image/Main/header1_bg1.png") left top repeat-x;
+}
+.header3 .menu_main ul {
+	width: auto;
+	padding: 0px;
+	background: #4ca1d7 url("//cdn.specialist.ru/Content/Image/Main/header1_bg1.png") left top repeat-x;
+	font-size: 16px;
+	overflow: hidden;
+	margin: 0;
+}
+.header3 .menu_main li {
+	float: left;
+	list-style-type: none;
+	border-left: 1px solid #FFFFFF;
+	margin: 1px 0;
+}
+/*Дополнительный стиль*/
+.header3 .menu_main li:first-child {border-left:0px; important!
+}
+/*Дополнительный стиль_конец*/
+.header3 .menu_main a, .header3 .menu_main span, .header3 .menu_main a:visited, .menu_main a:hover {
+	overflow: hidden;
+	color: #fff;
+	text-decoration: none;
+	padding: 0 14px;
+	display: block;
+}
+.menu_main a:hover, .menu_main span:hover {
+	background: #70B4DF;
+}
+.header3 .menu_main li.active a, .header3 .menu_main li.active a:hover {
+	background: url("//cdn1.specialist.ru/Content/Image/Main/menu1_bg_active.gif") right top repeat-x;
+}
+.header3 .menu_main .menu_small {
+	background: #ecf5ff;
+	behavior: url(//cdn.specialist.ru/Content/File/Course/border-radius.htc);
+	border: 1px solid #b3c0cf;
+	border-radius: 0 0 10px 10px;
+	box-shadow: 0 5px 5px 0 #999;
+	display: none;
+	height: auto;
+	padding: 0;
+	position: absolute;
+	z-index: 15;
+	opacity: 0.9;
+}
+.header3 .menu_main .menu_small li {
+	float: none;
+	padding: 0 8px;
+}
+.header3 .menu_main .menu_small li:hover {
+	background: #b1d3f6;
+}
+.header3 .menu_main li:hover ul {
+	display: block;
+}
+.header3 .menu_main .menu_small a {
+	color: #006;
+	padding: 0;
+}
+.header3 .menu_main .menu_small a:hover {
+	background: none;
+}
+a.menu_main_button, a.menu_main_button:visited {
+	background: #f00;
+	behavior: url(//cdn.specialist.ru/Content/File/Course/border-radius.htc);
+	border-radius: 2px;
+	box-shadow: 0 1px 1px #000;
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: normal;
+	margin-left: 10px;
+	margin-top: 6px;
+	padding: 3px 5px 4px 5px;
+	text-decoration: none;
+}
+/*Поиск старый*/
+.header3 .search {
+	position: absolute;
+	top: 70px;
+	right: 20px;
+}
+
+.header3 input.text {
+	width: 260px;
+	margin: 0;
+	padding-left:10px;
+	color: #3399cc;
+	font-size: 14px;
+	height: 25px;
+	border: 1px solid #d9d9d9;
+	box-shadow: inset 0px 1px 10px #e3e1e1;
+	background:url("//cdn2.specialist.ru/Content/Image/Main/lupa.png") right top no-repeat;
+}
+
+.header3 span.image {
+	display:none !important;
+}
+/*Поиск старый_конец*/
+/*Основная часть*/
+.center {
+	position: relative;
+	overflow: hidden;
+}
+/*Вторая колонка*/
+.left1 {
+	width: 245px;
+	float: left;
+	padding: 0px;
+	overflow: hidden;
+	background: #e4eef8;
+}
+.right2 {
+	width: 245px;
+	float: right;
+	padding: 0 0px 20px 6px;
+	overflow: hidden;
+}
+/*Заголовки на цветном фоне (в колонках)*/
+.h2_menu2 {
+	margin: 0px;
+	padding: 0px;
+	border-top: 0px solid #d8d8d8;
+	border-bottom: 0px solid #d8d8d8;
+}
+.h2_menu2 img {
+	margin-bottom: 3px;
+	vertical-align: middle;
+}
+.h2_menu2 h2 {
+	font-size:17px;
+	font-weight:normal;
+	color: #fff;
+	margin: 0 -10px;
+	padding: 5px 0px 6px 10px;	
+}
+.h2_menu2_t_blue, .h2_menu2_t_red, .h2_menu2_t_green, .h2_menu2_t_brown, .h2_menu2_t_grey, .h2_menu2_t_lightblue {
+	height: 4px;
+	background: #fff url("//cdn.specialist.ru/Content/Image/Main/header1_bg1.png") left top repeat-x;
+	display:none !important;
+}
+.h2_menu2_t_blue {
+	background: #fff url("//cdn.specialist.ru/Content/Image/Main/header1_bg1.png") left top repeat-x;
+	display:none !important;
+}
+.h2_menu2_t_red {
+	background: url("//cdn2.specialist.ru/Content/Image/Main/h2_bg_t_red.gif") right top repeat-x;
+}
+.h2_menu2_t_green {
+	background: url("//cdn2.specialist.ru/Content/Image/Main/h2_bg_t_green.gif") right top repeat-x;
+}
+.h2_menu2_t_brown {
+	background: url("//cdn1.specialist.ru/Content/Image/Main/h2_bg_t_brown.gif") right top repeat-x;
+}
+.h2_menu2_t_grey {
+	background: url("//cdn1.specialist.ru/Content/Image/Main/h2_bg_t_grey.gif") right top repeat-x;
+}
+.h2_menu2_t_lightblue {
+	background: url("//cdn.specialist.ru/Content/Image/Main/h2_bg_t_lightblue.gif") right top repeat-x;
+}
+.h2_menu2_b_blue {
+	background: #4ca1d7 url("//cdn.specialist.ru/Content/Image/Main/header1_bg1.png") left top repeat-x;
+}
+.h2_menu2_b_red {
+	background: #e9687d url("//cdn.specialist.ru/Content/Image/Main/h2_bg_b_red.gif") right bottom repeat-x;
+}
+.h2_menu2_b_green {
+	background: #3bafb9 url("//cdn2.specialist.ru/Content/Image/Main/h2_bg_b_green.gif") right bottom repeat-x;
+}
+.h2_menu2_b_brown {
+	background: #ead0b6 url("//cdn.specialist.ru/Content/Image/Main/h2_bg_b_brown.gif") right bottom repeat-x;
+}
+.h2_menu2_b_grey {
+	background: #777 url("//cdn1.specialist.ru/Content/Image/Main/h2_bg_b_grey.gif") right bottom repeat-x;
+}
+.h2_menu2_b_lightblue {
+	background: #69ceff url("//cdn1.specialist.ru/Content/Image/Main/h2_bg_b_lightblue.gif") right bottom repeat-x;
+}
+.h2_menu2 h2.h2_menu2_b_lightblue {
+	color: #012b50;
+}
+/*Виджет - Направление обучения*/
+a.all, a.all:visited {
+	font-size: 12px;
+	font-weight: bold;
+	color: #1458ae;
+}
+a.all:hover {
+	color: #5BACFF;
+	text-decoration: underline;
+}
+h3 a:hover {
+	color: #5BACFF;
+	text-decoration: underline;
+}
+/*Список маркеры-стрелки*/
+.mark_arrow {
+	margin: 10px 5px 10px 15px;
+	padding: 0;
+	font-size: 13px;
+}
+/*Дополнительный стиль*/
+.mark_arrow hr {
+    border: none;
+    color: #9ACDE3;
+    background-color: #9ACDE3;
+    height: 1px;
+	margin-left:-20px;
+}
+/*Дополнительный стиль_конец*/
+.mark_arrow li {
+	margin: 5px 0;
+	padding: 0 0 0 12px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/menu2_mark1.gif") 0 5px no-repeat;
+	list-style-type: none;
+	line-height: 14px;
+}
+.mark_arrow li a, .mark_arrow li a:visited {
+	color: #1a405e;
+	text-decoration: none;
+}
+.mark_arrow li a:hover {
+	color: #5BACFF;
+	text-decoration: underline;
+}
+/*Список маркеры-стрелки со светло-синими ссылками*/
+.mark_arrow2 {
+	margin: 10px 0;
+	padding: 0;
+	font-size: 12px;
+}
+.mark_arrow2 li {
+	margin: 6px 0;
+	padding: 0 0 0 14px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/menu2_mark.gif") 0 5px no-repeat;
+	list-style-type: none;
+	line-height: 14px;
+}
+.mark_arrow2 li a, .mark_arrow2 li a:visited, .mark_arrow2 li a:hover {
+	color: #0070bd;
+}
+/*Список маркеры-квадраты
+.mark ul {margin:10px 0 0 0; padding:0 0 0 5px; font-size:11px; color:#000066; font-weight:bold;  list-style-position:outside;}
+.mark li {margin:4px 0 0 0; padding:0 0 0 5px; list-style-type:square;  line-height:14px; font-size:11px; font-weight:bold;}
+.mark li a, .mark_arrow li a:visited {color:#000066; text-decoration:none; }
+.mark li a:hover {color:#5BACFF; text-decoration:underline;}*/
+
+
+.block_menu2_top {
+	height: 18px;
+	position: relative;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/block-shadow_t.gif") right bottom repeat-x;
+}
+.column_left_tl {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 16px;
+	height: 18px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/block_tl.png") 0 0 no-repeat;
+}
+.column_left_tr {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 16px;
+	height: 18px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/block_tr.png") 0 0 no-repeat;
+}
+.block_menu2_bottom {
+	height: 17px;
+	position: relative;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/block-shadow_b.gif") right bottom repeat-x;
+}
+.column_left_bl {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 12px;
+	height: 17px;
+	background: url("//cdn.specialist.ru/Content/Image/Main/block-shadow_bl.png") 0 0 no-repeat;
+}
+.column_left_br {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 12px;
+	height: 17px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/block-shadow_br.png") 0 0 no-repeat;
+}
+.consultant {
+	margin: 0px 0 0 29px;
+}
+.consultant h2.h2_consultant {
+	margin-bottom: 0px;
+	padding: 0;
+	font-size: 16px;
+	font-weight: bold;
+	color: #5f5f5f;
+	background: none;
+}
+.consultant h2.h2_consultant span {
+	color: #1c9a16;
+}
+.consultant p {
+	font-size: 12px;
+}
+.consultant a, .consultant a:visited, .consultant a:hover {
+	color: #000066;
+}
+.social a {
+	margin-right: 5px;
+}
+/*Главная колонка*/
+.right1 {
+	margin: 0 1px 0 260px; /**/
+	_margin: 0 20px 0 272px;/**/
+}
+.left2 {
+	position: relative;
+	margin: 10px 255px 0 0px; /**/
+	_margin: 10px 272px 0 20px;/**/
+}
+/*Баннеры на главной*/
+.banners {
+	margin: 10px 255px 0 0; /**/
+	_margin: 15px 252px 0 0;/**/
+	position: relative;
+}
+.banners2 {
+	position: relative;
+	height: 290px;
+	background: url("//cdn.specialist.ru/Content/Image/Main/banner-test.jpg") top center no-repeat;
+}
+.banners .banner_text {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/banner_text_bg.png") top left repeat;
+	color: #fff;
+	font-size: 13px;
+}
+.banners .banner_text .arrow_t {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 15px;
+	height: 16px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/banner_arrow_t.png") top left no-repeat;
+}
+.banners .banner_text .arrow_b {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 15px;
+	height: 16px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/banner_arrow_b.png") top left no-repeat;
+}
+.banners .banner_text .arrows_bg {
+	padding: 0 10px 0 25px;
+	background: url("//cdn.specialist.ru/Content/Image/Main/banner_arrow_space.gif") top left repeat-y;
+}
+.banners .banner_text p {
+	margin: 0.5em 0;
+}
+.banners .banner_text a, .banners .banner_text a:visited, .banners .banner_text a:hover {
+	color: #fff;
+}
+/*Сменный блок "номер 1"*/
+.nomer1 {
+	float: right;
+	width: 245px;
+	display: none;
+}
+/*Сменный блок - форма зказа со скидкой*/
+.form_order {
+	float: right;
+	width: 245px;
+	font-size: 11px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/block_min_bg_t.jpg") 0 0px no-repeat;
+}
+.form_order .h2_menu2 {
+	margin: 10px 0;
+	background-color: #fff;
+}
+.form_order form {
+	margin: 0 10px 0;
+}
+.form_order input.text {
+	width: 125px;
+	font-size: 12px;
+	color: #6e6e6e;
+	padding: 1px 0;
+}
+/*Группы со скидкой*/
+.groups_on_rebate {
+	position: relative;
+	margin: 27px 255px 0px 0; /**/
+	_margin: 27px 252px 0px 0;/**/
+	font-size: 12px;
+}
+.block {
+	overflow: hidden;
+	padding: 14px 15px 0px;
+}
+.h2_over_red, .h2_over_blue {
+	position: absolute;
+	top: -18px;
+	left: 0;
+	padding-right: 6px;
+	z-index: 10;
+}
+.h2_over_red h2, .h2_over_blue h2 {
+	float: left;
+	height: 30px;
+	margin: 0;
+	padding: 5px 8px 0 10px;
+	overflow: hidden;
+	zoom: 1;
+	line-height: 25px;
+	font-weight:normal;
+	font-size: 17px;
+	color: #FFF;
+	font-family: Verdana, sans-serif;
+}
+.h2_over_red a, .h2_over_red a:visited, .h2_over_red a:hover {
+	color: #fff;
+}
+.h2_over_red a {
+	text-decoration: none;
+}
+.h2_over_red a:hover {
+	text-decoration: underline;
+}
+.h2_over_blue a {
+	text-decoration: none;
+}
+.h2_over_blue a:hover {
+	text-decoration: underline;
+}
+.h2_over_blue a, .h2_over_blue a:visited, .h2_over_blue a:hover {
+	color: #fff;
+}
+/*.h2_over_red{background:url("//cdn1.specialist.ru/Content/Image/Main/h2_over_red_corner.png") top right no-repeat;}*/
+.h2_over_red h2 {
+	background: #d93440 top right repeat-x;
+}
+.fresh {
+	position: relative;
+	background: #fff;
+    right center repeat-x;
+	border: 1px solid #c3e5ce;
+}
+.discount_value {
+	margin-bottom: 5px;
+}
+/* уголки для зеленого блока
+	.fresh .fresh_c_bl{position:absolute; bottom:-1px; left:-1px; width:10px; height:10px; background:#000 url("//cdn1.specialist.ru/Content/Image/Main/fresh_c_bl.png") right top repeat; z-index:10;}
+	.fresh .fresh_c_br{position:absolute; bottom:-1px; right:-1px; width:10px; height:10px; background:#000 url("//cdn.specialist.ru/Content/Image/Main/fresh_c_br.png") right top repeat;}*/
+.groups_on_rebate ul.square {
+	margin: 0;
+	padding: 0;
+}
+/*Список с маркерами-квадратами (красными)*/
+.square {
+     margin: 10px 5px 10px 15px;
+	padding: 0;
+	font-size: 13px;
+}
+
+.square li {
+    margin: 5px 0;
+	padding: 0 0 0 12px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/menu2_mark1.gif") 0 5px no-repeat;
+	list-style-type: none;
+	line-height: 14px;
+}
+.square a, .square a:visited, .square a:hover {
+	color: #1a405e;
+	text-decoration: none;
+}
+
+.square .date {
+	display: inline-block;
+	margin-top: 4px;
+	font-size: 11px;
+	color: #ac3d4b;
+}
+a.square2 {
+	color: #1a405e !important;
+	text-decoration: none;
+}
+a.square2:hover {
+	color: #5BACFF;
+	text-decoration: underline;
+}
+
+a:hover.square {
+	text-decoration: underline;
+	font-size: 13px !important;
+}
+/*Список без маркеров-квадратов*/
+.square1 {
+	margin: 0;
+	padding: 0 10px 0 0;
+	font-size: 13px;
+	line-height: 13px;/*6-7*/
+	zoom: 1;/**/
+}
+.square1 li {
+	margin: 9px 0 0 0px;
+	padding: 0 0 0 0px;
+	list-style-type: none;
+}
+.square1 a, .square1 a:visited, .square1 a:hover {
+	color: #1a405e;
+	margin-top: 5px;
+}
+.square1 .date {
+	display: inline-block;
+	margin-top: 4px;
+	font-size: 13px;
+	color: #d93440;
+}
+ul.square1 li a:hover {
+	color: #5BACFF;
+	text-decoration: underline;
+}
+/*Ссылки в информационных блоках*/
+a.block1 {
+	font-size: 12px;
+	color: #1a405e;
+}
+a.block1:hover {
+	color: #5BACFF;
+	text-decoration: underline;
+}
+a:hover.link {
+	color: #5BACFF !important;
+	text-decoration: underline;
+}
+a:hover#link2 {
+	color: #5BACFF !important;
+	text-decoration: underline;
+}
+a:hover#link3 {
+	color: #5BACFF !important;
+}
+/*Список с маркерами-квадратами (синими)*/
+.square_blue {
+	margin: 14px 0;
+	padding: 0;
+	font-size: 12px;
+	line-height: 13px;/*6-7*/
+	zoom: 1;/**/
+}
+.square_blue li {
+	margin: 9px 0;
+	padding: 0 0 0 10px;
+	list-style-type: none;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/ul_mark_blue.gif") 0px 6px no-repeat;
+}
+.square_blue .zp {
+	display: inline-block;
+	margin-top: 2px;
+	font-size: 10px;
+	color: #aa3846;
+}
+.square_blue .price {
+	font-size: 10px;
+}
+.square_blue .price_old {
+	display: inline-block;
+	margin-top: 4px;
+	color: #6e6e6e;
+	text-decoration: line-through;
+}
+.square_blue .price_new {
+	display: inline-block;
+	margin-top: 4px;
+	font-weight: bold;
+	color: #aa3846;
+}
+/*Список с маркерами-квадратами (синими? текст 12px)*/
+.square_blue_min {
+	margin: 14px 0;
+	padding: 0;
+	font-size: 10px;
+	line-height: 13px;/*6-7*/
+	zoom: 1;/**/
+}
+.square_blue_min li {
+	margin: 9px 0;
+	padding: 0 0 0 10px;
+	list-style-type: none;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/ul_mark_blue.gif") 0px 6px no-repeat;
+}
+.square_blue_min .price {
+	font-size: 10px;
+}
+.square_blue_min .price_old {
+	display: inline-block;
+	margin-top: 4px;
+	color: #6e6e6e;
+	text-decoration: line-through;
+}
+.square_blue_min .price_new {
+	display: inline-block;
+	margin-top: 4px;
+	font-weight: bold;
+	color: #aa3846;
+}
+.square li a, .square li a:visited {
+	color: #000080;
+	text-decoration: none;
+	font-size: 12px;
+}
+.square li a:hover {
+	color: #5BACFF;
+	text-decoration: underline;
+	font-size: 12px;
+}
+/*Дополнительные ссылки, внизу блока, как вкладки*/
+.additionalLink {
+	height: 20px;
+	margin-left: 20px;
+	overflow: height;
+	color: #fff;
+	font-size: 11px;
+	overflow: hidden;
+}
+.additionalLink_r {
+	float: left;
+	width: 7px;
+	height: 20px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/bookmark_grey_r.png") right bottom repeat-x;
+}
+.additionalLink_l {
+	float: left;
+	width: 7px;
+	height: 20px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/bookmark_grey_l.png") left bottom repeat-x;
+}
+.additionalLink_c {
+	float: left;
+	height: 17px;
+	padding-top: 3px; /*6-7*/
+#height:18px;
+#padding-top:2px;/**/
+	background-color: #888;
+}
+.additionalLink_r_red {
+	float: left;
+	width: 7px;
+	height: 20px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/bookmark_red_r.png") right bottom no-repeat;
+}
+.additionalLink_l_red {
+	float: left;
+	width: 7px;
+	height: 20px;
+	background: url("//cdn.specialist.ru/Content/Image/Main/bookmark_red_l.png") left bottom no-repeat;
+}
+.additionalLink_c_red {
+	float: left;
+	height: 17px;
+	padding-top: 3px; /*6-7*/
+#height:18px;
+#padding-top:2px;/**/
+	background-color: #aa3846;
+}
+.additionalLink a, .additionalLink a:visited, .additionalLink a:hover {
+	color: #FFF;
+}
+.additionalLink img {
+	vertical-align: middle;
+}
+.under_chamfered {
+	position: relative;
+	position: relative;
+	margin-top: -9px;
+	z-index: 100;
+}
+/*Отзывы выпускников*/
+.graduate_opinion {
+	float: right;
+	width: 245px;
+	position: relative;
+	margin-left:15px;
+}
+.graduate_opinion .block_chamfered_t {
+	margin-bottom: 0;
+}
+.graduate_opinion .opinion_text {
+	font-size: 11px;
+}
+.graduate_opinion a, .graduate_opinion a:visited {
+	color: #1a405e;
+}
+.graduate_opinion a:hover {
+	color: ##5BACFF;
+}
+.graduate_opinion .all_opinion {
+	font-size: 9px;
+}
+.graduate_opinion .all_opinion a, .graduate_opinion .all_opinion a:visited, .graduate_opinion .all_opinion a:hover {
+	color: #888;
+}
+/*Анонсы новостей на главной*/
+.news_in_main {
+	position: relative;
+	margin: 26px 260px 0px 0;
+	border-top: 1px solid #dcdcdc;
+}
+/*.h2_over_blue{background:url("//cdn2.specialist.ru/Content/Image/Main/h2_over_blue_corner.png") top right no-repeat; }*/
+.h2_over_blue h2 {
+	background: #4ca1d7 url("//cdn.specialist.ru/Content/Image/Main/header1_bg1.png") left top repeat-x;
+}
+.news_in_main .block {
+	padding: 0;
+}
+.anons_news {
+	border: 1px solid #dcdcdc;
+	border-top: 0;
+	overflow: hidden;/**/
+	zoom: 1;/**/
+	padding-top:20px !important;
+}
+.new_news {
+	background: #ffffff;
+center right repeat-x; /**/
+	zoom: 1;/**/
+}
+.new_news1 {
+	background: #e4eef8;
+    center right repeat-x; /**/
+	zoom: 1;/**/ 
+}
+
+/*.anons_news img{float:left; margin:25px 15px 10px;}*/
+.anons_news h3 {
+	margin: 21px 0 5px;
+	font-size: 21px;
+	font-weight: normal;
+}
+.anons_news h3 a, .anons_news h3 a:visited, .anons_news h3 a:hover {
+	color: #000066;
+}
+.anons_news p {
+	margin: 5px 0;
+}
+.news_text {
+	margin: 0 15px 0 165px;
+}
+p.anons_news_date {
+	margin: 5px 0 14px;
+	font-size: 10px;
+	color: #6e6e6e;
+}
+/*Блок для срочных объявлений*/
+.advert {
+	position: relative;
+	margin: 8px 255px 0px 0;
+	border: 1px solid #dcdcdc;
+	background-color: #e4eef8;
+}
+.advert_text {
+	padding: 10px;
+}
+/*Блок с серым фоном (блок боковой колонки)*/
+/*.block_gray-bg{background-color:#ebf4fb;}*/
+.block_gray-bg {
+	background: #e4eef8;
+}
+/*Блок со скругленными углами и тенью*/
+.block_chamfered_t {
+    position: relative;
+	margin: 0 -6px 20px;
+	background-image: url("//cdn1.specialist.ru/Content/Image/Main/block_chamfered_t.gif");
+	background-position: right top;
+	background-repeat: repeat-x;
+}
+.block_chamfered_t img {
+	margin-bottom: 5px;
+	margin-top: 5px;
+	vertical-align: middle;
+}
+.block_chamfered_r {
+	background: url(//cdn2.specialist.ru/Content/Image/Main/block_chamfered_r.gif) top right repeat-y;
+}
+.block_chamfered_b {
+	background: url(//cdn.specialist.ru/Content/Image/Main/block_chamfered_b.gif) bottom right repeat-x;
+}
+.block_chamfered_l {
+	background: url(//cdn1.specialist.ru/Content/Image/Main/block_chamfered_l.gif) top left repeat-y;
+	padding: 10px 17px 16px;
+	overflow: hidden;
+}
+.block_chamfered_tl {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	background: url(//cdn.specialist.ru/Content/Image/Main/block_chamfered_tl.png) top left no-repeat;
+}
+.block_chamfered_tr {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 16px;
+	height: 16px;
+	background: url(//cdn2.specialist.ru/Content/Image/Main/block_chamfered_tr.png) top right no-repeat;
+}
+.block_chamfered_bl {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 16px;
+	height: 25px;
+	background: url(//cdn.specialist.ru/Content/Image/Main/block_chamfered_bl.png) bottom left no-repeat;
+}
+.block_chamfered_br {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 16px;
+	height: 25px;
+	background: url(//cdn.specialist.ru/Content/Image/Main/block_chamfered_br.png) bottom right no-repeat;
+}
+.block_chamfered_in {
+	width: 100%;
+	overflow: hidden;
+}
+.block_chamfered_in h3 {
+	margin: 11px 0;
+	font-weight: bold;
+	font-size: 14px;
+	color: #9d282f;
+}
+.block_chamfered_in h3 a:hover {
+	text-decoration: none;
+}
+.block_chamfered_in h3.h3_blue {
+	color: #12395c;
+}
+h3 a:hover {
+	text-decoration: none;
+}
+
+/*Дополнительные стили*/
+
+.left1 .block_chamfered_t {
+margin: 0 0px 20px;
+background-image: none !important;
+}
+
+.left1 .block_chamfered_b {
+	background-image: none !important;
+}
+
+.left1 .block_chamfered_r {
+	background-image: none !important;
+}
+
+.left1 .block_chamfered_l {
+	background-image: none !important;
+	padding: 0px !important;
+}
+
+.left1 .block_chamfered_tl{
+	background-image: none !important;
+}
+
+.left1 .block_chamfered_tr{
+	background-image: none !important;
+}
+
+.left1 .block_chamfered_bl{
+	background-image: none !important;
+}
+
+.left1 .block_chamfered_br{
+	background-image: none !important;
+}
+
+.left1 .h2_menu2 h2 {
+	font-size:17px;
+	font-weight:normal;
+	color: #fff;
+	margin: 0px;
+	padding: 5px 0px 6px 10px;	
+}
+
+.block_chamfered_in p a {
+	margin-left:15px;
+}
+
+/*Дополнительные стили_конец*/
+/*Блок со скругленными углами и тенью + отступ в 30px сверху и снизу*/
+.margin {
+	margin-top: 30px !important;
+	margin-bottom: 20px !important;
+}
+/*Блок с закладками*/
+ul.bookmarks {
+	height: 25px;
+	margin: 0 -10px;
+	padding: 0;
+	font-size: 12px;
+    font-weight: bold;
+	overflow: hidden;
+	background: #fbfbfb url(//cdn.specialist.ru/Content/Image/Main/bookmark_bg.png) bottom right repeat-x;
+}
+ul.bookmarks li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	float: left;
+	height: 25px;
+}
+ul.bookmarks li.active {
+	background-color: #fff;
+}
+ul.bookmarks a {
+	display: block;
+	margin-top: 5px;
+	padding: 0 12px;
+	border-right: 1px solid #373737;
+	line-height: 13px;
+	color: #373737;
+}
+ul.bookmarks a:visited, ul.bookmarks a:hover {
+	color: #373737;
+}
+ul.bookmarks li.active a, ul.bookmarks li.active a:visited {
+	color: #aa3846;
+	text-decoration: none;
+	font-weight: bold;
+}
+.tab_content {
+	padding: 0 10px;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+.tab_content2 {
+	padding: 15px 10px 10px;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+.tab_2column {
+	float: left;
+	width: 49.9%;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+.tab_3column {
+	float: left;
+	width: 33.3%;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+/*Блок с ссылками*/
+.link_block {
+	margin: 25px 0;
+}
+.link_block h3 {
+	font-size: 15px;
+	font-weight: bold;
+	margin: 0 20px 7px 0px;
+}
+.link_block h3 a, .link_block h3 a:visited, .link_block h3 a:hover {
+	color: #000066;
+}
+.link_block ul {
+	margin: 0 20px 0 0px;
+	padding: 0;
+	font-size: 11px;
+}
+.link_block li {
+	list-style-type: none;
+	margin: 0.2em 0;
+	padding: 0;
+}
+.link_block a, .link_block a:visited, .link_block a:hover {
+	color: #0070bd;
+}
+/*Блок с ссылками и картинками*/
+.link_block2 {
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	margin: 25px 0;
+}
+.link_block2 img {
+	float: left;
+}
+.link_block2 h3 {
+	font-size: 15px;
+	font-weight: bold;
+	margin: 0 20px 7px 80px;
+}
+.link_block2 h3 a, .link_block h3 a:visited, .link_block h3 a:hover {
+	color: #000066;
+}
+.link_block2 ul {
+	margin: 0 20px 0 80px;
+	padding: 0;
+	font-size: 11px;
+}
+.link_block2 ul ul {
+	margin: 0 20px 0 20px;
+	padding: 0;
+	font-size: 11px;
+}
+.link_block2 li {
+	list-style-type: none;
+	margin: 0.2em 0;
+	padding: 0;
+}
+.link_block2 a, .link_block a:visited, .link_block a:hover {
+	color: #0070bd;
+}
+/*Блок с ссылками и картинками с голубыми маркерами-квадратами*/
+.link_block3 {
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	margin: 25px 0;
+}
+.link_block3 img {
+	float: left;
+}
+.link_block3 h3 {
+	font-size: 15px;
+	font-weight: bold;
+	margin: 0 20px 7px 80px;
+}
+.link_block3 h3 a, .link_block3 h3 a:visited, .link_block3 h3 a:hover {
+	color: #000066;
+}
+.link_block3 ul {
+	margin: 0 20px 0 80px;
+	padding: 0;
+	font-size: 11px;
+}
+.link_block3 ul ul {
+	margin: 0 20px 0 20px;
+	padding: 0;
+	font-size: 11px;
+}
+.link_block3 li {
+	list-style-type: square;
+	margin: 0.2em 1.2em;
+	color: #0070bd;
+	padding: 0;
+}
+.link_block3 a, .link_block3 a:visited, .link_block3 a:hover {
+	color: #0070bd;
+}
+/*Блок - карусель*/
+.block_carousel {
+	position: relative;
+}
+.block_carousel .arrow_l {
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	left: 0;
+	top: 50%;
+	margin-top: -11px;
+	background: url(//cdn1.specialist.ru/Content/Image/Main/specialist_tv_arrow.png) 0px 0px no-repeat;
+	cursor: pointer;
+}
+.block_carousel .arrow_r {
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	right: 0;
+	top: 50%;
+	margin-top: -11px;
+	background: url(//cdn.specialist.ru/Content/Image/Main/specialist_tv_arrow.png) -44px 0px no-repeat;
+	cursor: pointer;
+}
+.block_carousel .arrow_l.active {
+	background-position: -22px 0px;
+}
+.block_carousel.arrow_r.active {
+	background-position: -66px 0px;
+}
+/*Виджет - Работы выпускников*/
+.v_works_graduate {
+	margin: 10px 0;
+}
+.block_work_graduate {
+	width: 200px;
+	font-size: 9px;
+	text-align: center;
+	margin: 0 auto;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+.block_work_graduate a {
+	display: block;
+	margin-bottom: 15px;
+}
+.block_work_graduate .graduate {
+	padding-top: 10px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/delimiter_arrow.png") left top no-repeat;
+	text-align: left;
+}
+.block_work_graduate .graduate img {
+	float: left;
+	padding-right: 5px;
+}
+.block_work_graduate .graduate span {
+	float: left;
+	overflow: hidden;
+}
+/*Блок - Работы выпускников*/
+.works_4 {
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	margin: 10px 0 20px 0;
+	background: url("//cdn.specialist.ru/Content/Image/Main/delimiter_dotted.gif") right top repeat-y;
+}
+.next_work {
+	float: left;
+	width: 24.9%;
+	padding-bottom: 20000px;
+	margin-bottom: -20000px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/delimiter_dotted.gif") left top repeat-y;
+}
+.next_work_in {
+	width: 130px;
+	margin: 0 auto;
+}
+.next_work a {
+	display: block;
+	margin-bottom: 15px;
+}
+.next_work .graduate {
+	padding-top: 10px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/delimiter_arrow.png") left top no-repeat;
+	font-size: 10px;
+}
+.next_work .graduate a, .next_work .graduate a:visited, .next_work .graduate a:hover {
+	color: #012b50;
+}
+/*Блок - Отзывы выпускников*/
+.block_opinions {
+}
+.opinions_2 {
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	margin: 10px 0 20px 0;
+	background: url("//cdn.specialist.ru/Content/Image/Main/delimiter_dotted.gif") right top repeat-y;
+}
+.next_opinion {
+	float: left;
+	width: 49.9%;
+	padding-bottom: 20000px;
+	margin-bottom: -20000px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/delimiter_dotted.gif") left top repeat-y;
+}
+.next_opinion_in {
+	margin: 0 10px;
+}
+.next_opinion p {
+	margin-top: 0;
+}
+.next_opinion .text {
+	font-size: 11px;
+	font-style: italic;
+}
+.next_opinion .graduate {
+	padding-top: 10px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/delimiter_arrow.png") left top no-repeat;
+	font-size: 10px;
+}
+.next_opinion .graduate a, .next_opinion .graduate a:visited, .next_opinion .graduate a:hover {
+	color: #012b50;
+}
+/*Виджет - Знаете ли Вы, что*/
+.v_know {
+	font-size: 12px;
+}
+.block_chamfered_in .delimiter_blue {
+	padding-bottom: 5px;
+	background: url(//cdn.specialist.ru/Content/Image/Main/delimiter_blue.gif) left bottom repeat-x;
+}
+/*Ближайшие курсы*/
+.next_courses {
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	margin: 11px 0 20px;
+	padding-bottom: 15px; /*background:url("//cdn.specialist.ru/Content/Image/Main/delimiter_blue.gif") left bottom repeat-x;*/
+}
+.next_courses h2.h2_block {
+	float: left;
+	clear: both;
+	margin-right: 5px;
+}
+.next_courses select {
+	float: left;
+}
+.next_courses .next_arrow {
+	float: left;
+	height: 18px;
+	width: 6px;
+	margin-top: 10px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/next_arrow.gif") left center no-repeat;
+}
+.next_courses .block_carousel {
+	clear: both;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	margin: 0 0 10px 0;
+	padding-top: 10px;
+}
+.courses_4 {
+	margin: 0 32px -20px 32px;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	height: 170;
+}
+.next_course {
+	float: left;
+	width: 49.9%;
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+.next_course img {
+	float: left;
+	margin-left: 10px;
+}
+.next_course a {
+	display: block;
+	padding: 0 10px 0 85px;
+}
+.next_course .date {
+	display: block;
+	padding: 0 10px 0 85px;
+	font-size: 10px;
+	color: #6e6e6e;
+}
+/*Блок - преподаватели Курса*/
+.lecturers_2 {
+	margin: 15px 32px 15px 32px;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	background: url("//cdn1.specialist.ru/Content/Image/Main/delimiter_dotted.gif") left top repeat-y;
+}
+.next_lecturer {
+	float: left;
+	width: 49.9%;
+	_width: 49.5%;
+	margin-bottom: -20000px;
+	padding-bottom: 20000px;
+	font-size: 12px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/delimiter_dotted.gif") right top repeat-y;
+}
+.next_lecturer .l {
+	float: left;
+	width: 83px;
+	padding-left: 15px;
+	font-size: 12px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/delimiter_arrow2.png") top right no-repeat;
+	overflow: hidden; /*? zoom:1;*/
+}
+.next_lecturer .l a, .next_lecturer .l a:visited, .next_lecturer .l a:hover {
+	color: #0070bd;
+}
+.next_lecturer .r {
+	padding: 0 15px 0 113px;
+}
+.next_lecturer .opinion {
+	font-size: 12px;
+	font-style: italic;
+	margin-top: 0;
+}
+.next_lecturer .opinion strong.text_red {
+	font-size: 10px;
+	font-style: bold;
+}
+.next_lecturer .student {
+	margin-bottom: 0;
+	font-size: 10px;
+}
+.next_lecturer .student a, .next_lecturer .student a:visited, .next_lecturer .student a:hover {
+	color: #012b50;
+}
+.next_lecturer .course {
+	font-size: 10px;
+}
+.next_lecturer .course a, .next_lecturer .course a:visited, .next_lecturer .course a:hover {
+	color: #0070bd;
+}
+/*Блок - преподаватели Курса новый*/	
+.next_lecturer1 {
+	float: left;
+	width: 100%;
+	_width: 100%;
+	font-size: 12px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/delimiter_dotted.gif") right top repeat-y;
+}
+.next_lecturer1 .l {
+	float: left;
+	width: 83px;
+	padding-left: 15px;
+	font-size: 12px;
+	background: url("//cdn.specialist.ru/Content/Image/Main/delimiter_arrow2.png") top right no-repeat;
+	overflow: none; /*? zoom:1;*/
+}
+.next_lecturer1 .l a, .next_lecturer1 .l a:visited, .next_lecturer1 .l a:hover {
+	color: #0070bd;
+}
+.next_lecturer1 .r {
+	padding: 0 15px 0 113px;
+}
+.next_lecturer1 .opinion {
+	font-size: 12px;
+	font-style: italic;
+	margin-top: 0;
+}
+.next_lecturer1 .opinion strong.text_red {
+	font-size: 10px;
+	font-style: bold;
+}
+.next_lecturer1 .student {
+	margin-bottom: 0;
+	font-size: 10px;
+}
+.next_lecturer1 .student a, .next_lecturer1 .student a:visited, .next_lecturer1 .student a:hover {
+	color: #012b50;
+}
+.next_lecturer1 .course {
+	font-size: 10px;
+}
+.next_lecturer1 .course a, .next_lecturer1 .course a:visited, .next_lecturer1 .course a:hover {
+	color: #0070bd;
+}
+/*Блок - преподаватели Курса новый*/			
+		
+		
+		
+			
+/*Сертификаты*/
+.certificate_block2 {
+	margin: 20px 0 0px;
+	padding-bottom: 15px; /*background:url("//cdn1.specialist.ru/Content/Image/Main/delimiter_blue.gif") left bottom repeat-x; */
+	color: #0A5292;
+	font-size: 12px;
+}
+.certificate_block2 p.certificate_ico {
+	margin: 0;
+}
+.certificate_block2 .certificate_ico a {
+	display: inline-block;
+	margin: 10px 27px 0 0;
+}
+.certificate_block2 img {
+	vertical-align: middle;
+}
+.certificate_block2 a, .certificate_block2 a:visited, .certificate_block2 a:hover {
+	color: #1B93E6;
+}
+/*Авторизованнче курсы и Документы об окончании*/
+.docs_graduation {
+	margin: 0 0 20px;
+	overflow: hidden;
+}
+.docs_graduation .details {
+	font-size: 10px;
+}
+/*Виджет Группы со скидками*/
+.v_group_discount {
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+/*Однострочный серый блок со скругл. углами*/
+.mblock_gray_l {
+	float: left;
+	margin: 10px 0 0 10px;
+	padding-bottom: 5px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/mblock_gray_l.png") left top no-repeat;
+	/**/display: inline;/**/
+}
+.mblock_gray_r {
+	background: url("//cdn.specialist.ru/Content/Image/Main/mblock_gray_r.png") right top no-repeat; /**/
+	float: left;/**/
+}
+.mblock_gray_c {
+	height: 19px;
+	margin: 0 5px;
+	padding-top: 3px;
+	background-color: #888;
+	overflow: hidden;
+	color: #fff; /**/
+	float: left;
+	display: inline;/**/
+}
+.mblock_gray_c .rss_a {
+	display: inline-block;
+	height: 14px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/rss.gif") 0px 0px no-repeat;
+	padding-left: 19px;
+}
+.mblock_gray_c a, .mblock_gray_c a:visited, .mblock_gray_c a:hover {
+	font-size: 11px;
+	color: #fff;
+}
+/*Виджет Заказ со скидкой*/
+.v_order_discount {
+}
+.v_order_discount input.text {
+	width: 170px;
+	font-size: 12px;
+	color: #6e6e6e;
+	padding: 1px 2px;
+	border: 1px solid #a5acb2;
+}
+.text_red {
+	color: #ac3d4b;
+}
+/*Виджет форум*/
+.v_forum {
+}
+.v_forum select {
+	font-size: 12px;
+	color: #6e6e6e;
+	padding: 1px 0;
+	width: 224px;
+	border: 1px solid #a5acb2;
+}
+.v_forum h3 {
+	margin: 8px 0;
+}
+.v_forum h3 a, .v_forum h3 a:visited, .v_forum h3 a:hover {
+	color: #000066;
+}
+.v_forum p {
+	margin: 8px 0;
+}
+.v_forum p.date {
+	font-size: 10px;
+	color: #6e6e6e;
+}
+/*Виджет - Путеводитель*/
+.v_guide .guide_img {
+	text-align: center;
+}
+/*Контент*/
+.content {
+	padding: 0 15px 20px 20px;
+	overflow: hidden;
+	zoom: 1;
+}
+/*Хлебные крошки*/
+.breadcrumbs {
+	margin: 14px 0;
+	font-size: 12px;
+}
+.breadcrumbs a, .breadcrumbs a:visited, .breadcrumbs a:hover {
+	color: #000;
+}
+/*Блок со скругленными углами и тенью в контенте*/
+.block_chamfered_content {
+	margin: 0 -13px 0 -20px;
+	clear: both;
+}
+.block_chamfered_content .block_chamfered_l {
+	padding: 1px 17px 10px;
+}
+.block_chamfered {
+	margin: 0;
+	clear: both;
+}
+.block_chamfered .block_chamfered_l {
+	padding: 1px 17px 10px;
+}
+.h2_grey {
+	line-height: 25px;
+	margin: 0 -10px;
+	padding: 0 0 0 20px;
+	font-size: 14px;
+	font-weight: bold;
+	background: #fbfbfb url(//cdn1.specialist.ru/Content/Image/Main/bookmark_bg.png) bottom right repeat-x;
+}
+/*Баннер*/
+.banner2 {
+	margin: 20px 0;
+	text-align: center;
+}
+/*Блок с текстом на внутренних страницах*/
+.content_text {
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+/*Таблица на странице поднаправление*/
+.signs1, .signs2 {
+	font-size: 10px;
+	color: #000;
+	text-align: right;
+}
+.signs1 {
+	margin-top: -24px;
+}
+.signs2 {
+}
+.signs1 img, .signs2 img {
+	vertical-align: middle;
+	margin-left: 15px;
+}
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	color: #000;
+	font-size: 14px;
+	background: url(//cdn.specialist.ru/Content/Image/Main/table_head_bg.png) 0px 0px repeat-x;
+}
+.table.table_forum {
+	background: #cccdd0 url("//cdn.specialist.ru/Content/Image/Main/table_head_bg2.png") 0px 0px repeat-x;
+}
+.table th {
+	padding: 4px 5px;
+	vertical-align: middle;
+	text-align: center; /*background-color:#dae7f3; *//*#ecf7ff;*/
+	border-bottom: 1px solid #ecf7ff;
+	border-right: 1px solid #ecf7ff;
+	font-weight: normal;
+}
+.table th a {
+	color: black
+}
+.table tr.complex td {
+	background-color: #f5eaeb;
+}
+.table tr.intra-extramural td {
+	background-color: #CDF897;
+}
+.table tr.tfoot td {
+	background-color: transparent;
+	padding: 5px 5px;
+	border-bottom: 0 !important;
+}
+.table tr.tfoot td.td_subject {
+	color: #5c5c5c;
+}
+.table td {
+	padding: 11px 5px;
+	border-right: 1px solid #ecf7ff;
+	border-bottom: 1px solid #c9cbcd;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #fff;/**/
+}
+.table td.td_course {
+	text-align: left;
+	font-size: 12px;
+}
+.table td.td_course2 {
+	padding: 7px 5px;
+	text-align: left;
+	font-size: 12px;
+	border-bottom: 1px solid #ECF7FF;
+}
+.table td.td_course3 {
+	text-align: left;
+	font-size: 11px;
+}
+.table td.td_subject {
+	text-align: left;
+	font-size: 12px;
+}
+.table td.td_date {
+	font-size: 11px;
+}
+.table td.td_date2 {
+	font-size: 11px;
+	width: 23%;
+}
+.table td.td_time {
+	font-size: 11px;
+}
+.table td.td_metro {
+	font-size: 11px;
+}
+.table td.td_lecturer {
+	font-size: 11px;
+}
+.table td.td_discount {
+	font-weight: bold;
+	color: #ac3d4b;
+}
+.table td.td_type {
+	font-size: 11px;
+	width: 19%;
+}
+.table td.plan {
+	text-align: left;
+}
+.table td.plan a, .table td.plan a:visited, .table td.plan a:hover {
+	text-decoration: none;
+	border-bottom: 1px dashed #0070BD;
+}
+.table td.plan a.open, .table td.plan a.open:visited, .table td.plan a.open:hover {
+	color: #12395c;
+	text-decoration: none;
+	border-bottom: 1px dashed #12395c;
+}
+.table td.date {
+	color: #012B50;
+}
+.table td.attendance {
+	width: 17px;
+}
+.table td.td_price {
+	font-size: 11px;
+	width: 15%;
+}
+.table td.td_price .old_price {
+	text-decoration: line-through;
+	;
+}
+.table td.td_price .new_price {
+}
+.table td.td_control {
+	font-size: 11px;
+	width: 15px;
+}
+.table td.td_control a {
+	display: block;
+	padding: 3px 0;
+	text-align: center;
+}
+.discount_color {
+	font-weight: bold;
+	color: #d93440;
+	font-size: 11px;
+}
+/*Дополнительный стиль*/
+a.discount_color:link, a.discount_color:hover, a.discount_color:visited {
+	color: #AC3D4B;
+	font-size: 14px !important;
+}
+
+a.discount_color {
+	font-weight: bold;
+	color: #d93440 !important;
+}
+
+.new_news1 p {
+	padding-left:10px !important;
+	color:#1a405e !important;
+}
+
+/*Дополнительный стиль_конец*/
+
+.table td.td_entrant {
+	font-size: 11px;
+	font-weight: bold;
+	color: #5c5c5c;
+}
+.table td.td_subject a, .table td.td_subject a:visited, .table td.td_subject a:hover {
+	text-decoration: none;
+	border-bottom: 1px dashed #0070BD;
+}
+.table td.td_subject a.open, .table td.td_subject a.open:visited, .table td.td_subject a.open:hover {
+	color: #12395c;
+	text-decoration: none;
+	border-bottom: 1px dashed #12395c;
+}
+.table .last_td {
+	border-right: 0 !important;
+}
+.table .last_rt td {
+	border-bottom: 0 !important;
+}
+.table_c_tl {
+	background: url(//cdn1.specialist.ru/Content/Image/Main/table_c_tl.png) top left no-repeat;
+}
+.table_c_tr {
+	background: url(//cdn1.specialist.ru/Content/Image/Main/table_c_tr.png) top right no-repeat;
+}
+.table_c_br {
+	background: url(//cdn.specialist.ru/Content/Image/Main/table_c_br.png) bottom right no-repeat;
+}
+.table_c_bl {
+	background: url(//cdn1.specialist.ru/Content/Image/Main/table_c_bl.png) bottom left no-repeat;
+}
+.table_c_tl, .table_c_tr, .table_c_bl, .table_c_br {
+	width: 7px;
+	height: 7px;
+	padding: 0 !important;
+	border: 0 !important;
+}
+.table_tfoot {
+	background: url(//cdn.specialist.ru/Content/Image/Main/tabel_tfoot_bg.png) left bottom repeat-x;
+}
+.td_hiden {
+	font-size: 12px;
+	color: #12395c;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/delimiter_arrow.png") left top no-repeat;
+	padding: 1px 0;
+	margin: 1em 0 0 0;
+}
+.td_date {
+}
+/*add ponomarev*/
+.table td {
+	font-size: 11px;
+}
+/*Блок небольшого текста с закругленными краями (красный)*/
+.block_red {
+	position: relative;
+	padding: 10px 15px 10px 10px;
+	margin: 10px 10px 10px 10px;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	background: #ffe8e9 url(//cdn.specialist.ru/Content/Image/Main/block_red_bg.png) left bottom repeat-x;
+}
+.block_yellow {
+	position: relative;
+	padding: 1px 15px 1px 10px;
+	margin: 10px 0;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	background: #fff8d7 url(//cdn1.specialist.ru/Content/Image/Main/block_yellow_bg.png) left bottom repeat-x;
+}
+.block_c_tl {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 7px;
+	height: 7px;
+	background: url(//cdn.specialist.ru/Content/Image/Main/table_corners.png) -7px -7px no-repeat;/**/
+	font-size: 1px;/**/
+}
+.block_c_tr {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 7px;
+	height: 7px;
+	background: url(//cdn2.specialist.ru/Content/Image/Main/table_corners.png) 0 -7px no-repeat;  /**/
+	font-size: 1px;/**/
+}
+.block_c_br {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 7px;
+	height: 7px;
+	background: url(//cdn.specialist.ru/Content/Image/Main/table_corners.png) 0 0 no-repeat; /**/
+	font-size: 1px;/**/
+}
+.block_c_bl {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 7px;
+	height: 7px;
+	background: url(//cdn.specialist.ru/Content/Image/Main/table_corners.png) -7px 0 no-repeat;  /**/
+	font-size: 1px;/**/
+}
+/*Выпажающие списки в заголовке + текст*/
+h2.h2_block_select {
+	margin: 20px 0 11px;
+	color: #012B50;
+	font-size: 14px;
+	font-weight: bold;
+	float: left;
+margin:;
+}
+.h2_select {
+	float: left;
+	color: #012B50;
+	font-size: 14px;
+	font-weight: bold;
+	margin: 19px 0 11px;
+}
+/*Блок - Классы и филиалы*/
+.branches_block {
+	overflow: hidden; /**/
+	zoom: 1;/**/
+	margin: 25px 0;
+}
+.branches_block img {
+	float: left;
+}
+.branches_block h3 {
+	font-size: 15px;
+	font-weight: bold;
+	margin: 0 20px 7px 90px;
+}
+.branches_block h3.citysize {
+	font-size: 18px;
+	color: #AC3D4B;
+}
+.branches_block h3 a, .branches_block h3 a:visited, .branches_block h3 a:hover {
+	color: #000066;
+}
+.branches_block p {
+	margin: 7px 20px 0 90px;
+}
+.branches_block a, .link_block a:visited, .link_block a:hover {
+	color: #0070bd;
+}
+/*Страница филиалов и классов города*/
+.city_block {
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+.city_block .city {
+	float: left;
+	width: 49.9%;
+}
+.city_in {
+	margin-right: 20px;
+}
+.city_branches {
+	float: left;
+	width: 49.9%;
+	margin-bottom: -20px;
+}
+.city_branches .branches_block {
+	margin-top: 0;
+}
+/*Виджет - Новости*/
+.v_news {
+}
+.v_news select {
+	font-size: 12px;
+	color: #6e6e6e;
+	padding: 1px 0;
+	width: 224px;
+	border: 1px solid #a5acb2;
+}
+.v_news h3 {
+	margin: 8px 0;
+}
+.v_news h3 a, .v_news h3 a:visited, .v_news h3 a:hover {
+	color: #000066;
+}
+.v_news p, .v_news_text {
+	margin: 8px 0;
+}
+.v_news p.date {
+	font-size: 10px;
+	color: #6e6e6e;
+}
+.delimiter_news {
+	height: 6px;
+	margin: 0 -10px;
+	background: url(//cdn2.specialist.ru/Content/Image/Main/delimiter_news.gif) left bottom repeat-x;
+}
+.h2_menu2_b_blue a {
+	color: #FFF;
+	text-decoration: none;
+}
+.h2_menu2_b_blue a:visited {
+	color: #FFF;
+}
+.h2_menu2_b_blue a:hover {
+	color: #FFF;
+	text-decoration: underline;
+}
+/*Формы*/
+.table_form {
+	width: 100%;
+	border-collapse: collapse;
+	border: 0;
+}
+.table_form td {
+	vertical-align: top;
+	padding: 6px 10px; /*border:1px solid grey;*/
+}
+.table_form td.name {
+	width: 24%;
+	font-weight: bold;
+	padding: 9px 10px 3px;
+	text-align: right;
+}
+.table_form td.name2 {
+	width: 105px;
+	font-weight: bold;
+	padding: 9px 10px 3px 0;
+	text-align: right;
+}
+.table_form td.field {
+}
+.table_form input.text, .table_form input.password {
+	width: 470px;
+	margin: 0;
+	padding: 1px 4px;
+}
+.explanation {
+	margin: 2px 0 6px;
+	color: gray;
+	font-size: 12px;
+}
+.table_form select.select {
+	width: 482px;
+	margin: 0;
+}
+.table_form select.select2 {
+	width: 330px;
+	margin: 0;
+}
+textarea.textarea_history {
+	width: 470px;
+	height: 300px;
+	padding: 1px 4px;
+}
+.content p.submit_p {
+	text-align: center;
+}
+/*Классы для колонок таблицы*/
+.table_d {
+	width: 7px;
+	border: 0 !important;
+	padding: 0 !important;
+}
+td.td_discussion {
+	text-align: left;
+}
+td.td_discussion h3 {
+	font-size: 16px;
+	margin: 0;
+	color: #000066;
+	font-weight: bold;
+}
+td.td_discussion h3 a, td.td_discussion h3 a:visited, td.td_discussion h3 a:hover {
+	color: #000066;
+}
+td.td_discussion p {
+	margin: 6px 0 0;
+	font-size: 12px;
+	color: #1458ae;
+}
+td.td_quantity {
+	width: 13%;
+}
+td.td_date2 {
+	width: 16%;
+}
+/*Отзывы по направлениям*/
+h3.h3_tab {
+	font-size: 18px;
+	margin: 18px 0 12px;
+	font-weight: normal;
+	color: #012b50;
+}
+h3.h3_tab a, h3.h3_tab a:visited, h3.h3_tab a:hover {
+	color: #012b50;
+}
+.block_comment {
+	padding-bottom: 6px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/news_hr2.gif") left bottom repeat-x;
+}
+.block_comment.last_comment {
+	padding-bottom: 0;
+	background: none;
+}
+.comment_text {
+}
+.comment_info {
+	font-size: 10px;
+}
+/*Страницы*/
+.pages {
+	font-size: 12px;
+	margin-top: 2em;
+	word-spacing: 1px;
+	text-align: center;
+}
+.pages a, .pages span {
+	padding: 0 3px;
+}
+/*Акции*/
+.action_full {
+	margin-bottom: 5px;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+.float_left2 {
+	float: left;
+	margin-top: 18px;
+	padding: 0 20px 9px 0;
+#padding:0 20px 0 0;
+}
+.ul_sm {
+	margin: 0;
+	padding: 0;
+}
+.ul_sm li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0 0 0 18px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/ul_sm_mark.gif") 7px 5px no-repeat;
+}
+.details {
+	font-size: 14px;
+	margin: 12px 0;
+}
+.details a, .details a:visited, .details a:hover {
+	font-size: 14px;
+	color: #012b50;
+}
+.date {
+	font-size: 10px;
+	color: #6e6e6e;
+}
+.action_full .date {
+	margin: 12px 0 9px;
+}
+.block_action {
+	padding-bottom: 6px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/news_hr2.gif") left bottom repeat-x;
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+.action_last {
+	padding-bottom: 0;
+	background: none;
+}
+.action_img {
+	float: left;
+	width: 150px;
+	padding: 18px 0 14px;
+#padding:18px 0 0px;
+	overflow: hidden;
+	zoom: 1;
+	text-align: center;
+}
+.action_text {
+	padding-left: 170px;
+}
+.block_action .date {
+	margin: 12px 0 14px;
+}
+/*Корзина*/
+.steps {
+	font-size: 10px;
+}
+.steps span {
+	font-weight: bold;
+	color: #aa3846;
+}
+.steps span.step_f {
+	color: #8d8d8d;
+	font-weight: normal;
+}
+.total {
+	text-align: right;
+}
+.buttons {
+	text-align: right;
+}
+/*Форум - внутренняя*/
+.forum3_block {
+	margin: 0.5em 0;
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid #C9CBCD;
+	overflow: hidden;
+	zoom: 1;
+}
+.forum3_block .img {
+	float: left;
+	padding: 10px;
+}
+.forum3_block .text {
+	padding: 0 10px 0 100px;
+}
+.forum3_block .date_time {
+	float: right;
+	margin: 0;
+	font-size: 12px;
+}
+.forum3_block .date {
+	font-weight: bold;
+	font-size: 12px;
+}
+.forum3_block .time {
+	color: gray;
+}
+.forum3_block .date_time form {
+	display: inline;
+}
+.forum3_block .author {
+	font-size: 14px;
+}
+/*Страница группы*/
+.page_group_l {
+	float: left;
+	width: 190px;
+	overflow: hidden;
+}
+.last_opinion {
+	font-size: 10px;
+}
+.last_opinion .text {
+	font-size: 11px;
+	font-style: italic;
+}
+.last_opinion .student {
+	padding-top: 10px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/delimiter_arrow.png") left top no-repeat;
+	font-size: 10px;
+}
+.last_opinion .student a, .last_opinion .student a:visited, .last_opinion .student a:hover {
+	color: #012b50;
+}
+.last_opinion .course a, .last_opinion .course a:visited, .last_opinion .course a:hover {
+	color: #012b50;
+}
+.page_group_r {
+	padding-left: 205px;
+}
+.page_group_r_ie {
+	margin-left: -3px;
+	width: 100%;
+}
+/*Блок - Адрес центра*/
+.address_center {
+}
+.address_center .l {
+	float: left;
+	width: 415px;
+	margin: 15px 0;
+	padding: 5px;
+	border: 1px solid #d8d8d8;
+	background-color: #f1f1f1;
+}
+.address_center .r {
+	padding-left: 445px;
+}
+/*Cтраница - Профиль*/
+.page_profile_l {
+	float: left;
+	width: 100px;
+	margin-top: 15px;
+}
+.page_profile_r {
+	padding-left: 115px;
+}
+.page_profile_r_ie {
+	margin-left: -3px;
+	width: 100%;
+}
+.contest_new {
+	margin-left: 10px;
+}
+.contest_new strong {
+	color: #8e8e8e;
+}
+.table_contact {
+	width: 100%;
+	border-collapse: collapse;
+	vertical-align: top;
+}
+.table_contact td {
+	padding: 7px 5px;
+}
+.table_contact .name {
+	width: 155px;
+}
+.table_contact .name .ico_blog {
+	vertical-align: middle;
+}
+.my_history .history {
+	margin-bottom: 5px;
+}
+.my_history .history a, .my_history .history a:visited, .my_history .history a:hover {
+	color: #012b50;
+}
+.my_history .read_full {
+	margin-top: 5px;
+	font-size: 10px;
+}
+/*Документы об окончании*/
+.docs {
+	overflow: hidden;
+	zoom: 1;
+}
+.doc {
+	float: left;
+	width: 33.3%;
+}
+.doc p {
+	margin-right: 15px;
+}
+.details2 {
+	font-size: 10px;
+}
+/*Подвал*/
+.footers {
+	width: 100%;
+}
+/*Подвал1 - сертификаты*/
+.footer1 {
+	margin: 0 45px;
+	font-size: 12px;
+	color: #0a5292;
+}
+.certificate_block {
+}
+.certificate_block p {
+}
+.certificate_block a {
+	display: inline-block;
+	margin: 25px 20px 0 0;
+}
+.certificate_block img {
+	vertical-align: middle;
+}
+.footer1 a, .footer1 a:visited, .footer1 a:hover {
+	color: #1b93e6;
+}
+/*Подвал 2*/
+.footer2 {
+	position: relative;
+	padding: 0 0 5px 0;
+	overflow: hidden;
+	background: #4ca1d7 url("//cdn.specialist.ru/Content/Image/Main/header1_bg1.png") left top repeat-x;
+}
+.footer2_bg_t {
+	position: absolute;
+	top: 3px;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/footer2_t.gif") 0px 0px repeat-x;
+}
+.footer2 .award {
+	float: left;
+	width: 125px;
+}
+.footer2 ul.menu-bottom {
+	margin: 0 0 0 125px;
+	padding: 0;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: bold;
+}
+.footer2 ul.menu-bottom li {
+	float: left;
+	width: 33%;
+	margin: 0;
+	padding: 15px 0;
+	list-style-type: none;
+}
+.footer2 ul.menu-bottom li a, .footer2 ul.menu-bottom li a:visited, .footer2 ul.menu-bottom li a:hover {
+	color: #d4ebfe;
+}
+.footer2 ul.menu-bottom li ul {
+	margin: 7px 0;
+	padding: 0;
+	font-size: 12px;
+	font-weight: normal;
+}
+.footer2 ul.menu-bottom li ul li {
+	float: none;
+	width: auto;
+	margin: 0;
+	padding: 2px 0 2px 15px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/menu-bottom_mark.gif") 2px 5px no-repeat;
+	line-height: 12px;
+}
+.footer2 ul.menu-bottom li ul li a, .footer2 ul.menu-bottom li ul li a:visited, .footer2 ul.menu-bottom li ul li a:hover {
+	color: #fff;
+}
+/*Подвал 3 - контактная информация*/
+.footer3 {
+	margin: 0 45px;
+	overflow: hidden;
+	font-size: 12px;
+	color: #373737;
+}
+.footer3 .contact {
+	font-size: 11px;
+}
+/*Подвал 4 - счетчики*/
+.footer4 {
+	overflow: hidden;
+	padding: 15px 45px;
+	background: url("//cdn2.specialist.ru/Content/Image/Main/footer_border.gif") left top repeat-x;
+}
+.footer4 .counter {
+	float: left;
+	margin: 0 15px 0 0;
+}
+/*Общие*/
+a {
+	color: #1458ae;
+}
+a:visited {
+	color: #1458ae;
+}
+a:hover {
+	color: #1458ae;
+	text-decoration: none;
+}
+a img {
+	border: 0;
+}
+p {
+	margin: 1em 0;
+}
+.nobr {
+	white-space: nowrap
+}
+.overflow {
+	overflow: hidden; /**/
+	zoom: 1;/**/
+}
+.clear {
+	clear: both;
+}
+h2 {
+	margin: 15px 0;
+	font-size: 21px;
+	font-weight: bold;
+}
+h2.h2_block {
+	clear: both;
+	margin: 20px 0 11px;
+	padding: 0;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000066;
+	background: none;
+}
+h2.h2_block a, h2.h2_block a:visited, h2.h2_block a:hover {
+	color: #000066;
+}
+h3 {
+	margin: 14px 0;
+	font-size: 14px;
+	font-weight: bold;
+}
+.img_left {
+	float: left;
+	margin: 0 10px 10px 0;
+	clear: left;
+}
+.float_left {
+	float: left;
+	margin: 0;
+	padding: 0 20px 15px 0;
+}
+.textDog {
+	height: 400px;
+	margin: 1em 0;
+	padding: 0 20px;
+	border: 1px solid #BFBFBF;
+	overflow: auto;
+}
+div.useful_info_container {
+	margin-bottom: 20px;
+}
+div.useful_info_container img {
+	max-width: 94%;
+}
+.useful_info {
+	margin-top: 0px;
+}
+/*крутилки баннеров */
+
+#banner-rotate {
+	font-size: 9px;
+	font-weight: bold;
+	font-family: Verdana, sans-serif;
+	margin-left: -2em;
+	margin-top: -1em;
+	;
+	margin-right: 26px;
+	color: #FFF;
+	z-index: 7;
+}
+#banner-rotate li {
+	display: inline;
+	list-style-type: none;
+	margin: 3px;
+	border: 1px solid #000;
+	line-height: 7px;
+	background: url("//cdn1.specialist.ru/Content/Image/Main/h2_over_blue_bg.gif") repeat-x scroll right bottom #2885D5;
+	float: left;
+	cursor: default;
+}
+#banner-rotate li span.active-button {
+	padding: 4px;
+	display: block;
+	color: #FFF;
+	background-color: #AA3846;
+	background-position: center;
+}
+#banner-rotate li span {
+	text-decoration: none;
+	display: block;
+	padding: 4px;
+	line-height: 7px;
+	color: #FFF;
+}
+/* videos */
+
+td.new-video {
+	text-align: center;
+	padding-right: 1em;
+	padding-top: 0.5em;
+	padding-left: 0.5em;
+}
+img.new-video {
+	margin-right: 1em;
+}
+.none-padding {
+	list-style-position: inside;
+	padding: 0px;
+}
+/*Специалист ТВ для главной*/
+.specialist-tv {
+	width: 245px;
+	margin: 10px 0;
+	display:none !important;
+}
+
+.specialist-tv h2 {
+	margin: 0;
+	padding-left: 10px;
+	line-height: 28px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #0a5292;
+	background: url(//cdn.specialist.ru/Content/Image/Main/specialist_tv_top-1.png) top right no-repeat;
+	display:none !important;
+}
+.spectv_bg {
+	position: relative;
+	padding: 0px 10px 0px 10px;
+	overflow: hidden;
+	text-align: center; /**/
+	zoom: 1;/**/
+}
+
+.specialist-tv a, .specialist-tv a:visited, .specialist-tv a:hover {
+	color: #fff;
+}
+.specialist-tv .date {
+	font-size: 11px;
+	color: #bfbfbf;
+	display: inline-block;
+	margin-top: 4px;
+	display:none !important;
+}
+/*course*/
+
+.cmenu-item {
+	display: inline-block;
+	padding: 10px;
+	background: #ededec;
+	border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	behavior: url(//cdn1.specialist.ru/Content/File/Course/border-radius.htc);
+}
+.cmenu-item:hover, .cmenu-item:hover a, .cmenu-item:active, .cmenu-item:active a, .cmenu-item:hover, .cmenu-item-current:hover a {
+	background-color: #153886;
+	color: #fff;
+}
+.cmenu-item a {
+	color: black;
+	display: block;
+}
+.cmenu-item a:hover, .cmenu-item a:active {
+	background-color: #153886;
+	color: #fff;
+}
+.course-menu {
+	text-align: center;
+	margin-top: 10px;
+}
+.header3 .menu_main a.sale {
+	padding-right: 26px;
+}
+.header3 .menu_main p.count-action {
+	float: right;
+	margin: -28px 0 0 0;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 15px;
+	color: #fff;
+	background-color: #ea0303;
+	border-radius: 15px;
+	padding: 0 4px;
+	text-align: center;
+	z-index: 80;
+}
+#welcome-block {
+	width: 250px;
+	height: 208px;
+	background: url(//cdn1.specialist.ru/Content/Image/Main/welcome.png) no-repeat top center;
+	overflow: hidden;
+	position: fixed;
+	top: 50%;
+	right: 0;
+	margin-top: -100px;
+	z-index: 60;
+}
+a.welcome-close {
+	color: #fff;
+	font-size: 26px;
+	text-decoration: none;
+	float: right;
+	margin: 10px 15px 0 0;
+}
+a.welcome-video {
+	display: block;
+	margin: 138px 55px 0;
+	background: url(//cdn1.specialist.ru/Content/Image/Main/wel-button.png) no-repeat top center;
+}
+/* quick register */
+
+.widget_quickregister {
+	font-family: Verdana, sans-serif;
+	border: medium none;
+	background-color: #1F75C9;
+	box-shadow: none;
+	padding-right: 48px;
+	transition: all 0.3s ease-in-out 0s;
+	position: fixed;
+	top: 50%;
+	margin-top: -145px;
+	border-width: 1px 1px 1px medium;
+	border-style: solid solid solid none;
+	border-color: #1F75C9 #1F75C9 #1F75C9 -moz-use-text-color;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	border-radius: 0px 5px 5px 0px;
+	width: auto;
+	left: -355px;
+	z-index: 999;
+}
+.widget_quickregister.opened {
+	left: 0;
+	height: 290px;
+}
+.widget_quickregister .qr-content {
+	font-size: 12px;
+	padding: 5px 10px 0px 15px;
+	width: 330px;
+	height: 285px;
+	background: #45AAE9 none repeat scroll 0% 0%;
+	background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #45AAE9), color-stop(13%, #45AAE9), color-stop(25%, #45AAE9), color-stop(100%, #1F75C9));
+	background-image: -webkit-linear-gradient(left, #45AAE9 0%, #45AAE9 13%, #45AAE9 25%, #1F75C9 100%);
+	background-image: -moz-linear-gradient(left, #45AAE9 0%, #45AAE9 13%, #45AAE9 25%, #1F75C9 100%);
+	background-image: -o-linear-gradient(left, #45AAE9 0%, #45AAE9 13%, #45AAE9 25%, #1F75C9 100%);
+	background-image: linear-gradient(left, #45AAE9 0%, #45AAE9 13%, #45AAE9 25%, #1F75C9 100%);
+}
+.widget_quickregister .qr-content input[type="email"], .widget_quickregister .qr-content input[type="text"] {
+	background-color: #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	color: #666;
+	padding: 5px;
+	width: 95%;
+	margin-bottom: 7px;
+	border: 1px solid #1F75C9;
+}
+.widget_quickregister .qr-content ul {
+	margin-bottom: 15px;
+	margin-top: 10px;
+	margin-left: 10px;
+	list-style: outside none disc;
+	outline: 0px none;
+	padding: 0px;
+}
+.widget_quickregister .qr-content ul li {
+	color: #fff;
+	margin-bottom: 2px;
+}
+.widget_quickregister .qr-content .qr-regform a.qr-later {
+	float: right;
+	font-size: 11px;
+	color: #fff;
+	text-decoration: underline;
+}
+.widget_quickregister .qr-content .qr-regform a.qr-later:hover {
+	text-decoration: none;
+}
+.widget_quickregister .qr-content .qr-regform p label {
+	float: none;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 11px;
+	line-height: 1.2;
+	width: 90%;
+	color: #fff;
+}
+.widget_quickregister .qr-label {
+	cursor: pointer;
+	position: absolute;
+	right: 0;
+	top: 0;
+	-webkit-border-radius: 0 5px 5px 0;
+	-moz-border-radius: 0 5px 5px 0;
+	-ms-border-radius: 0 5px 5px 0;
+	-o-border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 5px 0;
+}
+#qr-checkbox {
+	display: inline-block;
+	height: 15px;
+	width: 15px;
+	vertical-align: middle;
+}
+.widget_quickregister .qr-label {
+}
+.widget_quickregister .qr-label {
+	background: transparent url("//cdn.specialist.ru/Content/Image/main/qr-label.png") left top no-repeat;
+	width: 48px;
+	height: 100%;
+	background-position: -48px 0;
+}
+.widget_quickregister .btn-line .btn-primary {
+	width: 100%;
+	font: 13px Verdana, sans-serif;
+	letter-spacing: .04em;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	margin-bottom: 15px;
+}
+.btn {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	font: 14px Verdana, sans-serif;
+	letter-spacing: .04em;
+	border-width: 1px;
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-ms-border-radius: 5px;
+	-o-border-radius: 5px;
+	border-radius: 5px;
+	border-style: solid;
+	padding: 11px 25px 8px;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+.btn.btn-primary {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background-color: #ffae00;
+	border-color: #e39c04;
+	padding: 10px 25px;
+}
+.btn.btn-primary:hover {
+	background-color: #ffc000;
+	border-color: #efa402;
+}
+.btn.btn-primary:active, .btn.btn-primary:focus, .btn.btn-primary.active, .btn.btn-primary.active:hover {
+	border-width: 1px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background-color: #f2a01e;
+	border-color: #e0990d;
+}
+.btn.btn-disabled {
+	background-color: #cdcdcd;
+	border-color: #c3c1c1;
+	cursor: not-allowed;
+}
+div.social-buttons {
+	right: 0;
+	position: fixed;
+	top: 150px;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+div.social-buttons li {
+	cursor: pointer;
+	line-height: 0;
+	list-style-type: none;
+	margin: 0;
+	padding: 1px;
+}
+div.social-buttons li:hover {
+	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	-o-transform: scale(1.3);
+	transform: scale(1.3);
+}
+
+/*Новые стили*/
+.news2 {
+	background: #e4eef8;
+	padding-top: 1px; 
+	padding-bottom: 5px;
+}
+
+.podpiska input#maillist-subscribe-email{
+	width: 190px;
+	margin: 15px 0 8px 0px;
+	padding-left: 4px;
+	color: #bcbec0;
+	font-size: 14px;
+	height: 25px;
+	border: 1px solid #d9d9d9;
+	box-shadow: inset 0px 1px 5px #e3e1e1;
+}
+
+.hidden{
+	display:none;
+}
+
+#hidden{
+	display:none;
+}
+
+.vygoda {
+	width:100%;
+	margin: 0 auto;
+	padding: 5px 15px 5px 15px;
+	background:#fbeeec;
+	color:#393939;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.vygoda_red {
+	color:#ed1c24;
+}
+
+.vygoda_blue {
+	color:#0063a6;
+	font-size:14px;
+	font-weight:bold;
+}
+
+.vygoda table {
+	border-collapse:collapse;
+	width:95%;
+	margin:0 auto;
+	padding:0;
+}
+
+.vygoda table td {
+	padding:10px;
+}
+
+.vygoda table a {
+	color:#393939;
+	font-size:11px;
+}
+
+.vygoda table img {
+	float:left;
+	vertical-align:top;
+	margin-top:5px;
+	margin-right:10px;
+	height:35px;
+}
+.vygoda .all_vygoda {
+	color:#ed1c24;
+}

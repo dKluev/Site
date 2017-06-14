@@ -1,0 +1,43 @@
+.attention_block {
+	background: #FFC;
+	padding: 10px;
+	border: 1px solid #d9d9d9;
+	border-radius: 6px;
+}
+.gift_block {
+	padding: 15px;
+	overflow: hidden;
+	margin-bottom: 25px;
+	border-radius: 6px;
+}
+.gift_block:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+.gift_block img {
+	margin-right: 7px;
+	vertical-align: middle;
+	display: inline-block;
+}
+.gift_block h3 {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 1.2em;
+}
+img.ruble-img { 
+	height: 1.5ex;
+	display: inline-block;
+	vertical-align: -1px;
+	margin: 0;
+}
+span.dot { 
+	position: absolute;
+	text-indent: -1000em;
+}
+.subscribe {
+	padding: 3px 0 3px 21px;
+    background: url(//cdn.specialist.ru/Content/Image/Main/edit.png) left 50% no-repeat;
+    margin-left: 6px;
+}

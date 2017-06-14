@@ -1,0 +1,55 @@
+<%@ Import Namespace="Specialist.Entities.Catalog.ViewModel" %>
+<%@ Import Namespace="SimpleUtils.Common.Extensions" %>
+<%@ Import Namespace="Specialist.Entities.Common.ViewModel"%>
+<%@ Import Namespace="Specialist.Entities.Education.ViewModel" %>
+<%@ Import Namespace="Specialist.Web.Const"%>
+<%@ Import Namespace="Specialist.Entities.Catalog.Interface"%>
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" 
+MasterPageFile="~/Views/Shared/Site.Master" %>
+<%@ Import Namespace="Specialist.Web.Root.Contents.ViewModels" %>
+<%@ Import Namespace="Specialist.Web.Util" %>
+<%@ Import Namespace="Specialist.Web.Common.Logic" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <% var viewModel = Model as IViewModel; %>
+    <% var pageTitle = HtmlTitleCreator.GetPageTitle(); %>
+    <% if(viewModel != null){ %>
+    
+    <% var title = pageTitle.IsEmpty() ? viewModel.Title : pageTitle; %>
+
+    <% if(viewModel is CourseResponsesVM || viewModel is GroupVM || viewModel is TrackListVM){ %>
+        <%= Htmls.Title(title) %>
+    <% }else{ %>
+        <%= Htmls.Title(Html.Encode(title)) %>
+    <% } %>
+    <% } %>
+
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
+        
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="RightColumn" runat="server">
+   
+    <asp:ContentPlaceHolder ID="RightColumn" runat="server">
+	<%= Htmls2.ChamBegin(true) %>
+        <% Html.RenderPartial(PartialViewNames.MainNews, true);%>
+	<%= Htmls2.BlockEnd() %>
+
+    </asp:ContentPlaceHolder>
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <%= ViewData.ContainsKey(Htmls.AdditionalStyle) 
+        ? Htmls.CssLink("Views/" + ViewData[Htmls.AdditionalStyle]) : null %>
+<% var title = HtmlTitleCreator.Get(Model); %>
+<%= Htmls.MetaTitle(title) %>
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="bottom" runat="server">
+<asp:ContentPlaceHolder ID="bottom" runat="server">
+		
+	</asp:ContentPlaceHolder>
+</asp:Content>
+

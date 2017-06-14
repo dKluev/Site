@@ -1,0 +1,113 @@
+﻿<%@ Import Namespace="Specialist.Entities.Common.Const" %>
+<%@ Import Namespace="Specialist.Entities.Common.ViewModel" %>
+<%@ Import Namespace="Specialist.Entities.Context.Const" %>
+<%@ Import Namespace="Specialist.Web.Const" %>
+<%@ Import Namespace="Specialist.Entities.Catalog.Interface" %>
+
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" MasterPageFile="~/Views/Shared/Main.Master" %>
+
+<%@ Import Namespace="SimpleUtils.Common.Extensions" %>
+
+<%@ Import Namespace="Specialist.Web.Controllers" %>
+
+<%@ Import Namespace="Specialist.Web.Util" %>
+
+<%@ Import Namespace="Specialist.Entities.ViewModel" %>
+<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+	<asp:ContentPlaceHolder ID="head" runat="server" />
+</asp:Content>
+<asp:Content ID="Content1" ContentPlaceHolderID="Center" runat="server">
+	<div class="right2">
+	   
+        <% if (!Htmls.IsNewVersion) { %> 
+		
+        <%= Htmls2.ChamBegin() %>
+		    <% Html.RenderPartial(PartialViewNames.ExpressOrder, new ExpressOrderVM()); %> 
+		   <% Html.RenderPartial(PartialViewNames.OnlineConsultant); %>
+	    <%= Htmls2.BlockEnd() %>
+
+        <% } %> 
+       
+		<asp:ContentPlaceHolder ID="RightColumn" runat="server">
+        	<%= Htmls2.ChamBegin(true) %>
+    		   <% Html.RenderPartial(PartialViewNames.MainNews, true);%>
+        	<%= Htmls2.BlockEnd() %>
+		</asp:ContentPlaceHolder>
+		<!--noindex-->
+
+		<!--/noindex-->
+
+		<%= Images.Main("misprint.gif") %>
+
+        <%= Htmls2.ChamBegin() %>
+<%--		<% if(!(Model is CourseVM)){ %>--%>
+<%--	<% Html.RenderAction<PageController>(c => c.SideBanner());%>--%>
+<%--		<% } %>--%>
+	 <%= Htmls2.Menu2("Не нашли нужный Вам курс?") %>
+
+	 <p>
+	 Закажите его в индивидуальном формате или <%= Html.ActionLink<PageController>(c => c.CourseIdea(), "Напишите, и мы его сделаем!") %>
+	 </p>
+     
+		<% Html.RenderPartial(Views.Shared.Common.Awards); %>
+
+
+
+        <div id="poll"></div>
+        <%= H.JQuery("controls.loadPoll();") %>
+        <%= Htmls2.BlockEnd() %>
+
+<%--	<%= H.Anchor(SimplePages.FullUrls.Price, Images.Common("load_price.jpg").ToString())--%>
+<%--   	.Title("Прейскурант на обучение")%>--%>
+
+        <%= Htmls2.ChamBegin() %>
+	<% Html.RenderPartial(Views.Shared.Common.SubscribeBlock); %>
+        <%= Htmls2.BlockEnd() %>
+
+	</div>
+	<div class="left2">
+		<div class="content">
+			<% var breadCrumbs = this.BreadCrumbs(); %>
+			<% if (!breadCrumbs.IsEmpty()){ %>
+			<p class="breadcrumbs">
+				<%= breadCrumbs %>
+			</p>
+			<% } %>
+
+    <%= Htmls.ShowMessage() %>
+    <%= Htmls.ShowErrorMessage() %>
+			<asp:ContentPlaceHolder ID="MainContent" runat="server" />
+			<% if (!breadCrumbs.IsEmpty()){ %>
+			<div class="clear"></div>
+			<p class="breadcrumbs">
+				<%= breadCrumbs %>
+			</p>
+			<% } %>
+		</div>
+	</div>
+
+
+	<div id="open-in-dialog" style="height:100%;overflow:auto;display:none"></div>
+
+	 <div id="cart-dialog" 
+			style="width:500px;height:70px;display:none" >
+        <p>
+            Заказ будет добавлен в Корзину.<br />
+            Вы можете продолжить выбор курсов или перейти в Корзину!</p>
+        <div id="cart-dialog-buttons">
+            <span>
+                <input id="addcartstay" class="button" type="button" value="Продолжить" />
+            </span><span>
+                <input id="addcartgo" class="button" type="button" value="Перейти в корзину" />
+            </span>
+        </div>
+        <div id="cart-dialog-indicator" style="display:none;"><%= Images.Common("indicator.gif") %></div>
+    </div>
+</asp:Content>
+
+<asp:Content ContentPlaceHolderID="bottom" runat="server">
+<asp:ContentPlaceHolder ID="bottom" runat="server">
+		
+	</asp:ContentPlaceHolder>
+</asp:Content>
+

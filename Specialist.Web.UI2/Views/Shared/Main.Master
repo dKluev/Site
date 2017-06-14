@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<%@ Import Namespace="Specialist.Entities.Order.ViewModel" %>
+<%@ Import Namespace="Specialist.Web" %>
+<%@ Import Namespace="Specialist.Entities.Common.ViewModel" %>
+<%@ Import Namespace="Specialist.Web.Const" %>
+<%@ Import Namespace="Specialist.Web.Controllers" %>
+<%@ Import Namespace="SimpleUtils.Common.Extensions" %>
+<%@ Import Namespace="Specialist.Web.Common.Mvc" %>
+<%@ Import Namespace="Specialist.Web.Util" %>
+<%@ Import Namespace="Specialist.Web.Common.Logic" %>
+<%@ Import Namespace="Specialist.Entities.Context.ViewModel" %>
+<%@ Import Namespace="Specialist.Web.Controllers.Common" %>
+<%@ Import Namespace="Specialist.Web.Common.Extension" %>
+<%@ Import Namespace="Specialist.Entities.Passport" %>
+<%@ Import Namespace="Specialist.Services.Passport" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--[if IE]>
+  <xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v"/>
+<![endif]--> 
+<head>
+<% Html.RenderPartial(Views.Shared.Common.Optimizer); %>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<%= Htmls2.HeadRssLink(Url.Action<RssController>(c => c.News()), "Новости") %>
+	<%= Htmls2.HeadRssLink(Url.Action<RssController>(c => c.HotGroups()), 
+		"Группы со скидками") %>
+	<%= PageMetaTags.Get(Model) %>
+ 	<asp:ContentPlaceHolder ID="head" runat="server">
+		<title>Страница</title>	
+	</asp:ContentPlaceHolder>
+
+<% if(Request.Url.AbsolutePath.ToLower() == "/section/buhgalterskie-kursy"){ %>
+	<link rel="canonical" href="//www.specialist.ru/section/buhgalter"/>
+<% } %>
+
+	<% if(MvcApplication.IsDebug){ %>
+	<link href="/Content/stylenew.css" rel="stylesheet" type="text/css" />
+	<link href="/Content/my.css" rel="stylesheet" type="text/css" />
+	<link href="/Content/select2.css" rel="stylesheet" type="text/css" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+	<script src="/Scripts/utils.js" type="text/javascript"></script>
+	<script src="/Scripts/common.js" type="text/javascript"> </script>
+	<script src='/Scripts/jquery.fancybox.js' type='text/javascript' ></script>
+
+  <% }else{ %>
+	<link href="<%= JavaScripts.StyleNewPath %>" rel="stylesheet" type="text/css" />
+	 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+	<script src="<%= JavaScripts.ScriptPath %>" type="text/javascript"> </script>
+	<% } %>
+    <% if (!MvcApplication.IsDebug) { %>
+
+			<script type="text/javascript">
+			    var gaAccountId = 'UA-4563265-3';
+			</script>
+
+    
+		<% Html.RenderPartial(Views.Shared.GoogleAnalytics.GACommon); %>
+		<% if (Model is PaymentTypeChoiceVM) 
+            Html.RenderPartial(PartialViewNames.GAOrder, Model.As<PaymentTypeChoiceVM>().Order);
+		else if (Model is ExpressOrderCompleteVM) 
+		    Html.RenderPartial(PartialViewNames.GAOrder, Model.As<ExpressOrderCompleteVM>().Order); %>
+    	<% else{ %>
+            <script>
+                <% var user = HttpContext.Current.Session[AuthService.CurrentUserSessionKey] as User; %>
+                <% if (user != null) { %>
+                   ga('set', 'dimension4', <%= user.UserID %>);
+                <% } %>
+                ga('require', 'displayfeatures');
+                ga('require', 'linkid');
+                ga('send', 'pageview');
+            </script>
+    	<% } %>
+
+<script type="text/javascript">
+(function(a,e,c,f,g,h,b,d){var k={ak:"1059972133",cl:"fAavCKXo2WwQpci3-QM",autoreplace:"+7 (495) 232-32-16"};a[c]=a[c]||function(){(a[c].q=a[c].q||[]).push(arguments)};a[g]||(a[g]=k.ak);b=e.createElement(h);b.async=1;b.src="//www.gstatic.com/wcm/loader.js";d=e.getElementsByTagName(h)[0];d.parentNode.insertBefore(b,d);a[f]=function(b,d,e){a[c](2,b,k,d,null,new Date,e)};a[f]()})(window,document,"_googWcmImpl","_googWcmGet","_googWcmAk","script");
+</script>
+
+
+	<% } %>
+
+
+</head>
+<body style="background-color: white;">
+  
+<div id="fb-root"></div>
+	<div class="all_page" 
+		style="<%= Htmls.IsFixedHeader ? "position:relative; top:150px;" :"" %>">
+		<div class="page">
+		    <% if (Htmls.IsNewVersion) { %>
+			<% Html.RenderPartial(Views.Shared.NewHeader.Header); %>
+		    <% }else{ %>
+    			<% Html.RenderPartial(Views.Shared.Common.Header); %>
+		    <% } %>
+
+		
+
+
+			<div class="center">
+
+
+			<asp:ContentPlaceHolder ID="Center" runat="server" />
+
+			</div>
+
+			
+		</div>
+
+		<% Html.RenderPartial(PartialViewNames.Footer); %>
+	</div>
+
+	
+
+
+	<asp:ContentPlaceHolder ID="bottom" runat="server">
+		
+	</asp:ContentPlaceHolder>
+	<% Html.RenderPartial(Views.Shared.Common.ConsultantSlidePanel); %>
+	<% Html.RenderPartial(Views.Shared.Common.WelcomeSlidePanel); %>
+<%--	<% Html.RenderPartial(Views.Shared.Common.QuickRegistration); %>--%>
+    <script type="text/javascript" src="//cdn.callbackhunter.com/cbh.js?hunter_code=c0cbb50f63f95c23b994de2c0180095d" charset="UTF-8"></script>
+</body>
+</html>

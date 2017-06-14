@@ -1,0 +1,740 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C47AD1F7-A05D-412D-818B-050FFAC70731}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Specialist.Web.UI</RootNamespace>
+    <AssemblyName>Specialist.Web.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>true</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GSearch.Core">
+      <HintPath>..\..\Dependencies\GSearch\GSearch.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GSearch.Web">
+      <HintPath>..\..\Dependencies\GSearch\GSearch.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary">
+      <HintPath>..\..\Dependencies\AntiXSS\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Unity21\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.1.505.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Unity21\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\..\Dependencies\Mvc\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib">
+      <HintPath>..\..\Dependencies\MvcContrib\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib.FluentHtml">
+      <HintPath>..\..\Dependencies\MvcContrib\MvcContrib.FluentHtml.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib.Unity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\MvcContrib\Unity2\MvcContrib.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Dependencies\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\Dependencies\NLog\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils.FluentAttributes, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.FluentAttributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SimpleUtils.FluentHtml">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.FluentHtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\..\Dependencies\Mvc\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\datepicker.css" />
+    <Content Include="Content\number-polyfill.css" />
+    <Content Include="Content\stylenew.css" />
+    <Content Include="Content\stylenew.min.css" />
+    <Content Include="Content\teacher.css" />
+    <Content Include="Content\mobile.css" />
+    <Content Include="Content\mobile.min.css" />
+    <Content Include="Content\my.css" />
+    <Content Include="Content\Views\new-certification.css" />
+    <Content Include="Content\receipt.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\style_ie6.css" />
+    <Content Include="Content\style_ie7.css" />
+    <Content Include="Content\slider.css" />
+    <Content Include="Content\Views\personal-style.css" />
+    <Content Include="Content\Views\profile-subscribe.css" />
+    <Content Include="Content\Views\simplereg.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\AjaxTable\Css\jquery.searchFilter.css" />
+    <Content Include="Scripts\AjaxTable\Css\ui.jqgrid.all.css" />
+    <Content Include="Scripts\AjaxTable\Css\ui.jqgrid.all.min.css" />
+    <Content Include="Scripts\AjaxTable\Css\ui.jqgrid.css" />
+    <Content Include="Scripts\AjaxTable\Css\ui.multiselect.css" />
+    <Content Include="Scripts\AjaxTable\i18n\grid.locale-ru.js" />
+    <Content Include="Scripts\AjaxTable\jqgrid.all.js" />
+    <Content Include="Scripts\AjaxTable\jqgrid.all.min.js" />
+    <Content Include="Scripts\AjaxTable\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\ajaxupload.js" />
+    <Content Include="Scripts\all.min.js" />
+    <Content Include="Scripts\Array.js" />
+    <Content Include="Scripts\Array.pack.js" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\ddpowerzoomer.min.js" />
+    <Content Include="Scripts\fileuploader.js" />
+    <Content Include="Scripts\initcontrols.js" />
+    <Content Include="Scripts\jquery.d.ts" />
+    <Content Include="Scripts\jquery.fileupload.d.ts" />
+    <Content Include="Scripts\jquery.fileupload.js" />
+    <Content Include="Scripts\jquery.iframe-transport.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\lightbox\ekko-lightbox.min.css" />
+    <Content Include="Scripts\lightbox\ekko-lightbox.min.js" />
+    <Content Include="Scripts\lms.js" />
+    <Content Include="Scripts\responsiveslides.min.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="Scripts\Socials\buttons.js" />
+    <Content Include="Scripts\Socials\buttons.min.js" />
+    <Content Include="Scripts\Socials\otherbuttons.js" />
+    <Content Include="Scripts\Socials\icons.png" />
+    <Content Include="Scripts\view.all.min.js" />
+    <Content Include="Scripts\viewcommon.js" />
+    <Content Include="Scripts\DD_belatedPNG_0.0.8a-min.js" />
+    <Content Include="Scripts\jquery.fancybox.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.messages.ru.js" />
+    <Content Include="Scripts\utils.js" />
+    <Content Include="Scripts\Views\Cart\EditCourse.js" />
+    <Content Include="Scripts\Views\Center\guide.js" />
+    <Content Include="Scripts\Views\courseList.js" />
+    <Content Include="Scripts\Views\Course\jquery.imagemapster.min.js" />
+    <Content Include="Scripts\Views\Course\SeminarSocialLink.js" />
+    <Content Include="Scripts\Views\Group\autocomplete.js" />
+    <Content Include="Scripts\Views\Group\jquery.autocomplete-min.js" />
+    <Content Include="Scripts\Views\Group\jquery.autocomplete.js" />
+    <TypeScriptCompile Include="Scripts\Views\Lms\LectureEditView.ts" />
+    <Content Include="Scripts\Views\Lms\LectureEditView.js" />
+    <Content Include="Scripts\Views\Lms\number-polyfill.min.js" />
+    <Content Include="Scripts\Views\Lms\TimesheetView.js" />
+    <Content Include="Scripts\Views\Message\messageUtils.js" />
+    <Content Include="Scripts\Views\SimpleTest\simpletest.js" />
+    <Content Include="Scripts\Views\TestEdit\testfileupload.js" />
+    <Content Include="Scripts\Views\TestRun\testengine.js" />
+    <Content Include="Views\Account\LogOn.Mobile.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Cart\StateNew.ascx" />
+    <Content Include="Views\Cart\Details.Mobile.aspx" />
+    <Content Include="Views\Cart\Recommendations.ascx" />
+    <Content Include="Views\Cart\OrderExtrases.ascx" />
+    <Content Include="Views\Cart\OrderTestCertList.ascx" />
+    <Content Include="Views\Cart\UpdatePromocode.ascx" />
+    <Content Include="Views\Cart\TrackDiscounts.ascx" />
+    <Content Include="Views\Cart\Details.aspx" />
+    <Content Include="Views\Cart\Empty.ascx" />
+    <Content Include="Views\Cart\InPlan.ascx" />
+    <Content Include="Views\Cart\OrderCourseList.ascx" />
+    <Content Include="Views\Cart\OrderExamList.ascx" />
+    <Content Include="Views\Cart\OrderTrackList.ascx" />
+    <Content Include="Views\Cart\State.ascx" />
+    <Content Include="Views\Center\Advice.aspx" />
+    <Content Include="Views\Center\Advices.aspx" />
+    <Content Include="Views\Center\MtsEmployeeForm.aspx" />
+    <Content Include="Views\Center\OrgCatalogForm.aspx" />
+    <Content Include="Views\Center\PaperCatalogForm.aspx" />
+    <Content Include="Views\Certification\MsExamList.ascx" />
+    <Content Include="Views\CompanyFile\Edit.aspx" />
+    <Content Include="Views\CompanyFile\List.aspx" />
+    <Content Include="Views\Shared\Catalog\SecondCourseDiscount.ascx" />
+    <Content Include="Views\Course\RightColumn\VisitedCourses.ascx" />
+    <Content Include="Views\Employee\EmployeeGroupList.ascx" />
+    <Content Include="Views\Employee\Details.Mobile.aspx" />
+    <Content Include="Views\Group\Details.Mobile.aspx" />
+    <Content Include="Views\Home\MainPageResponseNew.ascx" />
+    <Content Include="Views\Order\ExpressRegisterComplete.aspx" />
+    <Content Include="Views\Order\OrgComplete.ascx" />
+    <Content Include="Views\Order\PaymentTypes\SberMerchant.ascx" />
+    <Content Include="Views\Order\PaymentTypes\WebMoneyCardControl.ascx" />
+    <Content Include="Views\Order\PaymentTypes\AlphaCreditControl.ascx" />
+    <Content Include="Views\Page\CompactTableList.ascx" />
+    <Content Include="Views\Page\TrainingProgramList.ascx" />
+    <Content Include="Views\Page\DiplomProgramList.ascx" />
+    <Content Include="Views\Page\PartnerVacancies.ascx" />
+    <Content Include="Views\Profile\Classmates.ascx" />
+    <Content Include="Views\Profile\ContactList.ascx" />
+    <Content Include="Views\Profile\NewVersion\ExamList.ascx" />
+    <Content Include="Views\Profile\NewVersion\GroupList.ascx" />
+    <Content Include="Views\Profile\NewVersion\ClabCard.ascx" />
+    <Content Include="Views\Profile\NewVersion\Details.aspx" />
+    <Content Include="Views\Profile\NewVersion\Learning.ascx" />
+    <Content Include="Views\Profile\NewVersion\Public.ascx" />
+    <Content Include="Views\Profile\UploadStudentPhoto.aspx" />
+    <Content Include="Views\Profile\StudyTypeStats.aspx" />
+    <Content Include="Views\Profile\GroupSurvey.aspx" />
+    <Content Include="Views\Profile\RealSpecialist.Mobile.aspx" />
+    <Content Include="Views\Profile\Learning.Mobile.aspx" />
+    <Content Include="Views\Profile\SocialConnect.ascx" />
+    <Content Include="Views\Shared\Catalog\CommonEntityPage.Mobile.aspx" />
+    <Content Include="Views\Shared\Catalog\Vendors.ascx" />
+    <Content Include="Views\Shared\Common\CityCoupon.ascx" />
+    <Content Include="Views\Page\MainMenu.ascx" />
+    <Content Include="Views\Shared\Common\QuickRegistration.ascx" />
+    <Content Include="Views\Shared\Common\WelcomeSlidePanel.ascx" />
+    <Content Include="Views\Shared\Common\SubscribeBlock.ascx" />
+    <Content Include="Views\Shared\Core\BootStrapView.aspx" />
+    <Content Include="Views\Shared\CourseList\AllCourseListPartHead.ascx" />
+    <Content Include="Views\Shared\CourseList\VideoCourseList.ascx" />
+    <Content Include="Views\Shared\EditTemplates\MediumTextArea.aspx" />
+    <Content Include="Views\Shared\EditTemplates\PaperCatalog.aspx" />
+    <Content Include="Views\Shared\Education\NearestGroupListWithSections.ascx" />
+    <Content Include="Views\Shared\Education\SeminarList.aspx" />
+    <Content Include="Views\Employee\AddResponseForm.aspx" />
+    <Content Include="Views\Center\SeminarRegisterForm.aspx" />
+    <Content Include="Views\Center\MarketingAction.Mobile.aspx" />
+    <Content Include="Views\Center\ExpressOrder.Mobile.ascx" />
+    <Content Include="Views\Center\Info.ascx" />
+    <Content Include="Views\Center\Video.ascx" />
+    <Content Include="Views\Center\MarketingActions.ascx" />
+    <Content Include="Views\Center\CourseResponses.aspx" />
+    <Content Include="Views\Center\Icq.aspx" />
+    <Content Include="Views\Center\MarketingAction.aspx" />
+    <Content Include="Views\Center\Polls.aspx" />
+    <Content Include="Views\Center\Responses.aspx" />
+    <Content Include="Views\Center\Skype.aspx" />
+    <Content Include="Views\Center\TrainerCertifications.ascx" />
+    <Content Include="Views\Center\Trainers.aspx" />
+    <Content Include="Views\Center\TrainerSections.ascx" />
+    <Content Include="Views\Center\UsefulInformation.aspx" />
+    <Content Include="Views\Center\Vacancies.aspx" />
+    <Content Include="Views\Center\Vacancy.aspx" />
+    <Content Include="Views\Certification\CertificationList.ascx" />
+    <Content Include="Views\Certification\Details.aspx" />
+    <Content Include="Views\Certification\ExamList.ascx" />
+    <Content Include="Views\Certification\RightColumn\CertificationTracks.ascx" />
+    <Content Include="Views\Client\ChooseSectionResponses.aspx" />
+    <Content Include="Views\Client\CorporateClients.aspx" />
+    <Content Include="Views\Client\Letter.aspx" />
+    <Content Include="Views\Client\LetterSent.aspx" />
+    <Content Include="Views\Client\OrgResponse.aspx" />
+    <Content Include="Views\Client\PrivatePerson.aspx" />
+    <Content Include="Views\Client\RequestForWebinar.ascx" />
+    <Content Include="Views\Client\Resume.aspx" />
+    <Content Include="Views\Client\SearchParamsResume.ascx" />
+    <Content Include="Views\Client\SearchParamsVacancy.ascx" />
+    <Content Include="Views\Client\SearchResultResume.ascx" />
+    <Content Include="Views\Client\SearchResultUser.ascx" />
+    <Content Include="Views\Client\SearchResultVacancy.ascx" />
+    <Content Include="Views\Client\SearchResume.aspx" />
+    <Content Include="Views\Client\SearchUser.aspx" />
+    <Content Include="Views\Client\SearchVacancy.aspx" />
+    <Content Include="Views\Client\SuccessStory.aspx" />
+    <Content Include="Views\Client\UserWorks.aspx" />
+    <Content Include="Views\Client\Vacancies.aspx" />
+    <Content Include="Views\Course\All.aspx" />
+    <Content Include="Views\Course\Search.Mobile.aspx" />
+    <Content Include="Views\Course\Group.Mobile.aspx" />
+    <Content Include="Views\Course\MainCourses.Mobile.aspx" />
+    <Content Include="Views\Course\IsNew.aspx" />
+    <Content Include="Views\Course\CoursesBySections.ascx" />
+    <Content Include="Views\Course\Details.Mobile.aspx" />
+    <Content Include="Views\Course\WithoutWebinar.aspx" />
+    <Content Include="Views\Course\CourseLists.ascx" />
+    <Content Include="Views\Course\CourseContents.ascx" />
+    <Content Include="Views\Course\CourseDescription.ascx" />
+    <Content Include="Views\Shared\Catalog\CourseDocuments.ascx" />
+    <Content Include="Views\Course\CourseGroups.ascx" />
+    <Content Include="Views\Course\CoursePrerequisites.ascx" />
+    <Content Include="Views\EditCart\EditTestCert.ascx" />
+    <Content Include="Views\Employee\Contacts.ascx" />
+    <Content Include="Views\Graduate\BestStudent.aspx" />
+    <Content Include="Views\Center\JubileeForm.aspx" />
+    <Content Include="Views\Home\Index.Mobile.aspx" />
+    <Content Include="Views\Locations\Contacts.ascx" />
+    <Content Include="Views\Locations\Complex.Mobile.aspx" />
+    <Content Include="Views\Order\CashInfo.Mobile.aspx" />
+    <Content Include="Views\Order\Register2.aspx" />
+    <Content Include="Views\Order\PaymentTypeChoice.Mobile.aspx" />
+    <Content Include="Views\Order\PaymentTypes\QiwiTerminalControl.ascx" />
+    <Content Include="Views\Order\PaymentTypes\RbkMoneyControl.ascx" />
+    <Content Include="Views\Order\Contract.Mobile.aspx" />
+    <Content Include="Views\Page\CollectionMctsForm.aspx" />
+    <Content Include="Views\Page\Videos.ascx" />
+    <Content Include="Views\Page\Recruiter2011.ascx" />
+    <Content Include="Views\Profile\ClabCard.ascx" />
+    <Content Include="Views\Profile\ExcelMaster.aspx" />
+    <Content Include="Views\Profile\Details.Mobile.aspx" />
+    <Content Include="Views\Profile\RealSpecialist.aspx" />
+    <Content Include="Views\Section\RootSection.Mobile.aspx" />
+    <Content Include="Views\Shared\Block\ActionsBlock.ascx" />
+    <Content Include="Views\Shared\Common\Awards.ascx" />
+    <Content Include="Views\Order\TestCertInfo.aspx" />
+    <Content Include="Views\Order\PassportUpload.ascx" />
+    <Content Include="Views\Order\SiteManager.ascx" />
+    <Content Include="Views\Order\SpecialLink.ascx" />
+    <Content Include="Views\Order\LearningReasons.ascx" />
+    <Content Include="Views\Page\SlidePanel.ascx" />
+    <Content Include="Views\Page\IpCamera.ascx" />
+    <Content Include="Views\Page\OpenClasses.ascx" />
+    <Content Include="Views\Shared\Common\Optimizer.ascx" />
+    <Content Include="Views\Shared\Common\SimplePage.Mobile.aspx" />
+    <Content Include="Views\Shared\Core\MobileView.aspx" />
+    <Content Include="Views\Shared\CourseList\AllCourseListPart.Mobile.ascx" />
+    <Content Include="Views\Shared\Education\NearestGroupRows.ascx" />
+    <Content Include="Views\Shared\Education\NearestGroup.Mobile.ascx" />
+    <Content Include="Views\Shared\MarketingActions\ActionList.ascx" />
+    <Content Include="Views\Partner\DwgCourseTable.ascx" />
+    <Content Include="Views\Partner\Dwg.ascx" />
+    <Content Include="Views\Profile\Tests.ascx" />
+    <Content Include="Views\Shared\Catalog\CoursePrices.ascx" />
+    <Content Include="Views\Course\CourseTrainers.ascx" />
+    <Content Include="Views\Course\Details.aspx" />
+    <Content Include="Views\Course\ElearningList.ascx" />
+    <Content Include="Views\Course\Files.aspx" />
+    <Content Include="Views\Course\NearestCourses.ascx" />
+    <Content Include="Views\Course\MainCourses.aspx" />
+    <Content Include="Views\Course\MainCoursesSections.ascx" />
+    <Content Include="Views\Course\RightColumn\SuperJobVacancies.ascx" />
+    <Content Include="Views\Course\RightColumn\CourseCertifications.aspx" />
+    <Content Include="Views\Course\RightColumn\CourseCertExams.aspx" />
+    <Content Include="Views\Course\RightColumn\CourseTracks.aspx" />
+    <Content Include="Views\Course\RightColumn\ManPercent.aspx" />
+    <Content Include="Views\Course\RightColumn\RelevantCourses.aspx" />
+    <Content Include="Views\Course\SeminarComplete.aspx" />
+    <Content Include="Views\Course\Seminars.aspx" />
+    <Content Include="Views\EditCart\DistancePriceList.ascx" />
+    <Content Include="Views\EditCart\Edit.aspx" />
+    <Content Include="Views\EditCart\EditCourse.ascx" />
+    <Content Include="Views\EditCart\EditExam.ascx" />
+    <Content Include="Views\EditCart\EditTrack.ascx" />
+    <Content Include="Views\EditCart\EditTrackCourse.ascx" />
+    <Content Include="Views\EditCart\GroupList.ascx" />
+    <Content Include="Views\EditCart\SmartGroupChoice.aspx" />
+    <Content Include="Views\Employee\AboutTrainer.aspx" />
+    <Content Include="Views\Employee\Courses.aspx" />
+    <Content Include="Views\Employee\Details.aspx" />
+    <Content Include="Views\Employee\Groups.aspx" />
+    <Content Include="Views\Exam\Search.aspx" />
+    <Content Include="Views\Exam\Details.aspx" />
+    <Content Include="Views\Graduate\CertificateValidation.aspx" />
+    <Content Include="Views\Home\MainPageResponse.ascx" />
+    <Content Include="Views\Locations\ComplexAddress.ascx" />
+    <Content Include="Views\Order\Contracts\WebinarOfferRu.ascx" />
+    <Content Include="Views\Order\Contracts\PersonOfferRu.ascx" />
+    <Content Include="Views\Order\Contracts\WebinarOffer.ascx" />
+    <Content Include="Views\Order\CashInfo.aspx" />
+    <Content Include="Views\Order\Qiwi.aspx" />
+    <Content Include="Views\Order\PaymentTypes\CashControl.ascx" />
+    <Content Include="Views\Order\PaymentTypes\QiwiControl.ascx" />
+    <Content Include="Views\Order\PaymentTypes\WebMoneyCheckControl.ascx" />
+    <Content Include="Views\Order\Special.aspx" />
+    <Content Include="Views\Page\WebinarResponses.ascx" />
+    <Content Include="Views\Profile\Survey.aspx" />
+    <Content Include="Views\Page\SideBanner.ascx" />
+    <Content Include="Views\Shared\Center\Best.ascx" />
+    <Content Include="Views\Shared\Center\AdviceList.ascx" />
+    <Content Include="Views\Shared\Common\ConsultantSlidePanel.ascx" />
+    <Content Include="Views\Shared\Common\ConsultantLinks.ascx" />
+    <Content Include="Views\Shared\Core\BaseView.aspx" />
+    <Content Include="Views\Shared\Core\AjaxList.ascx" />
+    <Content Include="Views\Shared\Core\BaseViewContent.ascx" />
+    <Content Include="Views\Shared\EditTemplates\FlagEnum.aspx" />
+    <Content Include="Views\Shared\NewHeader\Header.ascx" />
+    <Content Include="Views\SimpleReg\Registration.aspx" />
+    <Content Include="Views\SimpleReg\RegistrationWidget.aspx" />
+    <Content Include="Views\SiteNews\List.Mobile.aspx" />
+    <Content Include="Views\SiteNews\Details.Mobile.aspx" />
+    <Content Include="Views\Test\Best.ascx" />
+    <Content Include="Views\SiteNews\Search.aspx" />
+    <Content Include="Views\SiteNews\NewsList.ascx" />
+    <Content Include="Views\TestRun\Details.ascx" />
+    <Content Include="Views\TestRun\Result.ascx" />
+    <Content Include="Views\Test\Prerequisite.ascx" />
+    <Content Include="Views\Test\Prerequisites.ascx" />
+    <Content Include="Views\Test\Details.ascx" />
+    <Content Include="Views\Test\Section.ascx" />
+    <Content Include="Views\Page\TestSections.ascx" />
+    <Content Include="Views\Track\List.aspx" />
+    <Content Include="Views\Vendor\Testing.ascx" />
+    <Content Include="Views\Exam\Provider.aspx" />
+    <Content Include="Views\File\Edit.aspx" />
+    <Content Include="Views\File\List.aspx" />
+    <Content Include="Views\Graduate\Avatar.aspx" />
+    <Content Include="Views\Group\ListForPrint.aspx" />
+    <Content Include="Views\Group\Details.aspx" />
+    <Content Include="Views\Group\Forum.aspx" />
+    <Content Include="Views\Group\GroupList.aspx" />
+    <Content Include="Views\Group\GroupSearch.aspx" />
+    <Content Include="Views\Home\About.ascx" />
+    <Content Include="Views\Home\MarketingActions.ascx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Home\News.ascx" />
+    <Content Include="Views\Home\RootSections.ascx" />
+    <Content Include="Views\Locations\City.aspx" />
+    <Content Include="Views\Locations\Complex.aspx" />
+    <Content Include="Views\Message\AddAnswer.aspx" />
+    <Content Include="Views\Message\AddImagePart.ascx" />
+    <Content Include="Views\Message\AddMessage.aspx" />
+    <Content Include="Views\Message\Details.aspx" />
+    <Content Include="Views\Message\MessageBlock.ascx" />
+    <Content Include="Views\Message\MessageList.aspx" />
+    <Content Include="Views\Message\PrivateList.aspx" />
+    <Content Include="Views\Message\SectionList.aspx" />
+    <Content Include="Views\Order\CitySelect.js" />
+    <Content Include="Views\Order\Confirm.aspx" />
+    <Content Include="Views\Order\Conflict.aspx" />
+    <Content Include="Views\Order\Contract.aspx" />
+    <Content Include="Views\Order\Contracts\DistanceOffer.ascx" />
+    <Content Include="Views\Order\Contracts\OrgOffer.ascx" />
+    <Content Include="Views\Order\Contracts\PersonOffer.ascx" />
+    <Content Include="Views\Order\Contracts\Receipt.aspx" />
+    <Content Include="Views\Order\Contracts\ReceiptPart.ascx" />
+    <Content Include="Views\Order\InvoicePayment.aspx" />
+    <Content Include="Views\Order\OrderDetails.ascx" />
+    <Content Include="Views\Order\PaymentTypeChoice.aspx" />
+    <Content Include="Views\Order\PaymentTypes\SberbankControl.ascx" />
+    <Content Include="Views\Order\PaymentTypes\TerminalControl.ascx" />
+    <Content Include="Views\Order\PaymentTypes\WebMoneyControl.ascx" />
+    <Content Include="Views\Order\PaymentTypes\YandexMoneyControl.ascx" />
+    <Content Include="Views\Order\ReceiptPayment.aspx" />
+    <Content Include="Views\Order\Register.aspx" />
+    <Content Include="Views\Order\SberbankInfo.aspx" />
+    <Content Include="Views\Order\TerminalPayment.aspx" />
+    <Content Include="Views\Order\CyberPlat.aspx" />
+    <Content Include="Views\Page\AllTrainers.ascx" />
+    <Content Include="Views\Page\CleanCookies.aspx" />
+    <Content Include="Views\Rss\Chrome.aspx" />
+    <Content Include="Views\Shared\Center\Cities.ascx" />
+    <Content Include="Views\Page\AskTimetable.ascx" />
+    <Content Include="Views\Page\Elearning.ascx" />
+    <Content Include="Views\Page\EmployeeList.ascx" />
+    <Content Include="Views\Page\HotGroupsForMain.ascx" />
+    <Content Include="Views\Page\Job\UsefulInformation.ascx" />
+    <Content Include="Views\Shared\MarketingActions\Actions.ascx" />
+    <Content Include="Views\Shared\MarketingActions\Discounts.ascx" />
+    <Content Include="Views\Shared\MarketingActions\Reserve.ascx" />
+    <Content Include="Views\Page\RightColumn\GuidesBlock.ascx" />
+    <Content Include="Views\Page\RightColumn\VacanciesBlock.ascx" />
+    <Content Include="Views\Shared\RightColumn\VideoBlock.ascx" />
+    <Content Include="Views\Page\RightColumn\WebinarsBlock.ascx" />
+    <Content Include="Views\Page\Search.aspx" />
+    <Content Include="Views\Page\SectionsResponses.ascx" />
+    <Content Include="Views\Page\SendMessage.ascx" />
+    <Content Include="Views\Shared\Common\SimplePage.aspx" />
+    <Content Include="Views\Profession\Professions.aspx" />
+    <Content Include="Views\Profile\ChangePassword.aspx" />
+    <Content Include="Views\Profile\ChangeStatus.aspx" />
+    <Content Include="Views\Profile\Consultations.aspx" />
+    <Content Include="Views\Profile\Details.aspx" />
+    <Content Include="Views\Profile\EditProfile.aspx" />
+    <Content Include="Views\Profile\EditTemplates\PhoneVMControl.aspx" />
+    <Content Include="Views\Profile\EditTemplates\Sex.aspx" />
+    <Content Include="Views\Profile\ExamQuestionnaire.aspx" />
+    <Content Include="Views\Center\Graduate\Competition.aspx" />
+    <Content Include="Views\Center\Graduate\CompetitionList.ascx" />
+    <Content Include="Views\Center\Graduate\Competitions.aspx" />
+    <Content Include="Views\Profile\Learning.aspx" />
+    <Content Include="Views\Profile\Library.ascx" />
+    <Content Include="Views\Profile\Public.ascx" />
+    <Content Include="Views\Profile\Register.aspx" />
+    <Content Include="Views\Profile\Responses.aspx" />
+    <Content Include="Views\Profile\RestorePassword.aspx" />
+    <Content Include="Views\Profile\Subscribes.aspx" />
+    <Content Include="Views\Profile\SuccessStory.aspx" />
+    <Content Include="Views\Shared\Block\ContactsBlock.ascx" />
+    <Content Include="Views\Shared\Block\OrgResponseBlock.ascx" />
+    <Content Include="Views\Shared\Block\PollBlock.ascx" />
+    <Content Include="Views\Shared\Block\ResponseBlock.ascx" />
+    <Content Include="Views\Shared\Block\SearchResultResumeBlock.ascx" />
+    <Content Include="Views\Shared\Block\SearchResultUserBlock.ascx" />
+    <Content Include="Views\Shared\Block\SearchResultVacancyBlock.ascx" />
+    <Content Include="Views\Shared\Common\Counters.ascx" />
+    <Content Include="Views\Shared\Common\ExpressOrderForm.ascx" />
+    <Content Include="Views\Shared\Common\OrgResponseList.ascx" />
+    <Content Include="Views\Shared\Common\ResponseList.ascx" />
+    <Content Include="Views\Shared\Common\SubSectionsWithNote.ascx" />
+    <Content Include="Views\Shared\EditTemplates\BigTextArea.aspx" />
+    <Content Include="Views\Shared\EditTemplates\Captcha.aspx" />
+    <Content Include="Views\Shared\EditTemplates\CheckBox.aspx" />
+    <Content Include="Views\Shared\EditTemplates\DatePicker.aspx" />
+    <Content Include="Views\Shared\EditTemplates\File.aspx" />
+    <Content Include="Views\Shared\EditTemplates\Guid.aspx" />
+    <Content Include="Views\Shared\EditTemplates\Hidden.aspx" />
+    <Content Include="Views\Shared\EditTemplates\Number.aspx" />
+    <Content Include="Views\Shared\EditTemplates\Password.aspx" />
+    <Content Include="Views\Shared\EditTemplates\RadioButtons.aspx" />
+    <Content Include="Views\Shared\EditTemplates\Select.aspx" />
+    <Content Include="Views\Shared\EditTemplates\SubmitButton.aspx" />
+    <Content Include="Views\Shared\EditTemplates\Text.aspx" />
+    <Content Include="Views\Shared\EditTemplates\TextArea.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\Files\FileList.ascx" />
+    <Content Include="Views\Shared\Forum\MessageList.ascx" />
+    <Content Include="Views\Shared\Forum\MessagePagedList.ascx" />
+    <Content Include="Views\Shared\Forum\SendPrivateMessage.ascx" />
+    <Content Include="Views\Shared\GoogleAnalytics\GA404.ascx" />
+    <Content Include="Views\Shared\GoogleAnalytics\GA500.ascx" />
+    <Content Include="Views\Shared\GoogleAnalytics\GACommon.ascx" />
+    <Content Include="Views\Shared\GoogleAnalytics\GAOrder.ascx" />
+    <Content Include="Views\Shared\Profile\CustomerTypeChoice.ascx" />
+    <Content Include="Views\Shared\Profile\EditExamQuestionnaireControl.ascx" />
+    <Content Include="Views\Shared\Profile\EditProfileControl.ascx" />
+    <Content Include="Views\Shared\Profile\LogOnControl.ascx" />
+    <Content Include="Views\Section\UserWorks.ascx" />
+    <Content Include="Views\Section\RootSection.aspx" />
+    <Content Include="Views\Shared\Block\AdvicesBlock.ascx" />
+    <Content Include="Views\Shared\Block\HotGroupBlock.ascx" />
+    <Content Include="Views\Shared\Block\NewsBlock.ascx" />
+    <Content Include="Views\Shared\Block\UserWorkBlock.ascx" />
+    <Content Include="Views\Shared\Catalog\CommonEntityPage.aspx" />
+    <Content Include="Views\Shared\Catalog\CommonExamList.ascx" />
+    <Content Include="Views\Shared\Common\CityFilter.ascx" />
+    <Content Include="Views\Section\SectionsResponses.ascx" />
+    <Content Include="Views\Shared\Common\OnlineConsultant.ascx" />
+    <Content Include="Views\Shared\Common\ExpressOrder.ascx" />
+    <Content Include="Views\Shared\Common\Footer.ascx" />
+    <Content Include="Views\Shared\Common\RootEntity.ascx" />
+    <Content Include="Views\Shared\Common\SubSections.ascx" />
+    <Content Include="Views\Shared\CourseList\AllCourseList.ascx" />
+    <Content Include="Views\Shared\CourseList\AllCourseListPart.ascx" />
+    <Content Include="Views\Shared\CourseList\CommonCourseList.ascx" />
+    <Content Include="Views\Shared\Education\NearestGroupList.ascx" />
+    <Content Include="Views\Shared\Education\NearestGroupSet.ascx" />
+    <Content Include="Views\Shared\Profile\LogOnState.ascx" />
+    <Content Include="Views\Shared\Common\Header.ascx" />
+    <Content Include="Views\Shared\Profile\RegisterControl.ascx" />
+    <Content Include="Views\Shared\RightColumn\CommonPageBlock.ascx" />
+    <Content Include="Views\Shared\RightColumn\MainNews.ascx" />
+    <Content Include="Views\Shared\RightColumn\NearestGroupsBlock.ascx" />
+    <Content Include="Views\Shared\RightColumn\TagCloud.aspx" />
+    <Content Include="Views\Shared\RightColumn\DiscountGroups.ascx" />
+    <Content Include="Views\Shared\RightColumn\StudyTypes.ascx" />
+    <Content Include="Views\Shared\Shop\OrderSteps.ascx" />
+    <Content Include="Views\SiteNews\Details.aspx" />
+    <Content Include="Views\SiteNews\List.aspx" />
+    <Content Include="Views\Track\Details.aspx" />
+    <Content Include="Views\Vendor\Details.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="connectionStrings.config" />
+    <Content Include="connectionStringsDev.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="NLog.config" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Shared\WithTitle.Master" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamicForm\DynamicForm.csproj">
+      <Project>{9D06C8E9-58AD-4A39-80C0-B87CDA39C332}</Project>
+      <Name>DynamicForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MigrationUtils\MigrationUtils.csproj">
+      <Project>{A9D05184-E375-4B84-814C-5D771A4C6C88}</Project>
+      <Name>MigrationUtils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Entities\Specialist.Entities.csproj">
+      <Project>{19383E60-91D3-431B-8870-5456C67EE86D}</Project>
+      <Name>Specialist.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Services\Specialist.Services.csproj">
+      <Project>{EA56F9BC-8CDB-401F-B5F6-DCB77AAEAB20}</Project>
+      <Name>Specialist.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Web.Common\Specialist.Web.Common.csproj">
+      <Project>{C7F7E47A-8072-44BD-883E-06AC71768EF5}</Project>
+      <Name>Specialist.Web.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Web\Specialist.Web.csproj">
+      <Project>{F587A3CA-53CB-4365-8734-94A74C409504}</Project>
+      <Name>Specialist.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Main.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Print.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\RightColumn\RightBlock.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditTemplates\Field.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditTemplates\HiddenField.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Bootstrap.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>4328</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

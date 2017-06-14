@@ -1,0 +1,6 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<div class="block_chamfered_in v_know">
+	<asp:contentplaceholder id="Content" runat="server"> </asp:contentplaceholder>
+</div>
+<div class="delimiter_news"> </div>

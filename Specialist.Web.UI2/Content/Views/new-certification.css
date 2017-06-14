@@ -1,0 +1,302 @@
+.requirements {
+	font-size: 0;
+	line-height: 0;
+	letter-spacing: -1px;
+ 	margin: 25px 0 25px 4%;
+	padding-left: 0;
+	list-style: none;
+	color: #fff;
+}
+.requirements li {
+	width: 144px;
+	min-height: 104px;
+	display: inline-block;
+	line-height: normal;
+	letter-spacing: normal;
+	vertical-align: middle;
+	margin: 10px 29px 10px 0;
+	padding: 2px 5px 25px 5px;
+	position: relative;
+	background: #1570A6;
+}
+.requirements li:first-child {
+	margin-left: -24px;
+}
+.requirements li:first-child:before {
+	display: none;
+}
+.requirements li:before {
+	content: '+';
+	display: block;
+	position: absolute;
+	left: -28px;
+	top: 50%;
+	margin-top: -23px;
+	color: #072A60;
+	font-size: 31px;
+	font-weight: bold;
+}
+.requirements li:after {
+	content: '+';
+	display: block;
+	position: absolute;
+	right: -28px;
+	top: 50%;
+	margin-top: -23px;
+	color: #072A60;
+	font-size: 31px;
+	font-weight: bold;
+}
+.requirements .equally:after {
+	content: '=';
+}
+.requirements li.status {
+	padding: 0 0 0 1px;
+	background: #fff;
+}
+.requirements li.status:after {
+	display: none;
+}
+.requirements .status:before {
+	content: '=';
+	display: block;
+	position: absolute;
+	left: -28px;
+	top: 50%;
+	margin-top: -23px;
+	color: #072A60;
+	font-size: 31px;
+	font-weight: bold;
+}
+.requirements p {
+	font-size: 12px;
+	margin: 0;
+}
+.requirements a {
+	font-size: 12px;
+	color: #fff;
+}
+.requirements a:hover {
+	color: #fff;
+}
+.requirements a[href="#"] {
+	position: absolute;
+	right: 6px;
+	bottom: 5px;
+	z-index: 1;
+	border-bottom: 1px dashed #fff;
+	text-decoration: none;
+}
+.requirements a[href="#"]:hover {
+	border-bottom: none;
+	bottom: 6px;
+}
+ul.requirements .dropdown-content {
+	padding: 11px;
+	margin: 15px -5px -3px -5px;
+	background: #008ED4;
+}
+.requirements .item-number {
+	font-size: 25px;
+}
+.requirements .item-name {
+	font-size: 10px;
+}
+.requirements .any-status {
+	font-size: 13px;
+}
+.requirements .any-status + .item-name {
+	font-size: 20px;
+}
+.requirements .step {
+	width: 148px;
+	height: 22px;
+	line-height: 22px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding-left: 6px;
+	background: #072A60;
+	font-weight: bold;
+}
+.requirements .status img {
+	display: block;
+}
+.requirements:before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.marketplace {
+	width: 100%;
+	border-spacing: 4px;
+	text-align: center;
+}
+.marketplace .add-to-cart input {
+	width: 24px;
+	height: 24px;
+	background: url(img/basket.png) 50%;
+	cursor: pointer;
+	border: none;
+}
+/* Цвета ячеек при ховере */
+.marketplace .add-to-cart input:hover {
+	background: url(img/basket-hover.png) 50%;
+}
+.marketplace .add-to-cart input:active {
+	background: url(img/basket-active.png) 50%;
+}
+td.step:hover + td + .add-to-cart input, td.track:hover + td + .add-to-cart input, td.step + td:hover + .add-to-cart input, td.track + td:hover + .add-to-cart input {
+	background: url(img/basket-hover.png) 50%;
+}
+.marketplace tr:hover td.step, .marketplace tr:hover td.track {
+
+}
+.marketplace td.step:hover, .marketplace td.track:hover {
+	background: #072A60;
+}
+.marketplace td.step:hover + td a, .marketplace td.track:hover + td a {
+	text-decoration: none;
+}
+.marketplace td.step.active, .marketplace td.track.active {
+	background: #072A60 !important; /* цвет ячейки при ховере marketplace-step-hover.js */
+	text-decoration: none;
+}
+.marketplace td a.active {
+	text-decoration: none;
+}
+/* Цвета ячеек при ховере */
+/* Цвета ячеек в зависимости от уровня экзамена/курса, а также для трэков */
+.marketplace .track, .marketplace .step {
+	border-radius: 6px;
+	color: #fff;
+} 
+.marketplace .track {
+	background: #FB951D;
+}
+.marketplace .step.n1 {
+	background: #008aff;
+}
+.marketplace .step.n2 {
+	background: #0078dd;
+}
+.marketplace .step.n3 {
+	background: #006dc9;
+}
+.marketplace .step.n4 {
+	background: #0063b7;
+}
+.marketplace .step.n5 {
+	background: #0057a0;
+}
+.marketplace .step.n6 {
+	background: #004c8d;
+}
+.marketplace .step.n7 {
+	background: #004076;
+}
+.marketplace .step.n8 {
+	background: #003664;
+}
+.marketplace .step.n9 {
+	background: #002b4f;
+}
+.marketplace .step.n10 {
+	background: #00223e;
+}
+/* Цвета ячеек в зависимости от уровня экзамена/курса, а также для трэков */
+.marketplace th {
+	padding: 6px 15px;
+	border-radius: 5px;
+	background: #e7e7e8;
+}
+.marketplace .shop-basket {
+	background: #e7e7e8 url(./new_files/blue_bin.gif) 49% no-repeat;
+}
+.marketplace td {
+	padding: 6px 11px;
+	color: #000;
+}
+/* Стили для блока смежных сертификаций */
+.sertifications {
+	list-style: none;
+	margin-top: 20px;
+}
+.sertifications h3 {
+	margin: 0;
+	padding: 0;
+}
+.sertifications > li {
+	padding-bottom: 15px;
+}
+.sertifications h3 > a {
+	position: relative;
+	text-decoration: underline;
+}
+.sertifications h3 > a:hover {
+	text-decoration: none;
+}
+.sertifications li a span {
+	width: 24px;
+	height: 24px;
+	background: url(img/plus.png) 50% no-repeat;
+	position: absolute;
+	left: -27px;
+	top: -3px;
+}
+.changed-list-icon {
+	background: url(img/minus.png) 50% no-repeat !important;
+}
+.dropdown-content {
+	padding: 15px 0 0 20px;
+}
+.dropdown-content ul.requirements {
+	margin-left: 10px;
+}
+.dropdown-content > * {
+	margin: 0;
+	padding: 0;
+}
+/* Стили для блока смежных сертификаций */
+/* Стили для блока акций */
+.ad {
+	font-weight: bold;
+	font-size: 25px;
+	margin: 20px 0;
+}
+.stock-wrap {
+	border: 1px solid #d3d3d3;
+	border-radius: 6px;
+	padding: 6px;
+	margin: 20px 0;
+}
+.stock {
+	overflow: hidden;
+	padding: 5px;
+	background: #E7E7E9;
+	border-radius: 6px;
+}
+.stock img {
+	float: left;
+	margin-right: 15px;
+}
+.stock h3 {
+	margin: 0;
+}
+/* Стили для блока акций */
+.sertification-banner {
+	margin: 25px 0;
+	text-align: center;
+}
+.sertification-banner img {
+	width: 100%;
+	height: 100%
+}
+/* Start of "Micro clearfix" */
+.cf { zoom: 1; }
+.cf:before,
+.cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+/* End of "Micro clearfix" */

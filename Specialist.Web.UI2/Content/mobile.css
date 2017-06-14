@@ -1,0 +1,449 @@
+﻿body {
+	font-size:1.1em;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+}
+a {
+	text-decoration:none
+}
+h1, h2, h3 {
+	font-weight:normal;
+	margin:0.3em 0;
+	padding:0
+}
+h2 {
+	font-size:1em;
+	font-weight:bold
+}
+h3 {
+	font-size:1em;
+}
+#top {
+	font-size:0.9em;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background:#2267b4;
+	padding:0.3em 0em 0.3em 0.5em;
+	border-bottom:1px white solid;
+	border-right:1px white solid;
+	border-bottom-right-radius:1em 0.5em;
+	margin-bottom:0.3em;
+	box-shadow:0.1em 0.1em 0.3em #555;
+}
+#top, #bottom { /* украшательство градиентом */
+	background:#2267b4;
+	background: -moz-linear-gradient(top, #2b77cb, #073c79); /* Firefox 3.6+ */
+	/* Chrome 1-9, Safari 4-5 */
+	background: -webkit-gradient(linear, left top, left bottom,  color-stop(0%, #2b77cb), color-stop(100%, #073c79));
+	/* Chrome 10+, Safari 5.1+ */
+    background: -webkit-linear-gradient(top, #2b77cb, #073c79);
+	background: -o-linear-gradient(top, #2b77cb, #073c79); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #2b77cb, #073c79); /* IE10 */
+	background: linear-gradient(top, #2b77cb, #073c79); /* CSS3 */
+}
+/* название фирмы */
+#firm {
+	margin-left:0.5em;
+	background:url(//cdn.specialist.ru/Content/Image/Mobile/main/frontimage.jpg) left top no-repeat;
+	height:50px
+}
+#firm h1 {
+	margin:0em;
+	padding:0em;
+	font-family:  "Trebuchet MS", Arial, Helvetica, sans-serif;
+	line-height:1.2em;
+	font-size:1.5em;
+	font-weight:bold;
+	color:#256dbd;
+	padding-top:0.4em;
+	text-shadow: #CCC 2px 2px 3px;
+}
+#firm h2 {
+	margin:0em;
+	line-height:1.1em;
+	font-size:0.55em;
+	color:#00509e;
+	padding-bottom:0.2em;
+}
+#firm h1 span, #firm h2 span {
+	background:rgb(255,255,255);
+	background:rgba(255, 255, 255, 0.5);
+}
+a {
+	color: #0054a1
+}
+table td {
+	vertical-align: top
+}
+/*верх */
+#top a {
+	color:#fff;
+	padding:0.1em 0.2em;
+}
+#top #top_Home {
+	background:#fff;
+	padding:0.1em 0.7em;
+	color:#2267b4;
+	font-family:Georgia, Times, serif;
+	font-weight:bold;
+	font-size:1.2em;
+	margin-right:0.3em;
+	border-radius:0.3em
+}
+#top_Profile {
+}
+#top_Busket {
+}
+#top_Busket.notempty {color:#FFFFFF; text-decoration:underline}
+#top #top_Search {
+	padding-right:0;
+	margin-right:0
+}
+
+/*формы*/
+.form {
+	margin:0em
+}
+input {
+	font-size:0.8em;
+	width:auto
+}
+.longinput {
+	width:90%
+}
+.submit {
+	background: #2b76c9;
+	color:white;
+	font-weight:bold;
+	padding:0.3em
+}
+.res_message {
+	color:red;
+	font-weight:bold
+}
+.findres {
+	margin:1em 0em 0em 0em;
+	font-weight:bold
+}
+#rec {
+	margin-left:0em
+}
+.inbusket {background:#009900; color:white; padding:0.4em; line-height:1.3em}
+
+/* назад */
+.back {
+	margin-bottom:1em;
+	margin-left:0.7em;
+}
+.back a {
+	font-size:0.8em;
+	padding:0.2em;
+	position:relative;
+	left:0em;
+}
+.back .textback {
+	border-bottom:thin solid #2267b4;
+}
+.signback {
+	font-size:0.8em;
+	color:#093a73;
+	position:absolute;
+	left:-0.5em;
+	top:0.4em
+}
+/* основное наполнение */
+#content {
+	font-size:1.1em;
+	line-height:1.2em;
+	font-weight:normal;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	padding-left:0.4em;
+	padding-right:0.4em;
+}
+#content ul {
+	padding:0em 0 0.1em 0;
+	margin:0;
+}
+#content li {
+	margin-bottom:0.1em;
+	list-style:none;
+}
+/*.main li:before {content: url("ar1.gif"); font-size:0.5em; color:#093a73; position:relative; top:-0.3em} */
+.main a {
+	text-decoration:none;
+	border-bottom:0px solid #2267b4;
+	color:#093a73
+}
+.main li {
+	padding-left:0.3em;
+}
+.longlist {
+	font-size:0.7em;
+	padding:0 0em
+}
+.longlist .mainlist {
+	background:#ddd;
+	border-radius:0.5em;
+	border: thin #ccc solid;
+	padding:1em 0.3em 0em 0.5em;
+	margin: 0em
+}
+.longlist h2 {
+	margin:0.4em 0
+}
+.longlist li {
+	border:thin solid #999;
+	padding:0.2em 0.1em 0.2em 0.3em;
+	border-radius:0.5em;
+	margin:0.3em 0.3em 0.5em 0.3em;
+	background:#fff;
+	border-top-color:white;
+	border-left-color:white;
+}
+.longlist li a {
+	display:block;
+	line-height:1em;
+	font-weight:bold;
+}
+#content ol.longlist li {
+	display:list-item;
+	list-style:decimal
+}
+#content .simplelist {
+	margin-left:0em;
+	padding-left:1em;
+	margin-top:0em;
+	margin-bottom:0em
+}
+#content .simplelist li {
+	display:list-item;
+	border:none;
+	list-style: disc;
+	padding-left:0em;
+	margin-left:0em;
+	font-size:0.8em;
+	line-height:1.1em;
+}
+#content .simplelist li a {
+	display:inline;
+	margin:0;
+	padding:0
+}
+#content p {
+	margin:0em;
+	padding:0.5em 0em;
+	font-size:0.8em;
+	line-height:1.1em
+}
+.icons {
+	height:1.2em;
+	vertical-align:  text-top;
+	margin-right:0.2em;
+}
+.mainlist li.mainlinks {
+	padding:0.2em;
+	padding-left:0.3em;
+	margin:0.3em 0em;
+	font-size:1.1em;
+	line-height:1.1em;
+	border:1px solid #ddd;
+	border-radius:0.5em;
+	box-shadow:0.1em 0.1em 0.2em #fff;
+	text-shadow: white 1px 1px 1px;
+	/* украшательство градиентом */
+	background: -moz-linear-gradient(top, #fff, #eee); /* Firefox 3.6+ */
+	/* Chrome 1-9, Safari 4-5 */
+ 	background: -webkit-gradient(linear, left top, left bottom,  color-stop(0%, #fff), color-stop(100%, #eee));
+	/* Chrome 10+, Safari 5.1+ */
+    background: -webkit-linear-gradient(top, #fff, #eee);
+	background: -o-linear-gradient(top, #fff, #eee); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #fff, #eee); /* IE10 */
+	background: linear-gradient(top, #fff, #eee); /* CSS3 */
+}
+.mainlist li.mainlinks a {
+	display:block;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+.arrow1 {
+	display:block;
+	float:right;
+	margin-right:0.2em
+}
+.arrow1:before {
+	content: ">";
+}
+#cont_Discount a {
+	color:#dc360a
+}
+.main #cont_Discount:before {
+	color:#dc360a
+}
+.addrfilials {
+	font-size:0.6em;
+	line-height:1em;
+	display:block;
+	color:black;
+	padding-top:0.2em
+}
+#bottom {
+	margin-top:1em;
+	height:1.2em;
+	border-top-right-radius:0.5em;
+	padding:0.2em 0 0.4em 0;
+	border-top:1px white solid;
+	border-right:1px white solid;
+	border-top-right-radius:1em 0.5em;
+	box-shadow:-0.1em -0.1em 0.2em #555
+}
+#bottom a {
+	padding:0.1em 0.3em;
+	margin:0 0.3em 0 0.7em;
+	font-size:0.8em;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background:white;
+	border-radius:0.3em
+}
+#cont_Phone a {
+	color:#009245
+}
+.main #cont_Phone:before {
+	color:#009245
+}
+/* ближайшие группы */
+#groups {
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	background:#fff;
+	padding:1em 0.5em 0em 0.5em;
+	border-radius:0.5em;
+}
+.group {
+	margin:0.5em 0;
+	padding:0.1em 0.3em;
+	border:1px solid #2267b4;
+	border-radius:0.4em;
+	background:white
+}
+#groups h3 {
+	font-weight: bold;
+	margin-top:0
+}
+.group a {
+	display:block
+}
+.group .date {
+	font-weight:bold
+}
+.group .groupName {
+	color:black;
+}
+.group .discount {
+	display:block;
+	color:#dc360a
+}
+.coursedate {
+	display:block;
+	font-size:1em;
+	font-weight:bold;
+}
+.coursetime {
+	display:block;
+	font-size:0.8em;
+	color:black
+}
+.courseplace {
+	display:block;
+	font-size:0.8em;
+	color:black
+}
+#content h2.coursename {
+	color:red;
+	font-weight:bold
+}
+.price {
+	color:red
+}
+.groupinfo {
+	color:#2267b4
+}
+.longlist p b {
+	color:#2267b4
+}
+a.link {
+	color: #2267b4;
+	text-decoration:underline
+}
+/* поиск */
+#find {
+	font-size:1em;
+}
+#x-button {
+	width:0.5em;
+	height:auto;
+	font-size:0.7em;
+	padding:0.3em 0.3em;
+	border:1px solid black;
+	height:1em;
+	margin-right:0.3em;
+	background:#eee
+}
+#findbutton {
+	width:60%;
+	font-size:0.8em;
+}
+#findsubmit {
+	width:auto;
+	height:auto;
+	font-size:0.7em;
+	padding:0.1em
+}
+#findext {
+	margin-top:1em;
+	margin-left:0.3em
+}
+.findres li {
+	border-top-color:#ccc;
+	border-left-color:#ccc;
+}
+#content .moreplaces {
+	font-size:1em;
+	font-weight:bold;
+	padding-top:1em
+}
+.selected {
+	font-weight:bold
+}
+
+.h2_inline {display:block}
+.p_inline {display:block; color: black; font-weight:normal; margin-top:0.5em; font-size:0.8em}
+
+/* корзина */
+.buskettable { width:100%; margin:0.5em 0    }
+.buskettable_course  {border:1px solid black; border-top-left-radius:0.5em; border-right:0px solid black; padding:0.3em; background:#eee; border-bottom:none;  }
+.buskettable_x  {vertical-align: middle; width:0.5em; text-align:center; background:#ccc; border-top-right-radius:0.5em; border:1px solid black;  border-bottom:none; border-left:none }
+.buskettable_x a {display:block; padding:0.6em; }
+.buskettable_desc  {border:1px solid black;  padding:0.3em }
+.buskettable_desc select {}
+.buskettable_desc select option {}
+#content .pricebusket { font-size:1.2em; font-weight:bold;}
+#content .pricebusket.discount {color: #096}
+#content .pricebusket.discount span {font-size:0.6em; margin-left:1em}
+.busketdays {font-size:1.2em; font-weight:bold }
+.buskettimes {}
+.busketplace { }
+.busketclear {float:right; position:relative; top:0.8em}
+#content .busketall {font-size:1.2em; font-weight:bold}
+.busketsubmit {padding:1em; margin:0.4em 0}
+.warning {color:red}
+
+/* оплата */
+.pay_argy {margin-top:1em}
+.pay_argy input {padding:0.5em 1em; margin-right:2em}
+.pay_more {display:block; font-size:0.8em; color:black}
+
+
+.validation-summary-errors
+{
+	font-weight: bold;
+	color: #ff0000;
+}

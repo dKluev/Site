@@ -1,0 +1,20 @@
+﻿<%@ Import Namespace="System.Web.Mvc.Html"%>
+<%@ Import Namespace="DynamicForm"%>
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage<PropertyVM>" %>
+
+<tr>
+    <td class="name">
+    <asp:ContentPlaceHolder ID="Label" runat="server">
+        <label for="<%=Model.Name%>">
+            <%= Model.Descriptor.DisplayName %>
+      <%--  <%=Html.ValidationMessage(Model.Name,"*") %>--%>
+        </label>
+    </asp:ContentPlaceHolder>
+    </td>
+    <td class="field">
+        <asp:ContentPlaceHolder ID="Input" runat="server"/>
+    <% if(Model.Example != null){ %> 
+        <p class="explanation"><%= Model.Example %></p> 
+    <% } %>
+    </td>
+</tr>

@@ -1,0 +1,212 @@
+
+
+body
+{
+    min-width: 345px;
+    font-size: 12px;
+    font-family: Tahoma,Verdana,Arial,Helvetica,Geneva,sans-serif;
+}
+.container {
+    width: auto;
+}
+
+.pages a, .pages span {padding:0 3px;}
+
+.tooltip-inner {
+    white-space:pre; max-width:none;
+}
+
+.navbar
+{
+    min-height: 40px;
+}
+
+.navbar-inverse
+{
+    background-color: #014488;
+    border-color: transparent;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    position: static;
+    font-size: 16px;
+}
+
+    .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a
+    {
+        color: #fff;
+    }
+
+    .navbar-inverse img
+    {
+        position: absolute;
+        top: 5px;
+        right: 50px;
+    }
+
+.navbar-brand, .navbar-nav > li > a
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form
+{
+    border-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle
+{
+    border-color: #fff;
+}
+
+/* table */
+table.table.extable td
+{
+    vertical-align: middle;
+}
+
+table.table.extable tr.info td, table.table tr td.info
+{
+  background-color: #d9edf7;
+}
+
+td.td-center
+{
+    text-align: center;
+}
+
+table.timesheet-table {
+    border-collapse: collapse;
+    font-size: 10px;
+} 
+
+
+
+
+table.timesheet-table th.today {
+  background-color: #FAFF21;
+} 
+table.timesheet-table tr td {
+    background-image: url("//cdn.specialist.ru/content/Image/main/lms/lines-normal.png");
+} 
+
+table.timesheet-table td.other-month {
+    background-image: url("//cdn.specialist.ru/content/Image/main/lms/lines-other-month.png");
+} 
+
+table.timesheet-table td.dayoff {
+    background-image: url("//cdn.specialist.ru/content/Image/main/lms/lines-dayoff.png");
+} 
+
+table.timesheet-table td.absence {
+    background-image: url("//cdn.specialist.ru/content/Image/main/lms/lines-absence.png");
+}
+.absence-square
+{
+    background-color: #ACFFAC;
+    border: 1px solid black;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+}
+
+table.timesheet-table td, table.timesheet-table th
+{
+    border: 1px solid #EDCEA8;
+    vertical-align: top;
+}
+
+table.timesheet-table td {
+    min-width: 70px;
+}
+
+table.timesheet-table td.day-hours {
+    height: 224px;
+    min-width: 0;
+    width: 33px;
+    background-repeat: no-repeat;
+    background-image: url("//cdn.specialist.ru/content/Image/main/lms/hours.png");
+} 
+
+table.timesheet-table div.lecture-wrapper {
+    position: relative;
+}
+
+table.timesheet-table a.lecture
+{
+    border: 2px solid transparent;
+    display: block;
+    padding: 2px;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    color: black;
+}
+
+
+table.timesheet-table th
+{
+    background-color: #F8D24F;
+}
+
+div.lecture-edit table td {
+    padding: 0 5px;
+}
+div.lecture-edit .form-control {
+    height: 20px;
+    font-size: 10px;
+    padding: 0;
+}
+div.lecture-edit tr td .checkbox {
+    margin: 5px;
+    padding-left: 15px;
+}
+
+div.lecture-edit tr td input[type="checkbox"] {
+    height: 16px;
+    margin: 2px 0 0;
+}
+
+div.lecture-edit tr th input[type="checkbox"] {
+    vertical-align: middle;
+    height: 16px;
+    margin: 0;
+}
+
+li.nav-active {
+    background-color: #002A54;
+}
+
+.ekko-lightbox .modal-dialog {
+    max-width: 400px;
+    transition: max-width 0.2s !important;
+} 
+
+.ekko-lightbox .modal-dialog img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} 
+
+.student-fullname {
+    font-size: 12px;
+    color: #0d5696;
+}
+
+.student-email a {
+    color: #828080;
+    font-size: 10px;
+}
+.alert {
+    color: black;
+}
+.alert a {
+    text-decoration: underline;
+}
+
+a.not-link, a.not-link:link, a.not-link:hover, a.not-link:visited
+{
+	border-bottom:1px dashed;
+	text-decoration:none;
+}
