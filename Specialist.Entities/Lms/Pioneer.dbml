@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SPECIALIST" Class="PioneerDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=pioneer.specialist.ru;Initial Catalog=SPECIALIST;User ID=SpecWebDataEditor;MultipleActiveResultSets=True" SettingsObjectName="Specialist.Entities.Properties.Settings" SettingsPropertyName="PioneerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tLectures" Member="PiLectures">
+    <Type Name="PiLecture">
+      <Column Name="Lecture_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LectureDateBeg" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LectureDateEnd" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Breaks" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Teacher_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ClassRoom_TC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TrainerComingTime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsQualityAssurance" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="WebinarLicense_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="WebinarURL" Type="System.String" DbType="VarChar(250)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="WebCam_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="PiLecture_PiStudentInGroupLecture" Member="PiStudentInGroupLectures" Storage="_tStudentInGroupLectures" ThisKey="Lecture_ID" OtherKey="Lecture_ID" Type="PiStudentInGroupLecture" />
+      <Association Name="PiLecture_PiLectureQuestionnaire" Member="PiLectureQuestionnaires" ThisKey="Lecture_ID" OtherKey="Lecture_ID" Type="PiLectureQuestionnaire" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentInGroupLectures" Member="PiStudentInGroupLectures">
+    <Type Name="PiStudentInGroupLecture">
+      <Column Name="StudentInGroupLecture_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TS" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Lecture_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Truancy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Lateness" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Departure" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Mark" Type="System.Decimal" DbType="Decimal(2,1)" CanBeNull="true" />
+      <Column Name="TestMethodType_TC" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="IsRecognized" Type="System.Boolean" CanBeNull="true" />
+      <Association Name="PiLecture_PiStudentInGroupLecture" Member="PiLecture" ThisKey="Lecture_ID" OtherKey="Lecture_ID" Type="PiLecture" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PiStudentsInGroup_PiStudentInGroupLecture" Member="PiStudentsInGroup" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="PiStudentsInGroup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tLectureQuestionnaires" Member="PiLectureQuestionnaires">
+    <Type Name="PiLectureQuestionnaire">
+      <Column Name="LectureQuestionnaire_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TS" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="Lecture_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ClassRoomComment" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="EquipmentLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="EquipmentComment" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="FeedingLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="FeedingComment" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="LectureComment" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="InputDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="PiLecture_PiLectureQuestionnaire" Member="PiLecture" ThisKey="Lecture_ID" OtherKey="Lecture_ID" Type="PiLecture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tGroupQuestionnaires" Member="PiGroupQuestionnaires">
+    <Type Name="PiGroupQuestionnaire">
+      <Column Name="GroupQuestionnaire_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TS" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ComplexLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ComplexComment" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="SupplementaryLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="SupplementaryComment" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="AdministratorLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="AdministratorComment" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="AdministrationLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="AdministrationComment" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="DocumentsLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DocumentsComment" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="ScheduleLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ScheduleComment" Type="System.String" DbType="Text" CanBeNull="true" />
+      <Column Name="InputDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentsInGroups" Member="PiStudentsInGroups">
+    <Type Name="PiStudentsInGroup">
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TS" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Org_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="StudentContractAppendix_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="OrgContract_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PriceType_TC" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Consultant_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="Router_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="BerthType_TC" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="ReserveDeadline" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Debt" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Track_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsInformed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsRealized" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsReported" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsReserveProgram" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OurOrg_TC" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="StudyMonths" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="StudentAddress_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="StudentEmail_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Charge" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="PaidSum" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="Exam_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Exam_Passed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsGivenOriginal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PresentCertNum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CertGiven" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CertGivenDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CertGivenEmployee_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="IsGivenInvoiceAct" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Mark" Type="System.Decimal" DbType="Decimal(2,1)" CanBeNull="true" />
+      <Column Name="IsQualificationAdvancement" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InformedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="RoutedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LastTransferDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="QualAdv_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="QualAdv_Number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastTakenInGroupDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PresenceType_TC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ExamStartTime_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Assistant_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="IsHungry" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NextContactDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LastInformedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="IsError" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IncomingTestMark" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReasonForLearning" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="ClabCardNumber" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="IsExpressOrder" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InputSource_TC" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="SeatNumber" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IsEntryTestPassed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EntryTestDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="EntryTestEmp_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="IsPaperBookRequired" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DiscountMoney" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OrderPromocode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FinalExamMark_TC" Type="System.String" CanBeNull="true" UpdateCheck="Always" />
+      <Association Name="PiStudentsInGroup_PiStudentInGroupLecture" Member="PiStudentInGroupLectures" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="PiStudentInGroupLecture" />
+      <Association Name="PiStudent_PiStudentsInGroup" Member="PiStudent" ThisKey="Student_ID" OtherKey="Student_ID" Type="PiStudent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudents" Member="PiStudents">
+    <Type Name="PiStudent">
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastNameEn" Type="System.String" DbType="VarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FirstNameEn" Type="System.String" DbType="VarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MiddleNameEn" Type="System.String" DbType="VarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Member="IsSiteSubscriber" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="WebLogin" Type="System.String" DbType="VarChar(320)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="WebKeyword" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Sex" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Terrain_ID" Type="System.Decimal" CanBeNull="true" />
+      <Association Name="PiStudent_PiStudentsInGroup" Member="PiStudentsInGroups" ThisKey="Student_ID" OtherKey="Student_ID" Type="PiStudentsInGroup" />
+      <Association Name="PiStudent_PiStudentPhoto" Member="PiStudentPhoto" ThisKey="Student_ID" OtherKey="Student_ID" Type="PiStudentPhoto" Cardinality="One" />
+      <Association Name="PiStudent_tStudentEmail" Member="PiStudentEmails" ThisKey="Student_ID" OtherKey="Student_ID" Type="PiStudentEmail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentPhotos" Member="PiStudentPhotos">
+    <Type Name="PiStudentPhoto">
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="Image NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="PiStudent_PiStudentPhoto" Member="PiStudent" ThisKey="Student_ID" OtherKey="Student_ID" Type="PiStudent" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentEmails" Member="PiStudentEmails">
+    <Type Name="PiStudentEmail">
+      <Column Name="StudentEmail_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NoSpam" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NotActual" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsSiteSubscriber" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="PiStudent_tStudentEmail" Member="PiStudent" ThisKey="Student_ID" OtherKey="Student_ID" Type="PiStudent" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.uspChangerSPIDSet" Method="uspChangerSPIDSet">
+    <Parameter Name="Changer_TC" Parameter="changer_TC" Type="System.String" DbType="VarChar(7)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.uspChangerSPIDDelete" Method="uspChangerSPIDDelete">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.fnGetDefaultOurOrgTC" Method="fnGetDefaultOurOrgTC" IsComposable="true">
+    <Parameter Name="StudentInGroupID" Parameter="studentInGroupID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Bill_ID" Parameter="bill_ID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.fnIsProEducation" Method="fnIsProEducation" IsComposable="true">
+    <Parameter Name="Student_ID" Parameter="student_ID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.uspAutoEntryPersonalRecords" Method="uspAutoEntryPersonalRecords">
+    <Parameter Name="Student_ID" Parameter="student_ID" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="EducDocType_TC" Parameter="educDocType_TC" Type="System.String" DbType="VarChar(2)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.125, 19" name="Pioneer">
+  <DataContextMoniker Name="/PioneerDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a0460572-6347-47b9-b732-6f01529f869e" absoluteBounds="4.375, 1.75, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/PioneerDataContext/PiLecture" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f5615f1-7772-4105-a99f-224a5b540697" absoluteBounds="4.39, 2.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="669e0e67-f748-48fb-a1fb-5f9f10bfd189" absoluteBounds="9.125, 1.75, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/PioneerDataContext/PiStudentInGroupLecture" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ecc87679-ef79-4342-81c6-b5f6adbf0e8b" absoluteBounds="9.14, 2.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.375 : 3.59695556640625); (9.125 : 3.59695556640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PioneerDataContext/PiLecture/PiLecture_PiStudentInGroupLecture" />
+      <nodes>
+        <classShapeMoniker Id="a0460572-6347-47b9-b732-6f01529f869e" />
+        <classShapeMoniker Id="669e0e67-f748-48fb-a1fb-5f9f10bfd189" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f76e9f55-b8e5-48e2-82ef-1697675222be" absoluteBounds="7.625, 6.5, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/PioneerDataContext/PiLectureQuestionnaire" />
+      <nestedChildShapes>
+        <elementListCompartment Id="44e56663-2c0c-4c97-a468-41606f8dfffc" absoluteBounds="7.64, 6.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.375 : 5.57131184895833); (8.34375 : 5.57131184895833); (8.34375 : 6.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PioneerDataContext/PiLecture/PiLecture_PiLectureQuestionnaire" />
+      <nodes>
+        <classShapeMoniker Id="a0460572-6347-47b9-b732-6f01529f869e" />
+        <classShapeMoniker Id="f76e9f55-b8e5-48e2-82ef-1697675222be" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e55a2f5d-d39c-47b1-bf3c-0f094b4c29fb" absoluteBounds="5.5, 9.625, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/PioneerDataContext/PiGroupQuestionnaire" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55c5a5e2-5bef-4e3c-93d8-357586b79aff" absoluteBounds="5.515, 10.085, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24eadcd6-6d07-491a-9def-7fc9d0a950f9" absoluteBounds="11.875, 4, 2, 13.308982747395834">
+      <DataClassMoniker Name="/PioneerDataContext/PiStudentsInGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bc9eaa5e-3406-4f52-9495-ff61f1baf8f5" absoluteBounds="11.89, 4.46, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.875 : 4.72195556640625); (11.125 : 4.72195556640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PioneerDataContext/PiStudentsInGroup/PiStudentsInGroup_PiStudentInGroupLecture" />
+      <nodes>
+        <classShapeMoniker Id="24eadcd6-6d07-491a-9def-7fc9d0a950f9" />
+        <classShapeMoniker Id="669e0e67-f748-48fb-a1fb-5f9f10bfd189" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b70643d7-5bf1-4800-9223-8189857116b0" absoluteBounds="7.875, 14, 2, 3.30930826822917">
+      <DataClassMoniker Name="/PioneerDataContext/PiStudent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6271debd-3192-4974-a0d7-31ad45e9a42f" absoluteBounds="7.8900000000000006, 14.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(9.875 : 15.6544913736979); (11.875 : 15.6544913736979)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PioneerDataContext/PiStudent/PiStudent_PiStudentsInGroup" />
+      <nodes>
+        <classShapeMoniker Id="b70643d7-5bf1-4800-9223-8189857116b0" />
+        <classShapeMoniker Id="24eadcd6-6d07-491a-9def-7fc9d0a950f9" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="48b28f47-470c-45a4-bc2e-16295c4c5ac1" absoluteBounds="1.625, 1, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/PioneerDataContext/PiStudentPhoto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd14cd70-b44c-4635-a566-81f31d78c0bc" absoluteBounds="1.6400000000000001, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.875 : 15.0440584309896); (2.625 : 15.0440584309896); (2.625 : 2.19399251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PioneerDataContext/PiStudent/PiStudent_PiStudentPhoto" />
+      <nodes>
+        <classShapeMoniker Id="b70643d7-5bf1-4800-9223-8189857116b0" />
+        <classShapeMoniker Id="48b28f47-470c-45a4-bc2e-16295c4c5ac1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="db713a8e-5cde-4f94-8929-415357590b04" absoluteBounds="4.25, 16, 2, 2.73240397135417">
+      <DataClassMoniker Name="/PioneerDataContext/PiStudentEmail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1bf97dd3-7a50-4d5c-a911-18a39dea9a34" absoluteBounds="4.265, 16.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.875 : 16.6546541341146); (6.25 : 16.6546541341146)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PioneerDataContext/PiStudent/PiStudent_tStudentEmail" />
+      <nodes>
+        <classShapeMoniker Id="b70643d7-5bf1-4800-9223-8189857116b0" />
+        <classShapeMoniker Id="db713a8e-5cde-4f94-8929-415357590b04" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

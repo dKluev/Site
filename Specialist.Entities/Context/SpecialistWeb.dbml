@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SpecialistWeb" Class="SpecialistWebDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=apz002;Initial Catalog=SpecialistWeb;Persist Security Info=True;User ID=IUser" SettingsObjectName="Specialist.Entities.Properties.Settings" SettingsPropertyName="SpecialistWebConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="SpecialistWeb.dbo.tMarketingActionStudents" Member="MarketingActionStudents">
+    <Type Name="MarketingActionStudent">
+      <Column Name="MarketingActionStudent_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MarketingAction_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="MarketingAction_MarketingActionStudent" Member="MarketingAction" ThisKey="MarketingAction_ID" OtherKey="MarketingAction_ID" Type="MarketingAction" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tCustomerTypes" Member="CustomerTypes">
+    <Type Name="CustomerType">
+      <Column Name="CustomerType_TC" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CustomerType_DiscountCustomerType" Member="DiscountCustomerTypes" ThisKey="CustomerType_TC" OtherKey="CustomerType_TC" Type="DiscountCustomerType" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tCustomSections" Member="CustomSections">
+    <Type Name="CustomSection">
+      <Column Name="CustomSection_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomSectionType_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="CustomSectionType_CustomSection" Member="CustomSectionType" ThisKey="CustomSectionType_ID" OtherKey="CustomSectionType_ID" Type="CustomSectionType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tCustomSectionTypes" Member="CustomSectionTypes">
+    <Type Name="CustomSectionType">
+      <Column Name="CustomSectionType_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="CustomSectionType_CustomSection" Member="CustomSections" ThisKey="CustomSectionType_ID" OtherKey="CustomSectionType_ID" Type="CustomSection" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tDiscountAuthorizationTypes" Member="DiscountAuthorizationTypes">
+    <Type Name="DiscountAuthorizationType">
+      <Column Name="DiscountAuthorizationType_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Discount_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AuthorizationType_TC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Discount_DiscountAuthorizationType" Member="Discount" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="Discount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tDiscountCities" Member="DiscountCities">
+    <Type Name="DiscountCity">
+      <Column Name="DiscountCity_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="City_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Discount_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Discount_DiscountCity" Member="Discount" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="Discount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tDiscountComplexes" Member="DiscountComplexes">
+    <Type Name="DiscountComplex">
+      <Column Name="DiscountComplex_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Discount_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Complex_TC" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Discount_DiscountComplex" Member="Discount" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="Discount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tDiscountCustomerTypes" Member="DiscountCustomerTypes">
+    <Type Name="DiscountCustomerType">
+      <Column Name="DiscountCustomerTypes" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerType_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Discount_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="CustomerType_DiscountCustomerType" Member="CustomerType" ThisKey="CustomerType_TC" OtherKey="CustomerType_TC" Type="CustomerType" IsForeignKey="true" />
+      <Association Name="Discount_DiscountCustomerType" Member="Discount" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="Discount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tDiscountGraduateCourses" Member="DiscountGraduateCourses">
+    <Type Name="DiscountGraduateCourse">
+      <Column Name="DiscountGraduateCourse_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Discount_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ForStudent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Discount_DiscountGraduateCourse" Member="Discount" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="Discount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tDiscountPersonCategories" Member="DiscountPersonCategories">
+    <Type Name="DiscountPersonCategory">
+      <Column Name="DiscountPersonCategory_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Discount_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PersonCategory_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Discount_DiscountPersonCategory" Member="Discount" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="Discount" IsForeignKey="true" />
+      <Association Name="PersonCategory_DiscountPersonCategory" Member="PersonCategory" ThisKey="PersonCategory_ID" OtherKey="PersonCategory_ID" Type="PersonCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tDiscounts" Member="Discounts">
+    <Type Name="Discount">
+      <Column Name="Discount_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DayShift_TC" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="ReserveDateSpan" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="PercentValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="MoneyValue" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Present_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsSummable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsWeekend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GroupDateBegin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="GroupDateEnd" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ForGraduate" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MarketingAction_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PreviousOrderSum" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ExcludeAuthorizationType" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MaxPercentValue" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="ClabCardColor_TC" Type="System.String" CanBeNull="true" />
+      <Association Name="Discount_DiscountAuthorizationType" Member="DiscountAuthorizationTypes" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="DiscountAuthorizationType" />
+      <Association Name="Discount_DiscountCity" Member="DiscountCities" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="DiscountCity" />
+      <Association Name="Discount_DiscountComplex" Member="DiscountComplexes" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="DiscountComplex" />
+      <Association Name="Discount_DiscountCustomerType" Member="DiscountCustomerTypes" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="DiscountCustomerType" />
+      <Association Name="Discount_DiscountGraduateCourse" Member="DiscountGraduateCourses" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="DiscountGraduateCourse" />
+      <Association Name="Discount_DiscountPersonCategory" Member="DiscountPersonCategories" ThisKey="Discount_ID" OtherKey="Discount_ID" Type="DiscountPersonCategory" />
+      <Association Name="MarketingAction_Discount" Member="MarketingAction" ThisKey="MarketingAction_ID" OtherKey="MarketingAction_ID" Type="MarketingAction" IsForeignKey="true" />
+      <Association Name="Present_Discount" Member="Present" ThisKey="Present_ID" OtherKey="Present_ID" Type="Present" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tMarketingActions" Member="MarketingActions">
+    <Type Name="MarketingAction">
+      <Column Name="MarketingAction_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PromoCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SysName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsAdvert" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="UrlName" Type="System.String" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseTCList" Type="System.String" CanBeNull="true" />
+      <Column Name="WebSortOrder" Type="System.Int32" CanBeNull="false" />
+      <Column Name="ShowOnCoursePages" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="IsSecret" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="PromoCodeCount" Type="System.Int32" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" CanBeNull="true" />
+      <Column Name="IsOrg" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="Type" Type="System.Int32" CanBeNull="true" />
+      <Column Name="IsSpecialOffer" Type="System.Boolean" CanBeNull="false" />
+      <Association Name="MarketingAction_MarketingActionStudent" Member="MarketingActionStudents" ThisKey="MarketingAction_ID" OtherKey="MarketingAction_ID" Type="MarketingActionStudent" />
+      <Association Name="MarketingAction_Discount" Member="Discounts" ThisKey="MarketingAction_ID" OtherKey="MarketingAction_ID" Type="Discount" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tPersonCategories" Member="PersonCategories">
+    <Type Name="PersonCategory">
+      <Column Name="PersonCategory_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DocumentName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DocumentInfo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="PersonCategory_DiscountPersonCategory" Member="DiscountPersonCategories" ThisKey="PersonCategory_ID" OtherKey="PersonCategory_ID" Type="DiscountPersonCategory" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tPresents" Member="Presents">
+    <Type Name="Present">
+      <Column Name="Present_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Present_Discount" Member="Discounts" ThisKey="Present_ID" OtherKey="Present_ID" Type="Discount" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Orders" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="PaymentType_TC" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="ContractSigned" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Manager_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InetSource" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InetSourceDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateDate" AutoSync="OnInsert" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PromoCode" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SessionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerType" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="InPlan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Started" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="MailCount" Type="System.Byte" CanBeNull="false" />
+      <Column Name="IsGAExport" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="OurOrg_TC" Type="System.String" CanBeNull="true" />
+      <Column Name="FavoriteTeacher1" Type="System.String" CanBeNull="true" />
+      <Association Name="Order_OrderDetail" Member="OrderDetails" ThisKey="OrderID" OtherKey="OrderID" Type="OrderDetail" />
+      <Association Name="Order_OrderExam" Member="OrderExams" ThisKey="OrderID" OtherKey="OrderID" Type="OrderExam" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.OrderDetails" Member="OrderDetails">
+    <Type Name="OrderDetail">
+      <Column Name="OrderDetailID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Track_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PriceType_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Duration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PercentDiscount" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MoneyDiscount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserComment" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Count" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="City_TC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="OrgStudents" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ReasonForLearning" Type="System.String" CanBeNull="true" />
+      <Column Name="UserTestId" Storage="_TestId" Type="System.Int32" CanBeNull="true" />
+      <Column Name="JsonParams" Type="System.String" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" CanBeNull="true" />
+      <Column Name="SeatNumber" Type="System.Int16" CanBeNull="true" />
+      <Column Name="SocialUrl" Type="System.String" CanBeNull="true" />
+      <Column Name="SecondCourse_TC" Type="System.String" CanBeNull="true" />
+      <Association Name="OrderDetail_OrderExtras" Member="OrderExtras" ThisKey="OrderDetailID" OtherKey="OrderDetailID" Type="OrderExtras" />
+      <Association Name="Order_OrderDetail" Member="Order" ThisKey="OrderID" OtherKey="OrderID" Type="Order" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.OrderExams" Member="OrderExams">
+    <Type Name="OrderExam">
+      <Column Name="OrderExamID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Exam_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="Order_OrderExam" Member="Order" ThisKey="OrderID" OtherKey="OrderID" Type="Order" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.UserMessages" Member="UserMessages">
+    <Type Name="UserMessage">
+      <Column Name="UserMessageID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatorUserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReceiverUserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentMessageID" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="MessageSectionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UpdateDate" AutoSync="Never" Type="System.DateTime" DbType="DateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PublishDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="GroupID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="IsAnswered" Type="System.Boolean" CanBeNull="false" />
+      <Association Name="UserMessage_UserMessage" Member="Children" ThisKey="UserMessageID" OtherKey="ParentMessageID" Type="UserMessage" />
+      <Association Name="UserMessage_UserMessage" Member="Parent" ThisKey="ParentMessageID" OtherKey="UserMessageID" Type="UserMessage" IsForeignKey="true" />
+      <Association Name="MessageSection_UserMessage" Member="MessageSection" ThisKey="MessageSectionID" OtherKey="MessageSectionID" Type="MessageSection" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.MessageSections" Member="MessageSections">
+    <Type Name="MessageSection">
+      <Column Name="MessageSectionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentSectionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="SysName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="MessageSection_UserMessage" Member="UserMessages" ThisKey="MessageSectionID" OtherKey="MessageSectionID" Type="UserMessage" />
+      <Association Name="MessageSection_MessageSection" Member="Children" ThisKey="MessageSectionID" OtherKey="ParentSectionID" Type="MessageSection" />
+      <Association Name="MessageSection_MessageSection" Member="Parent" ThisKey="ParentSectionID" OtherKey="MessageSectionID" Type="MessageSection" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tSiteObjectRelations" Member="SiteObjectRelations">
+    <Type Name="SiteObjectRelation">
+      <Column Name="SiteObjectRelation_ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Object_ID" Type="System.Object" DbType="Variant NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ObjectType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RelationObject_ID" Type="System.Object" DbType="Variant NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="RelationObjectType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RelationOrder" Type="System.Int16" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="SiteObject_SiteObjectRelation" Member="Object" ThisKey="ObjectType,Object_ID" OtherKey="Type,ID" Type="SiteObject" IsForeignKey="true" />
+      <Association Name="SiteObject_SiteObjectRelation1" Member="RelationObject" ThisKey="RelationObjectType,RelationObject_ID" OtherKey="Type,ID" Type="SiteObject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.vSiteObjects" Member="SiteObjects">
+    <Type Name="SiteObject">
+      <Column Name="SiteObject_ID" Type="System.String" DbType="VarChar(100)" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Object" DbType="Variant NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
+      <Column Name="IsTag" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SiteObject_SiteObjectRelation" Member="ObjectRelations" ThisKey="Type,ID" OtherKey="ObjectType,Object_ID" Type="SiteObjectRelation" />
+      <Association Name="SiteObject_SiteObjectRelation1" Member="RelationObjectRelations" ThisKey="Type,ID" OtherKey="RelationObjectType,RelationObject_ID" Type="SiteObjectRelation" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.News" Member="News">
+    <Type Name="News">
+      <Column Name="NewsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortDescription" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+      <Column Name="PublishDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ForMainPage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="SmallImage" Type="System.String" CanBeNull="true" />
+      <Column Name="PriorityOrder" Type="System.Byte" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CourseTCList" Type="System.String" CanBeNull="true" />
+      <Column Name="MainPageDateEnd" Type="System.DateTime" CanBeNull="true" />
+      <Column Name="IsHot" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="ShowEverywhere" Type="System.Boolean" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.SimplePageRelations" Member="SimplePageRelations">
+    <Type Name="SimplePageRelation">
+      <Column Name="SimplePageRelationID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentPageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SimplePageID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsMainParent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="SimplePage_SimplePageRelation" Member="ParentPage" ThisKey="ParentPageID" OtherKey="SimplePageID" Type="SimplePage" IsForeignKey="true" />
+      <Association Name="SimplePage_SimplePageRelation1" Member="SimplePage" ThisKey="SimplePageID" OtherKey="SimplePageID" Type="SimplePage" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.SimplePages" Member="SimplePages">
+    <Type Name="SimplePage">
+      <Column Name="SimplePageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(Max)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SysName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WebSortOrder" Type="System.Int32" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="WithoutLink" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="LinkText" Type="System.String" CanBeNull="true" />
+      <Column Name="CourseTCList" Type="System.String" CanBeNull="true" />
+      <Column Name="UseTabs" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="UseAltTabs" Type="System.Boolean" CanBeNull="false" />
+      <Association Name="SimplePage_SimplePageRelation" Member="ParentPageRelations" ThisKey="SimplePageID" OtherKey="ParentPageID" Type="SimplePageRelation" />
+      <Association Name="SimplePage_SimplePageRelation1" Member="SimplePageRelations" ThisKey="SimplePageID" OtherKey="SimplePageID" Type="SimplePageRelation" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Responses" Member="Responses">
+    <Type Name="Response">
+      <Column Name="ResponseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PublishDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(7000) NOT NULL" CanBeNull="false" />
+      <Column Name="Authors" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Rating" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="RawQuestionnaireID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="IsWebinar" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" CanBeNull="true" />
+      <Column Name="Weight" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Complex_TC" Type="System.String" CanBeNull="true" />
+      <Column Name="IsIntraExtra" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="IsDiplom" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="PhotoUrl" Type="System.String" CanBeNull="true" />
+      <Column Name="SocialUrl" Type="System.String" CanBeNull="true" />
+      <Association Name="RawQuestionnaire_Response" Member="RawQuestionnaire" ThisKey="RawQuestionnaireID" OtherKey="RawQuestionnaireID" Type="RawQuestionnaire" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.RawQuestionnaires" Member="RawQuestionnaires">
+    <Type Name="RawQuestionnaire">
+      <Column Name="RawQuestionnaireID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TeacherMark_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Questionnaire_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="RawQuestionnaire_Response" Member="Responses" ThisKey="RawQuestionnaireID" OtherKey="RawQuestionnaireID" Type="Response" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.PollOptions" Member="PollOptions">
+    <Type Name="PollOption">
+      <Column Name="PollOptionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="PollID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VoteCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="WebSortOrder" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" CanBeNull="true" />
+      <Association Name="Poll_PollOption" Member="Poll" ThisKey="PollID" OtherKey="PollID" Type="Poll" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Polls" Member="Polls">
+    <Type Name="Poll">
+      <Column Name="PollID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Poll_PollOption" Member="PollOptions" ThisKey="PollID" OtherKey="PollID" Type="PollOption" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.SuccessStories" Member="SuccessStories">
+    <Type Name="SuccessStory">
+      <Column Name="SuccessStoryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="Profession_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Author" Type="System.String" CanBeNull="true" />
+      <Column Name="Course_TC" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.CourseFiles" Member="CourseFiles">
+    <Type Name="CourseFile">
+      <Column Name="CourseFileID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserFileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UserFile_CourseFile" Member="UserFile" ThisKey="UserFileID" OtherKey="UserFileID" Type="UserFile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.GroupFiles" Member="GroupFiles">
+    <Type Name="GroupFile">
+      <Column Name="GroupFileID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Group_ID" Storage="_GroupID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="UserFileID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UserFile_GroupFile" Member="UserFile" ThisKey="UserFileID" OtherKey="UserFileID" Type="UserFile" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.UserFiles" Member="UserFiles">
+    <Type Name="UserFile">
+      <Column Name="UserFileID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="SysFileName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="UserFile_CourseFile" Member="CourseFiles" ThisKey="UserFileID" OtherKey="UserFileID" Type="CourseFile" />
+      <Association Name="UserFile_GroupFile" Member="GroupFiles" ThisKey="UserFileID" OtherKey="UserFileID" Type="GroupFile" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Vacancies" Member="Vacancies">
+    <Type Name="Vacancy">
+      <Column Name="VacancyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="PublishDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsHot" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsPartner" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="CourseTCList" Type="System.String" CanBeNull="true" />
+      <Column Name="Logo" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Competitions" Member="Competitions">
+    <Type Name="Competition">
+      <Column Name="CompetitionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Congratulation" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="WinnerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CloseDate" Type="System.DateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="OpenDate" Type="System.DateTime" CanBeNull="true" />
+      <Column Name="Result" Type="System.String" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="WinnerName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ToClose" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CourseTCList" Type="System.String" CanBeNull="true" />
+      <Column Name="WebSortOrder" Type="System.Int32" CanBeNull="false" />
+      <Association Name="Competition_UserCompetition" Member="UserCompetitions" ThisKey="CompetitionID" OtherKey="CompetitionID" Type="UserCompetition" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.UserCompetitions" Member="UserCompetitions">
+    <Type Name="UserCompetition">
+      <Column Name="UserCompetitionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompetitionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Competition_UserCompetition" Member="Competition" ThisKey="CompetitionID" OtherKey="CompetitionID" Type="Competition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Organizations" Member="Organizations">
+    <Type Name="Organization">
+      <Column Name="OrganizationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="LogoImg" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="Organization_OrgResponse" Member="OrgResponses" ThisKey="OrganizationID" OtherKey="OrganizationID" Type="OrgResponse" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.OrgResponses" Member="OrgResponses">
+    <Type Name="OrgResponse">
+      <Column Name="OrgResponseID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(7000) NOT NULL" CanBeNull="false" />
+      <Column Name="OriginalImg" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Authors" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="OrganizationID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" CanBeNull="true" />
+      <Column Name="Course_TC" Type="System.String" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" CanBeNull="true" />
+      <Association Name="Organization_OrgResponse" Member="Organization" ThisKey="OrganizationID" OtherKey="OrganizationID" Type="Organization" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.OrgProjects" Member="OrgProjects">
+    <Type Name="OrgProject">
+      <Column Name="OrgProjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.UserWorks" Member="UserWorks">
+    <Type Name="UserWork">
+      <Column Name="UserWorkID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="WorkSectionID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Section_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="SmallImage" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Trainer_TC" Type="System.String" CanBeNull="true" />
+      <Association Name="UserWorkSection_UserWork" Member="UserWorkSection" ThisKey="WorkSectionID" OtherKey="UserWorkSectionID" Type="UserWorkSection" IsForeignKey="true" />
+      <Association Name="Section_UserWork" Member="Section" ThisKey="Section_ID" OtherKey="Section_ID" Type="Section" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.UserWorkSections" Member="UserWorkSections">
+    <Type Name="UserWorkSection">
+      <Column Name="UserWorkSectionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="UserWorkSection_UserWork" Member="UserWorks" ThisKey="UserWorkSectionID" OtherKey="WorkSectionID" Type="UserWork" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tProducts" Member="Products">
+    <Type Name="Product">
+      <Column Name="Product_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="WebSortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="ForMainPage" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="IsNew" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="IsHit" Type="System.Boolean" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tSections" Member="Sections">
+    <Type Name="Section">
+      <Column Name="Section_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="WebSortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="RelationsAsMenu" Type="System.Boolean" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ForMainPage" Type="System.Boolean" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DescriptionForTest" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsSeparator" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="IsMain" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="NotAnnounce" Type="System.String" CanBeNull="true" />
+      <Association Name="Section_UserWork" Member="UserWorks" ThisKey="Section_ID" OtherKey="Section_ID" Type="UserWork" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tSiteTerms" Member="SiteTerms">
+    <Type Name="SiteTerm">
+      <Column Name="SiteTerm_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="WebSortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="ForMainPage" Type="System.Boolean" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tBanners" Member="Banners">
+    <Type Name="Banner">
+      <Column Name="Banner_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ActualDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Priority" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="TargetUrl" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Pages" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="DateBegin" Type="System.DateTime" CanBeNull="true" />
+      <Column Name="IsSide" Type="System.Boolean" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.IpAddresses" Member="IpAddresses">
+    <Type Name="IpAddress">
+      <Column Name="IpAddressID" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CityName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Advices" Member="Advices">
+    <Type Name="Advice">
+      <Column Name="AdviceID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortDescription" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Videos" Member="Videos">
+    <Type Name="Video">
+      <Column Name="VideoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="YouTubeID" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" CanBeNull="true" />
+      <Column Name="CategoryId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsNew" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="CourseTCList" Type="System.String" CanBeNull="true" />
+      <Column Name="ShortDescription" Type="System.String" CanBeNull="true" />
+      <Column Name="AvailableEveryOne" Type="System.Boolean" DbType="bit" CanBeNull="true" />
+      <Association Name="VideoCategory_Video" Member="VideoCategory" ThisKey="CategoryId" OtherKey="Id" Type="VideoCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Guides" Member="Guides">
+    <Type Name="Guide">
+      <Column Name="GuideID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SmallImage" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="WebSortOrder" Type="System.Int32" CanBeNull="false" />
+      <Column Name="Areas" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.MailTemplates" Member="MailTemplates">
+    <Type Name="MailTemplate">
+      <Column Name="MailTemplateID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000) NOT NULL" CanBeNull="false" />
+      <Column Name="SysName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.PageMetas" Member="PageMetas">
+    <Type Name="PageMeta">
+      <Column Name="Url" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Keywords" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" CanBeNull="true" />
+      <Column Name="PageTitle" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.OrgVacancies" Member="OrgVacancies">
+    <Type Name="OrgVacancy">
+      <Column Name="OrgVacancyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="AgeSince" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AgeTill" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Education" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Experience" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Busy" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Schedule" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ForeignLanguages" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Profit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Currency" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Metro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Sections" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Period" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="OrgPosition" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Resumes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Resumes" Member="Resumes">
+    <Type Name="Resume">
+      <Column Name="ResumeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SecondName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Age" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sex" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Education" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Sections" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Experience" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Profit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Currency" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Metro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Period" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Vacancies" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.tUsefulInformation" Member="UsefulInformations">
+    <Type Name="UsefulInformation">
+      <Column Name="UsefulInformationID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.OrderExtrases" Member="OrderExtras">
+    <Type Name="OrderExtras">
+      <Column Name="OrderExtrasID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderDetailID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Extras_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Association Name="OrderDetail_OrderExtras" Member="OrderDetail" ThisKey="OrderDetailID" OtherKey="OrderDetailID" Type="OrderDetail" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.YdBannerPhrases" Member="YdBannerPhrases">
+    <Type Name="YdBannerPhrase">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BannerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PhraseID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Phrase" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentOnSearch" Storage="_MinPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CampaignID" Type="System.Int32" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.VideoCategories" Member="VideoCategories">
+    <Type Name="VideoCategory">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="WebSortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" CanBeNull="true" />
+      <Association Name="VideoCategory_Video" Member="Videos" ThisKey="Id" OtherKey="CategoryId" Type="Video" />
+      <Association Name="VideoCategory_VideoCategory" Member="VideoCategories" ThisKey="Id" OtherKey="ParentId" Type="VideoCategory" />
+      <Association Name="VideoCategory_VideoCategory" Member="VideoCategory1" ThisKey="ParentId" OtherKey="Id" Type="VideoCategory" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.EntityStudySets" Member="EntityStudySets">
+    <Type Name="EntityStudySet">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EntityId" Type="System.Int32" CanBeNull="false" />
+      <Column Name="EntityName" Type="System.String" CanBeNull="false" />
+      <Column Name="CourseTCList" Type="System.String" CanBeNull="true" />
+      <Column Name="Type" Type="System.Byte" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.HtmlBlocks" Member="HtmlBlocks">
+    <Type Name="HtmlBlock">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.UserCourseInfos" Member="UserCourseInfos">
+    <Type Name="UserCourseInfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.ImageMetas" Member="ImageMetas">
+    <Type Name="ImageMeta">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.CityInfos" Member="CityInfos">
+    <Type Name="CityInfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.SimpleValues" Member="SimpleValues">
+    <Type Name="SimpleValue">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.CompanyFiles" Member="CompanyFiles">
+    <Type Name="CompanyFile">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="SysFileName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.LectureFiles" Member="LectureFiles">
+    <Type Name="LectureFile">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Lecture_ID" Type="System.Decimal" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.GroupDatas" Member="GroupDatas">
+    <Type Name="GroupData">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="VkGroupId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.SberbankOrders" Member="SberbankOrders">
+    <Type Name="SberbankOrder">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CommonOrderId" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="SberbankId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.AlbumVideos" Member="AlbumVideos">
+    <Type Name="AlbumVideo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AlbumId" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Videos" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="SpecialistWeb.dbo.GetNewID" Method="GetNewID" IsComposable="true">
+    <Return Type="System.Guid" />
+  </Function>
+  <Function Name="SpecialistWeb.dbo.SplitContains" Method="SplitContains" IsComposable="true">
+    <Parameter Name="String" Parameter="string" Type="System.String" DbType="VarChar(MAX)" />
+    <Parameter Name="Item" Parameter="item" Type="System.String" DbType="VarChar(MAX)" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.uspCheckPromoCode" Method="uspCheckPromoCode">
+    <Parameter Name="PromoCode" Parameter="promoCode" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Course_TC" Parameter="course_TC" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="uspCheckPromoCodeResult">
+      <Column Name="" Member="Column1" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

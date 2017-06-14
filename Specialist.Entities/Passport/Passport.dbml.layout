@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.125" name="Passport">
+  <DataContextMoniker Name="/PassportDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c0be7c7d-f9c4-4bbf-afa6-77af03d24b71" absoluteBounds="3.875, 6.875, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/PassportDataContext/Company" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71a089a6-ccc9-4b7c-837c-c886af5ab5ef" absoluteBounds="3.8900000000000006, 7.3350000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71e0dabc-1aba-41cd-b69f-a01954b35948" absoluteBounds="0.5, 8.25, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/PassportDataContext/UserContactType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74103b46-c3fc-42d2-951d-dee6e57344a3" absoluteBounds="0.51500000000000012, 8.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29bea295-1a65-4f02-a159-7f2ac1b08b19" absoluteBounds="1.25, 3.625, 2, 3.1170068359374996">
+      <DataClassMoniker Name="/PassportDataContext/UserAddress" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a652f57a-9df2-4f9e-bf08-dab27b1b4c57" absoluteBounds="1.2649999999999997, 4.0850000000000009, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.875 : 7.53125); (2.90625 : 7.53125); (2.90625 : 6.7420068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PassportDataContext/Company/Company_UserAddress" />
+      <nodes>
+        <classShapeMoniker Id="c0be7c7d-f9c4-4bbf-afa6-77af03d24b71" />
+        <classShapeMoniker Id="29bea295-1a65-4f02-a159-7f2ac1b08b19" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.875 : 8.25); (1.875 : 6.36462646484375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PassportDataContext/UserContactType/UserContactType_UserAddress" />
+      <nodes>
+        <classShapeMoniker Id="71e0dabc-1aba-41cd-b69f-a01954b35948" />
+        <classShapeMoniker Id="29bea295-1a65-4f02-a159-7f2ac1b08b19" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="5951c515-c942-4a15-b223-4765b46cb849" absoluteBounds="7.875, 0.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/PassportDataContext/UserExamQuestionnaire" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6f5b29bb-7d57-411f-9499-0311d07c59c7" absoluteBounds="7.8900000000000006, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0119f92f-0c86-4091-b483-3c13abbcbfa2" absoluteBounds="6.375, 9.5, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/PassportDataContext/UserContact" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eea47eef-628b-45ec-911e-b468e75eff71" absoluteBounds="6.39, 9.96, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.875 : 9.74600341796875); (6.375 : 9.74600341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PassportDataContext/Company/Company_UserContact" />
+      <nodes>
+        <classShapeMoniker Id="c0be7c7d-f9c4-4bbf-afa6-77af03d24b71" />
+        <classShapeMoniker Id="0119f92f-0c86-4091-b483-3c13abbcbfa2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.5 : 10.0208968098958); (1.5 : 10.9343494583333); (6.375 : 10.9343494583333)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/PassportDataContext/UserContactType/UserContactType_UserContact" />
+      <nodes>
+        <classShapeMoniker Id="71e0dabc-1aba-41cd-b69f-a01954b35948" />
+        <classShapeMoniker Id="0119f92f-0c86-4091-b483-3c13abbcbfa2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="ca3e46aa-d66b-400d-8404-d114262b2925" absoluteBounds="5.125, 0.5, 2, 6.5784326171875">
+      <DataClassMoniker Name="/PassportDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0db13e66-7539-496f-8daa-e77739eb97f1" absoluteBounds="5.14, 0.96, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.125 : 5.18350341796875); (4.55208083333333 : 5.18350341796875 : JumpStart); (4.38541416666667 : 5.18350341796875 : JumpEnd); (3.25 : 5.18350341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PassportDataContext/User/User_UserAddress" />
+      <nodes>
+        <classShapeMoniker Id="ca3e46aa-d66b-400d-8404-d114262b2925" />
+        <classShapeMoniker Id="29bea295-1a65-4f02-a159-7f2ac1b08b19" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.125 : 2.15465413411458); (7.875 : 2.15465413411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PassportDataContext/User/User_UserExamQuestionnaire" />
+      <nodes>
+        <classShapeMoniker Id="ca3e46aa-d66b-400d-8404-d114262b2925" />
+        <classShapeMoniker Id="5951c515-c942-4a15-b223-4765b46cb849" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.75 : 7.0784326171875); (6.75 : 9.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PassportDataContext/User/User_UserContact" />
+      <nodes>
+        <classShapeMoniker Id="ca3e46aa-d66b-400d-8404-d114262b2925" />
+        <classShapeMoniker Id="0119f92f-0c86-4091-b483-3c13abbcbfa2" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.4687475 : 6.875); (4.4687475 : 2.81049920898437); (5.125 : 2.81049920898437)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PassportDataContext/Company/Company_User" />
+      <nodes>
+        <classShapeMoniker Id="c0be7c7d-f9c4-4bbf-afa6-77af03d24b71" />
+        <classShapeMoniker Id="ca3e46aa-d66b-400d-8404-d114262b2925" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2b7dd367-1a7d-43a4-bdf8-ee59bc6c95ef" absoluteBounds="1.5, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PassportDataContext/WorkPlace" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2ff0ffc2-2d68-4ae6-86ca-6ab6d03540aa" absoluteBounds="1.5150000000000001, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2dfc7d10-81e6-4c84-a90d-3da2349a8742" absoluteBounds="8.625, 4.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/PassportDataContext/UserInfo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5397a98a-b63b-46c6-b300-3ff499ee0da5" absoluteBounds="8.64, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c03db79-c340-41f5-881d-0d941af1752c" absoluteBounds="8.375, 6.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/PassportDataContext/SimpleRegUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e24d492-b5b0-49c2-9389-b1d5e095bfae" absoluteBounds="8.39, 7.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

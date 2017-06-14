@@ -1,0 +1,1250 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SPECREPL_replicating" Class="SpecialistDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=apz002;Initial Catalog=SPECREPL_replicating;Persist Security Info=True;User ID=IUser" SettingsObjectName="Specialist.Entities.Properties.Settings" SettingsPropertyName="SPECREPL_replicatingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tCourses" Member="Courses">
+    <Type Name="Course">
+      <Column Name="Course_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ParentCourse_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CourseDirection_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="OurOrg_TC" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="AuthorizationType_TC" Storage="_Vendor_TC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MaxDiscount" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NameOfficial" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NameOfficialEn" Type="System.String" DbType="VarChar(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="WebName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="eLearningName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BaseHours" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="AdditionalHours" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NormNumOfStudents" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MaxNumOfStudents" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsTrack" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsExam" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsNew" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="WebTopic" Type="System.String" DbType="VarChar(300)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsFeedingCourse" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="WebShortName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="AnnounceDescription" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="QualAdv_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsRestrictedSchedule" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="WebSortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Introduction" Type="System.String" CanBeNull="true" />
+      <Column Name="OnComplete" Type="System.String" CanBeNull="true" />
+      <Column Name="IsFreeConsultationExists" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="WebDescription" Member="Description" Type="System.String" CanBeNull="true" />
+      <Column Name="IsProjectAllowed" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="CourseDirectionA_TC" Type="System.String" CanBeNull="false" />
+      <Column Name="WebNameComment" Type="System.String" CanBeNull="true" />
+      <Column Name="WebPublishSchedule" Type="System.Boolean" CanBeNull="true" />
+      <Column Name="IsAllowedHalfCoursePrice" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="IntraExtramuralHours" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="IntraExtramuralHoursOut" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="WebinarEduURL" Type="System.String" CanBeNull="true" />
+      <Column Name="IsNotAuthorized" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="IsTheory" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="IsUnlimitedTraining" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="DiscountWebinar" Type="System.Int16" CanBeNull="true" />
+      <Column Name="ClassRoomType_ID" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="RatingCourse_TC" Type="System.String" CanBeNull="false" />
+      <Association Name="Course_EmployeesCourse" Member="EmployeesCourses" ThisKey="Course_TC" OtherKey="Course_TC" Type="EmployeesCourse" />
+      <Association Name="Course_CourseContent" Member="CourseContents" Storage="_tCourseContents" ThisKey="Course_TC" OtherKey="Course_TC" Type="CourseContent" />
+      <Association Name="Course_Group" Member="Groups" ThisKey="Course_TC" OtherKey="Course_TC" Type="Group" />
+      <Association Name="Course_Track" Member="TrackCourses" Storage="_CourseTracks" ThisKey="Course_TC" OtherKey="Track_TC" Type="Track" />
+      <Association Name="Course_Track1" Member="Tracks" ThisKey="Course_TC" OtherKey="Course_TC" Type="Track" />
+      <Association Name="Course_CourseLanguage" Member="CourseLanguages" ThisKey="Course_TC" OtherKey="Course_TC" Type="CourseLanguage" />
+      <Association Name="Course_CoursePrerequisite" Member="CoursePrerequisites" ThisKey="Course_TC" OtherKey="Course_TC" Type="CoursePrerequisite" />
+      <Association Name="Course_CoursePrerequisite1" Member="RequiredPrerequisites" ThisKey="Course_TC" OtherKey="RequiredCourse_TC" Type="CoursePrerequisite" />
+      <Association Name="Course_CourseCategory" Member="CourseCategories" ThisKey="Course_TC" OtherKey="Course_TC" Type="CourseCategory" />
+      <Association Name="Course_ExamCourse" Member="ExamCourses" ThisKey="Course_TC" OtherKey="Course_TC" Type="ExamCourse" />
+      <Association Name="Course_CoursesChain" Member="CoursesChains" ThisKey="Course_TC" OtherKey="NextCourse_TC" Type="CoursesChain" />
+      <Association Name="Course_CourseCertificate" Member="CourseCertificates" ThisKey="Course_TC" OtherKey="Course_TC" Type="CourseCertificate" />
+      <Association Name="AuthorizationType_Course" Member="AuthorizationType" ThisKey="AuthorizationType_TC" OtherKey="AuthorizationType_TC" Type="AuthorizationType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tEmployeesCourses" Member="EmployeesCourses">
+    <Type Name="EmployeesCourse">
+      <Column Name="EmployeeCourse_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="EmployeeClass" Type="System.Byte" DbType="TinyInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(255)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PublishCourse" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PublishSchedule" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BroadcastingURL" Type="System.String" CanBeNull="true" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="WbnRecLogin" Type="System.String" CanBeNull="true" />
+      <Column Name="WbnRecPwd" Type="System.String" CanBeNull="false" />
+      <Association Name="Employee_EmployeesCourse" Member="Employee" ThisKey="Employee_TC" OtherKey="Employee_TC" Type="Employee" IsForeignKey="true" />
+      <Association Name="Course_EmployeesCourse" Member="Course" ThisKey="Course_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tEmployees" Member="Employees">
+    <Type Name="Employee">
+      <Column Name="Employee_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="EMail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MaxHoursPerMonth" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="EmpGroup_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Probationer" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsStaffer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SiteDescription" Type="System.String" DbType="VarChar(Max)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SiteVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" CanBeNull="true" />
+      <Column Name="LastNameEN" Type="System.String" CanBeNull="true" />
+      <Column Name="FirstNameEN" Type="System.String" CanBeNull="false" />
+      <Association Name="Employee_EmployeesCourse" Member="EmployeesCourses" ThisKey="Employee_TC" OtherKey="Employee_TC" Type="EmployeesCourse" />
+      <Association Name="Employee_Group" Member="Groups" ThisKey="Employee_TC" OtherKey="Teacher_TC" Type="Group" />
+      <Association Name="Employee_Complex" Member="Complexes" ThisKey="Employee_TC" OtherKey="Admin_TC" Type="Complex" />
+      <Association Name="Employee_StudentInGroup" Member="StudentInGroups" ThisKey="Employee_TC" OtherKey="Consultant_TC" Type="StudentInGroup" />
+      <Association Name="Employee_QuestionnaireTeachersMark" Member="QuestionnaireTeachersMarks" ThisKey="Employee_TC" OtherKey="Teacher_TC" Type="QuestionnaireTeachersMark" />
+      <Association Name="Employee_EmployeeContact" Member="EmployeeContacts" ThisKey="Employee_TC" OtherKey="EmployeeFK_TC" Type="EmployeeContact" />
+      <Association Name="Employee_EmployeeCertification" Member="EmployeeCertifications" ThisKey="Employee_TC" OtherKey="EmployeeFK_TC" Type="EmployeeCertification" />
+      <Association Name="EmpGroup_Employee" Member="EmpGroup" ThisKey="EmpGroup_TC" OtherKey="EmpGroup_TC" Type="EmpGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCourseContent" Member="CourseContents">
+    <Type Name="CourseContent">
+      <Column Name="CourseContent_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ModuleNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ModuleName" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Hours" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NumOfLessons" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ModuleDescription" Type="System.String" DbType="VarChar(7000) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Labs" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Course_CourseContent" Member="Course" ThisKey="Course_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tGroups" Member="Groups">
+    <Type Name="Group">
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Color_TC" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="BranchOffice_TC" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Complex_TC" Type="System.String" DbType="VarChar(20)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LectureType_TC" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DayShift_TC" Type="System.String" DbType="VarChar(3)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DateBeg" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TimeBeg" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TimeEnd" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DistDateBeg" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DistDateEnd" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LiteratureSent" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LoginPasswordSent" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Teacher_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ClassRoom_TC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsEmploymentCenter" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ForOvertaking" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SupportingGroup" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsBlazing" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TeacherIsInformed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="GroupIsInformed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Hours" Type="System.Decimal" DbType="Decimal(5,1) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="HoursAdditional" Type="System.Decimal" DbType="Decimal(5,1) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="HoursGiven" Type="System.Decimal" DbType="Decimal(5,1)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NumOfStudents" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MaxNumOfStudents" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DaySequence" Type="System.String" DbType="VarChar(150)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="DaySequence_TC" Type="System.String" DbType="VarChar(3)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(3000)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Sequence_ID" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ForUpdate" Type="System.String" DbType="Char(10)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="BaseGroup_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Curator_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PrintAnnounce" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="WebinarExists" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
+      <Column Name="Discount" Type="System.Int16" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ForWebinarOnly" Type="System.Boolean" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MegaGroup_ID" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="WebinarRecordURL" Type="System.String" CanBeNull="true" />
+      <Column Name="IsFirstTeachersGroup" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="MaxNumOfWebinarists" Type="System.Int16" CanBeNull="true" />
+      <Column Name="IsIntraExtramural" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="WbnRecLogin" Type="System.String" CanBeNull="true" />
+      <Column Name="WbnRecPwd" Type="System.String" CanBeNull="false" />
+      <Column Name="UrlName" Type="System.String" CanBeNull="true" />
+      <Association Name="Group_StudentInGroup" Member="StudentInGroups" ThisKey="Group_ID" OtherKey="Group_ID" Type="StudentInGroup" />
+      <Association Name="Group_Lecture" Member="Lectures" ThisKey="Group_ID" OtherKey="Group_ID" Type="Lecture" />
+      <Association Name="DayShift_Group" Member="DayShift" ThisKey="DayShift_TC" OtherKey="DayShift_TC" Type="DayShift" IsForeignKey="true" />
+      <Association Name="Employee_Group" Member="Teacher" ThisKey="Teacher_TC" OtherKey="Employee_TC" Type="Employee" IsForeignKey="true" />
+      <Association Name="Course_Group" Member="Course" ThisKey="Course_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+      <Association Name="BranchOffice_Group" Member="BranchOffice" ThisKey="BranchOffice_TC" OtherKey="BranchOffice_TC" Type="BranchOffice" IsForeignKey="true" />
+      <Association Name="Complex_Group" Member="Complex" ThisKey="Complex_TC" OtherKey="Complex_TC" Type="Complex" IsForeignKey="true" />
+      <Association Name="GroupsCalc_Group" Member="GroupCalc" ThisKey="Group_ID" OtherKey="Group_ID" Type="GroupsCalc" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tTracks" Member="Tracks">
+    <Type Name="Track">
+      <Column Name="Track_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Track_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CourseAltName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(150)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SortOrder" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IseLearning" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PriceType_TC" Type="System.String" DbType="VarChar(5)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="StudyMonths" Type="System.Byte" DbType="TinyInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PriceWeight" Type="System.Decimal" DbType="Decimal(8,3) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Course_Track" Member="TrackCourse" ThisKey="Track_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+      <Association Name="Course_Track1" Member="Course" ThisKey="Course_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tDayShift" Member="DayShifts">
+    <Type Name="DayShift">
+      <Column Name="DayShift_TC" Type="System.String" DbType="VarChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TimeFrom" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TimeTo" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="DayShift_Group" Member="Groups" ThisKey="DayShift_TC" OtherKey="DayShift_TC" Type="Group" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tLanguages" Member="Languages">
+    <Type Name="Language">
+      <Column Name="Language_TC" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LanguageName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Language_CourseLanguage" Member="CourseLanguages" ThisKey="Language_TC" OtherKey="Language_TC" Type="CourseLanguage" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCountries" Member="Countries">
+    <Type Name="Country">
+      <Column Name="Country_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CountryName" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tSources" Member="Sources">
+    <Type Name="Source">
+      <Column Name="Source_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Source_TC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsVisible4Web" Storage="_Publish" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tPriceLists" Member="PriceLists">
+    <Type Name="PriceList">
+      <Column Name="PriceList_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PriceListDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CourseTextCodeColumnIndex" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="FeedingCost" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="PriceList_PriceList" Member="PriceList1" ThisKey="PriceList_ID" OtherKey="PriceList_ID" Type="PriceList" Cardinality="One" />
+      <Association Name="PriceList_PriceList" Member="tPriceList1" ThisKey="PriceList_ID" OtherKey="PriceList_ID" Type="PriceList" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vCurrentPrices" Member="PriceViews">
+    <Type Name="PriceView">
+      <Column Name="Price_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Track_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="StudyMonths" Type="System.Byte" DbType="TinyInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(33,8)" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsInaccuratePrice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PriceType_TC" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="PriceType_PriceView" Member="PriceType" ThisKey="PriceType_TC" OtherKey="PriceType_TC" Type="PriceType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tBranchOffices" Member="BranchOffices">
+    <Type Name="BranchOffice">
+      <Column Name="BranchOffice_TC" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NotActual" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SortOrder" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SchemeFileName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BranchOffice_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TrueCity_TC" Storage="_City_TC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="BranchOffice_Group" Member="Groups" ThisKey="BranchOffice_TC" OtherKey="BranchOffice_TC" Type="Group" />
+      <Association Name="BranchOffice_Complex" Member="Complexes" ThisKey="BranchOffice_TC" OtherKey="BranchOffice_TC" Type="Complex" />
+      <Association Name="City_BranchOffice" Member="City" ThisKey="TrueCity_TC" OtherKey="City_TC" Type="City" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tComplexes" Member="Complexes">
+    <Type Name="Complex">
+      <Column Name="Complex_TC" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="BranchOffice_TC" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Admin_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsLocalComplex" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="SchemeFileName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsInUse" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Complex_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsPublished" Storage="_PublishInSite" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(5000) " CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="WorkingHours" Type="System.String" DbType="VarChar(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Metro" Type="System.String" CanBeNull="true" />
+      <Column Name="PublicPhone" Type="System.String" CanBeNull="true" />
+      <Association Name="Complex_Group" Member="Groups" ThisKey="Complex_TC" OtherKey="Complex_TC" Type="Group" />
+      <Association Name="Complex_ClassRoom" Member="ClassRooms" ThisKey="Complex_TC" OtherKey="Complex_TC" Type="ClassRoom" />
+      <Association Name="BranchOffice_Complex" Member="BranchOffice" ThisKey="BranchOffice_TC" OtherKey="BranchOffice_TC" Type="BranchOffice" IsForeignKey="true" />
+      <Association Name="Employee_Complex" Member="Admin" ThisKey="Admin_TC" OtherKey="Employee_TC" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCourseLanguages" Member="CourseLanguages">
+    <Type Name="CourseLanguage">
+      <Column Name="CourseLanguage_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Language_TC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Course_CourseLanguage" Member="Course" ThisKey="Course_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+      <Association Name="Language_CourseLanguage" Member="Language" ThisKey="Language_TC" OtherKey="Language_TC" Type="Language" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tAuthorizationTypes" Member="AuthorizationTypes">
+    <Type Name="AuthorizationType">
+      <Column Name="AuthorizationType_TC" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AuthorizationName" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="AuthorizationType_Course" Member="Courses" ThisKey="AuthorizationType_TC" OtherKey="AuthorizationType_TC" Type="Course" />
+      <Association Name="AuthorizationType_Vendor" Member="Vendors" ThisKey="AuthorizationType_TC" OtherKey="AuthorizationType_TC" Type="Vendor" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentsInGroupsCalc" Member="StudentsInGroupsCalcs">
+    <Type Name="StudentsInGroupsCalc">
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PaidSum" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="OurOrg_TC" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Association Name="StudentInGroup_StudentsInGroupsCalc" Member="StudentInGroup" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="StudentInGroup" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentsInGroups" Member="StudentInGroups">
+    <Type Name="StudentInGroup">
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Org_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="StudentContractAppendix_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="OrgContract_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PriceType_TC" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Consultant_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Router_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="BerthType_TC" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ReserveDeadline" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Debt" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Track_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsInformed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsRealized" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsReported" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsReserveProgram" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="OurOrg_TC" Type="System.String" DbType="VarChar(4)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="StudyMonths" Type="System.Byte" DbType="TinyInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="StudentAddress_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="StudentEmail_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Exam_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Exam_Passed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsGivenOriginal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PresentCertNum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CertGiven" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CertGivenDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CertGivenEmployee_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsGivenInvoiceAct" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Mark" Type="System.Decimal" DbType="Decimal(2,1)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsQualificationAdvancement" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="InformedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RoutedDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastTransferDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="QualAdv_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="QualAdv_Number" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastTakenInGroupDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PresenceType_TC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Assistant_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsHungry" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NextContactDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Charge" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ReasonForLearning" Type="System.String" CanBeNull="true" />
+      <Column Name="IsExpressOrder" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="InputSource_TC" Type="System.Char" CanBeNull="false" />
+      <Column Name="SeatNumber" Type="System.Int16" CanBeNull="true" />
+      <Column Name="DiscountMoney" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="OrderPromocode" Type="System.String" CanBeNull="true" />
+      <Column Name="IsEntryTestPassed" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="IsPartialPayment" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="PartialPayment" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="PromoCode" Type="System.String" CanBeNull="true" />
+      <Column Name="CreditRequest_ID" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="FinalExamMark_TC" Type="System.String" CanBeNull="true" />
+      <Column Member="FavoriteTeacher1" Type="System.String" CanBeNull="true" />
+      <Association Name="StudentInGroup_StudentsInGroupsCalc" Member="StudentsInGroupsCalc" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="StudentsInGroupsCalc" Cardinality="One" />
+      <Association Name="StudentInGroup_Questionnaire" Member="Questionnaires" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="Questionnaire" />
+      <Association Name="StudentInGroup_StudentInGroupLecture" Member="StudentInGroupLectures" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="StudentInGroupLecture" />
+      <Association Name="StudentInGroup_StudentInGroupSource" Member="StudentInGroupSources" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="StudentInGroupSource" />
+      <Association Name="StudentInGroup_StudentInGroupExtras" Member="StudentInGroupExtras" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="StudentInGroupExtras" />
+      <Association Name="StudentInGroup_Certificate" Member="Certificates" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="Certificate" />
+      <Association Name="Group_StudentInGroup" Member="Group" ThisKey="Group_ID" OtherKey="Group_ID" Type="Group" IsForeignKey="true" />
+      <Association Name="Employee_StudentInGroup" Member="Consultant" Storage="_Employee" ThisKey="Consultant_TC" OtherKey="Employee_TC" Type="Employee" IsForeignKey="true" />
+      <Association Name="Student_StudentInGroup" Member="Student" ThisKey="Student_ID" OtherKey="Student_ID" Type="Student" IsForeignKey="true" />
+      <Association Name="Exam_StudentInGroup" Member="Exam" ThisKey="Exam_ID" OtherKey="Exam_ID" Type="Exam" IsForeignKey="true" />
+      <Association Name="Org_StudentInGroup" Member="Org" ThisKey="Org_ID" OtherKey="Org_ID" Type="Org" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tVendors" Member="Vendors">
+    <Type Name="Vendor">
+      <Column Name="Vendor_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="AuthorizationType_TC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ForMainPage" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="CertificationDescription" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TestingDescription" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="WebSortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Vendor_Certification" Member="Certifications" ThisKey="Vendor_ID" OtherKey="Vendor_ID" Type="Certification" />
+      <Association Name="Vendor_Exam" Member="Exams" ThisKey="Vendor_ID" OtherKey="Vendor_ID" Type="Exam" />
+      <Association Name="AuthorizationType_Vendor" Member="AuthorizationType" ThisKey="AuthorizationType_TC" OtherKey="AuthorizationType_TC" Type="AuthorizationType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tLectures" Member="Lectures">
+    <Type Name="Lecture">
+      <Column Name="Lecture_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LectureDateBeg" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LectureDateEnd" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Breaks" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Teacher_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ClassRoom_TC" Type="System.String" DbType="VarChar(15)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TrainerComingTime" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsQualityAssurance" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="WebinarURL" Type="System.String" CanBeNull="true" />
+      <Column Name="WebinarLicense_ID" Type="System.Decimal" CanBeNull="true" />
+      <Association Name="Lecture_StudentInGroupLecture" Member="StudentInGroupLectures" ThisKey="Lecture_ID" OtherKey="Lecture_ID" Type="StudentInGroupLecture" />
+      <Association Name="Group_Lecture" Member="Group" ThisKey="Group_ID" OtherKey="Group_ID" Type="Group" IsForeignKey="true" />
+      <Association Name="ClassRoom_Lecture" Member="ClassRoom" ThisKey="ClassRoom_TC" OtherKey="ClassRoom_TC" Type="ClassRoom" IsForeignKey="true" />
+      <Association Name="WebinarLicense_Lecture" Member="WebinarLicense" ThisKey="WebinarLicense_ID" OtherKey="WebinarLicense_ID" Type="WebinarLicense" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCoursePrerequisites" Member="CoursePrerequisites">
+    <Type Name="CoursePrerequisite">
+      <Column Name="CoursePrerequisite_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Text" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RequiredCourse_TC" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Exam_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Test_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Course_CoursePrerequisite" Member="Course" ThisKey="Course_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+      <Association Name="Course_CoursePrerequisite1" Member="RequiredCourse" ThisKey="RequiredCourse_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tGroupsCalc" Member="GroupsCalcs">
+    <Type Name="GroupsCalc">
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NumOfStudents" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="NumOfReserves" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="NumOfWebinarists" Type="System.Int16" CanBeNull="false" />
+      <Association Name="GroupsCalc_Group" Member="Group" ThisKey="Group_ID" OtherKey="Group_ID" Type="Group" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCourseCategories" Member="CourseCategories">
+    <Type Name="CourseCategory">
+      <Column Name="CourseCategory_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Category_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Course_CourseCategory" Member="Course" ThisKey="Course_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tProviders" Member="Providers">
+    <Type Name="Provider">
+      <Column Name="Provider_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" CanBeNull="true" />
+      <Association Name="Provider_ExamProvider" Member="ExamProviders" ThisKey="Provider_ID" OtherKey="Provider_ID" Type="ExamProvider" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCities" Member="Cities">
+    <Type Name="City">
+      <Column Name="City_TC" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CityName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Suffix" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Phones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="City_BranchOffice" Member="BranchOffices" ThisKey="City_TC" OtherKey="TrueCity_TC" Type="BranchOffice" />
+      <Association Name="City_CitiesPriceType" Member="CitiesPriceTypes" ThisKey="City_TC" OtherKey="City_TC" Type="CitiesPriceType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tPriceTypes" Member="PriceTypes">
+    <Type Name="PriceType">
+      <Column Name="PriceType_TC" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LongName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CancelDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="PriceListType_TC" Type="System.Char" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="IsFeeding" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsEWEOnly" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsEWEAvailable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OppositePriceType_TC" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="BasePriceType_TC" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CalcTrackModulePrices" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="IsVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsNotInGroup" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UseInTracksPrice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PriceType_PriceView" Member="PriceViews" ThisKey="PriceType_TC" OtherKey="PriceType_TC" Type="PriceView" />
+      <Association Name="PriceType_CitiesPriceType" Member="CitiesPriceTypes" ThisKey="PriceType_TC" OtherKey="PriceType_TC" Type="CitiesPriceType" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCitiesPriceTypes" Member="CitiesPriceTypes">
+    <Type Name="CitiesPriceType">
+      <Column Name="City_TC" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PriceType_TC" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PriceType_CitiesPriceType" Member="PriceType" ThisKey="PriceType_TC" OtherKey="PriceType_TC" Type="PriceType" IsForeignKey="true" />
+      <Association Name="City_CitiesPriceType" Member="City" ThisKey="City_TC" OtherKey="City_TC" Type="City" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tEmpGroups" Member="EmpGroups">
+    <Type Name="EmpGroup">
+      <Column Name="EmpGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="EmpGroup_TC" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="EmpGroupCaption" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="JobTitle" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="EmpGroup_Employee" Member="Employees" ThisKey="EmpGroup_TC" OtherKey="EmpGroup_TC" Type="Employee" />
+      <Association Name="EmpGroup_DepartmentEmpGroup" Member="DepartmentEmpGroups" ThisKey="EmpGroup_TC" OtherKey="EmpGroup_TC" Type="DepartmentEmpGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tDepartments" Member="Departments">
+    <Type Name="Department">
+      <Column Name="Department_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Department_TC" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DepartmentCaption" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Department_DepartmentEmpGroup" Member="DepartmentEmpGroups" ThisKey="Department_TC" OtherKey="Department_TC" Type="DepartmentEmpGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tDepartments_EmpGroups" Member="DepartmentEmpGroups">
+    <Type Name="DepartmentEmpGroup">
+      <Column Name="Departments_EmpGroups_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Department_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="EmpGroup_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="EmpGroup_DepartmentEmpGroup" Member="EmpGroup" ThisKey="EmpGroup_TC" OtherKey="EmpGroup_TC" Type="EmpGroup" IsForeignKey="true" />
+      <Association Name="Department_DepartmentEmpGroup" Member="Department" ThisKey="Department_TC" OtherKey="Department_TC" Type="Department" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tQuestionnaire" Member="Questionnaires">
+    <Type Name="Questionnaire">
+      <Column Name="Questionnaire_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="QuestionnaireVersion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SkillsLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="SkillsComment" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Column Name="CourseLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="CourseComment" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Column Name="AdministrationLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="AdministrationComment" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Column Name="OrganizingLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="OrganizingComment" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Column Name="ExpectationLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="ExpectationComment" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Column Name="RecommendationMark" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AdministrationMark" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="ManagerMark" Type="System.Decimal" DbType="Decimal(4,2)" CanBeNull="true" />
+      <Column Name="QualityNotes" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="StudentHopes" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="StudentSkills" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Practice" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="Friends" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="FriendsNotes" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ManagerNeededSituation" Type="System.String" DbType="VarChar(700)" CanBeNull="true" />
+      <Column Name="DirectedBy" Type="System.String" DbType="VarChar(700)" CanBeNull="true" />
+      <Column Name="StudentNotes" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="IsCompleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="RecordQualityLetter" Type="System.Char" CanBeNull="true" />
+      <Column Name="RecordQualityComment" Type="System.String" CanBeNull="true" />
+      <Association Name="Questionnaire_QuestionnaireTeachersMark" Member="QuestionnaireTeachersMarks" ThisKey="Questionnaire_ID" OtherKey="Questionnaire_ID" Type="QuestionnaireTeachersMark" />
+      <Association Name="Questionnaire_QuestionnaireClassRoomsMark" Member="QuestionnaireClassRoomsMarks" ThisKey="Questionnaire_ID" OtherKey="Questionnaire_ID" Type="QuestionnaireClassRoomsMark" />
+      <Association Name="StudentInGroup_Questionnaire" Member="StudentInGroup" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="StudentInGroup" IsForeignKey="true" />
+      <Association Name="Student_Questionnaire" Member="Student" ThisKey="Student_ID" OtherKey="Student_ID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tQuestionnaireTeachersMarks" Member="QuestionnaireTeachersMarks">
+    <Type Name="QuestionnaireTeachersMark">
+      <Column Name="QuestionnaireTeacherMark_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Questionnaire_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Teacher_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TeacherLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Questionnaire_QuestionnaireTeachersMark" Member="Questionnaire" ThisKey="Questionnaire_ID" OtherKey="Questionnaire_ID" Type="Questionnaire" IsForeignKey="true" />
+      <Association Name="Employee_QuestionnaireTeachersMark" Member="Teacher" Storage="_Employee" ThisKey="Teacher_TC" OtherKey="Employee_TC" Type="Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCurrency" Member="Currencies">
+    <Type Name="Currency">
+      <Column Name="CurrencyType_TC" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FiscalDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Rate" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tPaymentTypes" Member="PaymentTypes">
+    <Type Name="PaymentType">
+      <Column Name="PaymentType_TC" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudents" Member="Students">
+    <Type Name="Student">
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Sex" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="WebStudent_ID" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="WebLogin" Type="System.String" DbType="VarChar(320)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="WebKeyword" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="BCTC_Student_ID" Type="System.Int64" DbType="BigInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingType_TC" Type="System.String" DbType="VarChar(4)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingSite" Type="System.String" DbType="VarChar(100)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingRegDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingUpdateDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingDateBeg" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingDateEnd" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingHttpEnabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingFtpEnabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="HostingStatus_ID" Type="System.Byte" DbType="TinyInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Nonresident" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsGivenConsent" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ConsentCancelDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Terrain_ID" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="Country_ID" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="Branch_ID" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="Metier_ID" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" CanBeNull="true" />
+      <Column Name="LastNameEn" Type="System.String" CanBeNull="true" />
+      <Column Name="FirstNameEn" Type="System.String" CanBeNull="true" />
+      <Column Name="MiddleNameEn" Type="System.String" CanBeNull="true" />
+      <Association Name="Student_StudentInGroup" Member="StudentInGroups" ThisKey="Student_ID" OtherKey="Student_ID" Type="StudentInGroup" />
+      <Association Name="Student_Questionnaire" Member="Questionnaires" ThisKey="Student_ID" OtherKey="Student_ID" Type="Questionnaire" />
+      <Association Name="Student_StudentEmail" Member="StudentEmails" ThisKey="Student_ID" OtherKey="Student_ID" Type="StudentEmail" />
+      <Association Name="Student_StudentPhone" Member="StudentPhones" ThisKey="Student_ID" OtherKey="Student_ID" Type="StudentPhone" />
+      <Association Name="Student_StudentCalc" Member="StudentCalc" ThisKey="Student_ID" OtherKey="Student_ID" Type="StudentCalc" Cardinality="One" />
+      <Association Name="Student_StudentRating" Member="StudentRatings" ThisKey="Student_ID" OtherKey="Student_ID" Type="StudentRating" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tClassRooms" Member="ClassRooms">
+    <Type Name="ClassRoom">
+      <Column Name="ClassRoom_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ClassRoom_TC" Type="System.String" DbType="VarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Complex_TC" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(250)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NotesTech" Type="System.String" DbType="VarChar(250)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="NormNumOfStudents" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MaxNumOfStudents" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsInUse" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ReportsClassRoomSortOrder" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="ClassRoom_Lecture" Member="Lectures" ThisKey="ClassRoom_TC" OtherKey="ClassRoom_TC" Type="Lecture" />
+      <Association Name="Complex_ClassRoom" Member="Complex" ThisKey="Complex_TC" OtherKey="Complex_TC" Type="Complex" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentInGroupLectures" Member="StudentInGroupLectures">
+    <Type Name="StudentInGroupLecture">
+      <Column Name="StudentInGroupLecture_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Lecture_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Truancy" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Lateness" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Departure" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Mark" Type="System.Decimal" DbType="Decimal(2,1)" CanBeNull="true" />
+      <Column Name="IsRecognized" Type="System.Boolean" CanBeNull="true" />
+      <Association Name="StudentInGroup_StudentInGroupLecture" Member="StudentInGroup" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="StudentInGroup" IsForeignKey="true" />
+      <Association Name="Lecture_StudentInGroupLecture" Member="Lecture" ThisKey="Lecture_ID" OtherKey="Lecture_ID" Type="Lecture" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCertifications" Member="Certifications">
+    <Type Name="Certification">
+      <Column Name="Certification_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Certification_Name" Member="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Vendor_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsStatus" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" CanBeNull="false" />
+      <Association Name="Certification_EmployeeCertification" Member="EmployeeCertifications" ThisKey="Certification_ID" OtherKey="Certification_ID" Type="EmployeeCertification" />
+      <Association Name="Certification_CertificationExam" Member="CertificationExams" ThisKey="Certification_ID" OtherKey="Certification_ID" Type="CertificationExam" />
+      <Association Name="Certification_CertificationTable" Member="CertificationTables" ThisKey="Certification_ID" OtherKey="Certification_ID" Type="CertificationTable" />
+      <Association Name="Certification_CertificationVariant" Member="CertificationVariants" ThisKey="Certification_ID" OtherKey="Certification_ID" Type="CertificationVariant" />
+      <Association Name="Vendor_Certification" Member="Vendor" ThisKey="Vendor_ID" OtherKey="Vendor_ID" Type="Vendor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tExams" Member="Exams">
+    <Type Name="Exam">
+      <Column Name="Exam_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Exam_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ExamName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Available" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ExamType" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Languages" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Minutes" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Vendor_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ExamPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DatePublished" Type="System.DateTime" CanBeNull="true" />
+      <Column Name="DateClosed" Type="System.DateTime" CanBeNull="true" />
+      <Column Name="NumberOfQuestions" Type="System.String" CanBeNull="true" />
+      <Column Name="ProviderPrice" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="LastChangeDate" Type="System.DateTime" CanBeNull="false" />
+      <Column Name="AdditionalInfo" Type="System.String" CanBeNull="true" />
+      <Association Name="Exam_StudentInGroup" Member="StudentInGroups" ThisKey="Exam_ID" OtherKey="Exam_ID" Type="StudentInGroup" />
+      <Association Name="Exam_ExamProvider" Member="ExamProviders" ThisKey="Exam_ID" OtherKey="Exam_ID" Type="ExamProvider" />
+      <Association Name="Exam_ExamCourse" Member="ExamCourses" ThisKey="Exam_ID" OtherKey="Exam_ID" Type="ExamCourse" />
+      <Association Name="Exam_CertificationExam" Member="CertificationExams" ThisKey="Exam_ID" OtherKey="Exam_ID" Type="CertificationExam" />
+      <Association Name="Vendor_Exam" Member="Vendor" ThisKey="Vendor_ID" OtherKey="Vendor_ID" Type="Vendor" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tExamProviders" Member="ExamProviders">
+    <Type Name="ExamProvider">
+      <Column Name="ExamProvider_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Exam_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Provider_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Provider_ExamProvider" Member="Provider" ThisKey="Provider_ID" OtherKey="Provider_ID" Type="Provider" IsForeignKey="true" />
+      <Association Name="Exam_ExamProvider" Member="Exam" ThisKey="Exam_ID" OtherKey="Exam_ID" Type="Exam" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tExamCourses" Member="ExamCourses">
+    <Type Name="ExamCourse">
+      <Column Name="ExamCourse_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Exam_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Exam_ExamCourse" Member="Exam" ThisKey="Exam_ID" OtherKey="Exam_ID" Type="Exam" IsForeignKey="true" />
+      <Association Name="Course_ExamCourse" Member="Course" ThisKey="Course_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tContactTypes" Member="ContactTypes">
+    <Type Name="ContactType">
+      <Column Name="ContactType_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ContactType" Member="Name" Storage="_ContactType" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="ContactType_EmployeeContact" Member="EmployeeContacts" ThisKey="ContactType_ID" OtherKey="ContactType_ID" Type="EmployeeContact" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tEmployeeContacts" Member="EmployeeContacts">
+    <Type Name="EmployeeContact">
+      <Column Name="EmployeeContact_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeFK_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactType_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactValue" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="Employee_EmployeeContact" Member="Employee" ThisKey="EmployeeFK_TC" OtherKey="Employee_TC" Type="Employee" IsForeignKey="true" />
+      <Association Name="ContactType_EmployeeContact" Member="ContactType" ThisKey="ContactType_ID" OtherKey="ContactType_ID" Type="ContactType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tEmployeeCertifications" Member="EmployeeCertifications">
+    <Type Name="EmployeeCertification">
+      <Column Name="EmployeeCertification_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeFK_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Certification_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" CanBeNull="false" />
+      <Association Name="Employee_EmployeeCertification" Member="Employee" ThisKey="EmployeeFK_TC" OtherKey="Employee_TC" Type="Employee" IsForeignKey="true" />
+      <Association Name="Certification_EmployeeCertification" Member="Certification" ThisKey="Certification_ID" OtherKey="Certification_ID" Type="Certification" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCoursesChains" Member="CoursesChains">
+    <Type Name="CoursesChain">
+      <Column Name="CourseChain_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NextCourse_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Course_CoursesChain" Member="NextCourse" ThisKey="NextCourse_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCertTypes" Member="CertTypes">
+    <Type Name="CertType">
+      <Column Name="CertType_TC" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CertTypeName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="IsVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="CertType_CourseCertificate" Member="CourseCertificates" ThisKey="CertType_TC" OtherKey="CertType_TC" Type="CourseCertificate" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCourseCertificates" Member="CourseCertificates">
+    <Type Name="CourseCertificate">
+      <Column Name="CourseCertificate_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CertType_TC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="CertType_CourseCertificate" Member="CertType" ThisKey="CertType_TC" OtherKey="CertType_TC" Type="CertType" IsForeignKey="true" />
+      <Association Name="Course_CourseCertificate" Member="Course" ThisKey="Course_TC" OtherKey="Course_TC" Type="Course" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCertificationExams" Member="CertificationExams">
+    <Type Name="CertificationExam">
+      <Column Name="CertificationExam_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Certification_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Exam_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="IsRequired" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CertificationExamsSet" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="CertificationVariant_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CertificationTable_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="CertificationTable_CertificationExam" Member="CertificationTable" ThisKey="CertificationTable_ID" OtherKey="CertificationTable_ID" Type="CertificationTable" IsForeignKey="true" />
+      <Association Name="CertificationVariant_CertificationExam" Member="CertificationVariant" ThisKey="CertificationVariant_ID" OtherKey="CertificationVariant_ID" Type="CertificationVariant" IsForeignKey="true" />
+      <Association Name="Certification_CertificationExam" Member="Certification" ThisKey="Certification_ID" OtherKey="Certification_ID" Type="Certification" IsForeignKey="true" />
+      <Association Name="Exam_CertificationExam" Member="Exam" ThisKey="Exam_ID" OtherKey="Exam_ID" Type="Exam" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCertificationTables" Member="CertificationTables">
+    <Type Name="CertificationTable">
+      <Column Name="CertificationTable_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Certification_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="CertificationTable_CertificationExam" Member="CertificationExams" ThisKey="CertificationTable_ID" OtherKey="CertificationTable_ID" Type="CertificationExam" />
+      <Association Name="Certification_CertificationTable" Member="Certification" ThisKey="Certification_ID" OtherKey="Certification_ID" Type="Certification" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCertificationVariants" Member="CertificationVariants">
+    <Type Name="CertificationVariant">
+      <Column Name="CertificationVariant_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Certification_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="CertificationVariant_CertificationExam" Member="CertificationExams" ThisKey="CertificationVariant_ID" OtherKey="CertificationVariant_ID" Type="CertificationExam" />
+      <Association Name="Certification_CertificationVariant" Member="Certification" ThisKey="Certification_ID" OtherKey="Certification_ID" Type="Certification" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentEmails" Member="StudentEmails">
+    <Type Name="StudentEmail">
+      <Column Name="StudentEmail_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NoSpam" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="NotActual" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="Student_StudentEmail" Member="Student" ThisKey="Student_ID" OtherKey="Student_ID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentPhones" Member="StudentPhones">
+    <Type Name="StudentPhone">
+      <Column Name="StudentPhone_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneType_TC" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="IsFax" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="DigitPhoneNumber" Type="System.String" DbType="VarChar(150)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Student_StudentPhone" Member="Student" ThisKey="Student_ID" OtherKey="Student_ID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentInGroupSources" Member="StudentInGroupSources">
+    <Type Name="StudentInGroupSource">
+      <Column Name="StudentInGroupSource_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Source_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="IsPrimarySource" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="StudentInGroup_StudentInGroupSource" Member="StudentInGroup" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="StudentInGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tOurOrgBanks" Member="OurOrgBanks">
+    <Type Name="OurOrgBank">
+      <Column Name="OurOrgBank_ID" Type="System.Byte" DbType="TinyInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OurOrg_TC" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="BankSortOrder" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SettlementAccount" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CorrespondentAccount" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BIK" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Visible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsUsedForSBReceipt" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="BankMainName" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="BankDepartment" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tProfessions" Member="Professions">
+    <Type Name="Profession">
+      <Column Name="Profession_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Industry_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfessionName" Member="Name" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="UrlName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(3000)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Salary" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="ForMainPage" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="WebSortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SuperJobID" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tExtras" Member="Extras">
+    <Type Name="Extras">
+      <Column Name="Extras_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ExtrasName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="ExtrasPriceType_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CurrentPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CalkCoeffCert" Type="System.Decimal" DbType="Decimal(8,3)" CanBeNull="true" />
+      <Column Name="IsVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentInGroupExtras" Member="StudentInGroupExtras">
+    <Type Name="StudentInGroupExtras">
+      <Column Name="StudentInGroupExtras_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Extras_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SIGExtraNote" Type="System.String" DbType="VarChar(500)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="AgreedPrice" Type="System.Decimal" DbType="Money" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="StudentInGroup_StudentInGroupExtras" Member="StudentInGroup" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="StudentInGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCertificates" Member="Certificates">
+    <Type Name="Certificate">
+      <Column Name="Certificate_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseFullName" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="DateBeg" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="FullNumber" Type="System.String" DbType="VarChar(23)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Hours" Type="System.Decimal" CanBeNull="false" />
+      <Column Name="OurOrg_TC" Type="System.String" CanBeNull="false" />
+      <Column Name="ForPrint" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="CertType_TC" Type="System.String" CanBeNull="true" />
+      <Association Name="StudentInGroup_Certificate" Member="StudentInGroup" ThisKey="StudentInGroup_ID" OtherKey="StudentInGroup_ID" Type="StudentInGroup" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentNotes" Member="StudentNotes">
+    <Type Name="StudentNote">
+      <Column Name="StudentNote_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(2000) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudyReasons" Member="StudyReasons">
+    <Type Name="StudyReason">
+      <Column Name="Reason_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentsCalc" Member="StudentCalcs">
+    <Type Name="StudentCalc">
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ВestClabCard_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="CoursesScore" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FriendsScore" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ClabCardScore" Type="System.Decimal" DbType="Decimal(11,2)" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Student_StudentCalc" Member="Student" ThisKey="Student_ID" OtherKey="Student_ID" Type="Student" IsForeignKey="true" />
+      <Association Name="StudentClabCard_StudentCalc" Member="StudentClabCard" ThisKey="ВestClabCard_ID" OtherKey="StudentClabCard_ID" Type="StudentClabCard" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentClabCards" Member="StudentClabCards">
+    <Type Name="StudentClabCard">
+      <Column Name="StudentClabCard_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ClabCardColor_TC" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ClabCardNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FullNumber" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="IssuedDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="StudentClabCard_StudentCalc" Member="StudentCalc" ThisKey="StudentClabCard_ID" OtherKey="ВestClabCard_ID" Type="StudentCalc" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tClabCardColors" Member="ClabCardColors">
+    <Type Name="ClabCardColor">
+      <Column Name="ClabCardColor_TC" Type="System.String" DbType="VarChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ColorName" Member="Name" Storage="_ColorName" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tOrgs" Member="SpecOrgs">
+    <Type Name="SpecOrg">
+      <Column Name="Org_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Manager_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="ContractNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContractDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Field_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Owner_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="PartnerType_TC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="WebKeyword" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tTerrains" Member="Terrains">
+    <Type Name="Terrain">
+      <Column Name="Terrain_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Country_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Region_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TerrainName" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tSIGEvents" Member="SigEvents">
+    <Type Name="SigEvent">
+      <Column Name="SIGEvent_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="StudentInGroup_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Event_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="EventDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="PostalTrackingNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="EventNotes" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tOurOrgs" Member="OurOrgs">
+    <Type Name="OurOrg">
+      <Column Name="OurOrg_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OurOrg_TC" Type="System.String" DbType="VarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ShortName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="FullNameCase6" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="INN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="KPP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LegalAddress" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="PhysicalAddress" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="OKVED" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="OKPO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LicenceNumber" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VeryLongName" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Boss_TC" Type="System.String" CanBeNull="true" />
+      <Column Name="ChiefAccountant_TC" Type="System.String" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tExtrasCourses" Member="ExtrasCourses">
+    <Type Name="ExtrasCourse">
+      <Column Name="ExtrasCourses_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Extras_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCourseGiveOutItems" Member="CourseGiveOutItems">
+    <Type Name="CourseGiveOutItem">
+      <Column Name="CourseGiveOutItem_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemDescription" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="IsVisibleOnWeb" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ItemType_TC" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="ItemNotes" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Nomenclature" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" CanBeNull="false" />
+      <Association Name="CourseGiveOutItem_CoursesCourseGiveOutItem" Member="CoursesCourseGiveOutItems" ThisKey="CourseGiveOutItem_ID" OtherKey="CourseGiveOutItem_ID" Type="CoursesCourseGiveOutItem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCoursesCourseGiveOutItems" Member="CoursesCourseGiveOutItems">
+    <Type Name="CoursesCourseGiveOutItem">
+      <Column Name="CoursesCourseGiveOutItems_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseGiveOutItem_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="IsNotDigital" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="CourseGiveOutItem_CoursesCourseGiveOutItem" Member="CourseGiveOutItem" ThisKey="CourseGiveOutItem_ID" OtherKey="CourseGiveOutItem_ID" Type="CourseGiveOutItem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tWebinarLicenses" Member="WebinarLicenses">
+    <Type Name="WebinarLicense">
+      <Column Name="WebinarLicense_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LicenseLogin" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="LicensePassword" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="WebinarLicense_Lecture" Member="Lectures" ThisKey="WebinarLicense_ID" OtherKey="WebinarLicense_ID" Type="Lecture" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tEmployeesAbsences" Member="EmployeesAbsences">
+    <Type Name="EmployeesAbsence">
+      <Column Name="EmployeeAbsence_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsRestriction" Type="System.Boolean" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tEmployeesCurators" Member="EmployeesCurators">
+    <Type Name="EmployeesCurator">
+      <Column Name="EmployeeСurator_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Emp_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Сurator_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="DateTo" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tWorkBranches" Member="WorkBranches">
+    <Type Name="WorkBranch">
+      <Column Name="Branch_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BranchName" Type="System.String" DbType="VarChar(3000) NOT NULL" CanBeNull="false" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tMetiers" Member="Metiers">
+    <Type Name="Metier">
+      <Column Name="Metier_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Branch_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MetierName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCourseFiles" Member="SpecCourseFiles">
+    <Type Name="SpecCourseFile">
+      <Column Name="CourseFile_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Course_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FileName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="FileURL" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tQuestionnaireClassRoomsMarks" Member="QuestionnaireClassRoomsMarks">
+    <Type Name="QuestionnaireClassRoomsMark">
+      <Column Name="QuestionnaireClassRoomMark_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Questionnaire_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoom_TC" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="ClassRoomLetter" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Association Name="Questionnaire_QuestionnaireClassRoomsMark" Member="Questionnaire" ThisKey="Questionnaire_ID" OtherKey="Questionnaire_ID" Type="Questionnaire" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tOrgs" Member="Orgs">
+    <Type Name="Org">
+      <Column Name="Org_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Association Name="Org_StudentInGroup" Member="StudentInGroups" ThisKey="Org_ID" OtherKey="Org_ID" Type="StudentInGroup" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCalendar" Member="Calendars">
+    <Type Name="Calendar">
+      <Column Name="DateValue" Type="System.DateTime" DbType="SmallDateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="WorkDay" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tStudentRatings" Member="StudentRatings">
+    <Type Name="StudentRating">
+      <Column Name="StudentRating_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseDirection_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="CoursesSUM" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="CourseDateEnd" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Rating" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TopX" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Org_ID" Type="System.Decimal" CanBeNull="true" />
+      <Association Name="Student_StudentRating" Member="Student" ThisKey="Student_ID" OtherKey="Student_ID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tPromoCodes" Member="SpecPromoCodes">
+    <Type Name="SpecPromoCode">
+      <Column Name="PromoCode_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PromoCode" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ValidBeg" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ValidEnd" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DiscountPerc" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="DiscountRub" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="IsSumOtherDiscounts" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MaxSizeDiscountPerc" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Association Name="SpecPromoCode_SpecPromoCodeCoursesDirection" Member="SpecPromoCodeCoursesDirections" ThisKey="PromoCode_ID" OtherKey="PromoCode_ID" Type="SpecPromoCodeCoursesDirection" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tCourseDirectionsA" Member="CourseDirectionsAs">
+    <Type Name="CourseDirectionsA">
+      <Column Name="CourseDirectionA_TC" Type="System.String" DbType="VarChar(7) NOT NULL" IsPrimaryKey="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DirectionAName" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SortOrder" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DontShow" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tPromoCodeCoursesDirections" Member="SpecPromoCodeCoursesDirections">
+    <Type Name="SpecPromoCodeCoursesDirection">
+      <Column Name="PromoCodeCoursesDirections_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PromoCode_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="PromoCodeType_TC" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="CourseDirectionCourse_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Association Name="SpecPromoCode_SpecPromoCodeCoursesDirection" Member="SpecPromoCode" ThisKey="PromoCode_ID" OtherKey="PromoCode_ID" Type="SpecPromoCode" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tRatingSubtotals" Member="RatingSubtotals">
+    <Type Name="RatingSubtotal">
+      <Column Name="RatingSubtotal_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RatingYear" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="RatingMonth" Type="System.Decimal" DbType="Decimal(2,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Teacher_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="RatingCourse_TC" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Score" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+      <Column Name="LastChangeDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{19383E60-91D3-431B-8870-5456C67EE86D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Specialist.Entities</RootNamespace>
+    <AssemblyName>Specialist.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Linq">
+      <HintPath>..\..\Dependencies\Microsoft.Linq\Microsoft.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Dependencies\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils.FluentAttributes">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.FluentAttributes.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Catalog\Announcement\Announce.cs" />
+    <Compile Include="Catalog\Const\AuthorizationTypes.cs" />
+    <Compile Include="Catalog\Const\CommonConst.cs" />
+    <Compile Include="Catalog\Const\Category.cs" />
+    <Compile Include="Catalog\Const\Certificate.cs" />
+    <Compile Include="Catalog\Const\CourseDirections.cs" />
+    <Compile Include="Catalog\Const\CourseUrls.cs" />
+    <Compile Include="Catalog\Const\Exams.cs" />
+    <Compile Include="Catalog\Const\Sections.cs" />
+    <Compile Include="Catalog\Const\CourseTC.cs" />
+    <Compile Include="Catalog\Const\UrlName.cs" />
+    <Compile Include="Catalog\Const\Vendors.cs" />
+    <Compile Include="Catalog\Const\VideoCategories.cs" />
+    <Compile Include="Catalog\CourseStatistics.cs" />
+    <Compile Include="Catalog\GroupsForMainVM.cs" />
+    <Compile Include="Catalog\Links\CourseLink.cs" />
+    <Compile Include="Catalog\Links\EmployeeLink.cs" />
+    <Compile Include="Catalog\Links\Interfaces\ICourseLink.cs" />
+    <Compile Include="Catalog\Links\Interfaces\IEmployeeLink.cs" />
+    <Compile Include="Catalog\ViewModel\AddSeminarVM.cs" />
+    <Compile Include="Catalog\ViewModel\CourseSocialLinkVM.cs" />
+    <Compile Include="Catalog\ViewModel\ElearningCourse.cs" />
+    <Compile Include="Catalog\ViewModel\MainTrainersVM.cs" />
+    <Compile Include="Catalog\ViewModel\SeminalCompleteVM.cs" />
+    <Compile Include="Catalog\ViewModel\NearestGroupsVM.cs" />
+    <Compile Include="Catalog\ViewModel\TrackListVM.cs" />
+    <Compile Include="Catalog\ViewModel\WebinarRecord.cs" />
+    <Compile Include="Center\Const\CertTypes.cs" />
+    <Compile Include="Center\Const\ClassRoomTypes.cs" />
+    <Compile Include="Center\Const\Departments.cs" />
+    <Compile Include="Center\Const\Employees.cs" />
+    <Compile Include="Center\Const\GiveOutItemTypes.cs" />
+    <Compile Include="Center\Const\InputSources.cs" />
+    <Compile Include="Center\Const\OurOrgs.cs" />
+    <Compile Include="Center\Const\Students.cs" />
+    <Compile Include="Center\Const\TeacherRatings.cs" />
+    <Compile Include="Center\ViewModel\Clients\LetterVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\OrgResponseVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\RequestForWebinarVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\ResumeVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\SearchResumeVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\SearchUserVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\SearchVacancyVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\UserWorksVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\VacanciesVM.cs" />
+    <Compile Include="Center\ViewModel\ContactBlockVM.cs" />
+    <Compile Include="Center\ViewModel\Content\AdviceVM.cs" />
+    <Compile Include="Center\ViewModel\Content\AdviceListVM.cs" />
+    <Compile Include="Center\ViewModel\Content\AllNewsVM.cs" />
+    <Compile Include="Center\ViewModel\Content\NewsBlockVM.cs" />
+    <Compile Include="Center\ViewModel\Content\RelationNewsVM.cs" />
+    <Compile Include="Center\ViewModel\Content\PollListVM.cs" />
+    <Compile Include="Center\ViewModel\Employees\AboutTrainerVM.cs" />
+    <Compile Include="Center\ViewModel\Location\ComplexVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\CorporateClientsVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\PrivatePersonVM.cs" />
+    <Compile Include="Center\ViewModel\Clients\SuccessStoryVM.cs" />
+    <Compile Include="Center\ViewModel\Content\VacancyVM.cs" />
+    <Compile Include="Center\ViewModel\Employees\TrainerCoursesVM.cs" />
+    <Compile Include="Center\ViewModel\Employees\TrainerGroupsVM.cs" />
+    <Compile Include="Center\ViewModel\Content\VacancyListVM.cs" />
+    <Compile Include="Center\ViewModel\MarketingActions\MarketingActionVM.cs" />
+    <Compile Include="Center\ViewModel\MarketingActions\ReserveVM.cs" />
+    <Compile Include="Center\ViewModel\MarketingActions\UsefulInformationVM.cs" />
+    <Compile Include="Cms\MarketingActionType.cs" />
+    <Compile Include="Cms\RawQuestionnaireType.cs" />
+    <Compile Include="Cms\Const\CenterVacancyType.cs" />
+    <Compile Include="Common\CommonVM.cs" />
+    <Compile Include="Common\Const\HtmlBlocks.cs" />
+    <Compile Include="Common\Const\MailTemplates.cs" />
+    <Compile Include="Common\Const\SimplePageConst.cs" />
+    <Compile Include="Common\Const\SimpleValues.cs" />
+    <Compile Include="Common\Interface\IEntityCommonInfo.cs" />
+    <Compile Include="Catalog\MainPageVM.cs" />
+    <Compile Include="Catalog\GroupSeminar.cs" />
+    <Compile Include="Catalog\ViewModel\CourseList\AllCourseListVM.cs" />
+    <Compile Include="Catalog\ViewModel\CourseList\CourseListItem.cs" />
+    <Compile Include="Common\DefaultEntityCommonInfo.cs" />
+    <Compile Include="Common\Interface\IForMainPage.cs" />
+    <Compile Include="Common\Interface\IViewModel.cs" />
+    <Compile Include="Common\Logic\TextWithMenu.cs" />
+    <Compile Include="Common\Logic\SubSectionWithNote.cs" />
+    <Compile Include="Common\MetaData\WorkBranchMD.cs" />
+    <Compile Include="Common\UserWorks.cs" />
+    <Compile Include="Common\ViewModel\EntityCommonVM.cs" />
+    <Compile Include="Catalog\ViewModel\MainCoursesVM.cs" />
+    <Compile Include="Catalog\ViewModel\SectionVM.cs" />
+    <Compile Include="Catalog\ViewModel\SeminarListVM.cs" />
+    <Compile Include="Catalog\ViewModel\TrackDiscount.cs" />
+    <Compile Include="Center\Const\EmpGroups.cs" />
+    <Compile Include="Center\Logic\ResponseRating.cs" />
+    <Compile Include="Center\ViewModel\Location\CityVM.cs" />
+    <Compile Include="Center\ViewModel\Content\NewsListVM.cs" />
+    <Compile Include="Center\ViewModel\Content\NewsVM.cs" />
+    <Compile Include="Center\ViewModel\Employees\EmployeeVM.cs" />
+    <Compile Include="Cms\Const\SimplePages.cs" />
+    <Compile Include="Cms\NewsType.cs" />
+    <Compile Include="Cms\ObjectExtension.cs" />
+    <Compile Include="Cms\Response.cs" />
+    <Compile Include="Cms\UserMessage.cs" />
+    <Compile Include="Common\MetaData\CountryMD.cs" />
+    <Compile Include="Common\MetaData\SourceMD.cs" />
+    <Compile Include="Common\ViewModel\EntityWithSubEntityVM.cs" />
+    <Compile Include="Common\ViewModel\ExpressOrderVM.cs" />
+    <Compile Include="Common\ViewModel\OnLineVM.cs" />
+    <Compile Include="Common\ViewModel\PollVM.cs" />
+    <Compile Include="Common\ViewModel\SendMessageVM.cs" />
+    <Compile Include="Common\ViewModel\SimplePageVM.cs" />
+    <Compile Include="Common\ViewModel\SubSectionsWithNoteVM.cs" />
+    <Compile Include="Common\WeekDay.cs" />
+    <Compile Include="Const\Attendance.cs" />
+    <Compile Include="Const\Banners.cs" />
+    <Compile Include="Const\BeelineIpList.cs" />
+    <Compile Include="Const\ClabCardColors.cs" />
+    <Compile Include="Const\CommonTexts.cs" />
+    <Compile Include="Const\Companies.cs" />
+    <Compile Include="Const\Countries.cs" />
+    <Compile Include="Const\GroupListSortTypes.cs" />
+    <Compile Include="Const\PersonCategories.cs" />
+    <Compile Include="Const\Polls.cs" />
+    <Compile Include="Const\TopSearch.cs" />
+    <Compile Include="Context\Advice.cs" />
+    <Compile Include="Context\CertType.cs" />
+    <Compile Include="Context\City.cs" />
+    <Compile Include="Context\Competition.cs" />
+    <Compile Include="Context\Complex.cs" />
+    <Compile Include="Context\Extras.cs" />
+    <Compile Include="Context\HtmlBlock.cs" />
+    <Compile Include="Context\StudentInGroup.cs" />
+    <Compile Include="Context\StudentInGroupLecture.cs" />
+    <Compile Include="Context\UserFile.cs" />
+    <Compile Include="Context\UserWork.cs" />
+    <Compile Include="Context\OrderExtras.cs" />
+    <Compile Include="Context\OurOrgBank.cs" />
+    <Compile Include="Context\MarketingAction.cs" />
+    <Compile Include="Context\PageMeta.cs" />
+    <Compile Include="Context\Provider.cs" />
+    <Compile Include="Context\SpecialistDataContext.cs" />
+    <Compile Include="Context\SpecialistWeb.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecialistWeb.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\UsefulInformation.cs" />
+    <Compile Include="Context\MessageSection.cs" />
+    <Compile Include="Context\News.cs" />
+    <Compile Include="Context\Profession.cs" />
+    <Compile Include="Context\RawQuestionnaire.cs" />
+    <Compile Include="Context\SimplePage.cs" />
+    <Compile Include="Context\SiteTerm.cs" />
+    <Compile Include="Context\Student.cs" />
+    <Compile Include="Context\SuccessStory.cs" />
+    <Compile Include="Context\Vacancy.cs" />
+    <Compile Include="Context\Video.cs" />
+    <Compile Include="Education\CourseFileVM.cs" />
+    <Compile Include="Education\Lecture.cs" />
+    <Compile Include="Education\MetaData\DayShiftMD.cs" />
+    <Compile Include="Education\ViewModel\ConsultationListVM.cs" />
+    <Compile Include="Education\ViewModel\GroupForumVM.cs" />
+    <Compile Include="Education\ViewModel\GroupVideosVM.cs" />
+    <Compile Include="Education\ViewModel\GroupVM.cs" />
+    <Compile Include="Examination\Const\Providers.cs" />
+    <Compile Include="Examination\ViewModel\ProviderVM.cs" />
+    <Compile Include="Examination\ViewModel\ExamListVM.cs" />
+    <Compile Include="Lms\Const\FinalExamMarks.cs" />
+    <Compile Include="Lms\LectureQuestionnaireLetter.cs" />
+    <Compile Include="Lms\LmsLecture.cs" />
+    <Compile Include="Lms\LmsStudentNote.cs" />
+    <Compile Include="Lms\Pioneer.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pioneer.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Lms\PiStudentInGroupLecture.cs" />
+    <Compile Include="Lms\TestMethodType.cs" />
+    <Compile Include="Message\ViewModel\AddMessageVM.cs" />
+    <Compile Include="Message\ViewModel\AddAnswerVM.cs" />
+    <Compile Include="Message\ViewModel\CreateMessageVM.cs" />
+    <Compile Include="Message\ViewModel\SectionMessageListVM.cs" />
+    <Compile Include="Message\ViewModel\MessageVM.cs" />
+    <Compile Include="Message\ViewModel\SectionListVM.cs" />
+    <Compile Include="Message\ViewModel\NewMessageVM.cs" />
+    <Compile Include="Order\Const\Discounts.cs" />
+    <Compile Include="Order\Const\EducDocTypes.cs" />
+    <Compile Include="Order\Const\Extrases.cs" />
+    <Compile Include="Order\Const\ExtrasPriceTypes.cs" />
+    <Compile Include="Order\Const\Groups.cs" />
+    <Compile Include="Order\Const\LearningReasons.cs" />
+    <Compile Include="Order\Const\OrderCustomerType.cs" />
+    <Compile Include="Const\MarketingActions.cs" />
+    <Compile Include="Common\Metro.cs" />
+    <Compile Include="Const\Sex.cs" />
+    <Compile Include="Context\DataContextExtension.cs" />
+    <Compile Include="Context\DayShift.cs" />
+    <Compile Include="Context\Discount.cs" />
+    <Compile Include="Context\Employee.cs" />
+    <Compile Include="Context\Section.cs" />
+    <Compile Include="Context\SiteObject.cs" />
+    <Compile Include="Cms\SiteObjectType.cs" />
+    <Compile Include="Center\Const\Cities.cs" />
+    <Compile Include="Education\Const\Colors.cs" />
+    <Compile Include="Education\Const\DaySequences.cs" />
+    <Compile Include="Education\Const\DayShifts.cs" />
+    <Compile Include="Education\Const\LectureTypes.cs" />
+    <Compile Include="Const\PrerequisiteString.cs" />
+    <Compile Include="Order\Const\PriceListTypes.cs" />
+    <Compile Include="Context\Certification.cs" />
+    <Compile Include="Context\Exam.cs" />
+    <Compile Include="Context\Group.cs" />
+    <Compile Include="Core\EntityWithList.cs" />
+    <Compile Include="Core\Settings.cs" />
+    <Compile Include="Core\TagWithEntity.cs" />
+    <Compile Include="Order\Const\BerthTypes.cs" />
+    <Compile Include="Order\Const\OrderCommonConst.cs" />
+    <Compile Include="Order\Const\PaymentTypes.cs" />
+    <Compile Include="Order\Const\PresenceTypes.cs" />
+    <Compile Include="Order\Const\SmartChoiceType.cs" />
+    <Compile Include="Order\Extension\PriceEnumerable.cs" />
+    <Compile Include="Order\Extension\PriceQueryable.cs" />
+    <Compile Include="Order\Logic\RbkTypes.cs" />
+    <Compile Include="Order\MetaDatas\ExpressRegisterMD.cs" />
+    <Compile Include="Order\OrderDetailParams.cs" />
+    <Compile Include="Order\ViewModel\ConflictVM.cs" />
+    <Compile Include="Order\ViewModel\QuickRegisterVM.cs" />
+    <Compile Include="Order\ViewModel\ExpressOrderCompleteVM.cs" />
+    <Compile Include="Order\ViewModel\ExpressRegisterVM.cs" />
+    <Compile Include="Order\ViewModel\OrderConfirmVM.cs" />
+    <Compile Include="Order\ViewModel\OrgOrderCompleteVM.cs" />
+    <Compile Include="Order\ViewModel\ReceiptVM.cs" />
+    <Compile Include="Order\ViewModel\RegisterVM.cs" />
+    <Compile Include="Order\ViewModel\StepsVM.cs" />
+    <Compile Include="Order\Logic\OrderSeparator.cs" />
+    <Compile Include="Order\Logic\PaymentDataCreator.cs" />
+    <Compile Include="Order\Logic\PriceTypeAnalyzer.cs" />
+    <Compile Include="Order\Logic\SmartCourseChoice.cs" />
+    <Compile Include="Order\OrderDetail.cs" />
+    <Compile Include="Order\Logic\OrderStep.cs" />
+    <Compile Include="Order\ViewModel\EditCartVM.cs" />
+    <Compile Include="Order\ViewModel\EditExamVM.cs" />
+    <Compile Include="Order\ViewModel\GroupListVM.cs" />
+    <Compile Include="Order\ViewModel\SberbankInfoVM.cs" />
+    <Compile Include="Order\ViewModel\SmartGroupChoiceVM.cs" />
+    <Compile Include="Passport\MetaData\CompanyMD.cs" />
+    <Compile Include="Passport\MetaData\WorkPlaceMD.cs" />
+    <Compile Include="Passport\MetaData\UserAddressMD.cs" />
+    <Compile Include="Passport\MetaData\UserMD.cs" />
+    <Compile Include="Passport\Passport.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Passport.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PriceType.cs" />
+    <Compile Include="Context\PriceView.cs" />
+    <Compile Include="Context\Product.cs" />
+    <Compile Include="Context\Course.cs" />
+    <Compile Include="Context\Vendor.cs" />
+    <Compile Include="Const\EntityIds.cs" />
+    <Compile Include="Education\GroupFilter.cs" />
+    <Compile Include="Interface\ICourse.cs" />
+    <Compile Include="Common\Logic\LastModifiedFinder.cs" />
+    <Compile Include="MarketingActions\DiscountAnalizer.cs" />
+    <Compile Include="Common\Month.cs" />
+    <Compile Include="Catalog\NearestGroupSet.cs" />
+    <Compile Include="Order\ViewModel\CartVM.cs" />
+    <Compile Include="Order\OrderExam.cs" />
+    <Compile Include="Order\ViewModel\ContractVM.cs" />
+    <Compile Include="Order\ViewModel\EditCourseVM.cs" />
+    <Compile Include="Order\ViewModel\EditTrackVM.cs" />
+    <Compile Include="Order\Order.cs" />
+    <Compile Include="Order\OrderTrack.cs" />
+    <Compile Include="Order\ViewModel\PaymentTypeChoiceVM.cs" />
+    <Compile Include="Order\ViewModel\RegistrationVM.cs" />
+    <Compile Include="Order\ViewModel\ShoppingCartStateVM.cs" />
+    <Compile Include="Passport\PermissionNames.cs" />
+    <Compile Include="Passport\Roles.cs" />
+    <Compile Include="Passport\SimpleRegUser.cs" />
+    <Compile Include="Passport\User.cs" />
+    <Compile Include="Passport\UserAddress.cs" />
+    <Compile Include="Passport\UserPhone.cs" />
+    <Compile Include="Passport\ViewModel\LogOnVM.cs" />
+    <Compile Include="Passport\Const\ContactTypes.cs" />
+    <Compile Include="Passport\ViewModel\PhoneVM.cs" />
+    <Compile Include="Passport\ViewModel\RecoverPasswordVM.cs" />
+    <Compile Include="Profile\Const\LearningListType.cs" />
+    <Compile Include="Message\Const\MessageSections.cs" />
+    <Compile Include="Profile\Const\ProfileConst.cs" />
+    <Compile Include="Profile\MailListType.cs" />
+    <Compile Include="Profile\MetaData\ExpressRegisterMD.cs" />
+    <Compile Include="Profile\MetaData\SuccessStoryMD.cs" />
+    <Compile Include="Profile\SubscribeType.cs" />
+    <Compile Include="Profile\ViewModel\Common\ChangeNameRequestVM.cs" />
+    <Compile Include="Profile\ViewModel\Common\ContactsVM.cs" />
+    <Compile Include="Profile\ViewModel\Common\CertificateListVM.cs" />
+    <Compile Include="Profile\ViewModel\Common\UploadStudentPhotoVM.cs" />
+    <Compile Include="Profile\ViewModel\Common\GroupPhotosVM.cs" />
+    <Compile Include="Profile\ViewModel\Common\ProfileMenu.cs" />
+    <Compile Include="Profile\ViewModel\Common\PublicProfileVM.cs" />
+    <Compile Include="Profile\ViewModel\Common\EditProfileVM.cs" />
+    <Compile Include="Message\ViewModel\PrivateMessageListVM.cs" />
+    <Compile Include="Profile\MetaData\FileMD.cs" />
+    <Compile Include="Profile\MetaData\RestorePasswordVM.cs" />
+    <Compile Include="Passport\MetaData\UserExamQuestionnaireMD.cs" />
+    <Compile Include="Profile\ViewModel\Common\StudyTypeStatsVM.cs" />
+    <Compile Include="Profile\ViewModel\Graduate\ClassmatesVM.cs" />
+    <Compile Include="Profile\ViewModel\Graduate\CompetitionsVM.cs" />
+    <Compile Include="Profile\ViewModel\Graduate\CompetitionVM.cs" />
+    <Compile Include="Profile\ViewModel\Graduate\LibraryVM.cs" />
+    <Compile Include="Profile\ViewModel\Trainer\CompanyFileListVM.cs" />
+    <Compile Include="Profile\ViewModel\Trainer\CompanyFileVM.cs" />
+    <Compile Include="Profile\ViewModel\Trainer\UploadFile.cs" />
+    <Compile Include="Profile\ViewModel\Graduate\UserImageVM.cs" />
+    <Compile Include="Passport\ViewModel\RegisterVM.cs" />
+    <Compile Include="Context\Specialist.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Specialist.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Order\Const\PriceTypes.cs" />
+    <Compile Include="Passport\ViewModel\LogOnStateVM.cs" />
+    <Compile Include="Profile\ViewModel\Common\ChangePasswordVM.cs" />
+    <Compile Include="Profile\ViewModel\Graduate\ChangeStatusVM.cs" />
+    <Compile Include="Profile\ViewModel\Trainer\FileListVM.cs" />
+    <Compile Include="Profile\ViewModel\Common\CustomerTypeChoiceVM.cs" />
+    <Compile Include="Profile\ViewModel\Common\EditExamQuestionnaireVM.cs" />
+    <Compile Include="Profile\ViewModel\Graduate\LearningVM.cs" />
+    <Compile Include="Profile\ViewModel\Graduate\EditSuccessStoryVM.cs" />
+    <Compile Include="Profile\ViewModel\Trainer\UserFileListVM.cs" />
+    <Compile Include="Profile\ViewModel\Trainer\UserFileVM.cs" />
+    <Compile Include="Examination\ViewModel\CertificationVM.cs" />
+    <Compile Include="Catalog\ViewModel\VendorVM.cs" />
+    <Compile Include="Common\ViewModel\CityFilterVM.cs" />
+    <Compile Include="Catalog\ViewModel\CourseList\CommonCourseListItemVM.cs" />
+    <Compile Include="Catalog\ViewModel\CourseList\CommonCourseListVM.cs" />
+    <Compile Include="Catalog\ViewModel\CourseBaseVM.cs" />
+    <Compile Include="Catalog\ViewModel\CustomSectionDetailsVM.cs" />
+    <Compile Include="Examination\ViewModel\ExamVM.cs" />
+    <Compile Include="Catalog\ViewModel\CourseList\CourseListVM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Education\ViewModel\GroupListVM.cs" />
+    <Compile Include="Catalog\ViewModel\CoursesSheduleItemVM.cs" />
+    <Compile Include="Profile\MetaData\MyResponses.cs" />
+    <Compile Include="Catalog\ViewModel\CoursesScheduleVM.cs" />
+    <Compile Include="Catalog\ViewModel\TrackVM.cs" />
+    <Compile Include="Secondary\ForSecondary.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ForSecondary.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Secondary\GroupSurvey.cs" />
+    <Compile Include="Secondary\MetaData\GroupSurveyMD.cs" />
+    <Compile Include="Secondary\MetaData\QuestionAnswerMD.cs" />
+    <Compile Include="Tests\Consts\BaseNamedId.cs" />
+    <Compile Include="Tests\Consts\TestCertLang.cs" />
+    <Compile Include="Tests\Consts\TestCertType.cs" />
+    <Compile Include="Tests\Consts\TestRecomendations.cs" />
+    <Compile Include="Tests\Consts\UserTestStatus.cs" />
+    <Compile Include="Tests\Consts\TestQuestionType.cs" />
+    <Compile Include="Tests\Consts\TestStatus.cs" />
+    <Compile Include="Tests\GroupInfo.cs" />
+    <Compile Include="Tests\SpecialistTest.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SpecialistTest.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\Test.cs" />
+    <Compile Include="Tests\TestModuleSet.cs" />
+    <Compile Include="Tests\TestPassRule.cs" />
+    <Compile Include="Tests\UserTest.cs" />
+    <Compile Include="Utils\Algorithms\Combinatorial.cs" />
+    <Compile Include="Utils\CommonFunction.cs" />
+    <Compile Include="Utils\CouponUtils.cs" />
+    <Compile Include="Utils\CsvUtil.cs" />
+    <Compile Include="Utils\DateUtils.cs" />
+    <Compile Include="Utils\DefaultStringFormat.cs" />
+    <Compile Include="Utils\Extensions\BoolExtension.cs" />
+    <Compile Include="Utils\Extensions\EnumerableExtension.cs" />
+    <Compile Include="Utils\Extensions\GenericExtension.cs" />
+    <Compile Include="Utils\Grouping.cs" />
+    <Compile Include="Utils\IpAddressUtils.cs" />
+    <Compile Include="Utils\Linguistics.cs" />
+    <Compile Include="Utils\LinqEntityMockGenerator.cs" />
+    <Compile Include="Utils\MonthUtil.cs" />
+    <Compile Include="Utils\PriceUtils.cs" />
+    <Compile Include="Utils\Serializer.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
+    <Compile Include="Utils\Tree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Lms\Pioneer.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Pioneer.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Secondary\ForSecondary.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>ForSecondary.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Tests\SpecialistTest.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>SpecialistTest.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Context\Specialist.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Specialist.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Context\Specialist.dbml.layout">
+      <DependentUpon>Specialist.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Passport\Passport.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>Passport.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Passport\Passport.dbml.layout">
+      <DependentUpon>Passport.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Context\SpecialistWeb.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>SpecialistWeb.designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Context\SpecialistWeb.dbml.layout">
+      <DependentUpon>SpecialistWeb.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface\Extension\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Secondary\ForSecondary.dbml.layout">
+      <DependentUpon>ForSecondary.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tests\SpecialistTest.dbml.layout">
+      <DependentUpon>SpecialistTest.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lms\Pioneer.dbml.layout">
+      <DependentUpon>Pioneer.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SpecialistWeb" Class="SpecialistTestDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=apz002;Initial Catalog=SpecialistWeb;Persist Security Info=True;User ID=IUser" SettingsObjectName="Specialist.Entities.Properties.Settings" SettingsPropertyName="SpecialistWebConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="SpecialistWeb.dbo.TestAnswers" Member="TestAnswers">
+    <Type Name="TestAnswer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsRight" Type="System.Boolean" DbType="Bit" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ComparableId" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Sort" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="QuestionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="TestAnswer_TestAnswer" Member="Answer" ThisKey="Id" OtherKey="ComparableId" Type="TestAnswer" Cardinality="One" />
+      <Association Name="TestAnswer_TestAnswer" Member="ComparableAnswer" ThisKey="ComparableId" OtherKey="Id" Type="TestAnswer" IsForeignKey="true" />
+      <Association Name="TestQuestion_TestAnswer" Member="TestQuestion" ThisKey="QuestionId" OtherKey="Id" Type="TestQuestion" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.Tests" Member="Tests">
+    <Type Name="Test">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Author_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastChanger_TC" Type="System.String" DbType="VarChar(7) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Checker_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="IsNew" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Certified" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ProductName" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ProductNameEng" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="WebSortOrder" Type="System.Int32" CanBeNull="false" />
+      <Column Name="CourseTCList" Type="System.String" CanBeNull="true" />
+      <Column Name="NoRestriction" Type="System.Boolean" CanBeNull="false" />
+      <Column Member="TestIdList" Type="System.String" CanBeNull="true" />
+      <Association Name="Test_TestModule" Member="TestModules" ThisKey="Id" OtherKey="TestId" Type="TestModule" />
+      <Association Name="Test_TestQuestion" Member="TestQuestions" ThisKey="Id" OtherKey="TestId" Type="TestQuestion" />
+      <Association Name="Test_UserTest" Member="UserTests" ThisKey="Id" OtherKey="TestId" Type="UserTest" />
+      <Association Name="Test_GroupTest" Member="GroupTests" ThisKey="Id" OtherKey="TestId" Type="GroupTest" />
+      <Association Name="Test_TestPassRule" Member="TestPassRule" ThisKey="Id" OtherKey="TestId" Type="TestPassRule" Cardinality="One" />
+      <Association Name="Test_TestModuleSet" Member="TestModuleSets" ThisKey="Id" OtherKey="TestId" Type="TestModuleSet" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.TestModules" Member="TestModules">
+    <Type Name="TestModule">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CourseContent_ID" Type="System.Decimal" CanBeNull="true" />
+      <Association Name="TestModule_TestQuestion" Member="TestQuestions" ThisKey="Id" OtherKey="ModuleId" Type="TestQuestion" />
+      <Association Name="Test_TestModule" Member="Test" ThisKey="TestId" OtherKey="Id" Type="Test" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.TestQuestions" Member="TestQuestions">
+    <Type Name="TestQuestion">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Type" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="ModuleId" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="TestQuestion_TestAnswer" Member="TestAnswers" ThisKey="Id" OtherKey="QuestionId" Type="TestAnswer" />
+      <Association Name="TestQuestion_UserTestAnswer" Member="UserTestAnswers" ThisKey="Id" OtherKey="QuestionId" Type="UserTestAnswer" />
+      <Association Name="TestModule_TestQuestion" Member="TestModule" ThisKey="ModuleId" OtherKey="Id" Type="TestModule" IsForeignKey="true" />
+      <Association Name="Test_TestQuestion" Member="Test" ThisKey="TestId" OtherKey="Id" Type="Test" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.UserTests" Member="UserTests">
+    <Type Name="UserTest">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Status" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="RunDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Time" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TestPassRuleId" Type="System.Int32" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Stats" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="RightCount" Type="System.Int16" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="WrongCount" Type="System.Int16" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Course_TC" Type="System.String" CanBeNull="true" />
+      <Column Name="IsBest" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="TestModuleSetId" Type="System.Int32" CanBeNull="true" />
+      <Column Name="ShowAnswers" Type="System.Boolean" CanBeNull="false" />
+      <Association Name="UserTest_UserTestAnswer" Member="UserTestAnswers" ThisKey="Id" OtherKey="UserTestId" Type="UserTestAnswer" />
+      <Association Name="Test_UserTest" Member="Test" ThisKey="TestId" OtherKey="Id" Type="Test" IsForeignKey="true" />
+      <Association Name="TestPassRule_UserTest" Member="TestPassRule" ThisKey="TestPassRuleId" OtherKey="Id" Type="TestPassRule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.GroupInfos" Member="GroupInfos">
+    <Type Name="GroupInfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CompanyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsComplete" Type="System.Boolean" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Notes" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="GroupInfo_GroupTest" Member="GroupTests" ThisKey="Id" OtherKey="GroupInfoId" Type="GroupTest" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.GroupTests" Member="GroupTests">
+    <Type Name="GroupTest">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="GroupInfoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="TestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DateBegin" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="DateEnd" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="AttemptCount" Type="System.Byte" DbType="TinyInt" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="GroupTest_TestPassRule" Member="TestPassRule" ThisKey="Id" OtherKey="GroupTestId" Type="TestPassRule" Cardinality="One" />
+      <Association Name="GroupInfo_GroupTest" Member="GroupInfo" ThisKey="GroupInfoId" OtherKey="Id" Type="GroupInfo" IsForeignKey="true" />
+      <Association Name="Test_GroupTest" Member="Test" ThisKey="TestId" OtherKey="Id" Type="Test" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.TestPassRules" Member="TestPassRules">
+    <Type Name="TestPassRule">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="PassMark" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="QuestionCount" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Time" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="AverageMark" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ExpertMark" Type="System.Int16" DbType="SmallInt" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="TestId" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="GroupTestId" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ModulePercents" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="TestPassRule_UserTest" Member="UserTests" ThisKey="Id" OtherKey="TestPassRuleId" Type="UserTest" />
+      <Association Name="TestPassRule_TestModuleSet" Member="TestModuleSets" ThisKey="Id" OtherKey="RuleId" Type="TestModuleSet" />
+      <Association Name="GroupTest_TestPassRule" Member="GroupTest" ThisKey="GroupTestId" OtherKey="Id" Type="GroupTest" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="Test_TestPassRule" Member="Test" ThisKey="TestId" OtherKey="Id" Type="Test" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.TestModuleSets" Member="TestModuleSets">
+    <Type Name="TestModuleSet">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Number" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="RuleId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TestPassRule_TestModuleSet" Member="TestPassRule" ThisKey="RuleId" OtherKey="Id" Type="TestPassRule" IsForeignKey="true" />
+      <Association Name="Test_TestModuleSet" Member="Test" ThisKey="TestId" OtherKey="Id" Type="Test" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.UserTestAnswers" Member="UserTestAnswers">
+    <Type Name="UserTestAnswer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="QuestionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Answer" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="IsRight" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UserTestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="UserTest_UserTestAnswer" Member="UserTest" ThisKey="UserTestId" OtherKey="Id" Type="UserTest" IsForeignKey="true" />
+      <Association Name="TestQuestion_UserTestAnswer" Member="TestQuestion" ThisKey="QuestionId" OtherKey="Id" Type="TestQuestion" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="SpecialistWeb.dbo.TestCalc" Member="TestCalcs">
+    <Type Name="TestCalc">
+      <Column Name="TestId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TryCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PassCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserCount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

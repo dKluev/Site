@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Passport" EntityNamespace="Specialist.Entities.Passport" Class="PassportDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=apz002;Initial Catalog=Passport;Persist Security Info=True;User ID=IUser" SettingsObjectName="Specialist.Entities.Properties.Settings" SettingsPropertyName="PassportConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Passport.dbo.Companies" Member="Companies">
+    <Type Name="Company">
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="INN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="KPP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime" IsReadOnly="true" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="UpdateDate" AutoSync="Never" Type="System.DateTime" DbType="SmallDateTime" IsReadOnly="true" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LegalAddress" Type="System.String" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Company_UserAddress" Member="UserAddresses" ThisKey="CompanyID" OtherKey="CompanyID" Type="UserAddress" />
+      <Association Name="Company_UserContact" Member="UserContacts" ThisKey="CompanyID" OtherKey="CompanyID" Type="UserContact" />
+      <Association Name="Company_User" Member="Users" ThisKey="CompanyID" OtherKey="CompanyID" Type="User" />
+    </Type>
+  </Table>
+  <Table Name="Passport.dbo.UserContactTypes" Member="UserContactTypes">
+    <Type Name="UserContactType">
+      <Column Name="ContactTypeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RegularExpression" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Example" Type="System.String" CanBeNull="true" />
+      <Association Name="UserContactType_UserAddress" Member="UserAddresses" ThisKey="ContactTypeID" OtherKey="ContactTypeID" Type="UserAddress" />
+      <Association Name="UserContactType_UserContact" Member="UserContacts" ThisKey="ContactTypeID" OtherKey="ContactTypeID" Type="UserContact" />
+    </Type>
+  </Table>
+  <Table Name="Passport.dbo.UserAddresses" Member="UserAddresses">
+    <Type Name="UserAddress">
+      <Column Name="AddressID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Index]" Member="Index" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountryID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="ContactTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsReadOnly="true" IsDbGenerated="true" CanBeNull="true" />
+      <Column Name="UpdateDate" AutoSync="Never" Type="System.DateTime" DbType="DateTime" IsReadOnly="true" IsDbGenerated="true" CanBeNull="true" />
+      <Association Name="Company_UserAddress" Member="Company" ThisKey="CompanyID" OtherKey="CompanyID" Type="Company" IsForeignKey="true" />
+      <Association Name="UserContactType_UserAddress" Member="UserContactType" ThisKey="ContactTypeID" OtherKey="ContactTypeID" Type="UserContactType" IsForeignKey="true" />
+      <Association Name="User_UserAddress" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Passport.dbo.UserExamQuestionnaires" Member="UserExamQuestionnaires">
+    <Type Name="UserExamQuestionnaire">
+      <Column Name="UserExamQuestionnaireID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MiddleInitial" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Flat" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PostalCode" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="House" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Street" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PrometricCode" Type="System.String" CanBeNull="true" />
+      <Column Name="McpCode" Type="System.String" CanBeNull="true" />
+      <Association Name="User_UserExamQuestionnaire" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Passport.dbo.UserContacts" Member="UserContacts">
+    <Type Name="UserContact">
+      <Column Name="ContactID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="NVarChar(320) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsPublic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Company_UserContact" Member="Company" ThisKey="CompanyID" OtherKey="CompanyID" Type="Company" IsForeignKey="true" />
+      <Association Name="UserContactType_UserContact" Member="UserContactType" ThisKey="ContactTypeID" OtherKey="ContactTypeID" Type="UserContactType" IsForeignKey="true" />
+      <Association Name="User_UserContact" Member="User" ThisKey="UserID" OtherKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Passport.dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="SecondName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Sex" Type="System.Boolean" DbType="Int NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CompanyID" Type="System.Int32" DbType="Int" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Employee_TC" Type="System.String" DbType="VarChar(7)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Source_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MailListSubscribed" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="Subscribes" Type="System.Byte" CanBeNull="false" />
+      <Column Name="HideCourses" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="MailListTypes" Type="System.Byte" CanBeNull="false" />
+      <Column Name="Roles" Type="System.Int16" CanBeNull="false" />
+      <Column Name="EngFullName" Type="System.String" CanBeNull="true" />
+      <Column Name="HideContacts" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="Org_ID" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="FbToken" Type="System.String" CanBeNull="true" />
+      <Column Name="VkToken" Type="System.String" CanBeNull="true" />
+      <Column Name="CreateDate" AutoSync="Never" Type="System.DateTime" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeCompanyID" Type="System.Int32" CanBeNull="true" />
+      <Column Name="WorkBranch_ID" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="Metier_ID" Type="System.Decimal" CanBeNull="true" />
+      <Column Name="IsQuick" Type="System.Boolean" CanBeNull="false" />
+      <Column Name="FbUserId" Type="System.String" CanBeNull="true" />
+      <Column Member="Source_TC" Type="System.String" CanBeNull="true" />
+      <Association Name="User_UserAddress" Member="UserAddresses" ThisKey="UserID" OtherKey="UserID" Type="UserAddress" />
+      <Association Name="User_UserExamQuestionnaire" Member="ExamQuestionnaire" ThisKey="UserID" OtherKey="UserID" Type="UserExamQuestionnaire" Cardinality="One" />
+      <Association Name="User_UserContact" Member="UserContacts" ThisKey="UserID" OtherKey="UserID" Type="UserContact" />
+      <Association Name="Company_User" Member="Company" ThisKey="CompanyID" OtherKey="CompanyID" Type="Company" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Passport.dbo.WorkPlaces" Member="WorkPlaces">
+    <Type Name="WorkPlace">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Site" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="FullName" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="Passport.dbo.UserInfos" Member="UserInfos">
+    <Type Name="UserInfo">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CityPromocode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="Passport.dbo.SimpleRegUsers" Member="SimpleRegUsers">
+    <Type Name="SimpleRegUser">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Token" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" CanBeNull="true" />
+      <Column Name="Source_TC" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

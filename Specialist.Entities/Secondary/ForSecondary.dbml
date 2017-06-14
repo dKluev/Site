@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="For_SECONDARY" Class="ForSecondaryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ssz001\sqlee;Initial Catalog=For_SECONDARY;Persist Security Info=True;User ID=IUser" SettingsObjectName="Specialist.Entities.Properties.Settings" SettingsPropertyName="For_SECONDARYConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="For_SECONDARY.dbo.QuestionAnswers" Member="QuestionAnswers">
+    <Type Name="QuestionAnswer">
+      <Column Name="VoteId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VoteDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="Question1" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Question2" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Question3" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Question4" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Member="Question5" Type="System.String" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="For_SECONDARY.dbo.GroupSurvey" Member="GroupSurveys">
+    <Type Name="GroupSurvey">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Reply1" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Column Name="Reply2" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Column Name="InputDate" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Student_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Group_ID" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
