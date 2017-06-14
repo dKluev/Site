@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Best2010Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Best2010Icon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Best2011Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Best2011Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BestgraduateIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BestGraduateIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CardaIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CardAIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CarddIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CardDIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CardgIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CardGIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CardpIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CardPIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CardsIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CardSIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewtonTest" xml:space="preserve">
+    <value>q:Прикройте один глаз, затем другой. Каким глазом Вы видите лучше - правым или левым?
+i://cdn.specialist.ru/content/image/SimpleTest/1/glaz.jpg
+a:Левым
+a:Правым 
+a:Одинаково 
+
+q:Какие еще бывают корни, кроме корней деревьев? 
+i://cdn.specialist.ru/content/image/SimpleTest/1/derevo.png
+a:Корень - основная часть слова (без приставок и суффиксов) 
+a:Корень, который можно извлечь из числа. Вариант - корень уравнения. 
+a:Одновременно вспомнил/а несколько значений
+
+q:Внимательно посмотрите на пальцы своей руки. Какой из них ДЛИННЕЕ - указательный или безымянный? 
+i://cdn.specialist.ru/content/image/SimpleTest/1/ruka.png
+a:Указательный 
+a:Безымянный
+a:Они одинаковые 
+
+q:Какие предметы в школьной программе Вам нравились больше остальных?
+i://cdn.specialist.ru/content/image/SimpleTest/1/baby.jpg
+a:Литература, история, иностранные языки
+a:Математика, физика, химия
+a:Все нравились одинаково
+
+q:Если надо пнуть мяч, какой ногой Вам это удобнее сделать?
+i://cdn.specialist.ru/content/image/SimpleTest/1/foot.jpg
+a:Левой
+a:Правой 
+a:Все равно
+
+q:Посмотрите на изображение и скажите, что вы сразу увидели?
+i://cdn.specialist.ru/content/image/SimpleTest/1/gol.png
+a:По горизонтали буквы «АБС»
+a:По вертикали цифры «12 13 14»
+a:Обе надписи одновременно</value>
+  </data>
+  <data name="NewtonTestResult" xml:space="preserve">
+    <value>r:Вы – Есенин,  гуманитарного склада, у Вас лучше развито правое полушарие мозга, Вы мыслите образно. Для того чтобы сделать умозаключение, Вам необязательно разбивать ситуацию на кусочки, анализировать и потом опять собирать все воедино, находить логику, перепроверять, строить модели. Вы охватываете ситуацию в целом, пытаетесь прочувствовать ее, а недостаток информации восполняете за счет интуиции. У Вас хорошие лингвистические способности, открытый и общительный характер. Вам язык слов и букв значительно ближе и понятнее языка цифр. Вас воспринимают как приятного собеседника. &lt;br/&gt;&lt;img src="//cdn.specialist.ru/content/image/SimpleTest/1/r1.jpg"/&gt;
+c:ДИЗ-А, ОРИС-А, ОЖИВ-А, ДИЗИ1, ДИЗР-В, ЛАНДИЗ, ФОТО1-В, МАРКЕТ, ИВЕНТ, МП-А, КАДР-В, МПЕРС-А, МОБУЧ, АН1
+
+r:Вы – Ньютон, технического склада. Вы активно использует левое полушарие мозга, ответственное за абстрактное мышление. Вам проще выстраивать модели и причинно-следственные связи, делать логические выводы, обобщать, находить закономерности. Вы сдержанны, практичны, умеете глубоко и серьезно размышлять и не тратить время на пустую болтовню. Вам близок и понятен мир цифр, Вы с интересом учите законы физики, копаетесь в научной литературе, с легкостью решаете математические задачи. У Вас прекрасные данные для работы в точных науках. &lt;br/&gt;&lt;img src="//cdn.specialist.ru/content/image/SimpleTest/1/r2.jpg"/&gt;
+c:М10267, М10266, ЦИВИЛ-В,ИНВ-Г, М10967, АС1-Г, РИНОЦ-А, ВРЭЙ1-Г, АРХ1-Г, М20480, М20483, ОПРОГ-А, ОПРВЕБ-А, РНР1-А, 1С8Б1, 1С8УСН, 1С8ЗЗАР, 1С8УТ1, 1С8РОЗН-А, 1С82АДМ1, 1С82ВИНД, МЛ-А, МЛЗ, МЛБИЗ-А, ТОР16, СЕТИ1-А, М20688d, М10977А, М10774, ДИАЛЮКС 
+
+r:Вы – Леонардо Да Винчи, способный к любым видам деятельности. Можете в себе развивать оба типа - гуманитарный и технический. Вместе с тем, даже если Вы - человек одаренный и Вам в обучении даются с легкостью все предметы, все равно существует бОльшая предрасположенность к какой-то одной из этих двух категорий.&lt;br/&gt;&lt;img src="//cdn.specialist.ru/content/image/SimpleTest/1/r3.jpg"/&gt;
+c:ФШ1-Л, ИЛ1-Л, 3ДМ12014, ТБУХ-М, АН1, АЙПАД-Б, ВОРД1-Б, ЭКСЕЛЬ1-А, ПП-Е, МАКОС1-Б, АНДРБКП-А, ДПРТ, ЭЙЧТМЛ-В</value>
+  </data>
+  <data name="Webinar2011Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Webinar2011Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WebinarLauncherTamplate" xml:space="preserve">
+    <value>RegWrite, REG_SZ, HKEY_CURRENT_USER, SOFTWARE\Citrix\GoToMeeting, rememberMe, false
+Run, %comspec% /c ""%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Citrix\GoToMeeting.lnk" "/Action Join" "/Trigger Shortcut" "/Product G2M" "/FreeTrialUrl"", , hide
+BlockInput, On
+WinWait, Join a session - GoToMeeting, 
+IfWinNotActive, Join a session - GoToMeeting, , WinActivate, Join a session - GoToMeeting, 
+WinWaitActive, Join a session - GoToMeeting,
+Sleep, 100
+Send, [WebinarId]{ENTER}		; ВСТАВЛЯЕМ АЙДИШНИК
+BlockInput, Off
+WinWait, Waiting for Organizer - GoToMeeting, 
+IfWinNotActive, Waiting for Organizer - GoToMeeting, , WinActivate, Waiting for Organizer - GoToMeeting, 
+WinWaitActive, Waiting for Organizer - GoToMeeting, 
+BlockInput, On
+Sleep, 100
+MouseClick, left,  185,  333
+WinWait, Meeting Organizer Login - GoToMeeting, 
+IfWinNotActive, Meeting Organizer Login - GoToMeeting, , WinActivate, Meeting Organizer Login - GoToMeeting, 
+WinWaitActive, Meeting Organizer Login - GoToMeeting, 
+Sleep, 100
+Send, [Login]{TAB}[Password]{ENTER}  ; ВСТАВЛЯЕМ E-MAIL И ПАРОЛЬ
+BlockInput, Off
+Sleep, 100
+exit</value>
+  </data>
+</root>

@@ -1,0 +1,123 @@
+﻿<#@ template debug="True" hostspecific="False" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="$(ProjectDir)bin\Debug\Specialist.Web.dll" #>
+<#@ assembly name="$(ProjectDir)bin\Debug\SimpleUtils.FluentRouting.dll" #>
+<#@ assembly name="$(ProjectDir)bin\Debug\SimpleUtils.dll" #>
+<#@ assembly name="System.Web.Mvc" #>
+<#@ assembly name="System.Core.dll" #>
+
+<#@ import namespace="SimpleUtils.FluentRouting.Utils" #>
+<#@ import namespace="SimpleUtils.StrongRouting" #>
+<#@ import namespace="SimpleUtils.Reflection.Extensions" #>
+<#@ import namespace="Specialist.Web.Controllers" #>
+<#@ import namespace="System.Web.Mvc" #>
+<#@ import namespace="System.Linq" #>
+
+using System.Web.Mvc;
+using System.Web.Routing;
+using SimpleUtils.FluentHtml.Tags;
+
+namespace Specialist.Web.Const {
+	public static class UrlHelperLinkExtention{
+
+	<#	var types = TypeUtils.GetAllControllers(new [] {typeof(SectionController).Assembly}); #>
+	<# foreach(var t in types){ #>
+		<# var descriptor = new ReflectedControllerDescriptor(t); #>
+	
+		<# var classNameUrls = t.Name + "Urls"; #>
+		<# var classNameLinks = t.Name + "Links"; #>
+
+	//	private static <#= classNameLinks  #> _<#= classNameLinks  #> = null;
+		
+		public static <#= classNameLinks  #> <#= descriptor.ControllerName #>(this UrlHelper urlHelper) {
+		//	if(_<#= classNameLinks  #> == null) _<#= classNameLinks  #> = new <#= classNameLinks  #>(urlHelper);
+		//	return _<#= classNameLinks  #>;
+		return new <#= classNameLinks  #>(urlHelper);
+		}
+
+		public class <#= classNameUrls #>{
+			
+			private UrlHelper _url;
+
+			public <#= classNameUrls #>(UrlHelper url) {
+				_url = url;
+			}
+			
+			void CheckMethod<TController>(System.Linq.Expressions.Expression<System.Action<TController>> action) where TController : Controller {}
+
+		
+		
+		<# var i = 0; foreach(var action in TypeUtils.GetAllActions(t)){ #>
+			void TypeCheck<#= action.Name + (i++) #>(){
+				CheckMethod<<#= t.FullName #>>(c => 
+					c.<#= action.Name #>(<#= string.Join(", ", action.GetParameters()
+					.Select(p => {
+	                    var def = p.ParameterType.Default(); 
+						if(def is bool) return "false"; 
+                        if(def != null) return def;
+                        return "(" + p.ParameterType.GetCSharpGenericString() + ")null";})) #>));
+			}
+			public string <#= action.Name #>(<#= string.Join(", ", action.GetParameters()
+					.Select(p => p.ParameterType.GetCSharpGenericString() + " "
+					+ p.Name)) #>){
+				var routeValues = new RouteValueDictionary();
+			//	routeValues.Add("action", "<#= action.Name #>");
+			//	routeValues.Add("controller", "<#= descriptor.ControllerName #>");
+				<# foreach(var p in action.GetParameters()){ #>
+					routeValues.Add("<#= p.Name #>", <#= p.Name #>);
+				<# } #>
+				
+				return _url.Action("<#= action.Name #>", "<#= descriptor.ControllerName #>", routeValues);
+			}
+		<# } #>
+		
+
+		
+
+		}
+
+
+			public class <#= classNameLinks #>{
+			
+			private UrlHelper _url;
+
+			public <#= classNameLinks #>(UrlHelper url) {
+				_url = url;
+			}
+
+			//private static <#= classNameUrls  #> _<#= classNameUrls  #> = null;
+			public <#= classNameUrls  #> Urls { 
+				get {
+				//	if(_<#= classNameUrls  #> == null) _<#= classNameUrls  #> = new <#= classNameUrls  #>(_url);
+					//return _<#= classNameUrls  #>;
+					return new <#= classNameUrls  #>(_url);
+				}
+			}
+
+		
+		
+		<# foreach(var action in TypeUtils.GetAllActions(t)){ 
+			var param = action.GetParameters()
+					.Select(p => p.ParameterType.GetCSharpGenericString() + " "
+					+ p.Name).ToList();
+				param.Add("object content");
+#>
+
+
+
+			public TagA <#= action.Name #>(	<#=  string.Join(", ", param ) #>){
+				var localActionUrl = _url.<#= descriptor.ControllerName #>().Urls.<#= 
+			action.Name #>(<#= string.Join(", ", action.GetParameters().Select(p => p.Name)) #>);
+				return  Htmls.a.Href(localActionUrl)[content];
+			}
+		<# } #>
+		
+		
+
+		}
+	<# } #>
+
+
+	}
+
+}

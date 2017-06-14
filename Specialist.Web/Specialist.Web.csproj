@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F587A3CA-53CB-4365-8734-94A74C409504}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Specialist.Web</RootNamespace>
+    <AssemblyName>Specialist.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DDay.Collections">
+      <HintPath>..\..\Dependencies\DDay.iCal\DDay.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="DDay.iCal">
+      <HintPath>..\..\Dependencies\DDay.iCal\DDay.iCal.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\..\Dependencies\epplus\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Facebook.6.0.24\lib\net40-client\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation">
+      <HintPath>..\..\Dependencies\FluentValidation\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc">
+      <HintPath>..\..\Dependencies\FluentValidation\FluentValidation.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="GSearch.Core">
+      <HintPath>..\..\Dependencies\GSearch\GSearch.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GSearch.Web">
+      <HintPath>..\..\Dependencies\GSearch\GSearch.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Linq">
+      <HintPath>..\..\Dependencies\Microsoft.Linq\Microsoft.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\Dependencies\Unity21\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\Dependencies\Unity21\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\..\Dependencies\Mvc\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib">
+      <HintPath>..\..\Dependencies\MvcContrib\MvcContrib.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib.Unity">
+      <HintPath>..\..\Dependencies\MvcContrib\Unity2\MvcContrib.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Dependencies\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\..\Dependencies\NLog\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils.FluentAttributes">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.FluentAttributes.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils.FluentHtml, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SimpleUtils.FluentRouting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.FluentRouting.dll</HintPath>
+    </Reference>
+    <Reference Include="SubSonic.Core">
+      <HintPath>..\..\Dependencies\SubSonic\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TuesPechkin">
+      <HintPath>..\..\Dependencies\pechkin\TuesPechkin.dll</HintPath>
+    </Reference>
+    <Reference Include="TuesPechkin.Wkhtmltox.AnyCPU">
+      <HintPath>..\..\Dependencies\pechkin\TuesPechkin.Wkhtmltox.AnyCPU.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilters\CustomControllerActionInvoker.cs" />
+    <Compile Include="ActionFilters\MobileCacheAttribute.cs" />
+    <Compile Include="ActionFilters\NotFound.cs" />
+    <Compile Include="ActionFilters\NotMobileRedirect.cs" />
+    <Compile Include="ActionFilters\SetLastModifiedAttribute.cs" />
+    <Compile Include="Common\DynamicValues.cs" />
+    <Compile Include="Common\Exceptions\NotInGroupException.cs" />
+    <Compile Include="Common\Exceptions\NotOwnerException.cs" />
+    <Compile Include="Common\Logic\BreadCrumb.cs" />
+    <Compile Include="Common\Logic\BreadCrumbs.cs" />
+    <Compile Include="Common\Logic\HtmlTitleCreator.cs" />
+    <Compile Include="Common\Logic\Partners\AlphaBankGenerator.cs" />
+    <Compile Include="Common\Logic\Partners\TeachMePleaseGenerator.cs" />
+    <Compile Include="Common\Logic\Partners\X5RetailGenerator.cs" />
+    <Compile Include="Common\Logic\Partners\UchebaRuGenerator.cs" />
+    <Compile Include="Common\Logic\Partners\GoogleRemarketingGenerator.cs" />
+    <Compile Include="Common\Logic\Partners\GoogleMerchantGenerator.cs" />
+    <Compile Include="Common\Logic\Partners\SuperJobService.cs" />
+    <Compile Include="Common\Logic\Partners\SverhMarketGenerator.cs" />
+    <Compile Include="Common\Logic\Partners\XmlShopGenerator.cs" />
+    <Compile Include="Common\Logic\Partners\YmlGenerator.cs" />
+    <Compile Include="Common\Logic\SiteMapGenerator.cs" />
+    <Compile Include="Common\Logic\ForumBreadCrumbs.cs" />
+    <Compile Include="Common\Logic\PageMetaTags.cs" />
+    <Compile Include="Common\LowercasingRoute.cs" />
+    <Compile Include="Common\RoutingRegistrator.cs" />
+    <Compile Include="Common\Validators\Core\ExValidator.cs" />
+    <Compile Include="Common\Validators\Message\AddMessageVMValidator.cs" />
+    <Compile Include="Common\Validators\Order\TestCertInfoValidator.cs" />
+    <Compile Include="Common\Validators\Order\OrderConfirmValidator.cs" />
+    <Compile Include="Common\Validators\Order\SberbankInfoValidator.cs" />
+    <Compile Include="Common\Validators\Profile\ChangePasswordVMValidator.cs" />
+    <Compile Include="Common\Validators\Profile\CompetitionValidator.cs" />
+    <Compile Include="Common\Validators\Profile\CompanyFileValidator.cs" />
+    <Compile Include="Common\Validators\Profile\SubscribesVMValidator.cs" />
+    <Compile Include="Common\Validators\Profile\EditProfileValidator.cs" />
+    <Compile Include="Common\Validators\Profile\ForumGroupVMValidator.cs" />
+    <Compile Include="Common\Validators\Profile\SuccessStoryVMValidator.cs" />
+    <Compile Include="Common\Validators\Profile\UserContactValidator.cs" />
+    <Compile Include="Common\Validators\Profile\UserFileValidator.cs" />
+    <Compile Include="Common\Validators\Profile\UserRegisterValidator.cs" />
+    <Compile Include="Common\Validators\Profile\RegisterVMValidator.cs" />
+    <Compile Include="Common\ViewModel\ErrorVM.cs" />
+    <Compile Include="Const\ViewNames2.cs">
+      <DependentUpon>ViewNames2.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Const\MainMenu.cs" />
+    <Compile Include="Const\Urls.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Urls.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Const\ViewNames.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewNames.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Center\CenterController.cs" />
+    <Compile Include="Controllers\Center\ClientController.cs" />
+    <Compile Include="Controllers\Center\LocationsController.cs" />
+    <Compile Include="Controllers\Center\SiteNewsController.cs" />
+    <Compile Include="Controllers\Common\MobileAppController.cs" />
+    <Compile Include="Controllers\Common\BadgeController.cs" />
+    <Compile Include="Controllers\Common\ChartController.cs" />
+    <Compile Include="Controllers\Center\LmsController.cs" />
+    <Compile Include="Controllers\Common\InfoController.cs" />
+    <Compile Include="Controllers\Common\PartnerController.cs" />
+    <Compile Include="Controllers\Common\RssController.cs" />
+    <Compile Include="Controllers\Common\DictionaryController.cs" />
+    <Compile Include="Controllers\Common\MasterPageController.cs" />
+    <Compile Include="Controllers\Message\MessageController.cs" />
+    <Compile Include="Controllers\Profile\CompanyFileController.cs" />
+    <Compile Include="Controllers\Profile\GraduateController.cs" />
+    <Compile Include="Controllers\Profile\FileController.cs" />
+    <Compile Include="Controllers\Profile\OrgProfileController.cs" />
+    <Compile Include="Controllers\Profile\OrgTestController.cs" />
+    <Compile Include="Controllers\Profile\SimpleRegController.cs" />
+    <Compile Include="Controllers\Profile\ProfileController.cs" />
+    <Compile Include="Controllers\Shop\CartController.cs" />
+    <Compile Include="Controllers\Shop\EditCartController.cs" />
+    <Compile Include="Controllers\Shop\OrderController.cs" />
+    <Compile Include="Controllers\Catalog\CertificationController.cs" />
+    <Compile Include="Controllers\Catalog\CourseController.cs" />
+    <Compile Include="Controllers\Catalog\ExamController.cs" />
+    <Compile Include="Controllers\Catalog\GroupController.cs" />
+    <Compile Include="Controllers\Common\HomeController.cs" />
+    <Compile Include="Controllers\Common\PageController.cs" />
+    <Compile Include="Controllers\Catalog\ProductController.cs" />
+    <Compile Include="Controllers\Catalog\ProfessionController.cs" />
+    <Compile Include="Controllers\Catalog\SectionController.cs" />
+    <Compile Include="Controllers\Catalog\TrackController.cs" />
+    <Compile Include="Controllers\Center\EmployeeController.cs" />
+    <Compile Include="Controllers\Catalog\VendorController.cs" />
+    <Compile Include="Controllers\Tests\GroupTestController.cs" />
+    <Compile Include="Controllers\Tests\SimpleTestController.cs" />
+    <Compile Include="Controllers\Tests\TestController.cs" />
+    <Compile Include="Controllers\Tests\TestEditController.cs" />
+    <Compile Include="Controllers\Tests\TestRunController.cs" />
+    <Compile Include="Core\CacheManager.cs" />
+    <Compile Include="Core\Logic\BaseView.cs" />
+    <Compile Include="Core\Validation\LinqToSqlValidator.cs" />
+    <Compile Include="Core\Logic\ViewControls.cs" />
+    <Compile Include="Core\Services\TitleCreator.cs" />
+    <Compile Include="Core\Validation\ValidationMessages.cs" />
+    <Compile Include="Core\ViewController.cs" />
+    <Compile Include="Core\ViewModels\AjaxListVM.cs" />
+    <Compile Include="Core\ViewModels\AjaxTableRequest.cs" />
+    <Compile Include="Core\ViewModels\FormResponseContentVM.cs" />
+    <Compile Include="Core\ViewModels\FormResponseVM.cs" />
+    <Compile Include="Core\ViewModels\GridData.cs" />
+    <Compile Include="Core\ViewModels\Select2VM.cs" />
+    <Compile Include="Core\ViewModels\SimplePageCommonVM.cs" />
+    <Compile Include="Helpers\Links2.cs" />
+    <Compile Include="Helpers\TrackPageHtmls.cs" />
+    <Compile Include="Root\Api\OpenBadge.cs" />
+    <Compile Include="Root\Catalog\GroupTitleType.cs" />
+    <Compile Include="Root\Catalog\ViewModels\DiplomProgramListVM.cs" />
+    <Compile Include="Root\Catalog\ViewModels\GroupsWithDiscountVM.cs" />
+    <Compile Include="Root\Catalog\ViewModels\IsNewCoursesVM.cs" />
+    <Compile Include="Root\Catalog\ViewModels\MobileCourseVM.cs" />
+    <Compile Include="Root\Catalog\Views\CourseListView.cs" />
+    <Compile Include="Root\Catalog\Views\GuideVM.cs" />
+    <Compile Include="Root\Center\ViewModels\AddResponseVM.cs" />
+    <Compile Include="Root\Center\ViewModels\ClassRoomsVM.cs" />
+    <Compile Include="Root\Center\ViewModels\CollectionMctsFormVM.cs" />
+    <Compile Include="Root\Center\ViewModels\MtsEmployeeFormVM.cs" />
+    <Compile Include="Root\Center\ViewModels\OrgCatalogFormVM.cs" />
+    <Compile Include="Root\Center\ViewModels\PaperCatalogFormVM.cs" />
+    <Compile Include="Root\Center\ViewModels\SeminarRegisterFormVM.cs" />
+    <Compile Include="Root\Center\ViewModels\JubileeFormVM.cs" />
+    <Compile Include="Root\Center\ViewModels\MarketingActionsVM.cs" />
+    <Compile Include="Root\Center\ViewModels\VideoCategoryVM.cs" />
+    <Compile Include="Root\Center\ViewModels\VideosVM.cs" />
+    <Compile Include="Root\Center\Views\VideoCategoryView.cs" />
+    <Compile Include="Root\Common\BingSearchContainer.cs" />
+    <Compile Include="Root\Common\CalData.cs" />
+    <Compile Include="Root\Common\LectureFilesVM.cs" />
+    <Compile Include="Root\Common\Services\CalendarService.cs" />
+    <Compile Include="Root\Common\Services\PiStudentEmailService.cs" />
+    <Compile Include="Root\Common\Services\ExpressOrderService.cs" />
+    <Compile Include="Root\Common\Views\LectureFilesView.cs" />
+    <Compile Include="Root\Graduate\Services\ProfileService.cs" />
+    <Compile Include="Root\Graduate\Services\StudentRatingService.cs" />
+    <Compile Include="Root\Graduate\ViewModels\TopStudentListVM.cs" />
+    <Compile Include="Root\Learning\CourseStudyTypes.cs" />
+    <Compile Include="Root\Learning\Services\CourseFileVMService.cs" />
+    <Compile Include="Root\Learning\Services\GroupCertService.cs" />
+    <Compile Include="Root\Learning\ViewModels\JubileeGroupsVM.cs" />
+    <Compile Include="Root\Lms\LmsLinks.cs" />
+    <Compile Include="Root\Lms\ViewModels\HoursVM.cs" />
+    <Compile Include="Root\Lms\ViewModels\LectureEditStatus.cs" />
+    <Compile Include="Root\Lms\ViewModels\LectureEditVM.cs" />
+    <Compile Include="Root\Lms\ViewModels\LectureQuestionnaireVM.cs" />
+    <Compile Include="Root\Lms\ViewModels\TimesheetVM.cs" />
+    <Compile Include="Root\Lms\Views\LectureEditView.cs" />
+    <Compile Include="Root\Lms\Views\LectureQuestionnaireView.cs" />
+    <Compile Include="Root\Lms\Views\LmsViews.cs" />
+    <Compile Include="Root\Lms\Views\TimeSheetView.cs" />
+    <Compile Include="Root\Orders\Services\SberbankService.cs" />
+    <Compile Include="Root\Orders\Validators\QuickRegisterVMValidator.cs" />
+    <Compile Include="Root\Orders\Validators\ExpressRegisterVMValidator.cs" />
+    <Compile Include="Root\Orders\ViewModels\EditSeatNumberVM.cs" />
+    <Compile Include="Root\Orders\ViewModels\YandexOrderJson.cs" />
+    <Compile Include="Root\Orders\Views\AddSeminarView.cs" />
+    <Compile Include="Root\Orders\Views\CourseSocialLinkView.cs" />
+    <Compile Include="Root\Orders\Views\EditSeatNumberView.cs" />
+    <Compile Include="Root\Orders\Views\ExpressRegisterView.cs" />
+    <Compile Include="Root\OrgTests\ViewModels\CompanyTestsVM.cs" />
+    <Compile Include="Root\OrgTests\ViewModels\CompanyTestResultsVM.cs" />
+    <Compile Include="Root\OrgTests\Views\CompanyTestResultsView.cs" />
+    <Compile Include="Root\OrgTests\Views\GroupAttendanceView.cs" />
+    <Compile Include="Root\PlannedTests\ViewModels\PlanTestQuestionStatsVM.cs" />
+    <Compile Include="Root\PlannedTests\ViewModels\UserTestAnswerVM.cs" />
+    <Compile Include="Root\PlannedTests\Views\UserTestAnswersView.cs" />
+    <Compile Include="Root\PlannedTests\Views\PlanTestQuestionStatsView.cs" />
+    <Compile Include="Root\PlannedTests\Views\PlanTestUserStatsView.cs" />
+    <Compile Include="Root\PlannedTests\ViewModels\PlanTestUserStatsVM.cs" />
+    <Compile Include="Root\Profile\Logic\HoursBadge.cs" />
+    <Compile Include="Root\Profile\Logic\MyBusinessCodes.cs" />
+    <Compile Include="Root\Profile\Logic\MyBusinessUser.cs" />
+    <Compile Include="Root\Profile\MetaDatas\OrgGroupSearchMD.cs" />
+    <Compile Include="Root\Profile\Services\AlbumVideoService.cs" />
+    <Compile Include="Root\Profile\Services\FacebookService.cs" />
+    <Compile Include="Root\Profile\Services\MyBusinessService.cs" />
+    <Compile Include="Root\Profile\Services\VimeoService.cs" />
+    <Compile Include="Root\Profile\Validators\SimpleRegUserValidator.cs" />
+    <Compile Include="Root\Profile\ViewModels\BangesVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\OrgListVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\OrgFileListVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\OrgNextCoursesVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\GroupAttendanceVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\OrgGroupSearchVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\OrgGroupVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\OrgQuestionnaireVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\OrgRealSpecialistVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\OrgStatusUpdateVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\OrgStudentVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\ProfileVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\WorkPlaceView.cs" />
+    <Compile Include="Root\Profile\ViewModels\RealSpecialistVM.cs" />
+    <Compile Include="Root\Profile\Views\ClearCacheView.cs" />
+    <Compile Include="Root\Profile\Views\ChangeNameRequestView.cs" />
+    <Compile Include="Root\Profile\Views\SimpleRegistrationView.cs" />
+    <Compile Include="Root\Profile\Views\OrgListView.cs" />
+    <Compile Include="Root\Profile\Views\OrgFileListView.cs" />
+    <Compile Include="Root\Profile\Views\OrgRealSpecialistView.cs" />
+    <Compile Include="Root\Profile\Views\OrgQuestionnaireView.cs" />
+    <Compile Include="Root\Profile\Views\UserCourseInfoView.cs" />
+    <Compile Include="Root\Profile\Views\OrgGroupSearchListView.cs" />
+    <Compile Include="Root\Profile\Views\OrgNextCoursesView.cs" />
+    <Compile Include="Root\Profile\Views\OrgStatusUpdateView.cs" />
+    <Compile Include="Root\Profile\Views\GroupAttendanceView.cs" />
+    <Compile Include="Root\Profile\Views\OrgGroupSearchView.cs" />
+    <Compile Include="Root\Profile\Views\MyBusinessView.cs" />
+    <Compile Include="Root\Profile\Views\OrgGroupView.cs" />
+    <Compile Include="Root\Profile\Views\OrgProfileViews.cs" />
+    <Compile Include="Root\SimpleTests\Logic\SimpleTest.cs" />
+    <Compile Include="Root\SimpleTests\Logic\SimpleTestParser.cs" />
+    <Compile Include="Root\SimpleTests\ViewModels\SimpleTestResultVM.cs" />
+    <Compile Include="Root\SimpleTests\Views\SimpleTestResultView.cs" />
+    <Compile Include="Root\SimpleTests\Views\SimpleTestView.cs" />
+    <Compile Include="Root\Tests\MetaDatas\TestModuleSetMD.cs" />
+    <Compile Include="Root\Tests\MetaDatas\GroupInfoMD.cs" />
+    <Compile Include="Root\Tests\MetaDatas\GroupPrepareMD.cs" />
+    <Compile Include="Root\Tests\MetaDatas\GroupTestMD.cs" />
+    <Compile Include="Root\Tests\Services\UserTestResultService.cs" />
+    <Compile Include="Root\Tests\Validators\TestValidators.cs" />
+    <Compile Include="Root\Tests\ViewModels\AssignTestsVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\CoursePlannedTestVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\GroupPrepareVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\GroupTestResultVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\GroupTestEditVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\GroupUserTests.cs" />
+    <Compile Include="Root\Tests\ViewModels\ModuleSetVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\PrerequisiteTestsVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\PrerequisiteTestVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestBestVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestCertificatesVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestCertInfoVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\GroupInfoVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestReadOnlyVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\MainTestsVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestResultData.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestResultVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestSectionVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\UserTestStats.cs" />
+    <Compile Include="Root\Tests\ViewModels\UserTestsVM.cs" />
+    <Compile Include="Root\Tests\Views\AnswerEditView.cs" />
+    <Compile Include="Root\Tests\Views\CoursePlannedTestView.cs" />
+    <Compile Include="Root\Tests\Views\ModuleSetEditView.cs" />
+    <Compile Include="Root\Tests\Views\GroupInfosView.cs" />
+    <Compile Include="Root\Tests\Views\AssignTestsView.cs" />
+    <Compile Include="Root\Tests\Views\TestCertificatesView.cs" />
+    <Compile Include="Root\Tests\Views\GroupTestResultView.cs" />
+    <Compile Include="Root\Tests\Views\GroupPrepareView.cs" />
+    <Compile Include="Root\Tests\Views\GroupTestEditView.cs" />
+    <Compile Include="Root\Tests\Views\GroupInfoView.cs" />
+    <Compile Include="Root\Tests\ViewModels\GroupInfosVM.cs" />
+    <Compile Include="Root\Tests\Views\TestControls.cs" />
+    <Compile Include="Root\Tests\Views\TestReadOnlyView.cs" />
+    <Compile Include="Root\Tests\Views\TestRunDetailsVM.cs" />
+    <Compile Include="Root\Tests\Views\TestRunView.cs" />
+    <Compile Include="Root\Tests\Views\QuestionEditView.cs" />
+    <Compile Include="Root\Tests\Views\ModuleEditView.cs" />
+    <Compile Include="Root\Tests\Views\TestEditView.cs" />
+    <Compile Include="Extension\CourseDetailsVMExtension.cs" />
+    <Compile Include="Extension\EditExamVMExtension.cs" />
+    <Compile Include="Extension\ModelWithCityExtension.cs" />
+    <Compile Include="Extension\EditCourseVMExtension.cs" />
+    <Compile Include="Extension\OrderExtensions.cs" />
+    <Compile Include="Extension\Profile\ProfileVMExtension.cs" />
+    <Compile Include="Extension\RegistrationVMExtension.cs" />
+    <Compile Include="Extension\SelectGroupItem.cs" />
+    <Compile Include="Extension\SmartGroupChoiceVMExtension.cs" />
+    <Compile Include="Extension\VendorVMHelper.cs" />
+    <Compile Include="Helpers\CenterHelper.cs" />
+    <Compile Include="Helpers\CoursePageHtmls.cs" />
+    <Compile Include="Helpers\HtmlHelperExtension.cs" />
+    <Compile Include="Helpers\SimpleLinks.cs" />
+    <Compile Include="Helpers\Links.cs" />
+    <Compile Include="Helpers\Shop\ShopLinks.cs" />
+    <Compile Include="Helpers\SiteHtmls.cs" />
+    <Compile Include="MvcApplication.cs" />
+    <Compile Include="Core\ViewModels\BaseVM.cs" />
+    <Compile Include="Pages\Interfaces\ISimplePageVMService.cs" />
+    <Compile Include="Core\ViewModels\PagePart.cs" />
+    <Compile Include="Pages\SimplePageVMService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Root\Api\Api.cs" />
+    <Compile Include="Root\Api\Services\ApiService.cs" />
+    <Compile Include="Root\Common\Services\PageMetaService.cs" />
+    <Compile Include="Root\Contents\ViewModels\CourseResponsesVM.cs" />
+    <Compile Include="Root\Exams\ViewModels\ExamSearchVM.cs" />
+    <Compile Include="Root\Learning\ViewModels\CheckCertificateVM.cs" />
+    <Compile Include="Root\Orders\Views\EditExtrasView.cs" />
+    <Compile Include="Root\Partners\ViewModels\DwgVM.cs" />
+    <Compile Include="Root\Profile\ViewModels\SubscribesVM.cs" />
+    <Compile Include="Root\Tests\MetaDatas\TestPassRuleMD.cs" />
+    <Compile Include="Root\Tests\MetaDatas\TestAnswerMD.cs" />
+    <Compile Include="Root\Tests\MetaDatas\TestQuestionMD.cs" />
+    <Compile Include="Root\Tests\MetaDatas\TestModuleMD.cs" />
+    <Compile Include="Root\Tests\MetaDatas\TestMD.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestEditVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestListVM.cs" />
+    <Compile Include="Root\Tests\ViewModels\TestRunVM.cs" />
+    <Compile Include="Services\Catalog\AnnounceService.cs" />
+    <Compile Include="Services\Catalog\CourseVMService.cs" />
+    <Compile Include="Services\Catalog\Interfaces\IAnnounceService.cs" />
+    <Compile Include="Services\Catalog\Interfaces\ICourseVMService.cs" />
+    <Compile Include="Services\Catalog\Interfaces\ISectionVMService.cs" />
+    <Compile Include="Services\Catalog\PdfCreator.cs" />
+    <Compile Include="Services\Catalog\SectionVMService.cs" />
+    <Compile Include="Util\Captcha\CaptchaImage.cs" />
+    <Compile Include="Util\ControllerExtension.cs" />
+    <Compile Include="Helpers\CommonSiteHelper.cs" />
+    <Compile Include="Util\EntityUtils.cs" />
+    <Compile Include="Util\ExcelUtl.cs" />
+    <Compile Include="Util\ExtendedController.cs" />
+    <Compile Include="Util\GroupFilterExtension.cs" />
+    <Compile Include="Util\Month.cs" />
+    <Compile Include="Util\ResponseHeader.cs" />
+    <Compile Include="Util\SiteUrls.cs" />
+    <Compile Include="Common\Validators\Core\LinqToSqlAttributesRule.cs" />
+    <Compile Include="Common\Validators\Core\ValidatorRegistrator.cs" />
+    <Compile Include="Common\Validators\Profile\UserExamQuestionnaireValidator.cs" />
+    <Compile Include="Root\Catalog\ViewModels\CourseVM.cs" />
+    <Compile Include="Root\Orders\ViewModels\ExtrasesVM.cs" />
+    <Compile Include="Root\Partners\Logic\SuperJobVacancy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DynamicForm\DynamicForm.csproj">
+      <Project>{9D06C8E9-58AD-4A39-80C0-B87CDA39C332}</Project>
+      <Name>DynamicForm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Entities\Specialist.Entities.csproj">
+      <Project>{19383E60-91D3-431B-8870-5456C67EE86D}</Project>
+      <Name>Specialist.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Services\Specialist.Services.csproj">
+      <Project>{EA56F9BC-8CDB-401F-B5F6-DCB77AAEAB20}</Project>
+      <Name>Specialist.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Web.Common\Specialist.Web.Common.csproj">
+      <Project>{C7F7E47A-8072-44BD-883E-06AC71768EF5}</Project>
+      <Name>Specialist.Web.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Const\ViewNames2.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ViewNames2.cs</LastGenOutput>
+    </None>
+    <None Include="Const\Urls.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Urls.cs</LastGenOutput>
+    </None>
+    <None Include="Const\ViewNames.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ViewNames.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\Best2010Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webinar2011Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Best2011Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BestGraduateIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardPIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardDIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardSIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardAIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CardGIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Root\Orders\MetaDatas\" />
+    <Folder Include="Services\Tasts\" />
+    <Folder Include="Util\View\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

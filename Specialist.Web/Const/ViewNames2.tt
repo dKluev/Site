@@ -1,0 +1,49 @@
+﻿<#@ template language="C#v3.5" hostspecific="true" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+namespace Specialist.Web.Const
+{
+	public static class Views 
+	{
+	<#
+var _viewPath = Path.Combine(Host.ResolvePath(@""), @"..\..\Specialist.Web.UI2\Views");
+    var directoryInfo = new DirectoryInfo(_viewPath);
+    WriteViewNames(directoryInfo);
+#>
+	
+		
+	}
+}
+<#+
+public void WriteViewNames(DirectoryInfo dir){
+	foreach(var fileInfo in dir.GetFiles("*.aspx")){
+		WriteLine("public const string " + GetNameWithoutExtension(fileInfo).Replace(".", "") + " = \"" + GetPath(fileInfo) + "\";");
+    }     
+    foreach(var fileInfo in dir.GetFiles("*.ascx")){
+		WriteLine("public const string " + GetNameWithoutExtension(fileInfo).Replace(".", "") + " = \""  + GetPath(fileInfo) + "\";");
+    }    
+    foreach(var subdire in dir.GetDirectories()){
+	   WriteLine("public static class " + subdire.Name + "{");
+	   WriteViewNames(subdire);
+		WriteLine("}");
+    }
+}
+
+public static string GetNameWithoutExtension(FileInfo fileInfo)
+{
+    return Path.GetFileNameWithoutExtension(fileInfo.Name);
+}
+
+private static string GetPath(FileInfo fileInfo)
+{
+    string path;
+    if (fileInfo.Directory.Parent.Name == "Views")
+        path = GetNameWithoutExtension(fileInfo);
+    else
+        path = fileInfo.Directory.Name + "/" + GetNameWithoutExtension(fileInfo);
+    return path;
+}
+
+#>
