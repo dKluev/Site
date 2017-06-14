@@ -1,0 +1,4 @@
+.pdb
+System.Data.SQLite.Linq.dll
+connectionStrings.config
+Web.config
