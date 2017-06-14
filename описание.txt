@@ -1,0 +1,65 @@
+Деплой
+ 1. Запустить бат файл publish_test выкладываем на fortest.specialist.ru
+ 2. publish_main выложить в папку test/temp
+ 3. update-main.bat на apz004 перенести файлы из test/temp в main 
+
+
+Быстрация регистрация
+  1. Запись на семинар - CourseController.AddSeminar
+  2. SimpleRegController.Registration(string returnUrl, string source_tc) Первый раз
+  3. RegistrationPost(SimpleRegUser user) 
+  4. EmailConfirm Щелкает из письма
+
+Таблица с группами
+   1. C:\Projects\SpecialistWeb_Testing\Specialist.Web.UI2\Views\Shared\Education\NearestGroupSet.ascx
+   2. C:\Projects\SpecialistWeb_Testing\Specialist.Web.UI2\Views\Shared\Education\NearestGroupList.ascx
+   3.  public CourseVM GetByUrlName(string urlName) {
+   4. var nearestGroups = GroupService.GetNearestGroups(course, cityTC);
+
+Определение организации
+  1.PaymentDataCreator
+  2.GetOurOrg корневой метод, передается весь заказ
+  3. Доработать функцию в спеце, добавить параметр трека 
+
+ДВП. Взаимодействие с Specialist.
+
+  1. C:\Projects\SpecialistWeb_Testing\Specialist.Web\Controllers\Common\PartnerController.cs
+  2. SberbankCallback(string mdOrder, string orderNumber, string operation, int status)
+  3. SetDVP
+
+Admitad
+
+  1. Человек приходит на главную и параметр (ИД партнёра) добавляется в куки
+  2. PaymentTypeChoice(decimal orderID)
+  3. C:\Projects\SpecialistWeb_Testing\Specialist.Web.UI2\Views\Shared\GoogleAnalytics\GAOrder.ascx
+  4. Делаем запрос в адмитад с параметрами
+
+
+Личный кабинет
+  1. ProfileController
+  2. C:\Projects\SpecialistWeb_Testing\Specialist.Web.UI2\Views\Profile\NewVersion\Details.aspx
+  3. C:\Projects\SpecialistWeb_Testing\Specialist.Web\Controllers\Center\CenterController.cs
+  4. public ActionResult MarketingActions()
+
+Активация личного кабинета
+
+  1. ChangeStatus
+  2. C:\Projects\SpecialistWeb_Testing\Specialist.Services\Order\SpecialistExportService.cs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+  
