@@ -110,6 +110,9 @@ namespace Specialist.Web.Controllers
 			SimpleRegUserService.DeleteAndSubmit(simpleRegUser);
 			var url = simpleRegUser.Url.IsEmpty() ? Url.Profile().Urls.Details() : simpleRegUser.Url;
             MailService.RegistrationComplete(user, null, false);
+
+            SpecialistExportService ses = new SpecialistExportService();
+            ses.InsertStudentBySimpleUser(user);
 			ShowMessage("¬ы успешно зарегистрировались на сайте");
 			return Redirect(url);
 		}
