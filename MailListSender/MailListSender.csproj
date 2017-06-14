@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08D4F1CA-38BA-4BA0-BF6F-EE33B05A09E5}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MailListSender</RootNamespace>
+    <AssemblyName>MailListSender</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\Dependencies\Unity\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils.FluentHtml">
+      <HintPath>..\Specialist.Web\bin\x86\Debug\SimpleUtils.FluentHtml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <Content Include="NLog.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Specialist.Entities\Specialist.Entities.csproj">
+      <Project>{19383E60-91D3-431B-8870-5456C67EE86D}</Project>
+      <Name>Specialist.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Services\Specialist.Services.csproj">
+      <Project>{EA56F9BC-8CDB-401F-B5F6-DCB77AAEAB20}</Project>
+      <Name>Specialist.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Web.Cms\Specialist.Web.Cms.csproj">
+      <Project>{CD50A5D3-C570-4A99-9309-A1FEA83E4C0F}</Project>
+      <Name>Specialist.Web.Cms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Web.Common\Specialist.Web.Common.csproj">
+      <Project>{C7F7E47A-8072-44BD-883E-06AC71768EF5}</Project>
+      <Name>Specialist.Web.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
