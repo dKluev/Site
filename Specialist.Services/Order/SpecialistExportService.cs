@@ -271,6 +271,26 @@ namespace Specialist.Services.Order
              new SpecialistContextProvider());
 			studentRepository.InsertAndSubmit(student);
 		}
+
+        public  Student InsertStudentBySimpleUser(User user)
+        {
+            var studentRepository = new Repository<Student>(
+             new SpecialistContextProvider());
+            var student = new Student
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                WebLogin = user.Email,
+                WebKeyword = user.Password
+            };
+            studentRepository.InsertAndSubmit(student);
+            var userForChange = UserService.GetByPK(user.UserID);
+            userForChange.Student_ID = student.Student_ID;
+            UserService.SubmitChanges();
+
+            return student;
+        }
+
         public Student GetOrInsertStudentByUser(User user, string webkeyword)
         {
             var studentRepository = new Repository<Student>(
