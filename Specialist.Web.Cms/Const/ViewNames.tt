@@ -1,0 +1,59 @@
+﻿<#@ template language="C#v3.5" hostspecific="true" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+namespace Specialist.Web.Cms.Const
+{
+	public class ViewNames 
+	{
+		<# foreach(var pair in GetViewNames("*.aspx")) { #>
+		
+		public const string <#= pair.Key #> = "<#= pair.Value #>";
+		<#}#>
+	
+	}
+
+	public class PartialViewNames 
+	{
+		<# foreach(var pair in GetViewNames("*.ascx")) { #>
+		
+		public const string <#= pair.Key #> = "<#= pair.Value #>";
+		<#}#>
+		
+	}
+}
+<#+
+public Dictionary<string, string> GetViewNames(string extension)
+{
+	var _viewPath = Path.Combine(Host.ResolvePath(@""), @"..\..\Specialist.Web.Cms.UI\Views");
+    var directoryInfo = new DirectoryInfo(_viewPath);
+    var files = directoryInfo.GetFiles(extension, SearchOption.AllDirectories);
+    var names = new Dictionary<string, string>();
+    
+
+    foreach (var fileInfo in files)
+    {
+        if(!names.ContainsKey(GetNameWithoutExtension(fileInfo)))
+            names.Add(GetNameWithoutExtension(fileInfo), GetPath(fileInfo));
+    }
+    return names;
+}
+
+public static string GetNameWithoutExtension(FileInfo fileInfo)
+{
+    return Path.GetFileNameWithoutExtension(fileInfo.Name);
+}
+
+private static string GetPath(FileInfo fileInfo)
+{
+    string path;
+    if (fileInfo.Directory.Parent.Name == "Views")
+        path = GetNameWithoutExtension(fileInfo);
+    else
+        path = fileInfo.Directory.Name + "/" + GetNameWithoutExtension(fileInfo);
+    return path;
+}
+
+
+#>

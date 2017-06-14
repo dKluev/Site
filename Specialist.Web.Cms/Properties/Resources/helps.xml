@@ -1,0 +1,52 @@
+<Root>
+  <News>
+    <ShowEverywhere>
+      Отображать новость везде на сайте.
+    </ShowEverywhere>
+    <CourseTCList>
+      Если в начале строки поставить [HideDiscount], в таблице групп скидки будут скрыты. 
+    </CourseTCList>
+  </News>
+  <MarketingAction>
+    <CourseTCList>
+      Если в начале строки поставить [HideDiscount], в таблице групп скидки будут скрыты. 
+    </CourseTCList>
+    <IsSpecialOffer>
+       Специальное предложение
+    </IsSpecialOffer>
+    
+  </MarketingAction>
+	<Test>
+    <CourseTCList>
+      Код курса по которому проводится тестирование. Если указан, тест доступен только обучающемся на курсе (это ограничение можно снять параметром "Без ограний").
+      
+    </CourseTCList>
+    <NoRestriction>
+      Даже если выставлен "Курс", тест будет доступен всем посетителям сайта.
+    </NoRestriction>
+    <TestIdList>
+      Номера тестов из которых будут браться вопросы
+    </TestIdList>
+	</Test>
+  <Response>
+    <IsIntraExtra>
+      Очно-заочное обучение
+    </IsIntraExtra>
+    <IsDiplom>
+      Дипломная программа
+    </IsDiplom>
+  </Response>
+  <PollOption>
+    <Message>
+      Сообщение выведется, если человек выберет данный вариант ответа
+    </Message>
+  </PollOption>
+  <Section>
+    <RelationsAsMenu>
+        Отображать привязки в виде большого меню с иконками. Если не выставлено, привязки отображаются в виде простого списка ссылок.
+    </RelationsAsMenu>
+    <IsSeparator>
+      На главной в левом меню после направления появится разделительная черта.
+    </IsSeparator>
+  </Section>
+</Root>

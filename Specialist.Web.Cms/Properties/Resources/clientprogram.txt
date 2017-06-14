@@ -1,0 +1,932 @@
+
+
+
+<!-- NON-PORTAL USER -->
+
+
+<html>
+<head>
+<script language="JavaScript" type="text/JavaScript">
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+	
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+	var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+	if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+	d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+	var i
+	var j=0
+	var x
+	var a = MM_swapImage.arguments; 
+	
+	document.MM_sr = new Array; 
+	
+	for(i=0;i<(a.length-2);i+=3) {
+		if ((x=MM_findObj(a[i]))!=null){
+			document.MM_sr[j++]=x; 
+			if(!x.oSrc)x.oSrc=x.src;x.src=a[i+2];
+		}
+	}
+}
+
+function change(which,replace){
+	which.src = replace
+}
+// this function highlights the box on the left of segment headers with the appropriate color
+function highlight(hiliteBox, state)
+{
+	if (state=="on")
+	{
+		document.getElementById(hiliteBox).style.backgroundColor = "#993333";
+	}
+	else
+	{
+		document.getElementById(hiliteBox).style.backgroundColor = "#E4E5D7";
+	}
+	return false;
+}
+//-->
+</script>	
+
+	<meta NAME="KEYWORDS" CONTENT="2test, www.totest.com, oracle faqs, certification, certifications, prometric, microsoft, cisco, testing ">
+	<meta NAME="DESCRIPTION" CONTENT="Prometric's online registration website. We provide certification exams for Academic Admissions, Architect/Engineering/Construction Certifications, Federal Aviation Administration, Finance/Banking/Accounting Certifications, Government: Federal, State, Local, Health/Medical Certifications, Information Technology Certifications, Insurance/Real Estate/Legal Certifications. We also help you to find a testing center to take your exam.">
+	<meta HTTP-EQUIV="content-type" CONTENT="text/html; charset=utf-8">
+	<script language="javascript" type="text/javascript" src="/scripts/global.js"></script>
+	<script language="javascript" type="text/javascript" src="/scripts/instantiation.js"></script>
+	<script language="javascript" type="text/javascript" src="/scripts/cscall.js"></script>
+	
+	
+	<title>Prometric - Client and Program Selection</title>
+<script LANGUAGE="JavaScript">
+function popUp(url) {
+sealWin=window.open(url,"win",'toolbar=0,location=0,directories=0,status=1,menubar=1,scrollbars=1,resizable=1,width=710,height=450');
+self.name = "mainWin";
+}
+</script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" onLoad="Page_OnLoad(); self.focus();" >
+
+
+
+<div id="mainTable" style="display:block">
+<!-- MASTHEAD START -->
+
+<div id="container">
+<div id="topphoto"><img src="../images/s.gif" alt="test taker" style="width:679px;height:112px" /><img src="../images/logo_prometric.gif" alt="Prometric" style="width:293px;height:112px;border-width:0" usemap="#Map" /></div>
+<div style="display:none"><map name="Map" id="Map"><area shape="rect" coords=coords="5,48,247,97" href="http://www.prometric.com/" target="_blank" /></map></div>
+<div id="topcolorbar"><img src="../images/s.gif" alt="For Test Takers" style="width:972px;height:46px" /></div>
+<!-- MASTHEAD END -->
+
+<div id="leftcontent"><!--START OF LEFT NAV--><div class="leftNavContainer">   <div class="leftNavMenuStepsTitle">
+       <span class="leftNavMenuStepsItemTitle"></span>
+   </div>   <div style="height: 10px;"></div>   <div class="leftNavStepsContainer">
+
+      <div>
+         <div class="leftNavMenuSteps">
+            <span class="leftNavMenuStepsItem"><a href="http://www.register.prometric.com/Index.asp?tcl=1">Locate a Test Site </a></span>
+		 </div>
+	  </div>	  <div>
+         <div class="leftNavMenuSteps">
+            <span class="leftNavMenuStepsItem"><a href="http://www.register.prometric.com/SeatAvailability.asp">Search for Seat Availability </a></span>
+		 </div>
+	  </div>	  <div>
+         <div class="leftNavMenuSteps">
+            <span class="leftNavMenuStepsItem"><a href="http://www.register.prometric.com/ClientProgram.asp">Schedule an Appointment </a></span>
+		 </div>
+	  </div>      <div>
+         <div class="leftNavMenuSteps">
+            <span class="leftNavMenuStepsItem"><a href="http://www.register.prometric.com/ClientProgram.asp">Exam Fees </a></span>
+		 </div>
+	  </div>      <div>
+         <div class="leftNavMenuSteps">
+            <span class="leftNavMenuStepsItem"><a href="http://www.register.prometric.com/Index.asp">Change Test Country/State </a></span>
+		 </div>
+	  </div>      <div>
+         <div class="leftNavMenuSteps">
+            <span class="leftNavMenuStepsItem"><a href="https://www.register.prometric.com/RescheduleCancel.asp">Reschedule/Cancel an Exam </a></span>
+		 </div>
+	  </div>      <div>
+         <div class="leftNavMenuSteps">
+            <span class="leftNavMenuStepsItem"><a href="https://www.register.prometric.com/CandidateHistory.asp">View/Print Receipt </a></span>
+		 </div>
+	  </div>      <div>
+         <div class="leftNavMenuSteps">
+            <span class="leftNavMenuStepsItem"><a href="https://www.register.prometric.com/CandidateHistory.asp">Candidate History </a></span>
+		 </div>
+	  </div>      <div>
+         <div class="leftNavMenuSteps">
+            <span class="leftNavMenuStepsItem"><a href="https://www.register.prometric.com/ChangeProfile.asp">Update Personal Information </a></span>
+		 </div>
+	  </div>      <div>
+         <div class="leftNavMenuSteps">
+            <span class="leftNavMenuStepsItem"><a href="https://www.register.prometric.com/ChooseLogin.asp">Change Password </a></span>
+		 </div>
+	  </div>  
+
+	</div>
+</div>
+</div>
+<!--END OF LEFT NAV - START OF CONTENT-->
+	<!-- MAIN CONTENT START -->
+	<div id="rightcontent">
+							<SCRIPT LANGUAGE="JavaScript"><!--
+	function LboClients_onChange(theSelect)
+	{
+		var selectedOption = theSelect.options[theSelect.selectedIndex];
+		//document.all.SpnPrograms.style.visibility = "hidden";	
+		document.ClientProgram.TxtClientName.value = selectedOption.text;
+		
+		//Submit instead of filling LboPrograms if Cisco
+		if (selectedOption.value == 47)
+		{
+			document.ClientProgram.submit();
+			return;
+		}
+		
+		FillLboPrograms(selectedOption.value);
+	}
+	
+	function LboPrograms_onChange(theSelect)
+	{
+		var selectedOption = theSelect.options[theSelect.selectedIndex];
+		
+		document.ClientProgram.TxtProgramName.value = selectedOption.text;
+	}
+	
+	function FillLboPrograms(clientID)
+	{
+		//clear LboPrograms
+		document.ClientProgram.LboPrograms.length = 0;
+		
+		 if (clientID == 276)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('3COM (3M0, 3M1)' , '353', false, false);
+		    
+		}
+		else if (clientID == 16)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('ACI - Financial Markets Association  (3I0, 3I1)' , '112', false, false);
+		    
+		}
+		else if (clientID == 5)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Alcatel-Lucent  (4A0, 4A1)' , '125', false, false);
+		    
+		}
+		else if (clientID == 12)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Apple Certification  (9L0, 9L1)' , '199', false, false);
+		    
+		}
+		else if (clientID == 24)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('ARE TECHNOLOGIES    ' , '216', false, false);
+		    
+		}
+		else if (clientID == 315)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Aruba Networks (A51, A50)' , '775', false, false);
+		    
+		}
+		else if (clientID == 343)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('ISAT' , '1055', false, false);
+		    
+		}
+		else if (clientID == 324)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('BlackBerry Certification' , '790', false, false);
+		    
+		}
+		else if (clientID == 257)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Charles Sturt University (CU0, CU1)' , '331', false, false);
+		    
+		}
+		else if (clientID == 154)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('CIW (Internet Certification)  (1D0, 1D1)' , '42', false, false);
+		    
+		}
+		else if (clientID == 9)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('CompTIA A+ (221, 220)' , '66', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[1] = new Option('CompTIA Bridge (BR0, BR1)' , '802', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[2] = new Option('CompTIA CDIA+ (226, 225)' , '67', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[3] = new Option('CompTIA Convergence+ (CT1,CT0)' , '390', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[4] = new Option('CompTIA CTT+  (TK1, TK0)' , '280', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[5] = new Option('CompTIA Linux+  (XK1, XK0)' , '288', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[6] = new Option('CompTIA Linux+ [Powered by LPI]' , '1058', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[7] = new Option('CompTIA Network +  (N11, N10)' , '256', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[8] = new Option('CompTIA PDI+ (PD1,PD0)' , '777', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[9] = new Option('CompTIA Project+  (PK1, PK0)' , '265', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[10] = new Option('CompTIA RFID+ (RF1/RF0)' , '369', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[11] = new Option('CompTIA Security+  (SY1, SY0)' , '294', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[12] = new Option('CompTIA Server+  (SK1, SK0)' , '274', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[13] = new Option('CompTIA Strata (FC1, FC0) Exams' , '827', false, false);
+		    
+		}
+		else if (clientID == 206)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Convergence Technologies Profession (TT0, TT1)' , '283', false, false);
+		    
+		}
+		else if (clientID == 313)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Curam Certification' , '765', false, false);
+		    
+		}
+		else if (clientID == 301)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Data Center University by APC (DU0, DU1)' , '401', false, false);
+		    
+		}
+		else if (clientID == 61)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Dell Computer' , '223', false, false);
+		    
+		}
+		else if (clientID == 311)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('MTLD dotMobi Certification Scheme' , '653', false, false);
+		    
+		}
+		else if (clientID == 1)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('EC-Council' , '227', false, false);
+		    
+		}
+		else if (clientID == 73)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Exam Express (EE0, EE1)' , '228', false, false);
+		    
+		}
+		else if (clientID == 78)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('EXIN  (EX0, EX1)' , '232', false, false);
+		    
+		}
+		else if (clientID == 306)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('F5 Networks (F50, F51)' , '407', false, false);
+		    
+		}
+		else if (clientID == 264)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('FileMaker (FM1, FM0)' , '341', false, false);
+		    
+		}
+		else if (clientID == 252)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Fujitsu - IT License (FI0, FI1)' , '324', false, false);
+		    
+		}
+		else if (clientID == 275)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Fujitsu-Limited Middleware Certification Program (FD0, FD1)' , '352', false, false);
+		    
+		}
+		else if (clientID == 271)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Genesys Telecommunications Laboratories (GE0, GE1)' , '348', false, false);
+		    
+		}
+		else if (clientID == 256)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Green Building Council of Australia' , '329', false, false);
+		    
+		}
+		else if (clientID == 90)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('ENCE ENCASE CERTIFIED EXAMINER' , '235', false, false);
+		    
+		}
+		else if (clientID == 88)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('H3C' , '234', false, false);
+		    
+		}
+		else if (clientID == 229)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('HP Certified Professional Certification Program (HP0,HP1)' , '300', false, false);
+		    
+		}
+		else if (clientID == 333)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Hewlett Packard Sales Accreditation' , '812', false, false);
+		    
+		}
+		else if (clientID == 232)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Hitachi Data Systems' , '304', false, false);
+		    
+		}
+		else if (clientID == 317)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Huawei' , '778', false, false);
+		    
+		}
+		else if (clientID == 105)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('IBM  (000, COG, LOT)' , '1', false, false);
+		    
+		}
+		else if (clientID == 254)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('IFID Exam - ICMA International Captital Market Association' , '327', false, false);
+		    
+		}
+		else if (clientID == 269)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('IISFA (International Information Systems Forensics Assoc)' , '346', false, false);
+		    
+		}
+		else if (clientID == 328)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Infosys' , '797', false, false);
+		    
+		}
+		else if (clientID == 314)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Intel Software (IA0, IA1)' , '766', false, false);
+		    
+		}
+		else if (clientID == 310)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('International Consortium of Certified Knowledge Experts' , '428', false, false);
+		    
+		}
+		else if (clientID == 321)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('International Function Point Users Group (IFPUG)' , '786', false, false);
+		    
+		}
+		else if (clientID == 35)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('ISEB' , '218', false, false);
+		    
+		}
+		else if (clientID == 307)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Certified Procurement Professional' , '415', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[1] = new Option('Certified Production Engineer' , '814', false, false);
+		    
+		}
+		else if (clientID == 117)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Juniper Networks' , '245', false, false);
+		    
+		}
+		else if (clientID == 126)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('LEGATO Software - a division of EMC' , '249', false, false);
+		    
+		}
+		else if (clientID == 130)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Linux Professional Institute (LPI)' , '29', false, false);
+		    
+		}
+		else if (clientID == 331)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('LSI Corporation' , '808', false, false);
+		    
+		}
+		else if (clientID == 132)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Microsoft (070, 071, 074, 075, 076, 078, 083, MBx)' , '19', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[1] = new Option('Microsoft Certified Master Programs' , '815', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[2] = new Option('Microsoft IT Academy Exams (073, 096)' , '866', false, false);
+		    
+		}
+		else if (clientID == 295)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Mincom, Inc.' , '388', false, false);
+		    
+		}
+		else if (clientID == 152)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('NetApp  (NS0)' , '262', false, false);
+		    
+		}
+		else if (clientID == 39)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Nortel (920, 921, 922)' , '182', false, false);
+		    
+		}
+		else if (clientID == 346)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('NVIDIA Certified Programmer' , '1057', false, false);
+		    
+		}
+		else if (clientID == 164)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Polycom (1K0, 1K1)' , '48', false, false);
+		    
+		}
+		else if (clientID == 284)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Prometric' , '366', false, false);
+		    
+		}
+		else if (clientID == 302)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('RES Software' , '402', false, false);
+		    
+		}
+		else if (clientID == 179)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Riverstone Networks' , '272', false, false);
+		    
+		}
+		else if (clientID == 322)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Ruby Association Certified Ruby Programmer' , '787', false, false);
+		    
+		}
+		else if (clientID == 199)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('SAS Institute  (A00, A01)' , '212', false, false);
+		    
+		}
+		else if (clientID == 182)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('SCO/Caldera Systems  (090, 091)' , '22', false, false);
+		    
+		}
+		else if (clientID == 327)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Service Desk Institute' , '796', false, false);
+		    
+		}
+		else if (clientID == 233)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Service Desk Institute (QQ)' , '305', false, false);
+		    
+		}
+		else if (clientID == 258)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('SNIA Certification Program' , '335', false, false);
+		    
+		}
+		else if (clientID == 332)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('SOA Certified Professional (SOACP)' , '811', false, false);
+		    
+		}
+		else if (clientID == 334)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('SolarWinds' , '826', false, false);
+		    
+		}
+		else if (clientID == 184)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('SUN Academic Initiative (212)' , '326', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[1] = new Option('Sun Microsystems (310, 311)' , '96', false, false);
+		    
+		}
+		else if (clientID == 262)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('SuSE' , '339', false, false);
+		    
+		}
+		else if (clientID == 181)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Sybase, Inc. (510, 511)' , '129', false, false);
+		    
+		}
+		else if (clientID == 198)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Symantec End User Certification Program (250, 251)' , '70', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[1] = new Option('Symantec Technical Specialist (STS) Partner Accreditation' , '841', false, false);
+		    
+		}
+		else if (clientID == 151)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Teradata 12 Program' , '828', false, false);
+		    
+		    document.ClientProgram.LboPrograms.options[1] = new Option('Teradata Certified Professional Program  (NR0)' , '261', false, false);
+		    
+		}
+		else if (clientID == 294)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Open Group' , '387', false, false);
+		    
+		}
+		else if (clientID == 305)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('VE Leader Examination' , '406', false, false);
+		    
+		}
+		else if (clientID == 201)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('TIBCO Software Inc. (TB0, TB1)' , '278', false, false);
+		    
+		}
+		else if (clientID == 245)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Trend Micro (TM0, TM1)' , '316', false, false);
+		    
+		}
+		else if (clientID == 255)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('Universitas 21 Global (UG1, UG0)' , '328', false, false);
+		    
+		}
+		else if (clientID == 104)
+		{
+			
+		    document.ClientProgram.LboPrograms.options[0] = new Option('XML Master Certification (I10)' , '240', false, false);
+		    
+		}
+		
+		
+		//Netscape 6.1 hack; If DefaultLboProgramsToFirstOption() is called directly LboPrograms isn't defaulted.
+		//The setTimeout() doesn't affect IE or N4.5 detrimentally.
+		setTimeout('DefaultLboProgramsToFirstOption()', 1);
+		
+	}	
+	
+	function DefaultLboProgramsToFirstOption()
+	{
+		document.ClientProgram.LboPrograms.options[0].selected = true;
+		LboPrograms_onChange(document.ClientProgram.LboPrograms);
+	}
+	
+	function DefaultProgramsOnPageLoad()
+	{
+		var selIndex = document.ClientProgram.LboClients.selectedIndex;
+
+		if (selIndex != -1) 
+		{
+			for (i = 0; i < document.ClientProgram.LboPrograms.length; i++)
+			{
+			
+			}
+		}	
+	}
+	
+	function ValidateForm()
+	{
+		if (document.ClientProgram.LboClients.selectedIndex == -1)
+		{
+			alert("Please select a Client.");
+			return false;
+		}
+		else if ((document.ClientProgram.LboPrograms.selectedIndex == -1) && (document.ClientProgram.LboClients[document.ClientProgram.LboClients.selectedIndex].value != 47))
+		{
+			alert("Please select a Program.");
+			return false;
+		}
+	}
+//--></SCRIPT><form method="post" name="ClientProgram" onSubmit="return ValidateForm();" action="http://www.register.prometric.com/ClientProgram.asp"><input type="hidden" name="TxtClientName"><input type="hidden" name="TxtProgramName"><input type="hidden" name="mode" value="1"><table border="0" width="560" cellspacing="0" cellpadding="0">
+<tr height="6"><td colspan="2"></td></tr>
+<tr>
+<td valign="top" colspan="2" class="errorText"></td>
+</tr>
+<tr>
+<td valign="top" class="bodyTitles" colspan="2">Client and Program Selection</td>
+</tr>
+<tr>
+<td valign="top" colspan="2"><img src="/images/spacer.gif" alt="" width="330" height="8" border="0"></td>
+</tr>
+<tr>
+<td valign="top" colspan="2">
+<p>Your current location is <b>Russia</b>.  If you would like to change this, please <a href="http://www.register.prometric.com/Index.asp?tcl=0">click here.</a></p>
+<p>Select a Client and Program, and click Next.  If you don't see your exam sponsor, please <a href="http://www.prometric.com/TestTakers/ContactUs/default.htm">contact us</a>.</p>
+</td>
+</tr>
+<tr>
+<td valign="top" colspan="2"><img src="/images/spacer.gif" alt="" width="330" height="5" border="0"></td>
+</tr>
+<tr>
+<td><p>Client:<br><select name="LboClients" size="5" onChange="LboClients_onChange(this);"><option value="276">3COM</option>
+<option value="16">ACI - Financial Markets Association</option>
+<option value="5">Alcatel-Lucent</option>
+<option value="12">Apple</option>
+<option value="24">ARE TECHNOLOGIES    </option>
+<option value="315">Aruba Networks</option>
+<option value="343">Australian Council for Educational Research (ACER)</option>
+<option value="324">BlackBerry Certification (RIM)</option>
+<option value="257">Charles Sturt University</option>
+<option value="154">CIW (Internet Certification)</option>
+<option value="9">CompTIA</option>
+<option value="206">Convergence Technologies Profession</option>
+<option value="313">Curam Software</option>
+<option value="301">Data Center University by APC </option>
+<option value="61">Dell</option>
+<option value="311">dotMobi</option>
+<option value="1">EC-Council</option>
+<option value="73">Exam Express</option>
+<option value="78">EXIN, Inc.</option>
+<option value="306">F5 Networks</option>
+<option value="264">FileMaker, Inc.</option>
+<option value="252">Fujitsu - IT License</option>
+<option value="275">Fujitsu Limited - Middleware Certification Program</option>
+<option value="271">Genesys Telecommunications Laboratories</option>
+<option value="256">Green Building Council of Australia</option>
+<option value="90">Guidance Software</option>
+<option value="88">H3C</option>
+<option value="229">Hewlett Packard</option>
+<option value="333">Hewlett Packard Sales Accreditation</option>
+<option value="232">Hitachi Data Systems</option>
+<option value="317">Huawei</option>
+<option value="105">IBM</option>
+<option value="254">IFID Exam - ICMA International Capital Market Association</option>
+<option value="269">IISFA (International Information Systems Forensics Assoc)</option>
+<option value="328">Infosys</option>
+<option value="314">Intel Software</option>
+<option value="310">International Consortium of Certified Knowledge Experts</option>
+<option value="321">International Function Point Users Group (IFPUG)</option>
+<option value="35">ISEB</option>
+<option value="307">Japan Management Association</option>
+<option value="117">Juniper Networks</option>
+<option value="126">LEGATO Certified Professional Program</option>
+<option value="130">Linux Professional Institute (LPI)</option>
+<option value="331">LSI Corporation</option>
+<option value="132">Microsoft</option>
+<option value="295">Mincom, Inc.</option>
+<option value="152">NetApp</option>
+<option value="39">Nortel</option>
+<option value="346">NVIDIA</option>
+<option value="164">Polycom (1K0, 1K1)</option>
+<option value="284">Prometric</option>
+<option value="302">RES Software</option>
+<option value="179">Riverstone</option>
+<option value="322">Ruby Association</option>
+<option value="199">SAS Institute</option>
+<option value="182">SCO/Caldera Systems</option>
+<option value="327">Service Desk Institute</option>
+<option value="233">Service Desk Institute (QQ)</option>
+<option value="258">SNIA Certification Program</option>
+<option value="332">SOASchool.com (owned and operated by SOA Systems Inc.)</option>
+<option value="334">SolarWinds</option>
+<option value="184">Sun Microsystems</option>
+<option value="262">SuSE</option>
+<option value="181">Sybase, Inc.</option>
+<option value="198">Symantec</option>
+<option value="151">Teradata</option>
+<option value="294">The Open Group</option>
+<option value="305">The Society of Japanese Value Engineering (SJVE)</option>
+<option value="201">TIBCO Software Inc.</option>
+<option value="245">Trend Micro</option>
+<option value="255">Universitas 21 Global</option>
+<option value="104">XML Master Certification</option></select></p></td>
+</tr>
+<tr>
+<td valign="top" colspan="2"><img src="/images/spacer.gif" alt="" width="330" height="8" border="0"></td>
+</tr>
+<tr>
+<td><span id="SpnPrograms"><p>Program:<br><select name="LboPrograms" size="5" onChange="LboPrograms_onChange(this);"><option>                                                                                          </option></select></p></span></td>
+</tr>
+<tr>
+<td valign="top" colspan="2"><img src="/images/spacer.gif" alt="" width="330" height="8" border="0"></td>
+</tr>
+<tr>
+<td valign="top" align="left" colspan="2">
+<div id="pnlbuttons"><input type="submit" value="Next >" name="BtnNext" class="btn2"></div>
+</td>
+</tr>
+</table>
+</form><script language="JavaScript"><!--
+function Page_OnLoad()
+{
+	var selIndex = document.ClientProgram.LboClients.selectedIndex;
+	
+	//If not Cisco then fill the LboPrograms
+	if ((selIndex != -1) && (document.ClientProgram.LboClients[selIndex].value != 47))
+	{
+		document.ClientProgram.TxtClientName.value = document.ClientProgram.LboClients.options[selIndex].text;
+		FillLboPrograms(document.ClientProgram.LboClients.options[selIndex].value);
+		
+		//Netscape 6.1 hack; If DefaultPrograms() is called directly LboPrograms isn't defaulted.
+		//The setTimeout() doesn't affect IE or N4.5 detrimentally.
+		setTimeout('DefaultProgramsOnPageLoad()', 1);
+	}
+	else if (selIndex != -1) //cisco, don't fill LboPrograms
+	{
+		document.ClientProgram.TxtClientName.value = document.ClientProgram.LboClients.options[selIndex].text;
+	}
+}
+//--></script>
+	</div>
+	
+		<!-- MAIN CONTENT END -->
+<!-- FOOTER START -->
+<div class="clearfloat">&nbsp;</div><div id="footer">
+    <span class="footerprometric">        <a href="http://www.prometric.com/" target="_blank">Prometric.com</a>
+    </span>&nbsp;&nbsp;|&nbsp;&nbsp;    	<span class="footerservices">		<a href="http://www.prometric.com/services" target="_blank">Prometric Services</a>	</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<span class="footernetwork">		<a href="http://www.prometric.com/network" target="_blank">For Network Partners and Test Centers</a>	</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<span class="footerbasic">		<a href="http://www.prometric.com/AboutUs/Copyright/default.htm" target="_blank">Copyright Notices</a>	</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<span class="footerbasic">		<a href="http://www.prometric.com/AboutUs/Terms/default.htm" target="_blank">Terms of Use</a>	</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+	<span class="footerbasic">
+		<a href="http://www.prometric.com/AboutUs/Privacy/default.htm" target="_blank">Privacy</a>
+	</span></div></div></div></div>
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3677066-2");
+pageTracker._trackPageview();
+</script>
+
+
+  </div>
+  
+ <div id="waitScreen" class="pnlWaitScreen">
+ 	<div style="text-align:center; margin: 20px 0"><img src="Images/prometric_BW_Large.gif" style="border-width:0px;" /></div>
+	<div style="text-align:center; margin-bottom: 20px"><span class="bodyTitles">Please do not close this window while we are processing your request.</span></div>
+	<div style="text-align:center; margin-bottom: 20px"><span ></span></div>
+	<div style="text-align:center; margin-bottom: 20px">
+		<table style="margin: 0 auto">
+			<tr>
+	   <td valign="top" align="center">
+	      <script language="javascript">
+	            var blnFlash = false; 
+
+	            if (navigator.plugins && navigator.plugins.length)
+	            {
+	                x = navigator.plugins["Shockwave Flash"];
+	                if (x)
+	                {
+	                    blnFlash = true;
+	                }
+	                if (navigator.plugins["Shockwave Flash 2.0"])
+	                {
+	                    blnFlash = true;
+	                }
+	            }
+	            else if (navigator.mimeTypes && navigator.mimeTypes.length)
+	            {
+	                x = navigator.mimeTypes['application/x-shockwave-flash'];
+	                if (x && x.enabledPlugin)
+	                    blnFlash = true;
+	            }
+											                
+	            if (blnFlash == false)
+	            {
+	               for(var i=7; i>0; i--)
+	               {
+	                    try
+	                    {
+	                        var flash = new ActiveXObject("ShockwaveFlash.ShockwaveFlash." + i);
+	                        blnFlash = true;
+	                        break;
+	                    }
+	                    catch(e)
+	                    {
+	                    }
+	                }
+	             }
+											    	         
+	             if (blnFlash)
+	             {  
+	                document.write('<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,42,0" id="ProgressBar" width="261" height="10" VIEWASTEXT><param name="movie" value="images/ProgressBar.swf"><param name="bgcolor" value="#FFFFFF"><param name="quality" value="high"><param name="allowscriptaccess" value="samedomain"><embed type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" width="261" height="10" name="ProgressBar" src="images/ProgressBar.swf" bgcolor="#FFFFFF" quality="high" swLiveConnect="true" allowScriptAccess="samedomain"></embed></object>');
+	             }
+	             else
+	             {  
+	                document.write('<IMG src="images/ProgressBar.gif" border="0" runat="server" />');
+	             }
+	      </script>
+	   </td>
+	</tr>
+	</table>
+  </div>
+  </div>
+  </body>
+
+</html>
+
+

@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD50A5D3-C570-4A99-9309-A1FEA83E4C0F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Specialist.Web.Cms</RootNamespace>
+    <AssemblyName>Specialist.Web.Cms</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BLToolkit.4">
+      <HintPath>..\packages\BLToolkit.4.1.21\lib\net40-full\BLToolkit.4.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>..\packages\Facebook.6.0.24\lib\net40-client\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\Dependencies\HtmlAgilityPack\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPlus">
+      <HintPath>..\..\Dependencies\HtmlAgilityPack\HtmlAgilityPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Linq">
+      <HintPath>..\..\Dependencies\Microsoft.Linq\Microsoft.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\..\Dependencies\Unity21\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Interception">
+      <HintPath>..\..\Dependencies\Unity21\Microsoft.Practices.Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\..\Dependencies\Mvc\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcContrib.Unity">
+      <HintPath>..\..\Dependencies\MvcContrib\Unity2\MvcContrib.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\Dependencies\Newtonsoft.Json\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\NLog\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\packages\RestSharp.104.1\lib\net4\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils.FluentAttributes">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.FluentAttributes.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils.FluentHtml, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="SimpleUtils.FluentRouting">
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.FluentRouting.dll</HintPath>
+    </Reference>
+    <Reference Include="SubSonic.Core, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\SubSonic\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Reactive.Core">
+      <HintPath>..\packages\Rx-Core.2.0.21114\lib\Net40\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>..\packages\Rx-Interfaces.2.0.21114\lib\Net40\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>..\packages\Rx-Linq.2.0.21114\lib\Net40\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>..\packages\Rx-PlatformServices.2.0.21114\lib\Net40\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Const\Common.cs" />
+    <Compile Include="Const\Content.cs" />
+    <Compile Include="Const\OperationType.cs" />
+    <Compile Include="Const\RecommendationConst.cs" />
+    <Compile Include="Const\ViewNames.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ViewNames.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\CompetitionEntityController.cs" />
+    <Compile Include="Controllers\NewsEntityController.cs" />
+    <Compile Include="Controllers\EntityStudySetEntityController.cs" />
+    <Compile Include="Controllers\MarketingActionEntityController.cs" />
+    <Compile Include="Controllers\BannerEntityController.cs" />
+    <Compile Include="Controllers\PublicController.cs" />
+    <Compile Include="Controllers\UserEntityController.cs" />
+    <Compile Include="Controllers\MailTemplateEntityController.cs" />
+    <Compile Include="Controllers\EmployeeEntityController.cs" />
+    <Compile Include="Controllers\OrderEntityController.cs" />
+    <Compile Include="Controllers\UserWorkEntityController.cs" />
+    <Compile Include="Controllers\CourseEntityController.cs" />
+    <Compile Include="Controllers\ExamEntityController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagerEntityController.cs" />
+    <Compile Include="Controllers\PollEntityController.cs" />
+    <Compile Include="Controllers\ProductEntityController.cs" />
+    <Compile Include="Controllers\ResponseEntityController.cs" />
+    <Compile Include="Controllers\SectionEntityController.cs" />
+    <Compile Include="Controllers\SiteObjectRelationEntityController.cs" />
+    <Compile Include="Core\BaseController.cs" />
+    <Compile Include="Core\CmsControllerFactory.cs" />
+    <Compile Include="Core\CmsPage.cs" />
+    <Compile Include="Core\FluentMetaData\CmsMetaDataAttributeProviders.cs" />
+    <Compile Include="Core\Helps.cs" />
+    <Compile Include="Core\MetaInfo\Controls\ActionLinkControl.cs" />
+    <Compile Include="Core\MetaInfo\Controls\FilterLinkControl.cs" />
+    <Compile Include="Core\MetaInfo\Controls\RelationsLinkControl.cs" />
+    <Compile Include="Core\MetaInfo\Controls\TabFocusControl.cs" />
+    <Compile Include="Core\MetaInfo\GMetaDataExtension.cs" />
+    <Compile Include="Core\MetaInfo\CommonPropertyMetaInfo.cs" />
+    <Compile Include="Core\MetaInfo\CmsMetaDataContainer.cs" />
+    <Compile Include="Core\Service\ComboBoxSourceCreator.cs" />
+    <Compile Include="Core\SelectListUtil.cs" />
+    <Compile Include="Core\Validator.cs" />
+    <Compile Include="Core\ViewModel\JsTableVM.cs" />
+    <Compile Include="Core\ViewModel\ComboBoxVM.cs" />
+    <Compile Include="Core\ViewModel\ControlVM.cs" />
+    <Compile Include="Core\ViewModel\EditRelationListVM.cs" />
+    <Compile Include="Core\ViewModel\EditVM.cs" />
+    <Compile Include="Core\ViewModel\ExtraControlVM.cs" />
+    <Compile Include="Core\ViewModel\Interfaces\IExtraControls.cs" />
+    <Compile Include="Core\ViewModel\ListVM.cs" />
+    <Compile Include="Core\ViewModel\OrderColumn.cs" />
+    <Compile Include="Core\ViewModel\PageVM.cs" />
+    <Compile Include="Core\ViewModel\RelationListVM.cs" />
+    <Compile Include="Helper\Links.cs" />
+    <Compile Include="Logic\ContentManagers.cs" />
+    <Compile Include="Logic\CourseSorting.cs" />
+    <Compile Include="Logic\MailList\MailListService.cs" />
+    <Compile Include="Logic\MailList\MailListVM.cs" />
+    <Compile Include="Logic\PaperCatalogData.cs" />
+    <Compile Include="Logic\Responses\ResponseUpdateView.cs" />
+    <Compile Include="MetaData\Common\CityMD.cs" />
+    <Compile Include="MetaData\Common\CmsMetaData.cs" />
+    <Compile Include="MetaData\Common\ComplexMD.cs" />
+    <Compile Include="MetaData\Content\BannerMD.cs" />
+    <Compile Include="MetaData\Content\AdviceMD.cs" />
+    <Compile Include="MetaData\Content\VideoCategoryMD.cs" />
+    <Compile Include="MetaData\Content\GuideMD.cs" />
+    <Compile Include="MetaData\Content\VideoMD.cs" />
+    <Compile Include="MetaData\Content\OrgProjectMD.cs" />
+    <Compile Include="MetaData\Content\UserWorkMD.cs" />
+    <Compile Include="MetaData\Content\UserWorkSectionMD.cs" />
+    <Compile Include="MetaData\Content\OrgResponseMD.cs" />
+    <Compile Include="MetaData\Content\NewsMD.cs" />
+    <Compile Include="MetaData\Content\ResponseMD.cs" />
+    <Compile Include="MetaData\Content\OrganizationMD.cs" />
+    <Compile Include="MetaData\Examination\ExamMD.cs" />
+    <Compile Include="MetaData\Infrastructure\CompetitionMD.cs" />
+    <Compile Include="MetaData\Infrastructure\CityInfoMD.cs" />
+    <Compile Include="MetaData\Infrastructure\ImageMetaMD.cs" />
+    <Compile Include="MetaData\Infrastructure\HtmlBlockMD.cs" />
+    <Compile Include="MetaData\Infrastructure\PageMetaMD.cs" />
+    <Compile Include="MetaData\Infrastructure\SuccessStoryMD.cs" />
+    <Compile Include="MetaData\Infrastructure\UsefulInformationMD.cs" />
+    <Compile Include="MetaData\Infrastructure\VacancyMD.cs" />
+    <Compile Include="MetaData\Infrastructure\PollOptionMD.cs" />
+    <Compile Include="MetaData\Infrastructure\MailTemplateMD.cs" />
+    <Compile Include="MetaData\Infrastructure\PollMD.cs" />
+    <Compile Include="MetaData\Infrastructure\SimplePageMD.cs" />
+    <Compile Include="MetaData\Infrastructure\SimplePageRelationMD.cs" />
+    <Compile Include="MetaData\MarketingActions\DiscountAuthorizationMD.cs" />
+    <Compile Include="MetaData\MarketingActions\DiscountCityMD.cs" />
+    <Compile Include="MetaData\MarketingActions\DiscountComplexMD.cs" />
+    <Compile Include="MetaData\MarketingActions\DiscountGraduateCourseMD.cs" />
+    <Compile Include="MetaData\MarketingActions\DiscountCustomerTypeMD.cs" />
+    <Compile Include="MetaData\MarketingActions\DiscountMD.cs" />
+    <Compile Include="MetaData\MarketingActions\DiscountPersonCategoryMD.cs" />
+    <Compile Include="MetaData\MarketingActions\ClabCardColorMD.cs" />
+    <Compile Include="MetaData\MarketingActions\PersonCategoryMD.cs" />
+    <Compile Include="MetaData\MarketingActions\PresentMD.cs" />
+    <Compile Include="MetaData\MarketingActions\MarketingActionMD.cs" />
+    <Compile Include="MetaData\Shop\PaymentTypeMD.cs" />
+    <Compile Include="MetaData\Shop\OrderCustomerTypeMD.cs" />
+    <Compile Include="MetaData\Shop\UserContactMD.cs" />
+    <Compile Include="MetaData\Shop\UserContactTypeMD.cs" />
+    <Compile Include="MetaData\SiteEntities\AuthorizationTypeMD.cs" />
+    <Compile Include="MetaData\SiteEntities\CertificationMD.cs" />
+    <Compile Include="MetaData\SiteEntities\EntityStudySetMD.cs" />
+    <Compile Include="MetaData\SiteEntities\SectionMD.cs" />
+    <Compile Include="Core\FluentMetaData\Utils\MetaDataProviderUtils.cs" />
+    <Compile Include="MetaData\Shop\GroupMD.cs" />
+    <Compile Include="MetaData\Shop\OrderDetailMD.cs" />
+    <Compile Include="MetaData\Shop\OrderMD.cs" />
+    <Compile Include="MetaData\Shop\UserMD.cs" />
+    <Compile Include="MetaData\SiteEntities\CourseMD.cs" />
+    <Compile Include="MetaData\SiteEntities\ProductMD.cs" />
+    <Compile Include="MetaData\SiteEntities\ProfessionMD.cs" />
+    <Compile Include="MetaData\SiteEntities\SiteObjectMD.cs" />
+    <Compile Include="MetaData\SiteEntities\SiteObjectRelationMD.cs" />
+    <Compile Include="MetaData\SiteEntities\SiteTermMD.cs" />
+    <Compile Include="MetaData\SiteEntities\VendorMD.cs" />
+    <Compile Include="MetaData\Validators\AllValidators.cs" />
+    <Compile Include="MetaData\Validators\CityInfoValidator.cs" />
+    <Compile Include="MetaData\Validators\ICmsValidator.cs" />
+    <Compile Include="MvcApplication.cs" />
+    <Compile Include="Mvc\CmsAuthAttribute.cs" />
+    <Compile Include="Mvc\UpdateAuthRoleList.cs" />
+    <Compile Include="Mvc\AuthFilterProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\CmsUserSettingsService.cs" />
+    <Compile Include="Repository\NamedIdRepository.cs" />
+    <Compile Include="Repository\PaymentTypeRepository.cs" />
+    <Compile Include="Repository\InMemoryRepository.cs" />
+    <Compile Include="Repository\SiteObjectTypeRepository.cs" />
+    <Compile Include="Root\ExamImport\Logic\Client.cs" />
+    <Compile Include="Root\ExamImport\Logic\ExamPrice.cs" />
+    <Compile Include="Root\ExamImport\Logic\PageParser.cs" />
+    <Compile Include="Root\ExamImport\Logic\PrometricSpider.cs" />
+    <Compile Include="Root\ExamImport\Logic\ProviderConst.cs" />
+    <Compile Include="Root\ExamImport\Logic\ProviderExam.cs" />
+    <Compile Include="Root\ExamImport\Services\ExamImportService.cs" />
+    <Compile Include="Root\ExamImport\Logic\StringExtension.cs" />
+    <Compile Include="Root\ExamImport\Logic\Util.cs" />
+    <Compile Include="Root\ExamImport\Logic\VueParser.cs" />
+    <Compile Include="Root\ExamImport\Logic\VueSpider.cs" />
+    <Compile Include="Root\Recommendations\CourseCoef.cs" />
+    <Compile Include="Root\Recommendations\CourseName.cs" />
+    <Compile Include="Root\Recommendations\CourseStudent.cs" />
+    <Compile Include="Root\Recommendations\FullCourseCoef.cs" />
+    <Compile Include="Root\Recommendations\RecLogic.cs" />
+    <Compile Include="Root\Recommendations\RecRepository.cs" />
+    <Compile Include="Root\Recommendations\SectionRecVM.cs" />
+    <Compile Include="Root\Socials\OdnoklassnikiService.cs" />
+    <Compile Include="Root\YandexDirect\Logic\Phrases.cs" />
+    <Compile Include="Root\YandexDirect\Logic\ApiEntites.cs" />
+    <Compile Include="Root\YandexDirect\Logic\SearchAbsPositions.cs" />
+    <Compile Include="Root\YandexDirect\Logic\SeCompetitor.cs" />
+    <Compile Include="Root\YandexDirect\Logic\YandexParser.cs" />
+    <Compile Include="Root\YandexDirect\Services\DirectApiBannerService.cs" />
+    <Compile Include="Root\YandexDirect\Services\DirectFiveService.cs" />
+    <Compile Include="Root\YandexDirect\Services\YandexAuthService.cs" />
+    <Compile Include="Root\YandexDirect\Services\YandexDirectTextUtils.cs" />
+    <Compile Include="Root\YandexDirect\Services\DirectApiService.cs" />
+    <Compile Include="Services\CourseEntityService.cs" />
+    <Compile Include="Services\EntityService.cs" />
+    <Compile Include="Services\Interfaces\IResponseLogicService.cs" />
+    <Compile Include="Services\Shop\OrderDetailService.cs" />
+    <Compile Include="Services\Shop\OrderService.cs" />
+    <Compile Include="Services\ResponseLogicService.cs" />
+    <Compile Include="Util\BinDatabase.cs" />
+    <Compile Include="Util\CmsValidatorFactory.cs" />
+    <Compile Include="Util\EntityDisplayName.cs" />
+    <Compile Include="Util\FluentValidationRulesProvider.cs" />
+    <Compile Include="Util\CmsHtmls.cs" />
+    <Compile Include="Util\Mock\MockRepository.cs" />
+    <Compile Include="Util\Tasks\DirectReportTask.cs" />
+    <Compile Include="Util\Tasks\EveryDayTasks.cs" />
+    <Compile Include="Util\Tasks\GroupPhotosTask.cs" />
+    <Compile Include="Util\Tasks\SocialTask.cs" />
+    <Compile Include="Util\Tasks\NewCourseVersionTask.cs" />
+    <Compile Include="Util\Tasks\TestCertPaidTask.cs" />
+    <Compile Include="Util\Tasks\MailUserOrdersTask.cs" />
+    <Compile Include="Util\Tasks\YandexCompetitorsTasks.cs" />
+    <Compile Include="Util\Tasks\EntityActivationTask.cs" />
+    <Compile Include="Util\Tasks\AbsPositionUpdateTask.cs" />
+    <Compile Include="Util\Tasks\EntityWithoutNewsTask.cs" />
+    <Compile Include="Util\Tasks\YandexDirectTasks.cs" />
+    <Compile Include="Util\Tasks\YdCurrentOnSearchUpdateTask.cs" />
+    <Compile Include="Util\Tasks\ResponseExport.cs" />
+    <Compile Include="Util\UnityRegistrator.cs" />
+    <Compile Include="Util\Validators.cs" />
+    <Compile Include="ViewModel\DirectBannerPricesVM.cs" />
+    <Compile Include="ViewModel\ForecastDirectVM.cs" />
+    <Compile Include="ViewModel\MarketingActionVM.cs" />
+    <Compile Include="ViewModel\RecommendationsVM.cs" />
+    <Compile Include="ViewModel\Responses\ResponseSearchVM.cs" />
+    <Compile Include="ViewModel\ReverseRelationSortingVM.cs" />
+    <Compile Include="ViewModel\TestCertGroupVM.cs" />
+    <Compile Include="ViewModel\TrainerInfoVM.cs" />
+    <Compile Include="ViewModel\UpdateDirectVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Specialist.Entities\Specialist.Entities.csproj">
+      <Project>{19383E60-91D3-431B-8870-5456C67EE86D}</Project>
+      <Name>Specialist.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Services\Specialist.Services.csproj">
+      <Project>{EA56F9BC-8CDB-401F-B5F6-DCB77AAEAB20}</Project>
+      <Name>Specialist.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Web.Common\Specialist.Web.Common.csproj">
+      <Project>{C7F7E47A-8072-44BD-883E-06AC71768EF5}</Project>
+      <Name>Specialist.Web.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Web\Specialist.Web.csproj">
+      <Project>{F587A3CA-53CB-4365-8734-94A74C409504}</Project>
+      <Name>Specialist.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Const\ViewNames.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ViewNames.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\Resources\clientprogram.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\FluentMetaData\Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Resources\helps.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
