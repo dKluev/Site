@@ -1,0 +1,120 @@
+--select name, is_broker_enabled FROM sys.databases
+--select * from passport..users
+--where lastname like 'бадыль'
+--update Passport..Users
+--set employee_TC = 'БАДЫЛЬ'
+--where UserID = 212292
+--use SPECREPL_replicating
+--select * from dbo.tComplexes as TC
+--update dbo.tComplexes
+--set PublishInSite = 1
+--where Complex_TC in 
+--(select distinct complex_tc from dbo.tGroups as TG )
+--select * from dbo.tGroups as TG
+--where course_Tc = 'М2274'
+--where DateBeg > getdate()
+--update Passport..Users
+--set email = 'ptolochko@specialist.ru', Password = 'qweqwe'
+--where UserID = 212292
+--update Passport..Users
+--set email = 'ptolochko1@specialist.ru'
+--where email = 'ptolochko@specialist.ru'
+--SELECT DATEDIFF(month, 3, getdate())
+--DATEDIFF ( datepart , startdate , enddate )
+--use SPECREPL_replicating
+--select * from dbo.tLectures as TL
+--where Group_ID in (64478, 65600)
+--order by LectureDateBeg
+
+--select * 
+--FROM [dbo].[tGroups] AS [t0]
+--INNER JOIN [dbo].[tBranchOffices] AS [t1] ON [t1].[BranchOffice_TC] = [t0].[BranchOffice_TC]
+--WHERE ([t0].[DateBeg] > '12.30.2009 0:00:00') AND ([t1].[City_TC] = 'Москва') AND ([t0].[Course_TC] = 'ФШ2-Д') AND ([t0].[LectureType_TC] = 'Г') AND ([t0].[DateBeg] > '08.25.2009')
+----select * from dbo.tCourses as TC
+--where Course_TC in (
+
+--select UrlName, Track_TC, groupcount from 
+--(select Track_TC, count(tg.Group_ID) as groupcount from dbo.tTracks as TT
+--inner join dbo.tGroups as TG on tg.Course_TC = tt.Course_TC
+--group by Track_TC
+--having count(tt.Course_TC) < 4
+--) as t
+--left join dbo.tCourses as TC on tc.Course_TC = T.Track_TC
+--
+--select course_tc, count(*) from dbo.tGroups as TG
+-- join dbo.tTracks as TT on tt.Course_TC = tg.Course_TC
+--where Color_TC = 'Ж' and LectureType_TC = 'Г' and exists
+--(select * from dbo.tTracks as TT where  and tt.Track_TC = 'ДИЗФШ')
+--group by course_tc
+--select a, urlname from (
+--select Track_TC, sum(c)/count(*) as a from (
+--select Track_TC, tt.Course_TC,
+--(select count(*) from dbo.tGroups as TG 
+--where tg.Course_TC = tt.Course_TC
+--and
+--Color_TC = 'Ж' and LectureType_TC = 'Г' ) as c
+--
+--
+-- from dbo.tTracks as TT) as t
+-- where c > 0
+-- group by Track_TC
+-- having  count(*) between 2 and 3 ) as t2
+-- left join dbo.tCourses as TC on tc.Course_TC = t2.Track_TC
+-- where exists (select 1 from dbo.vPrices as VP where vp.Track_TC = t2.Track_TC)
+-- order by a desc
+--SET identity_insert dbo.tLectures off
+-- insert into dbo.tLectures (
+-- 	Group_ID,
+-- 	LectureDateBeg,
+-- 	LectureDateEnd,
+-- 	Breaks,
+-- 	Teacher_TC,
+-- 	ClassRoom_TC,
+-- 	Notes,
+-- 	InputDate,
+-- 	Employee_TC,
+-- 	LastChangeDate,
+-- 	LastChanger_TC,
+-- 	TrainerComingTime,
+-- 	IsQualityAssurance
+-- ) 
+-- select 
+-- Group_ID,
+-- 	LectureDateBeg,
+-- 	LectureDateEnd,
+-- 	Breaks,
+-- 	Teacher_TC,
+-- 	ClassRoom_TC,
+-- 	Notes,
+-- 	InputDate,
+-- 	Employee_TC,
+-- 	LastChangeDate,
+-- 	LastChanger_TC,
+-- 	TrainerComingTime,
+-- 	IsQualityAssurance
+--  from [ssz001\sqlee].SPECREPL_replicating.dbo.tLectures as rtl
+-- where rtl.group_id in 
+-- (select distinct t.group_id from dbo.tGroups as t 
+-- inner join dbo.tLectures tl on tl.Group_ID = t.group_id
+-- where t.Color_TC = 'Ж')
+--select * from dbo.tLectures as TL
+--where Group_ID = 64678 
+-- select * from dbo.tgroups as TC
+-- where group_id = 64678 
+--select * from dbo.tComplexes as TC
+--select name, * from dbo.tCourses as TC
+--where name like '%сертифи%'
+--delete from dbo.tSections
+--delete from dbo.tSiteObjectRelations
+--where ObjectType = 'tSections' or RelationObjectType = 'tSections'
+--select top 1 * from dbo.tCourses as TC
+--update dbo.tCourses
+--set IsRestrictedSchedule = 1
+--where Course_TC = 'М2274'
+--select top 10 * from dbo.tGroups as TC
+--where Course_TC = 'СЕМИНАР'
+--order by DateBeg desc
+select * from dbo.tCategories as TC
+where CategoryName like 'семинары'
+select * from dbo.tCourseCategories as TCC
+where Course_TC like 'сем%'
