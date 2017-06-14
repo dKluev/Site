@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9E43EB02-F5C2-45B5-A12D-F2B20213B3AF}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Specialist.Web.Cms.UI</RootNamespace>
+    <AssemblyName>Specialist.Web.Cms.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>true</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="SimpleUtils, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\SimpleUtils\SimpleUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mvc\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Image\Add.png" />
+    <Content Include="Content\Image\Boolean.png" />
+    <Content Include="Content\Image\Calendar.png" />
+    <Content Include="Content\Image\Delete.png" />
+    <Content Include="Content\Image\Down.png" />
+    <Content Include="Content\Image\Edit.png" />
+    <Content Include="Content\Image\EditContent.png" />
+    <Content Include="Content\Image\favicon.ico" />
+    <Content Include="Content\Image\Filter.png" />
+    <Content Include="Content\Image\FilterLink.png" />
+    <Content Include="Content\Image\LoadIndicator.gif" />
+    <Content Include="Content\Image\Paste.png" />
+    <Content Include="Content\Image\pbar-ani.gif" />
+    <Content Include="Content\Image\Relations.png" />
+    <Content Include="Content\Image\Save.png" />
+    <Content Include="Content\Image\Table.png" />
+    <Content Include="Content\Image\Up.png" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Global.asax" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\autocomplete.js" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\datatable\jquery.dataTables.min.js" />
+    <Content Include="Scripts\jquery.autocomplete.js" />
+    <Content Include="Scripts\jquery.bgiframe.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.dimensions.js" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.jdMenu.css" />
+    <Content Include="Scripts\jquery.jdMenu.js" />
+    <Content Include="Scripts\jquery.positionBy.js" />
+    <Content Include="Scripts\jquery.tablednd_0_5.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\xVal.jquery.validate.js" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Profile\LogOnControl.ascx" />
+    <Content Include="Views\Account\Profile\LogOnState.ascx" />
+    <Content Include="Views\CourseEntity\RelationSorting.aspx" />
+    <Content Include="Views\CourseEntity\Sorting.aspx" />
+    <Content Include="Views\CourseEntity\WithoutTag.aspx" />
+    <Content Include="Views\EmployeeEntity\TrainersInfo.aspx" />
+    <Content Include="Views\ExamEntity\Import.aspx" />
+    <Content Include="Views\Home\Competitors.aspx" />
+    <Content Include="Views\Home\DirectBannerPrices.aspx" />
+    <Content Include="Views\Shared\CmsPage.aspx" />
+    <Content Include="Views\Home\UserEmails.aspx" />
+    <Content Include="Views\Home\SocialImage.aspx" />
+    <Content Include="Views\Home\Error.aspx" />
+    <Content Include="Views\Home\ForecastDirect.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Home\MainMenu.ascx" />
+    <Content Include="Views\Home\MainMenuPart.ascx" />
+    <Content Include="Views\Home\UpdateDirect.aspx" />
+    <Content Include="Views\MailTemplateEntity\MailList.aspx" />
+    <Content Include="Views\ManagerEntity\DiscountList.aspx" />
+    <Content Include="Views\OrderEntity\SpecialistOrders.aspx" />
+    <Content Include="Views\OrderEntity\PaidOrders.aspx" />
+    <Content Include="Views\OrderEntity\Envelope.aspx" />
+    <Content Include="Views\OrderEntity\Recommendations.aspx" />
+    <Content Include="Views\OrderEntity\TestCertGroup.aspx" />
+    <Content Include="Views\OrderEntity\TestCert.aspx" />
+    <Content Include="Views\OrderEntity\Edit.aspx" />
+    <Content Include="Views\OrderEntity\Beeline.aspx" />
+    <Content Include="Views\OrderEntity\BeelineData.ascx" />
+    <Content Include="Views\Public\SectionRecommendations.aspx" />
+    <Content Include="Views\Public\CourseRecommendations.aspx" />
+    <Content Include="Views\Shared\CommonPage.aspx" />
+    <Content Include="Views\Shared\JsTableControl.ascx" />
+    <Content Include="Views\Shared\JsTable.aspx" />
+    <Content Include="Views\Shared\CourseTCList.ascx" />
+    <Content Include="Views\ResponseEntity\ExportListControl.ascx" />
+    <Content Include="Views\ResponseEntity\ExportSearch.aspx" />
+    <Content Include="Views\ResponseEntity\ExportDate.aspx" />
+    <Content Include="Views\ResponseEntity\RawQuestionnaireList.aspx" />
+    <Content Include="Views\Shared\Add.aspx" />
+    <Content Include="Views\Shared\Controls\ActionLinkControl.ascx" />
+    <Content Include="Views\Shared\Controls\CheckBoxList.ascx" />
+    <Content Include="Views\Shared\Controls\Select.ascx" />
+    <Content Include="Views\Shared\Edit.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\FilterControl.ascx" />
+    <Content Include="Views\Shared\List.aspx" />
+    <Content Include="Views\Shared\ListControl.ascx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\PropertyGrid.ascx" />
+    <Content Include="Views\Shared\Relations\EditRelationList.aspx" />
+    <Content Include="Views\Shared\Relations\EditRelationListControl.ascx" />
+    <Content Include="Views\Shared\Relations\RelationListControl.ascx" />
+    <Content Include="Views\Shared\SiteObjectSelector.ascx" />
+    <Content Include="Views\SiteObjectRelationEntity\ReverseRelationSorting.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="connectionStrings.config" />
+    <Content Include="connectionStringsDev.config" />
+    <Content Include="NLog.config" />
+    <None Include="Scripts\jquery.autocomplete.jsN" />
+    <Content Include="Views\Shared\MainSite.Master" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Specialist.Entities\Specialist.Entities.csproj">
+      <Project>{19383e60-91d3-431b-8870-5456c67ee86d}</Project>
+      <Name>Specialist.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Services\Specialist.Services.csproj">
+      <Project>{EA56F9BC-8CDB-401F-B5F6-DCB77AAEAB20}</Project>
+      <Name>Specialist.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Web.Cms\Specialist.Web.Cms.csproj">
+      <Project>{CD50A5D3-C570-4A99-9309-A1FEA83E4C0F}</Project>
+      <Name>Specialist.Web.Cms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Specialist.Web.Common\Specialist.Web.Common.csproj">
+      <Project>{C7F7E47A-8072-44BD-883E-06AC71768EF5}</Project>
+      <Name>Specialist.Web.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>4327</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

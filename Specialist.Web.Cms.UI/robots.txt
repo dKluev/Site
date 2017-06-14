@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow: /
+Host: cms.specialist.ru

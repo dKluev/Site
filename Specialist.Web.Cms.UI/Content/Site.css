@@ -1,0 +1,352 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #dbddff. If you'd like
+to use a different color start by replacing all instances of
+#dbddff with your new color.
+----------------------------------------------------------*/
+body
+{
+    font-size: 70%;
+    font-family: Verdana, Helvetica, Sans-Serif;
+    color: #3E3D3D;
+    margin: 0;
+    padding: 0;
+}
+
+/*a:link
+{
+    color: #36487F;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #36487F;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}*/
+
+/* HEADINGS   
+----------------------------------------------------------
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+h2
+{
+    padding: 0 0 10px 0;
+}
+h3
+{
+    font-size: 1.2em;
+}
+h4
+{
+    font-size: 1.1em;
+}
+h5, h6
+{
+    font-size: 1em;
+}
+*/
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+/*.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}*/
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page
+{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#header
+{
+    padding: 0;
+}
+
+
+
+#main
+{
+	 margin: 20px 0px 0px 0px;
+
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+    margin: 1em 0;
+    padding: 1em;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+label 
+{
+    display: block;
+    margin: 0 0 5px 0;
+}
+
+label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+textarea 
+{
+	width: 100%;
+	height: 600;
+}
+
+img
+{
+	border-width:0;	
+}
+
+select 
+{
+	width: 100%;
+}
+
+.number
+{
+	width: 100px;
+	text-align: right;
+}
+
+form
+{
+	padding: 10px;
+}
+input[type='submit']
+{
+	cursor: pointer;
+}
+
+input.ui-icon
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-indent: -1000em;
+}
+
+
+.text
+{
+	width: 100%;
+}
+
+.textarea
+{
+	width: 100%;
+	height: 100px;
+    border: 1px solid #CCC;
+}
+
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+/*  border: solid 1px #dbddff; */
+  border-collapse: collapse;
+  width: 100%
+}
+
+table td 
+{
+  padding: 5px;   
+ /* border: solid 1px #dbddff; */
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  /*background-color: #f2f2ff;  */
+ /* border: solid 1px #dbddff;    */
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color:Red;
+}
+
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.ac_results {
+	padding: 0px;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+	z-index: 99999;
+}
+
+.ac_results ul {
+	width: 100%;
+	list-style-position: outside;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ac_results li {
+	margin: 0px;
+	padding: 2px 5px;
+	cursor: default;
+	display: block;
+	/* 
+	if width will be 100% horizontal scrollbar will apear 
+	when scroll mode will be used
+	*/
+	/*width: 100%;*/
+	font: menu;
+	font-size: 12px;
+	/* 
+	it is very important, if line-height not setted or setted 
+	in relative units scroll will be broken in firefox
+	*/
+	line-height: 16px;
+	overflow: hidden;
+}
+
+.ac_loading {
+	background: white url('//cdn.specialist.ru/Content/Image/Common/indicator.gif') right center no-repeat !important;
+}
+
+.ac_input
+{
+	width: 100%;
+}
+
+
+.ac_odd {
+	background-color: #eee;
+}
+
+.ac_over {
+	background-color: #0A246A;
+	color: white;
+}
+
+
+#editLink { background-image: url('/Content/Image/Edit.png'); }
+
+
+.Description {
+  height: 600px;
+}
+/*.clickable {
+	cursor: pointer;
+}*/
+.delete {
+	cursor: pointer;
+}
+.msg_head 
+{
+   /* text-decoration: underline; */
+    font-weight: bold;
+	cursor: pointer;
+	position: relative;
+	margin:0px;
+}
+.msg_body 
+{
+	padding: 5px 10px 15px;
+}
+/*.ui-state-focus a
+{
+	width: 100px;
+}
+
+.ui-state-default a
+{
+	width: 100px;
+}
+*/
+
+.pages{margin-top:2em; word-spacing:1px;}
+.pages a, .pages span {padding:0 3px;}
+.pages span {font-weight:bold;}
+
+.css_right {
+float:right;
+}
+
+.center  {
+text-align:center;
+}
+
+
+	.ui-progressbar-value { background-image: url(/content/image/pbar-ani.gif) !important; }
+
+ul.default-ul
+{
+    list-style-type: none;
+    
+}
